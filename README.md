@@ -1,6 +1,6 @@
 # Sistema de reservación de salas de estudio
 
-Aplicación de escritorio con interfaz gráfica en Python para administrar estudiantes, salas y reservaciones de salas de estudio universitarias. Proyecto Final — Calidad en Sistemas de Información, Semestre II 2026.
+Aplicación de escritorio con interfaz gráfica en Python para administrar estudiantes, salas y reservaciones de salas de estudio universitarias. Proyecto Final - Calidad en Sistemas de Información, Semestre II 2026.
 
 ## Descripción
 
@@ -50,12 +50,7 @@ Pendiente de definir...
 
 ## Pruebas
 
-- Pruebas unitarias e integración: `pruebas/unitarias/` y `pruebas/integracion/`.
-- Ejecutar la suite completa:
-  ```bash
-  pytest pruebas/
-  ```
-- La lógica de negocio (`solucion/modelo/`) se prueba de forma independiente de la interfaz gráfica, sin necesidad de automatizar clics.
+Pendiente de definir...
 
 ## Control de versiones
 
