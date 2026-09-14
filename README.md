@@ -9,7 +9,7 @@ La universidad cuenta con varias salas destinadas al estudio individual y grupal
 ## Estructura del repositorio
 
 ```
-Grupo##_ProyectoFinal/
+proyecto-qa-II-semestre-2026/
 ├── info.txt
 ├── README.md
 ├── requirements.txt
