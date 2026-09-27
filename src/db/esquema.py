@@ -17,7 +17,8 @@ verdad.
 
 ESQUEMA_SQL = """
 CREATE TABLE IF NOT EXISTS estudiantes (
-    carne           TEXT PRIMARY KEY,
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    carne           TEXT NOT NULL UNIQUE,
     nombre_completo TEXT NOT NULL,
     correo          TEXT NOT NULL,
     estado          TEXT NOT NULL DEFAULT 'activo'
@@ -25,7 +26,8 @@ CREATE TABLE IF NOT EXISTS estudiantes (
 );
 
 CREATE TABLE IF NOT EXISTS salas (
-    codigo    TEXT PRIMARY KEY,
+    id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo    TEXT NOT NULL UNIQUE,
     nombre    TEXT NOT NULL,
     capacidad INTEGER NOT NULL CHECK (capacidad > 0),
     estado    TEXT NOT NULL DEFAULT 'disponible'
@@ -33,9 +35,9 @@ CREATE TABLE IF NOT EXISTS salas (
 );
 
 CREATE TABLE IF NOT EXISTS reservaciones (
-    id                TEXT PRIMARY KEY,
-    carne             TEXT NOT NULL,
-    codigo_sala       TEXT NOT NULL,
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    estudiante_id     INTEGER NOT NULL,
+    sala_id           INTEGER NOT NULL,
     fecha             TEXT NOT NULL,
     hora_inicio       TEXT NOT NULL,
     duracion_horas    INTEGER NOT NULL CHECK (duracion_horas IN (1, 2)),
@@ -43,15 +45,15 @@ CREATE TABLE IF NOT EXISTS reservaciones (
     estado            TEXT NOT NULL DEFAULT 'activa'
         CHECK (estado IN ('activa', 'cancelada')),
     serie_id          TEXT,
-    FOREIGN KEY (carne) REFERENCES estudiantes (carne),
-    FOREIGN KEY (codigo_sala) REFERENCES salas (codigo)
+    FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id),
+    FOREIGN KEY (sala_id) REFERENCES salas (id)
 );
 
 CREATE INDEX IF NOT EXISTS idx_reservaciones_sala_fecha
-    ON reservaciones (codigo_sala, fecha);
+    ON reservaciones (sala_id, fecha);
 
-CREATE INDEX IF NOT EXISTS idx_reservaciones_carne
-    ON reservaciones (carne);
+CREATE INDEX IF NOT EXISTS idx_reservaciones_estudiante
+    ON reservaciones (estudiante_id);
 
 CREATE TABLE IF NOT EXISTS auditoria (
     id         INTEGER PRIMARY KEY AUTOINCREMENT,
