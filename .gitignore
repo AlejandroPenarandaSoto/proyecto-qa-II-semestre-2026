@@ -1,5 +1,6 @@
 # --- Python ---
 __pycache__/
+*.pyc
 *.py[cod]
 *$py.class
 *.egg-info/
@@ -20,6 +21,7 @@ ENV/
 *.db-journal
 *.db-wal
 *.db-shm
+*reservas.db
 
 # --- Pruebas y cobertura ---
 .pytest_cache/
