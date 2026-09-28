@@ -1,7 +1,7 @@
 import sqlite3
 
 from src.db.conexion import obtener_conexion
-from estudiantes.validaciones import(
+from src.model.estudiantes.validaciones import(
     validar_carne,
     validar_correo,
     validar_estado,

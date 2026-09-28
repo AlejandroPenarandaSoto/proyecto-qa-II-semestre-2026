@@ -7,7 +7,7 @@ from src.db.conexion import (
     obtener_ruta_base_datos,
     obtener_conexion,
 )
-from db.inicializador import inicializar_base_datos
+from src.db.inicializador import inicializar_base_datos
 from src.model.estudiantes.servicio import (
     registrar_estudiante, 
     consultar_estudiantes,
