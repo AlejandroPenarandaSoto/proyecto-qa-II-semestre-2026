@@ -2,6 +2,7 @@ import sqlite3
 from datetime import datetime, timedelta
 
 from src.db.conexion import obtener_conexion
+from src.model.auditoria.servicio import registrar_evento
 
 _HORA_APERTURA = datetime.strptime("08:00", "%H:%M")
 _HORA_CIERRE = datetime.strptime("20:00", "%H:%M")
@@ -56,8 +57,24 @@ def crear_reservacion(carne, codigo_sala, fecha, hora_inicio, duracion, cantidad
                 datos["cantidad_personas"],
             ),
         )
-        conexion.commit()
         identificador = _formatear_id(cursor.lastrowid)
+
+        resultado_auditoria = registrar_evento(
+            accion="creacion",
+            entidad="reservacion",
+            entidad_id=identificador,
+            detalle=f"Reservación {identificador} creada correctamente.",
+            conexion=conexion,
+        )
+
+        if not resultado_auditoria["exito"]:
+            conexion.rollback()
+            return {
+                "exito": False,
+                "mensaje": "No fue posible crear la reservación.",
+            }
+
+        conexion.commit()
         return {
             "exito": True,
             "mensaje": f"Reservación {identificador} creada correctamente.",
@@ -157,8 +174,24 @@ def cancelar_reservacion(id_reservacion):
             "UPDATE reservaciones SET estado = 'cancelada' WHERE id = ?",
             (identificador_interno,),
         )
-        conexion.commit()
         visible = _formatear_id(identificador_interno)
+
+        resultado_auditoria = registrar_evento(
+            accion="cancelacion",
+            entidad="reservacion",
+            entidad_id=visible,
+            detalle=f"Reservación {visible} cancelada correctamente.",
+            conexion=conexion,
+        )
+
+        if not resultado_auditoria["exito"]:
+            conexion.rollback()
+            return {
+                "exito": False,
+                "mensaje": "No fue posible cancelar la reservación.",
+            }
+
+        conexion.commit()
         return {
             "exito": True,
             "mensaje": f"Reservación {visible} cancelada correctamente.",
@@ -259,8 +292,24 @@ def modificar_reservacion(
                 identificador_interno,
             ),
         )
-        conexion.commit()
         visible = _formatear_id(identificador_interno)
+
+        resultado_auditoria = registrar_evento(
+            accion="modificacion",
+            entidad="reservacion",
+            entidad_id=visible,
+            detalle=f"Reservación {visible} modificada correctamente.",
+            conexion=conexion,
+        )
+
+        if not resultado_auditoria["exito"]:
+            conexion.rollback()
+            return {
+                "exito": False,
+                "mensaje": "No fue posible modificar la reservación.",
+            }
+
+        conexion.commit()
         return {
             "exito": True,
             "mensaje": f"Reservación {visible} modificada correctamente.",
