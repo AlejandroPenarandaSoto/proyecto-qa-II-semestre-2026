@@ -3,7 +3,7 @@ Punto de entrada de la aplicación.
 """
 import sys
 
-from db.inicializador import inicializar_base_datos
+from src.db.inicializador import inicializar_base_datos
 
 
 def main() -> int:
@@ -21,7 +21,7 @@ def main() -> int:
     # La interfaz gráfica (Tkinter/CustomTkinter/PySide) se conecta aquí
     # una vez que el módulo de vista esté implementado por el equipo.
     try:
-        from vista.app import iniciar_aplicacion  # type: ignore
+        from src.view.app import iniciar_aplicacion  # type: ignore
     except ModuleNotFoundError:
         print(
             "Módulo de interfaz gráfica aún no disponible; "

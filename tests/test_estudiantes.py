@@ -1,14 +1,14 @@
 
 import pytest
 
-from db.conexion import (
+from src.db.conexion import (
     configurar_ruta_base_datos,
     cerrar_conexion,
     obtener_ruta_base_datos,
     obtener_conexion,
 )
 from db.inicializador import inicializar_base_datos
-from estudiantes.servicio import (
+from src.model.estudiantes.servicio import (
     registrar_estudiante, 
     consultar_estudiantes,
     buscar_reservaciones_estudiante,
