@@ -1,4 +1,4 @@
-# Sistema de reservación de salas de estudio
+# Sistema de reservación de salas de estudio - QA
 
 Aplicación de escritorio con interfaz gráfica en Python para administrar estudiantes, salas y reservaciones de salas de estudio universitarias. Proyecto Final - Calidad en Sistemas de Información, Semestre II 2026.
 
