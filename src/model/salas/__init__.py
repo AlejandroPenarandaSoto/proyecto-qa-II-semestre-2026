@@ -1,0 +1,1 @@
+"""Módulo de lógica de negocio para la gestión de salas (RF-04, RF-08, RF-12)."""
