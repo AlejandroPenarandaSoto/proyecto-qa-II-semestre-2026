@@ -23,14 +23,25 @@ from src.model.reservaciones.servicio import (
 
 
 @pytest.fixture
-def base_datos_auditoria(tmp_path):
-    """Prepara una base de datos temporal exclusiva para cada prueba."""
+def base_datos_auditoria(tmp_path, monkeypatch):
+    """Prepara una base temporal aislada para probar reservaciones."""
     ruta_original = obtener_ruta_base_datos()
     cerrar_conexion()
     configurar_ruta_base_datos(tmp_path / "auditoria_pruebas.db")
 
     resultado = inicializar_base_datos()
     assert resultado.exito, resultado.mensaje
+
+    def omitir_auditoria_de_estudiantes(**_argumentos):
+        return {
+            "exito": True,
+            "mensaje": "Auditoría aislada para esta prueba.",
+        }
+
+    monkeypatch.setattr(
+        "src.model.estudiantes.servicio.registrar_evento",
+        omitir_auditoria_de_estudiantes,
+    )
 
     try:
         yield
