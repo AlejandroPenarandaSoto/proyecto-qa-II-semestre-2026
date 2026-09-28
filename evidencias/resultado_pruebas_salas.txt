@@ -1,0 +1,39 @@
+=============================================================== test session starts ===============================================================
+platform win32 -- Python 3.12.2, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\PERSONAL\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\PERSONAL\Documents\AA TEC\Año 2026\II Semestre 2026\Calidad en sistemas de información\Github Proyecto QA\proyecto-qa-II-semestre-2026
+plugins: anyio-4.4.0, cov-7.1.0
+collected 30 items                                                                                                                                 
+
+tests/test_estudiantes.py::test_registrar_estudiante_correctamente PASSED                                                                    [  3%]
+tests/test_estudiantes.py::test_rechazar_carne_duplicado PASSED                                                                              [  6%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[123-Ana Rodr\xedguez-ana@tec.ac.cr] PASSED                                          [ 10%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[123456789!-Ana Rodr\xedguez-ana@tec.ac.cr] PASSED                                   [ 13%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-A-ana@tec.ac.cr] PASSED                                                  [ 16%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-   -ana@tec.ac.cr] PASSED                                                [ 20%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-anatec.ac.cr] PASSED                                    [ 23%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@] PASSED                                            [ 26%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@@tec.ac.cr] PASSED                                  [ 30%]
+tests/test_estudiantes.py::test_consultar_estudiantes_registrados PASSED                                                                     [ 33%]
+tests/test_estudiantes.py::test_consultar_estudiantes_ordenados PASSED                                                                       [ 36%]
+tests/test_estudiantes.py::test_consultar_sin_estudiantes PASSED                                                                             [ 40%]
+tests/test_estudiantes.py::test_estudiante_sin_reservaciones PASSED                                                                          [ 43%]
+tests/test_estudiantes.py::test_buscar_reservaciones_estudiante_inexistente PASSED                                                           [ 46%]
+tests/test_estudiantes.py::test_buscar_reservaciones_existentes PASSED                                                                       [ 50%]
+tests/test_estudiantes.py::test_modificar_estudiante_correctamente PASSED                                                                    [ 53%]
+tests/test_estudiantes.py::test_modificar_estudiante_inexistente PASSED                                                                      [ 56%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[A-ana@tec.ac.cr-activo] PASSED                                          [ 60%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[   -ana@tec.ac.cr-activo] PASSED                                        [ 63%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-correo_invalido-activo] PASSED                         [ 66%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-ana@tec.ac.cr-pendiente] PASSED                        [ 70%]
+tests/test_estudiantes.py::test_registrar_con_espacios PASSED                                                                                [ 73%]
+tests/test_estudiantes.py::test_buscar_reservaciones_carne_vacio PASSED                                                                      [ 76%]
+tests/test_estudiantes.py::test_modificar_estado_a_activo PASSED                                                                             [ 80%]
+tests/test_salas.py::test_rf04_consultar_salas_iniciales PASSED                                                                              [ 83%]
+tests/test_salas.py::test_rf12_registrar_sala_capacidad_invalida PASSED                                                                      [ 86%]
+tests/test_salas.py::test_rf12_registrar_sala_codigo_duplicado PASSED                                                                        [ 90%]
+tests/test_salas.py::test_rf08_disponibilidad_hora_incompleta PASSED                                                                         [ 93%]
+tests/test_salas.py::test_rf08_disponibilidad_fuera_de_horario PASSED                                                                        [ 96%]
+tests/test_salas.py::test_rf08_disponibilidad_sala_fuera_servicio PASSED                                                                     [100%]
+
+=============================================================== 30 passed in 2.45s ================================================================
