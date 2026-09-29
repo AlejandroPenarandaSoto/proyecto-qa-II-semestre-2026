@@ -10,7 +10,11 @@ from src.db.conexion import (
 )
 from src.db.inicializador import inicializar_base_datos
 from src.model.estudiantes.servicio import registrar_estudiante
-from src.model.reportes.servicio import ENCABEZADOS_REPORTE, generar_reporte_csv
+from src.model.reportes.servicio import (
+    ENCABEZADOS_REPORTE,
+    generar_reporte_csv,
+    validar_rango_reporte,
+)
 from src.model.reservaciones.servicio import crear_reservacion
 
 
@@ -76,6 +80,14 @@ def test_generar_reporte_csv_utf8_con_encabezados(base_datos_reportes):
             "estado": "activa",
         }
     ]
+
+
+def test_validar_rango_antes_de_seleccionar_destino(base_datos_reportes):
+    assert validar_rango_reporte("2026-10-10", "2026-10-11")["exito"] is True
+
+    invalido = validar_rango_reporte("2026-10-11", "2026-10-10")
+    assert invalido["exito"] is False
+    assert "anterior" in invalido["mensaje"].lower()
 
 
 def test_reporte_filtra_rango_inclusivo(base_datos_reportes):

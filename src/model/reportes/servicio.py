@@ -25,6 +25,15 @@ ENCABEZADOS_REPORTE = (
 )
 
 
+def validar_rango_reporte(fecha_inicio: str, fecha_fin: str) -> dict:
+    """Valida el rango antes de solicitar una ubicación de guardado."""
+    _rango, error = _validar_rango_fechas(fecha_inicio, fecha_fin)
+    return {
+        "exito": error is None,
+        "mensaje": error or "Rango de fechas válido.",
+    }
+
+
 def generar_reporte_csv(
     fecha_inicio: str,
     fecha_fin: str,

@@ -6,6 +6,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 
 from src.controller.controller import ControladorAplicacion
+from src.view.dialogo_reporte import abrir_dialogo_reporte
 from src.view.tema import (
     COLOR_ACENTO,
     COLOR_FILA_ALTERNA,
@@ -37,6 +38,7 @@ class Aplicacion(tk.Tk):
             self,
             self.controlador,
             self.logo_marca,
+            self.mostrar_reporte_csv,
             self.solicitar_salida,
         )
         self.panel.pack(fill="both", expand=True)
@@ -45,6 +47,11 @@ class Aplicacion(tk.Tk):
         barra_menu = tk.Menu(self)
         menu_archivo = tk.Menu(barra_menu, tearoff=False)
         es_macos = self.tk.call("tk", "windowingsystem") == "aqua"
+        menu_archivo.add_command(
+            label="Generar reporte CSV…",
+            command=self.mostrar_reporte_csv,
+        )
+        menu_archivo.add_separator()
         menu_archivo.add_command(
             label="Salir",
             accelerator="⌘Q" if es_macos else "Ctrl+Q",
@@ -55,6 +62,9 @@ class Aplicacion(tk.Tk):
 
         self.bind_all("<Command-q>", self.solicitar_salida)
         self.bind_all("<Control-q>", self.solicitar_salida)
+
+    def mostrar_reporte_csv(self):
+        abrir_dialogo_reporte(self, self.controlador)
 
     def marcar_cambios_pendientes(self, hay_cambios=True):
         """Permite a los formularios informar que tienen datos sin guardar."""
@@ -92,10 +102,11 @@ class PanelControl(ttk.Frame):
         ("estado", "Estado", 90),
     )
 
-    def __init__(self, parent, controlador, logo, al_salir):
+    def __init__(self, parent, controlador, logo, al_generar_reporte, al_salir):
         super().__init__(parent, style="Fondo.TFrame", padding=20)
         self.controlador = controlador
         self.logo = logo
+        self.al_generar_reporte = al_generar_reporte
         self.al_salir = al_salir
         self.fecha_var = tk.StringVar()
         self.sala_var = tk.StringVar(value="Todas")
@@ -125,6 +136,12 @@ class PanelControl(ttk.Frame):
             style="Cabecera.TButton",
             command=self.al_salir,
         ).pack(side="right", padx=(16, 0))
+        ttk.Button(
+            cabecera,
+            text="Reporte CSV",
+            style="Cabecera.TButton",
+            command=self.al_generar_reporte,
+        ).pack(side="right")
         ttk.Label(
             cabecera,
             image=self.logo,

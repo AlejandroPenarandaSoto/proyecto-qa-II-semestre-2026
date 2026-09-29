@@ -32,6 +32,7 @@ def configurar_estilos(master):
 
     estilo.configure("Fondo.TFrame", background=COLOR_FONDO)
     estilo.configure("Panel.TFrame", background=COLOR_PANEL)
+    estilo.configure("Panel.TLabel", background=COLOR_PANEL)
     estilo.configure("Encabezado.TFrame", background=COLOR_PRIMARIO)
     estilo.configure("Encabezado.TLabel", background=COLOR_PRIMARIO)
     estilo.configure(
@@ -118,6 +119,46 @@ def configurar_estilos(master):
         "Cabecera.TButton",
         background=[("pressed", "#DDF4F2"), ("active", "#DDF4F2")],
         foreground=[("pressed", COLOR_PRIMARIO), ("active", COLOR_PRIMARIO)],
+    )
+    estilo.configure(
+        "CalendarioTitulo.TLabel",
+        background=COLOR_PANEL,
+        foreground=COLOR_TEXTO,
+        font=("TkDefaultFont", 12, "bold"),
+    )
+    estilo.configure(
+        "CalendarioDiaSemana.TLabel",
+        background=COLOR_PANEL,
+        foreground=COLOR_SECUNDARIO,
+        font=("TkDefaultFont", 9, "bold"),
+    )
+    estilo.configure(
+        "Calendario.TButton",
+        background="#EDF3F7",
+        foreground=COLOR_TEXTO,
+        borderwidth=0,
+        padding=7,
+    )
+    estilo.map(
+        "Calendario.TButton",
+        background=[("active", "#DDF4F2")],
+        foreground=[("active", COLOR_PRIMARIO)],
+    )
+    estilo.configure(
+        "CalendarioSeleccionado.TButton",
+        background=COLOR_ACENTO,
+        foreground="#FFFFFF",
+        borderwidth=0,
+        padding=7,
+        font=("TkDefaultFont", 9, "bold"),
+    )
+    estilo.configure(
+        "CalendarioNavegacion.TButton",
+        background=COLOR_PANEL,
+        foreground=COLOR_PRIMARIO,
+        borderwidth=0,
+        padding=(12, 5),
+        font=("TkDefaultFont", 15, "bold"),
     )
     estilo.configure(
         "TEntry",

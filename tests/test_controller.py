@@ -81,3 +81,31 @@ def test_controlador_delega_operaciones_recurrentes(monkeypatch):
         ("crear", datos),
         ("cancelar", "R0002"),
     ]
+
+
+def test_controlador_delega_generacion_de_reporte(monkeypatch):
+    llamadas = []
+    monkeypatch.setattr(
+        "src.controller.controller.validar_rango_reporte",
+        lambda inicio, fin: llamadas.append(("validar", inicio, fin))
+        or {"exito": True},
+    )
+    monkeypatch.setattr(
+        "src.controller.controller.generar_reporte_csv",
+        lambda inicio, fin, ruta: llamadas.append(("generar", inicio, fin, ruta))
+        or {"exito": True},
+    )
+    controlador = ControladorAplicacion()
+
+    assert controlador.validar_rango_reporte("2026-10-01", "2026-10-31")[
+        "exito"
+    ]
+    assert controlador.generar_reporte(
+        "2026-10-01",
+        "2026-10-31",
+        "reporte.csv",
+    )["exito"]
+    assert llamadas == [
+        ("validar", "2026-10-01", "2026-10-31"),
+        ("generar", "2026-10-01", "2026-10-31", "reporte.csv"),
+    ]
