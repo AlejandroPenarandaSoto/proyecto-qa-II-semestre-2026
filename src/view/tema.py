@@ -107,6 +107,19 @@ def configurar_estilos(master):
         background=[("pressed", "#D5E3EC"), ("active", "#D5E3EC")],
     )
     estilo.configure(
+        "Cabecera.TButton",
+        background="#FFFFFF",
+        foreground=COLOR_PRIMARIO,
+        borderwidth=0,
+        padding=(16, 8),
+        font=("TkDefaultFont", 10, "bold"),
+    )
+    estilo.map(
+        "Cabecera.TButton",
+        background=[("pressed", "#DDF4F2"), ("active", "#DDF4F2")],
+        foreground=[("pressed", COLOR_PRIMARIO), ("active", COLOR_PRIMARIO)],
+    )
+    estilo.configure(
         "TEntry",
         fieldbackground=COLOR_PANEL,
         bordercolor=COLOR_BORDE,

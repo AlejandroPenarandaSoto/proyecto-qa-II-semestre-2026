@@ -33,7 +33,12 @@ class Aplicacion(tk.Tk):
         self.iconphoto(True, self.logo_marca)
         self._crear_menu()
         self.protocol("WM_DELETE_WINDOW", self.solicitar_salida)
-        self.panel = PanelControl(self, self.controlador, self.logo_marca)
+        self.panel = PanelControl(
+            self,
+            self.controlador,
+            self.logo_marca,
+            self.solicitar_salida,
+        )
         self.panel.pack(fill="both", expand=True)
 
     def _crear_menu(self):
@@ -87,10 +92,11 @@ class PanelControl(ttk.Frame):
         ("estado", "Estado", 90),
     )
 
-    def __init__(self, parent, controlador, logo):
+    def __init__(self, parent, controlador, logo, al_salir):
         super().__init__(parent, style="Fondo.TFrame", padding=20)
         self.controlador = controlador
         self.logo = logo
+        self.al_salir = al_salir
         self.fecha_var = tk.StringVar()
         self.sala_var = tk.StringVar(value="Todas")
         self.estado_var = tk.StringVar(value="Todos")
@@ -113,6 +119,12 @@ class PanelControl(ttk.Frame):
             padding=(18, 12),
         )
         cabecera.pack(fill="x", pady=(0, 18))
+        ttk.Button(
+            cabecera,
+            text="Salir",
+            style="Cabecera.TButton",
+            command=self.al_salir,
+        ).pack(side="right", padx=(16, 0))
         ttk.Label(
             cabecera,
             image=self.logo,
