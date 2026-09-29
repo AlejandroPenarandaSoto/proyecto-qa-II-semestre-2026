@@ -109,3 +109,14 @@ def test_controlador_delega_generacion_de_reporte(monkeypatch):
         ("validar", "2026-10-01", "2026-10-31"),
         ("generar", "2026-10-01", "2026-10-31", "reporte.csv"),
     ]
+
+
+def test_controlador_delega_consulta_de_auditoria(monkeypatch):
+    monkeypatch.setattr(
+        "src.controller.controller.consultar_auditoria",
+        lambda: {"exito": True, "eventos": [{"id": 1}]},
+    )
+
+    resultado = ControladorAplicacion().obtener_auditoria()
+
+    assert resultado == {"exito": True, "eventos": [{"id": 1}]}

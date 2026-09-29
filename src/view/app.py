@@ -6,6 +6,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 
 from src.controller.controller import ControladorAplicacion
+from src.view.dialogo_auditoria import abrir_dialogo_auditoria
 from src.view.dialogo_reporte import abrir_dialogo_reporte
 from src.view.tema import (
     COLOR_ACENTO,
@@ -38,6 +39,7 @@ class Aplicacion(tk.Tk):
             self,
             self.controlador,
             self.logo_marca,
+            self.mostrar_auditoria,
             self.mostrar_reporte_csv,
             self.solicitar_salida,
         )
@@ -58,6 +60,12 @@ class Aplicacion(tk.Tk):
             command=self.solicitar_salida,
         )
         barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
+        menu_ver = tk.Menu(barra_menu, tearoff=False)
+        menu_ver.add_command(
+            label="Auditoría…",
+            command=self.mostrar_auditoria,
+        )
+        barra_menu.add_cascade(label="Ver", menu=menu_ver)
         self.configure(menu=barra_menu)
 
         self.bind_all("<Command-q>", self.solicitar_salida)
@@ -65,6 +73,9 @@ class Aplicacion(tk.Tk):
 
     def mostrar_reporte_csv(self):
         abrir_dialogo_reporte(self, self.controlador)
+
+    def mostrar_auditoria(self):
+        abrir_dialogo_auditoria(self, self.controlador)
 
     def marcar_cambios_pendientes(self, hay_cambios=True):
         """Permite a los formularios informar que tienen datos sin guardar."""
@@ -102,10 +113,19 @@ class PanelControl(ttk.Frame):
         ("estado", "Estado", 90),
     )
 
-    def __init__(self, parent, controlador, logo, al_generar_reporte, al_salir):
+    def __init__(
+        self,
+        parent,
+        controlador,
+        logo,
+        al_mostrar_auditoria,
+        al_generar_reporte,
+        al_salir,
+    ):
         super().__init__(parent, style="Fondo.TFrame", padding=20)
         self.controlador = controlador
         self.logo = logo
+        self.al_mostrar_auditoria = al_mostrar_auditoria
         self.al_generar_reporte = al_generar_reporte
         self.al_salir = al_salir
         self.fecha_var = tk.StringVar()
@@ -142,6 +162,12 @@ class PanelControl(ttk.Frame):
             style="Cabecera.TButton",
             command=self.al_generar_reporte,
         ).pack(side="right")
+        ttk.Button(
+            cabecera,
+            text="Auditoría",
+            style="Cabecera.TButton",
+            command=self.al_mostrar_auditoria,
+        ).pack(side="right", padx=(0, 8))
         ttk.Label(
             cabecera,
             image=self.logo,

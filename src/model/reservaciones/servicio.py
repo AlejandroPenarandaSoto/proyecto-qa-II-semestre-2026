@@ -729,10 +729,6 @@ def _validar_fecha_hora_duracion(fecha, hora_inicio, duracion):
     if hora_dt.minute != 0:
         return False, "La hora debe comenzar exactamente en una hora completa (ej. 08:00)."
 
-    hora_fin_dt = hora_dt + timedelta(hours=duracion)
-    if hora_dt < _HORA_APERTURA or hora_fin_dt > _HORA_CIERRE:
-        return False, "El horario permitido de uso es de 08:00 a 20:00."
-
     ahora = datetime.now()
     fecha_actual = ahora.strftime("%Y-%m-%d")
     hora_actual = ahora.strftime("%H:%M")
@@ -740,6 +736,10 @@ def _validar_fecha_hora_duracion(fecha, hora_inicio, duracion):
         return False, "La fecha no puede ser anterior a la fecha actual."
     if fecha == fecha_actual and hora_inicio <= hora_actual:
         return False, "El horario solicitado para hoy ya transcurrió."
+
+    hora_fin_dt = hora_dt + timedelta(hours=duracion)
+    if hora_dt < _HORA_APERTURA or hora_fin_dt > _HORA_CIERRE:
+        return False, "El horario permitido de uso es de 08:00 a 20:00."
 
     return True, ""
 

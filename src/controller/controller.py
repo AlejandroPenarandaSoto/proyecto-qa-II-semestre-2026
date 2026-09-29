@@ -5,6 +5,7 @@ persistencia en la vista.
 """
 
 from src.db.conexion import cerrar_conexion
+from src.model.auditoria.servicio import consultar_auditoria
 from src.model.panel.servicio import consultar_panel
 from src.model.reportes.servicio import generar_reporte_csv, validar_rango_reporte
 from src.model.reservaciones.servicio import (
@@ -42,6 +43,9 @@ class ControladorAplicacion:
 
     def generar_reporte(self, fecha_inicio, fecha_fin, ruta_destino):
         return generar_reporte_csv(fecha_inicio, fecha_fin, ruta_destino)
+
+    def obtener_auditoria(self):
+        return consultar_auditoria()
 
     def cerrar_aplicacion(self):
         """Libera los recursos de persistencia antes de cerrar la GUI."""
