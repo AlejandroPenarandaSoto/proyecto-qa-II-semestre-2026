@@ -6,12 +6,13 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 
 from src.controller.controller import ControladorAplicacion
-
-COLOR_FONDO = "#F4F7FB"
-COLOR_PANEL = "#FFFFFF"
-COLOR_PRIMARIO = "#1F5AA6"
-COLOR_TEXTO = "#172033"
-COLOR_SECUNDARIO = "#5E6B7C"
+from src.view.tema import (
+    COLOR_ACENTO,
+    COLOR_FILA_ALTERNA,
+    COLOR_FONDO,
+    cargar_logo,
+    configurar_estilos,
+)
 
 
 class Aplicacion(tk.Tk):
@@ -21,56 +22,16 @@ class Aplicacion(tk.Tk):
         super().__init__()
         self.controlador = controlador or ControladorAplicacion()
 
-        self.title("Sistema de reservación de salas")
-        self.geometry("1240x820")
+        self.title("TEC Room Manager")
+        self.geometry("1280x840")
         self.minsize(1024, 700)
         self.configure(background=COLOR_FONDO)
 
-        self._configurar_estilos()
-        self.panel = PanelControl(self, self.controlador)
+        configurar_estilos(self)
+        self.logo_marca = cargar_logo(self)
+        self.iconphoto(True, self.logo_marca)
+        self.panel = PanelControl(self, self.controlador, self.logo_marca)
         self.panel.pack(fill="both", expand=True)
-
-    def _configurar_estilos(self):
-        estilo = ttk.Style(self)
-        estilo.theme_use("clam")
-        estilo.configure("Fondo.TFrame", background=COLOR_FONDO)
-        estilo.configure("Panel.TFrame", background=COLOR_PANEL)
-        estilo.configure(
-            "Titulo.TLabel",
-            background=COLOR_FONDO,
-            foreground=COLOR_TEXTO,
-            font=("TkDefaultFont", 22, "bold"),
-        )
-        estilo.configure(
-            "Subtitulo.TLabel",
-            background=COLOR_FONDO,
-            foreground=COLOR_SECUNDARIO,
-            font=("TkDefaultFont", 11),
-        )
-        estilo.configure(
-            "Seccion.TLabel",
-            background=COLOR_PANEL,
-            foreground=COLOR_TEXTO,
-            font=("TkDefaultFont", 12, "bold"),
-        )
-        estilo.configure(
-            "Resumen.TLabel",
-            background=COLOR_PANEL,
-            foreground=COLOR_PRIMARIO,
-            font=("TkDefaultFont", 18, "bold"),
-        )
-        estilo.configure(
-            "Primario.TButton",
-            background=COLOR_PRIMARIO,
-            foreground="#FFFFFF",
-            padding=(14, 8),
-        )
-        estilo.map(
-            "Primario.TButton",
-            background=[("active", "#17457F")],
-        )
-        estilo.configure("Treeview", rowheight=27)
-        estilo.configure("Treeview.Heading", font=("TkDefaultFont", 10, "bold"))
 
 
 class PanelControl(ttk.Frame):
@@ -86,9 +47,10 @@ class PanelControl(ttk.Frame):
         ("estado", "Estado", 90),
     )
 
-    def __init__(self, parent, controlador):
-        super().__init__(parent, style="Fondo.TFrame", padding=24)
+    def __init__(self, parent, controlador, logo):
+        super().__init__(parent, style="Fondo.TFrame", padding=20)
         self.controlador = controlador
+        self.logo = logo
         self.fecha_var = tk.StringVar()
         self.sala_var = tk.StringVar(value="Todas")
         self.estado_var = tk.StringVar(value="Todos")
@@ -105,6 +67,31 @@ class PanelControl(ttk.Frame):
         self.refrescar_panel()
 
     def _crear_encabezado(self):
+        cabecera = ttk.Frame(
+            self,
+            style="Encabezado.TFrame",
+            padding=(18, 12),
+        )
+        cabecera.pack(fill="x", pady=(0, 18))
+        ttk.Label(
+            cabecera,
+            image=self.logo,
+            style="Encabezado.TLabel",
+        ).pack(side="left", padx=(0, 16))
+
+        identidad = ttk.Frame(cabecera, style="Encabezado.TFrame")
+        identidad.pack(side="left", anchor="center")
+        ttk.Label(
+            identidad,
+            text="TEC ROOM MANAGER",
+            style="Marca.TLabel",
+        ).pack(anchor="w")
+        ttk.Label(
+            identidad,
+            text="Reservación de espacios académicos",
+            style="MarcaDetalle.TLabel",
+        ).pack(anchor="w", pady=(2, 0))
+
         ttk.Label(
             self,
             text="Panel de control",
@@ -129,10 +116,15 @@ class PanelControl(ttk.Frame):
             style="Seccion.TLabel",
         ).grid(row=0, column=0, columnspan=7, sticky="w", pady=(0, 10))
 
-        ttk.Label(contenedor, text="Fecha (AAAA-MM-DD):").grid(
+        ttk.Label(
+            contenedor,
+            text="FECHA (AAAA-MM-DD)",
+            style="Campo.TLabel",
+        ).grid(
             row=1,
             column=0,
             sticky="w",
+            pady=(0, 4),
         )
         ttk.Entry(contenedor, textvariable=self.fecha_var, width=16).grid(
             row=2,
@@ -141,7 +133,11 @@ class PanelControl(ttk.Frame):
             padx=(0, 12),
         )
 
-        ttk.Label(contenedor, text="Sala:").grid(row=1, column=1, sticky="w")
+        ttk.Label(
+            contenedor,
+            text="SALA",
+            style="Campo.TLabel",
+        ).grid(row=1, column=1, sticky="w", pady=(0, 4))
         self.sala_combo = ttk.Combobox(
             contenedor,
             textvariable=self.sala_var,
@@ -150,7 +146,11 @@ class PanelControl(ttk.Frame):
         )
         self.sala_combo.grid(row=2, column=1, sticky="ew", padx=(0, 12))
 
-        ttk.Label(contenedor, text="Estado:").grid(row=1, column=2, sticky="w")
+        ttk.Label(
+            contenedor,
+            text="ESTADO",
+            style="Campo.TLabel",
+        ).grid(row=1, column=2, sticky="w", pady=(0, 4))
         ttk.Combobox(
             contenedor,
             textvariable=self.estado_var,
@@ -168,6 +168,7 @@ class PanelControl(ttk.Frame):
         ttk.Button(
             contenedor,
             text="Limpiar",
+            style="Secundario.TButton",
             command=self._limpiar_filtros,
         ).grid(row=2, column=4)
 
@@ -185,15 +186,24 @@ class PanelControl(ttk.Frame):
             ("Próximas activas", self.total_proximas_var),
         )
         for columna, (titulo, variable) in enumerate(tarjetas):
-            tarjeta = ttk.Frame(contenedor, style="Panel.TFrame", padding=16)
+            tarjeta = ttk.Frame(contenedor, style="Panel.TFrame", padding=14)
             tarjeta.grid(
                 row=0,
                 column=columna,
                 sticky="nsew",
                 padx=(0 if columna == 0 else 6, 0 if columna == 2 else 6),
             )
-            ttk.Label(tarjeta, text=titulo, style="Seccion.TLabel").pack(anchor="w")
-            ttk.Label(tarjeta, textvariable=variable, style="Resumen.TLabel").pack(
+            tk.Frame(tarjeta, background=COLOR_ACENTO, width=4).pack(
+                side="left",
+                fill="y",
+                padx=(0, 12),
+            )
+            contenido = ttk.Frame(tarjeta, style="Panel.TFrame")
+            contenido.pack(side="left", fill="both", expand=True)
+            ttk.Label(contenido, text=titulo, style="Seccion.TLabel").pack(
+                anchor="w"
+            )
+            ttk.Label(contenido, textvariable=variable, style="Resumen.TLabel").pack(
                 anchor="w",
                 pady=(4, 0),
             )
@@ -220,7 +230,7 @@ class PanelControl(ttk.Frame):
         self.estado_vacio = ttk.Label(
             resultados,
             textvariable=self.mensaje_var,
-            style="Seccion.TLabel",
+            style="Vacio.TLabel",
         )
         self.estado_vacio.pack(pady=10)
 
@@ -238,6 +248,7 @@ class PanelControl(ttk.Frame):
             command=tabla.yview,
         )
         tabla.configure(yscrollcommand=desplazamiento.set)
+        tabla.tag_configure("alterna", background=COLOR_FILA_ALTERNA)
         for identificador, titulo, ancho in self.COLUMNAS_RESERVACION:
             tabla.heading(identificador, text=titulo)
             tabla.column(identificador, width=ancho, anchor="center")
@@ -268,6 +279,7 @@ class PanelControl(ttk.Frame):
             command=tabla.yview,
         )
         tabla.configure(yscrollcommand=desplazamiento.set)
+        tabla.tag_configure("alterna", background=COLOR_FILA_ALTERNA)
         for identificador, titulo, ancho in columnas:
             tabla.heading(identificador, text=titulo)
             tabla.column(identificador, width=ancho, anchor="center")
@@ -320,10 +332,11 @@ class PanelControl(ttk.Frame):
 
     def _llenar_reservaciones(self, tabla, reservaciones):
         self._vaciar_tabla(tabla)
-        for reserva in reservaciones:
+        for indice, reserva in enumerate(reservaciones):
             tabla.insert(
                 "",
                 "end",
+                tags=("alterna",) if indice % 2 else (),
                 values=(
                     reserva["id"],
                     reserva["estudiante"],
@@ -337,10 +350,11 @@ class PanelControl(ttk.Frame):
 
     def _llenar_ocupacion(self, salas):
         self._vaciar_tabla(self.tabla_ocupacion)
-        for sala in salas:
+        for indice, sala in enumerate(salas):
             self.tabla_ocupacion.insert(
                 "",
                 "end",
+                tags=("alterna",) if indice % 2 else (),
                 values=(
                     sala["codigo"],
                     sala["nombre"],
