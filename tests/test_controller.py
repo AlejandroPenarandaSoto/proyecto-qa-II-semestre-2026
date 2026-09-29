@@ -70,16 +70,23 @@ def test_controlador_delega_operaciones_recurrentes(monkeypatch):
         lambda identificador: llamadas.append(("cancelar", identificador))
         or {"exito": True},
     )
+    monkeypatch.setattr(
+        "src.controller.controller.cancelar_reservacion",
+        lambda identificador: llamadas.append(("cancelar_una", identificador))
+        or {"exito": True},
+    )
     controlador = ControladorAplicacion()
     datos = {"carne": "C123456789", "semanas": 4}
 
     assert controlador.previsualizar_recurrencia(**datos)["exito"] is True
     assert controlador.crear_recurrencia(**datos)["exito"] is True
     assert controlador.cancelar_recurrencia_desde("R0002")["exito"] is True
+    assert controlador.cancelar_reserva("R0001")["exito"] is True
     assert llamadas == [
         ("previsualizar", datos),
         ("crear", datos),
         ("cancelar", "R0002"),
+        ("cancelar_una", "R0001"),
     ]
 
 

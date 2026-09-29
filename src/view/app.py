@@ -7,6 +7,7 @@ from tkinter import messagebox, ttk
 
 from src.controller.controller import ControladorAplicacion
 from src.view.dialogo_auditoria import abrir_dialogo_auditoria
+from src.view.dialogo_recurrencia import abrir_dialogo_recurrencia
 from src.view.dialogo_reporte import abrir_dialogo_reporte
 from src.view.tema import (
     COLOR_ACENTO,
@@ -39,6 +40,7 @@ class Aplicacion(tk.Tk):
             self,
             self.controlador,
             self.logo_marca,
+            self.mostrar_recurrencia,
             self.mostrar_auditoria,
             self.mostrar_reporte_csv,
             self.solicitar_salida,
@@ -60,6 +62,15 @@ class Aplicacion(tk.Tk):
             command=self.solicitar_salida,
         )
         barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
+        menu_reservaciones = tk.Menu(barra_menu, tearoff=False)
+        menu_reservaciones.add_command(
+            label="Nueva recurrencia…",
+            command=self.mostrar_recurrencia,
+        )
+        barra_menu.add_cascade(
+            label="Reservaciones",
+            menu=menu_reservaciones,
+        )
         menu_ver = tk.Menu(barra_menu, tearoff=False)
         menu_ver.add_command(
             label="Auditoría…",
@@ -76,6 +87,14 @@ class Aplicacion(tk.Tk):
 
     def mostrar_auditoria(self):
         abrir_dialogo_auditoria(self, self.controlador)
+
+    def mostrar_recurrencia(self):
+        abrir_dialogo_recurrencia(
+            self,
+            self.controlador,
+            self.panel.refrescar_panel,
+            self.marcar_cambios_pendientes,
+        )
 
     def marcar_cambios_pendientes(self, hay_cambios=True):
         """Permite a los formularios informar que tienen datos sin guardar."""
@@ -118,6 +137,7 @@ class PanelControl(ttk.Frame):
         parent,
         controlador,
         logo,
+        al_crear_recurrencia,
         al_mostrar_auditoria,
         al_generar_reporte,
         al_salir,
@@ -125,6 +145,7 @@ class PanelControl(ttk.Frame):
         super().__init__(parent, style="Fondo.TFrame", padding=20)
         self.controlador = controlador
         self.logo = logo
+        self.al_crear_recurrencia = al_crear_recurrencia
         self.al_mostrar_auditoria = al_mostrar_auditoria
         self.al_generar_reporte = al_generar_reporte
         self.al_salir = al_salir
@@ -167,6 +188,12 @@ class PanelControl(ttk.Frame):
             text="Auditoría",
             style="Cabecera.TButton",
             command=self.al_mostrar_auditoria,
+        ).pack(side="right", padx=(0, 8))
+        ttk.Button(
+            cabecera,
+            text="Nueva recurrencia",
+            style="Cabecera.TButton",
+            command=self.al_crear_recurrencia,
         ).pack(side="right", padx=(0, 8))
         ttk.Label(
             cabecera,
@@ -317,6 +344,21 @@ class PanelControl(ttk.Frame):
         cuaderno.add(hoy, text="Hoy")
         cuaderno.add(proximas, text="Próximas")
 
+        acciones = ttk.Frame(resultados, style="Panel.TFrame")
+        acciones.pack(fill="x", pady=(0, 8))
+        ttk.Button(
+            acciones,
+            text="Cancelar seleccionada y futuras",
+            style="Secundario.TButton",
+            command=self._cancelar_futuras,
+        ).pack(side="right")
+        ttk.Button(
+            acciones,
+            text="Cancelar seleccionada",
+            style="Secundario.TButton",
+            command=self._cancelar_individual,
+        ).pack(side="right", padx=(0, 8))
+
         self.tabla_resultados = self._crear_tabla_reservaciones(resultados)
         self.tabla_hoy = self._crear_tabla_reservaciones(hoy)
         self.tabla_proximas = self._crear_tabla_reservaciones(proximas)
@@ -391,6 +433,64 @@ class PanelControl(ttk.Frame):
         self.fecha_var.set("")
         self.sala_var.set("Todas")
         self.estado_var.set("Todos")
+        self.refrescar_panel()
+
+    def _id_reserva_seleccionada(self):
+        seleccion = self.tabla_resultados.selection()
+        if not seleccion:
+            messagebox.showwarning(
+                "Seleccione una reservación",
+                "Primero seleccione una reservación en la tabla de resultados.",
+                parent=self.winfo_toplevel(),
+            )
+            return None
+        valores = self.tabla_resultados.item(seleccion[0], "values")
+        return valores[0] if valores else None
+
+    def _cancelar_individual(self):
+        identificador = self._id_reserva_seleccionada()
+        if identificador is None:
+            return
+        confirmar = messagebox.askyesno(
+            "Cancelar reservación",
+            f"¿Desea cancelar únicamente la reservación {identificador}?",
+            parent=self.winfo_toplevel(),
+        )
+        if not confirmar:
+            return
+        resultado = self.controlador.cancelar_reserva(identificador)
+        self._mostrar_resultado_cancelacion(resultado)
+
+    def _cancelar_futuras(self):
+        identificador = self._id_reserva_seleccionada()
+        if identificador is None:
+            return
+        confirmar = messagebox.askyesno(
+            "Cancelar ocurrencias futuras",
+            (
+                f"¿Desea cancelar {identificador} y todas las ocurrencias "
+                "posteriores de su serie?"
+            ),
+            parent=self.winfo_toplevel(),
+        )
+        if not confirmar:
+            return
+        resultado = self.controlador.cancelar_recurrencia_desde(identificador)
+        self._mostrar_resultado_cancelacion(resultado)
+
+    def _mostrar_resultado_cancelacion(self, resultado):
+        if not resultado["exito"]:
+            messagebox.showerror(
+                "No fue posible cancelar",
+                resultado["mensaje"],
+                parent=self.winfo_toplevel(),
+            )
+            return
+        messagebox.showinfo(
+            "Cancelación realizada",
+            resultado["mensaje"],
+            parent=self.winfo_toplevel(),
+        )
         self.refrescar_panel()
 
     def refrescar_panel(self):

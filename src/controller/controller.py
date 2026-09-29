@@ -10,6 +10,7 @@ from src.model.panel.servicio import consultar_panel
 from src.model.reportes.servicio import generar_reporte_csv, validar_rango_reporte
 from src.model.reservaciones.servicio import (
     cancelar_ocurrencias_futuras,
+    cancelar_reservacion,
     crear_reservaciones_recurrentes,
     previsualizar_reservaciones_recurrentes,
 )
@@ -37,6 +38,9 @@ class ControladorAplicacion:
 
     def cancelar_recurrencia_desde(self, id_reservacion):
         return cancelar_ocurrencias_futuras(id_reservacion)
+
+    def cancelar_reserva(self, id_reservacion):
+        return cancelar_reservacion(id_reservacion)
 
     def validar_rango_reporte(self, fecha_inicio, fecha_fin):
         return validar_rango_reporte(fecha_inicio, fecha_fin)
