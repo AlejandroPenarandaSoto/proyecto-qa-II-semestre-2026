@@ -21,6 +21,7 @@ class Aplicacion(tk.Tk):
     def __init__(self, controlador=None):
         super().__init__()
         self.controlador = controlador or ControladorAplicacion()
+        self._hay_cambios_pendientes = False
 
         self.title("TEC Room Manager")
         self.geometry("1280x840")
@@ -30,8 +31,47 @@ class Aplicacion(tk.Tk):
         configurar_estilos(self)
         self.logo_marca = cargar_logo(self)
         self.iconphoto(True, self.logo_marca)
+        self._crear_menu()
+        self.protocol("WM_DELETE_WINDOW", self.solicitar_salida)
         self.panel = PanelControl(self, self.controlador, self.logo_marca)
         self.panel.pack(fill="both", expand=True)
+
+    def _crear_menu(self):
+        barra_menu = tk.Menu(self)
+        menu_archivo = tk.Menu(barra_menu, tearoff=False)
+        es_macos = self.tk.call("tk", "windowingsystem") == "aqua"
+        menu_archivo.add_command(
+            label="Salir",
+            accelerator="⌘Q" if es_macos else "Ctrl+Q",
+            command=self.solicitar_salida,
+        )
+        barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
+        self.configure(menu=barra_menu)
+
+        self.bind_all("<Command-q>", self.solicitar_salida)
+        self.bind_all("<Control-q>", self.solicitar_salida)
+
+    def marcar_cambios_pendientes(self, hay_cambios=True):
+        """Permite a los formularios informar que tienen datos sin guardar."""
+        self._hay_cambios_pendientes = bool(hay_cambios)
+
+    def solicitar_salida(self, _evento=None):
+        """Confirma cambios pendientes y libera recursos antes de salir."""
+        if self._hay_cambios_pendientes:
+            confirmar = messagebox.askyesno(
+                "Cambios sin guardar",
+                (
+                    "Hay cambios pendientes que se perderán al salir.\n\n"
+                    "¿Desea cerrar la aplicación?"
+                ),
+                parent=self,
+            )
+            if not confirmar:
+                return False
+
+        self.controlador.cerrar_aplicacion()
+        self.destroy()
+        return True
 
 
 class PanelControl(ttk.Frame):

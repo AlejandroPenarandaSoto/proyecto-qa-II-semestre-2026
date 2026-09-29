@@ -4,6 +4,7 @@ Conecta la interfaz con los servicios del modelo sin exponer detalles de
 persistencia en la vista.
 """
 
+from src.db.conexion import cerrar_conexion
 from src.model.panel.servicio import consultar_panel
 from src.model.salas.servicio import consultar_salas
 
@@ -20,3 +21,7 @@ class ControladorAplicacion:
 
     def obtener_codigos_salas(self):
         return [sala["codigo"] for sala in consultar_salas()]
+
+    def cerrar_aplicacion(self):
+        """Libera los recursos de persistencia antes de cerrar la GUI."""
+        cerrar_conexion()

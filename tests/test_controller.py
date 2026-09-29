@@ -39,3 +39,16 @@ def test_controlador_devuelve_codigos_de_sala(monkeypatch):
     controlador = ControladorAplicacion()
 
     assert controlador.obtener_codigos_salas() == ["S01", "S02"]
+
+
+def test_controlador_cierra_la_conexion(monkeypatch):
+    llamadas = []
+    monkeypatch.setattr(
+        "src.controller.controller.cerrar_conexion",
+        lambda: llamadas.append("cerrada"),
+    )
+    controlador = ControladorAplicacion()
+
+    controlador.cerrar_aplicacion()
+
+    assert llamadas == ["cerrada"]
