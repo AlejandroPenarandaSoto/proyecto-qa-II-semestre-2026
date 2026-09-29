@@ -142,7 +142,7 @@ class PanelControl(ttk.Frame):
         al_generar_reporte,
         al_salir,
     ):
-        super().__init__(parent, style="Fondo.TFrame", padding=20)
+        super().__init__(parent, style="Fondo.TFrame", padding=24)
         self.controlador = controlador
         self.logo = logo
         self.al_crear_recurrencia = al_crear_recurrencia
@@ -168,9 +168,9 @@ class PanelControl(ttk.Frame):
         cabecera = ttk.Frame(
             self,
             style="Encabezado.TFrame",
-            padding=(18, 12),
+            padding=(20, 14),
         )
-        cabecera.pack(fill="x", pady=(0, 18))
+        cabecera.pack(fill="x", pady=(0, 22))
         ttk.Button(
             cabecera,
             text="Salir",
@@ -226,11 +226,11 @@ class PanelControl(ttk.Frame):
                 "compromisos."
             ),
             style="Subtitulo.TLabel",
-        ).pack(anchor="w", pady=(2, 18))
+        ).pack(anchor="w", pady=(3, 20))
 
     def _crear_filtros(self):
-        contenedor = ttk.Frame(self, style="Panel.TFrame", padding=16)
-        contenedor.pack(fill="x", pady=(0, 14))
+        contenedor = ttk.Frame(self, style="Panel.TFrame", padding=18)
+        contenedor.pack(fill="x", pady=(0, 16))
 
         ttk.Label(
             contenedor,
@@ -300,7 +300,7 @@ class PanelControl(ttk.Frame):
 
     def _crear_resumen(self):
         contenedor = ttk.Frame(self, style="Fondo.TFrame")
-        contenedor.pack(fill="x", pady=(0, 14))
+        contenedor.pack(fill="x", pady=(0, 16))
 
         tarjetas = (
             ("Salas", self.total_salas_var),
@@ -308,27 +308,30 @@ class PanelControl(ttk.Frame):
             ("Próximas activas", self.total_proximas_var),
         )
         for columna, (titulo, variable) in enumerate(tarjetas):
-            tarjeta = ttk.Frame(contenedor, style="Panel.TFrame", padding=14)
+            tarjeta = ttk.Frame(contenedor, style="Tarjeta.TFrame", padding=18)
             tarjeta.grid(
                 row=0,
                 column=columna,
                 sticky="nsew",
                 padx=(0 if columna == 0 else 6, 0 if columna == 2 else 6),
             )
-            tk.Frame(tarjeta, background=COLOR_ACENTO, width=4).pack(
+            tk.Frame(tarjeta, background=COLOR_ACENTO, width=3).pack(
                 side="left",
                 fill="y",
-                padx=(0, 12),
+                padx=(0, 14),
             )
-            contenido = ttk.Frame(tarjeta, style="Panel.TFrame")
+            contenido = ttk.Frame(tarjeta, style="Tarjeta.TFrame")
             contenido.pack(side="left", fill="both", expand=True)
-            ttk.Label(contenido, text=titulo, style="Seccion.TLabel").pack(
-                anchor="w"
-            )
-            ttk.Label(contenido, textvariable=variable, style="Resumen.TLabel").pack(
-                anchor="w",
-                pady=(4, 0),
-            )
+            ttk.Label(
+                contenido,
+                text=titulo,
+                style="TarjetaTitulo.TLabel",
+            ).pack(anchor="w")
+            ttk.Label(
+                contenido,
+                textvariable=variable,
+                style="TarjetaValor.TLabel",
+            ).pack(anchor="w", pady=(5, 0))
             contenedor.columnconfigure(columna, weight=1)
 
     def _crear_contenido(self):
@@ -359,17 +362,18 @@ class PanelControl(ttk.Frame):
             command=self._cancelar_individual,
         ).pack(side="right", padx=(0, 8))
 
-        self.tabla_resultados = self._crear_tabla_reservaciones(resultados)
-        self.tabla_hoy = self._crear_tabla_reservaciones(hoy)
-        self.tabla_proximas = self._crear_tabla_reservaciones(proximas)
+        self.tabla_resultados, contenedor_resultados = (
+            self._crear_tabla_reservaciones(resultados)
+        )
+        self.tabla_hoy, _ = self._crear_tabla_reservaciones(hoy)
+        self.tabla_proximas, _ = self._crear_tabla_reservaciones(proximas)
         self.tabla_ocupacion = self._crear_tabla_ocupacion(ocupacion)
 
         self.estado_vacio = ttk.Label(
-            resultados,
+            contenedor_resultados,
             textvariable=self.mensaje_var,
-            style="Vacio.TLabel",
+            style="VacioTabla.TLabel",
         )
-        self.estado_vacio.pack(pady=10)
 
     def _crear_tabla_reservaciones(self, parent):
         contenedor = ttk.Frame(parent, style="Panel.TFrame")
@@ -392,7 +396,7 @@ class PanelControl(ttk.Frame):
         tabla.column("estudiante", anchor="w")
         tabla.pack(side="left", fill="both", expand=True)
         desplazamiento.pack(side="right", fill="y")
-        return tabla
+        return tabla, contenedor
 
     def _crear_tabla_ocupacion(self, parent):
         columnas = (
@@ -521,9 +525,20 @@ class PanelControl(ttk.Frame):
         self.total_salas_var.set(str(len(resultado["ocupacion_salas"])))
         self.total_hoy_var.set(str(len(resultado["reservaciones_hoy"])))
         self.total_proximas_var.set(str(len(resultado["proximas_reservaciones"])))
-        self.mensaje_var.set(
-            "" if resultado["resultados"] else resultado["mensaje"]
+        self._actualizar_estado_vacio(
+            resultado["resultados"],
+            resultado["mensaje"],
         )
+
+    def _actualizar_estado_vacio(self, reservaciones, mensaje):
+        """Muestra el estado vacío dentro de la tabla solo cuando corresponde."""
+        if reservaciones:
+            self.mensaje_var.set("")
+            self.estado_vacio.place_forget()
+            return
+
+        self.mensaje_var.set(mensaje)
+        self.estado_vacio.place(relx=0.5, rely=0.5, anchor="center")
 
     def _llenar_reservaciones(self, tabla, reservaciones):
         self._vaciar_tabla(tabla)

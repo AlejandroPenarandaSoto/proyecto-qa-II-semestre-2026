@@ -65,3 +65,43 @@ def test_resultado_exitoso_actualiza_el_panel(monkeypatch):
 
     informacion.assert_called_once()
     panel.refrescar_panel.assert_called_once_with()
+
+
+def test_estado_vacio_se_muestra_centrado_en_la_tabla():
+    panel = SimpleNamespace(
+        mensaje_var=Mock(),
+        estado_vacio=SimpleNamespace(place=Mock(), place_forget=Mock()),
+    )
+
+    PanelControl._actualizar_estado_vacio(
+        panel,
+        [],
+        "No hay reservaciones para los filtros seleccionados.",
+    )
+
+    panel.mensaje_var.set.assert_called_once_with(
+        "No hay reservaciones para los filtros seleccionados."
+    )
+    panel.estado_vacio.place.assert_called_once_with(
+        relx=0.5,
+        rely=0.5,
+        anchor="center",
+    )
+    panel.estado_vacio.place_forget.assert_not_called()
+
+
+def test_estado_vacio_se_oculta_cuando_hay_resultados():
+    panel = SimpleNamespace(
+        mensaje_var=Mock(),
+        estado_vacio=SimpleNamespace(place=Mock(), place_forget=Mock()),
+    )
+
+    PanelControl._actualizar_estado_vacio(
+        panel,
+        [{"id": "R0001"}],
+        "Mensaje no utilizado",
+    )
+
+    panel.mensaje_var.set.assert_called_once_with("")
+    panel.estado_vacio.place_forget.assert_called_once_with()
+    panel.estado_vacio.place.assert_not_called()
