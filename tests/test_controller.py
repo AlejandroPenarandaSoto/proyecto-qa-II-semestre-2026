@@ -52,3 +52,32 @@ def test_controlador_cierra_la_conexion(monkeypatch):
     controlador.cerrar_aplicacion()
 
     assert llamadas == ["cerrada"]
+
+
+def test_controlador_delega_operaciones_recurrentes(monkeypatch):
+    llamadas = []
+
+    monkeypatch.setattr(
+        "src.controller.controller.previsualizar_reservaciones_recurrentes",
+        lambda **datos: llamadas.append(("previsualizar", datos)) or {"exito": True},
+    )
+    monkeypatch.setattr(
+        "src.controller.controller.crear_reservaciones_recurrentes",
+        lambda **datos: llamadas.append(("crear", datos)) or {"exito": True},
+    )
+    monkeypatch.setattr(
+        "src.controller.controller.cancelar_ocurrencias_futuras",
+        lambda identificador: llamadas.append(("cancelar", identificador))
+        or {"exito": True},
+    )
+    controlador = ControladorAplicacion()
+    datos = {"carne": "C123456789", "semanas": 4}
+
+    assert controlador.previsualizar_recurrencia(**datos)["exito"] is True
+    assert controlador.crear_recurrencia(**datos)["exito"] is True
+    assert controlador.cancelar_recurrencia_desde("R0002")["exito"] is True
+    assert llamadas == [
+        ("previsualizar", datos),
+        ("crear", datos),
+        ("cancelar", "R0002"),
+    ]

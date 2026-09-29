@@ -118,7 +118,8 @@ def _consultar_reservaciones(
             r.hora_inicio,
             r.duracion_horas,
             r.cantidad_personas,
-            r.estado
+            r.estado,
+            r.serie_id
         FROM reservaciones AS r
         JOIN estudiantes AS e ON e.id = r.estudiante_id
         JOIN salas AS s ON s.id = r.sala_id
@@ -154,7 +155,8 @@ def _consultar_proximas(conexion, fecha_referencia, hora_referencia):
             r.hora_inicio,
             r.duracion_horas,
             r.cantidad_personas,
-            r.estado
+            r.estado,
+            r.serie_id
         FROM reservaciones AS r
         JOIN estudiantes AS e ON e.id = r.estudiante_id
         JOIN salas AS s ON s.id = r.sala_id
@@ -210,6 +212,7 @@ def _formatear_reservacion(fila):
         "duracion_horas": fila["duracion_horas"],
         "cantidad_personas": fila["cantidad_personas"],
         "estado": fila["estado"],
+        "serie_id": fila["serie_id"],
     }
 
 

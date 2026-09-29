@@ -55,6 +55,9 @@ CREATE INDEX IF NOT EXISTS idx_reservaciones_sala_fecha
 CREATE INDEX IF NOT EXISTS idx_reservaciones_estudiante
     ON reservaciones (estudiante_id);
 
+CREATE INDEX IF NOT EXISTS idx_reservaciones_serie
+    ON reservaciones (serie_id);
+
 CREATE TABLE IF NOT EXISTS auditoria (
     id         INTEGER PRIMARY KEY AUTOINCREMENT,
     fecha_hora TEXT NOT NULL,
