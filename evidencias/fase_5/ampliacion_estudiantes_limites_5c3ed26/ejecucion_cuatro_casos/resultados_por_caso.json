@@ -1,0 +1,130 @@
+[
+  {
+    "id": "CP-EST-04",
+    "requirement": "RF-02",
+    "test_name": "test_cp_est_04_rechaza_carne_de_9_caracteres",
+    "nodeid_from_summary": null,
+    "status": "aprobado",
+    "expected": "Rechazar el carné de 9 caracteres e informar el campo inválido, sin cambiar estudiantes ni auditoría.",
+    "observed": {
+      "carne": "C12345678",
+      "caso": "CP-EST-04",
+      "correo": "ana@tec.ac.cr",
+      "estado_antes": {
+        "auditoria": [],
+        "estudiantes": []
+      },
+      "estado_despues": {
+        "auditoria": [],
+        "estudiantes": []
+      },
+      "exito_obtenido": false,
+      "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.",
+      "nombre": "Ana Rodríguez",
+      "requisito": "RF-02",
+      "sin_cambios": true
+    },
+    "duration_seconds": "0.006",
+    "evidence": "resultado_pytest.txt; resultado_pytest.xml"
+  },
+  {
+    "id": "CP-EST-05",
+    "requirement": "RF-02",
+    "test_name": "test_cp_est_05_rechaza_carne_de_11_caracteres",
+    "nodeid_from_summary": null,
+    "status": "aprobado",
+    "expected": "Rechazar el carné de 11 caracteres e informar el campo inválido, sin cambiar estudiantes ni auditoría.",
+    "observed": {
+      "carne": "C1234567890",
+      "caso": "CP-EST-05",
+      "correo": "ana@tec.ac.cr",
+      "estado_antes": {
+        "auditoria": [],
+        "estudiantes": []
+      },
+      "estado_despues": {
+        "auditoria": [],
+        "estudiantes": []
+      },
+      "exito_obtenido": false,
+      "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.",
+      "nombre": "Ana Rodríguez",
+      "requisito": "RF-02",
+      "sin_cambios": true
+    },
+    "duration_seconds": "0.003",
+    "evidence": "resultado_pytest.txt; resultado_pytest.xml"
+  },
+  {
+    "id": "CP-EST-07",
+    "requirement": "RF-02",
+    "test_name": "test_cp_est_07_rechaza_nombre_de_2_caracteres",
+    "nodeid_from_summary": null,
+    "status": "aprobado",
+    "expected": "Rechazar el nombre Al de 2 caracteres e informar el campo inválido, sin cambiar estudiantes ni auditoría.",
+    "observed": {
+      "carne": "C123456789",
+      "caso": "CP-EST-07",
+      "correo": "ana@tec.ac.cr",
+      "estado_antes": {
+        "auditoria": [],
+        "estudiantes": []
+      },
+      "estado_despues": {
+        "auditoria": [],
+        "estudiantes": []
+      },
+      "exito_obtenido": false,
+      "mensaje_obtenido": "El nombre debe contener al menos 3 caracteres sin contar espacios.",
+      "nombre": "Al",
+      "requisito": "RF-02",
+      "sin_cambios": true
+    },
+    "duration_seconds": "0.004",
+    "evidence": "resultado_pytest.txt; resultado_pytest.xml"
+  },
+  {
+    "id": "CP-EST-08",
+    "requirement": "RF-02",
+    "test_name": "test_cp_est_08_acepta_nombre_de_3_caracteres",
+    "nodeid_from_summary": null,
+    "status": "aprobado",
+    "expected": "Registrar a Ana, de 3 caracteres, con carné C123456789, correo ana@tec.ac.cr y estado activo.",
+    "observed": {
+      "carne": "C123456789",
+      "caso": "CP-EST-08",
+      "correo": "ana@tec.ac.cr",
+      "estado_antes": {
+        "auditoria": [],
+        "estudiantes": []
+      },
+      "estado_despues": {
+        "auditoria": [
+          {
+            "accion": "creacion",
+            "detalle": "Estudiante C123456789 registrado correctamente.",
+            "entidad": "estudiante",
+            "entidad_id": "C123456789",
+            "fecha_hora": "2026-10-30 00:46:25",
+            "id": 1
+          }
+        ],
+        "estudiantes": [
+          {
+            "carne": "C123456789",
+            "correo": "ana@tec.ac.cr",
+            "estado": "activo",
+            "nombre_completo": "Ana"
+          }
+        ]
+      },
+      "exito_obtenido": true,
+      "mensaje_obtenido": "Estudiante registrado correctamente.",
+      "nombre": "Ana",
+      "requisito": "RF-02",
+      "sin_cambios": false
+    },
+    "duration_seconds": "0.006",
+    "evidence": "resultado_pytest.txt; resultado_pytest.xml"
+  }
+]

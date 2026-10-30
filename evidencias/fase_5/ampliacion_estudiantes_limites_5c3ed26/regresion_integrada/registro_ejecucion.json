@@ -1,0 +1,27 @@
+{
+  "branch": "dev-vega",
+  "base_commit": "5c3ed26239ce2b96484e2a6fa6e74411c9093831",
+  "new_test_file": "tests/test_estudiantes_limites_fase5.py",
+  "new_test_sha256": "88470ea44380123280560a62d3bf9a89b783053843ed9f6ef033559534fff817",
+  "start_costa_rica": "2026-10-30T06:02:08-06:00",
+  "finish_costa_rica": "2026-10-30T06:02:10-06:00",
+  "process_duration_seconds": 1.742353,
+  "pytest_exit_code": 0,
+  "total_items": 198,
+  "counts": {
+    "aprobado": 195,
+    "xfail": 2,
+    "omitido": 1
+  },
+  "new_cases_passed": [
+    "CP-EST-04",
+    "CP-EST-05",
+    "CP-EST-07",
+    "CP-EST-08"
+  ],
+  "tracked_files_database_initial_evidence_and_zip_unchanged": true,
+  "evaluated_sources_unchanged_during_run": true,
+  "initial_execution_overwritten": false,
+  "commit_or_push_performed": false,
+  "note": "Regresión posterior a la ampliación; no sustituye la ejecución inicial."
+}

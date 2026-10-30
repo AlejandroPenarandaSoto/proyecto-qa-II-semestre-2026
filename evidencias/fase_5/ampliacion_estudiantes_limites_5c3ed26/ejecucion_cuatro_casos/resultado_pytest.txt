@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14
+rootdir: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/repositorio
+collecting ... collected 4 items
+
+::test_cp_est_04_rechaza_carne_de_9_caracteres <- ../pruebas/test_limites_estudiantes.py PASSED [ 25%]
+::test_cp_est_05_rechaza_carne_de_11_caracteres <- ../pruebas/test_limites_estudiantes.py PASSED [ 50%]
+::test_cp_est_07_rechaza_nombre_de_2_caracteres <- ../pruebas/test_limites_estudiantes.py PASSED [ 75%]
+::test_cp_est_08_acepta_nombre_de_3_caracteres <- ../pruebas/test_limites_estudiantes.py PASSED [100%]
+
+==================================== PASSES ====================================
+_________________ test_cp_est_04_rechaza_carne_de_9_caracteres _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"carne": "C12345678", "caso": "CP-EST-04", "correo": "ana@tec.ac.cr", "estado_antes": {"auditoria": [], "estudiantes": []}, "estado_despues": {"auditoria": [], "estudiantes": []}, "exito_obtenido": false, "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.", "nombre": "Ana Rodríguez", "requisito": "RF-02", "sin_cambios": true}
+________________ test_cp_est_05_rechaza_carne_de_11_caracteres _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"carne": "C1234567890", "caso": "CP-EST-05", "correo": "ana@tec.ac.cr", "estado_antes": {"auditoria": [], "estudiantes": []}, "estado_despues": {"auditoria": [], "estudiantes": []}, "exito_obtenido": false, "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.", "nombre": "Ana Rodríguez", "requisito": "RF-02", "sin_cambios": true}
+________________ test_cp_est_07_rechaza_nombre_de_2_caracteres _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"carne": "C123456789", "caso": "CP-EST-07", "correo": "ana@tec.ac.cr", "estado_antes": {"auditoria": [], "estudiantes": []}, "estado_despues": {"auditoria": [], "estudiantes": []}, "exito_obtenido": false, "mensaje_obtenido": "El nombre debe contener al menos 3 caracteres sin contar espacios.", "nombre": "Al", "requisito": "RF-02", "sin_cambios": true}
+_________________ test_cp_est_08_acepta_nombre_de_3_caracteres _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"carne": "C123456789", "caso": "CP-EST-08", "correo": "ana@tec.ac.cr", "estado_antes": {"auditoria": [], "estudiantes": []}, "estado_despues": {"auditoria": [{"accion": "creacion", "detalle": "Estudiante C123456789 registrado correctamente.", "entidad": "estudiante", "entidad_id": "C123456789", "fecha_hora": "2026-10-30 00:46:25", "id": 1}], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "nombre_completo": "Ana"}]}, "exito_obtenido": true, "mensaje_obtenido": "Estudiante registrado correctamente.", "nombre": "Ana", "requisito": "RF-02", "sin_cambios": false}
+- generated xml file: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_estudiantes_limites_bloque_1/resultado_pytest.xml -
+=========================== short test summary info ============================
+PASSED ::test_cp_est_04_rechaza_carne_de_9_caracteres
+PASSED ::test_cp_est_05_rechaza_carne_de_11_caracteres
+PASSED ::test_cp_est_07_rechaza_nombre_de_2_caracteres
+PASSED ::test_cp_est_08_acepta_nombre_de_3_caracteres
+============================== 4 passed in 0.03s ===============================

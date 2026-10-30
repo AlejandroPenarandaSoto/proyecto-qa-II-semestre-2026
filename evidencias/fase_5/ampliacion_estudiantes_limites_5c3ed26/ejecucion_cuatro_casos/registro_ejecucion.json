@@ -1,0 +1,26 @@
+{
+  "branch": "dev-vega",
+  "commit": "5c3ed26239ce2b96484e2a6fa6e74411c9093831",
+  "start_costa_rica": "2026-10-30T00:46:24-06:00",
+  "finish_costa_rica": "2026-10-30T00:46:25-06:00",
+  "process_duration_seconds": 0.275456,
+  "pytest_exit_code": 0,
+  "cases": [
+    "CP-EST-04",
+    "CP-EST-05",
+    "CP-EST-07",
+    "CP-EST-08"
+  ],
+  "counts": {
+    "aprobado": 4,
+    "fallido": 0,
+    "error": 0,
+    "omitido": 0
+  },
+  "case_observations_recorded": 4,
+  "integrity_unchanged": true,
+  "productive_code_changed": false,
+  "original_tests_changed": false,
+  "initial_execution_repeated_or_overwritten": false,
+  "commit_or_push_performed": false
+}

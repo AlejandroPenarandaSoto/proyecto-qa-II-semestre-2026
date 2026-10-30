@@ -1,0 +1,49 @@
+{
+  "repository": "https://github.com/AlejandroPenarandaSoto/proyecto-qa-II-semestre-2026",
+  "branch": "dev-vega",
+  "base_commit": "5c3ed26239ce2b96484e2a6fa6e74411c9093831",
+  "uncommitted_test": "tests/test_estudiantes_limites_fase5.py",
+  "new_test_sha256": "88470ea44380123280560a62d3bf9a89b783053843ed9f6ef033559534fff817",
+  "source_note": "Commit base más un archivo nuevo de cuatro pruebas, todavía sin commit ni push.",
+  "python": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "pytest": "9.1.1",
+  "sqlite": "3.50.4",
+  "timezone": "America/Costa_Rica",
+  "cwd": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_estudiantes_integracion/repositorio",
+  "command": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14 -B -m pytest tests -vv -rA --tb=long --capture=fd --color=no --import-mode=importlib --rootdir=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_estudiantes_integracion/repositorio -p no:cacheprovider -o junit_family=xunit1 --junitxml=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_estudiantes_limites_integracion/resultado_pytest.xml --basetemp=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_estudiantes_integracion/temporales_regresion",
+  "command_argv": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "-B",
+    "-m",
+    "pytest",
+    "tests",
+    "-vv",
+    "-rA",
+    "--tb=long",
+    "--capture=fd",
+    "--color=no",
+    "--import-mode=importlib",
+    "--rootdir=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_estudiantes_integracion/repositorio",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "junit_family=xunit1",
+    "--junitxml=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_estudiantes_limites_integracion/resultado_pytest.xml",
+    "--basetemp=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_estudiantes_integracion/temporales_regresion"
+  ],
+  "environment_settings": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONPATH": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_estudiantes_integracion/repositorio",
+    "TZ": "America/Costa_Rica",
+    "NO_COLOR": "1"
+  },
+  "new_cases": [
+    "CP-EST-04",
+    "CP-EST-05",
+    "CP-EST-07",
+    "CP-EST-08"
+  ]
+}

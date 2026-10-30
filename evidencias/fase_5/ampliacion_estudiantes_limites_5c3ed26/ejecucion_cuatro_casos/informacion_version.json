@@ -1,0 +1,49 @@
+{
+  "repository": "https://github.com/AlejandroPenarandaSoto/proyecto-qa-II-semestre-2026",
+  "branch": "dev-vega",
+  "commit": "5c3ed26239ce2b96484e2a6fa6e74411c9093831",
+  "initial_evaluated_commit": "cc9fab4cd268782cbdc9eb9921aa350903ce1e61",
+  "note": "Ejecución adicional de cuatro pruebas externas. El commit 5c3ed26 solo añadió evidencias; src y tests originales coinciden con cc9fab4.",
+  "python": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "pytest": "9.1.1",
+  "sqlite": "3.50.4",
+  "timezone": "America/Costa_Rica",
+  "cwd": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/repositorio",
+  "command": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14 -B -m pytest /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/pruebas/test_limites_estudiantes.py -vv -rA --tb=long --capture=fd --color=no --import-mode=importlib --rootdir=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/repositorio -p no:cacheprovider -o junit_family=xunit1 --junitxml=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_estudiantes_limites_bloque_1/resultado_pytest.xml --basetemp=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/temporales_bloque_1",
+  "command_argv": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "-B",
+    "-m",
+    "pytest",
+    "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/pruebas/test_limites_estudiantes.py",
+    "-vv",
+    "-rA",
+    "--tb=long",
+    "--capture=fd",
+    "--color=no",
+    "--import-mode=importlib",
+    "--rootdir=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/repositorio",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "junit_family=xunit1",
+    "--junitxml=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_estudiantes_limites_bloque_1/resultado_pytest.xml",
+    "--basetemp=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/temporales_bloque_1"
+  ],
+  "environment_settings": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONPATH": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/repositorio",
+    "TZ": "America/Costa_Rica",
+    "NO_COLOR": "1"
+  },
+  "cases_authorized": [
+    "CP-EST-04",
+    "CP-EST-05",
+    "CP-EST-07",
+    "CP-EST-08"
+  ],
+  "test_file": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_limites_estudiantes/pruebas/test_limites_estudiantes.py"
+}
