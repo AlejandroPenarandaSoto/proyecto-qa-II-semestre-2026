@@ -1,0 +1,631 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14
+rootdir: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_persona1_cierre/repositorio
+collecting ... collected 231 items
+
+tests/test_acciones_panel.py::test_cancelacion_individual_delega_reservacion_seleccionada PASSED [  0%]
+tests/test_acciones_panel.py::test_cancelacion_futura_delega_serie_seleccionada PASSED [  0%]
+tests/test_acciones_panel.py::test_resultado_exitoso_actualiza_el_panel PASSED [  1%]
+tests/test_acciones_panel.py::test_estado_vacio_se_muestra_centrado_en_la_tabla PASSED [  1%]
+tests/test_acciones_panel.py::test_estado_vacio_se_oculta_cuando_hay_resultados PASSED [  2%]
+tests/test_auditoria.py::test_registrar_evento_guarda_datos PASSED       [  2%]
+tests/test_auditoria.py::test_consultar_auditoria_muestra_eventos_mas_recientes_primero PASSED [  3%]
+tests/test_auditoria.py::test_crear_reservacion_genera_evento_de_auditoria PASSED [  3%]
+tests/test_auditoria.py::test_creacion_fallida_no_genera_evento_de_auditoria PASSED [  3%]
+tests/test_auditoria.py::test_modificar_reservacion_genera_evento_de_auditoria PASSED [  4%]
+tests/test_auditoria.py::test_modificacion_fallida_no_genera_evento_de_auditoria PASSED [  4%]
+tests/test_auditoria.py::test_cancelar_reservacion_genera_evento_de_auditoria PASSED [  5%]
+tests/test_auditoria.py::test_cancelacion_repetida_no_genera_otro_evento_de_auditoria PASSED [  5%]
+tests/test_auditoria.py::test_fallo_de_auditoria_revierte_creacion PASSED [  6%]
+tests/test_auditoria.py::test_fallo_de_auditoria_revierte_modificacion PASSED [  6%]
+tests/test_auditoria.py::test_fallo_de_auditoria_revierte_cancelacion PASSED [  6%]
+tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[-reservacion-R0001] PASSED [  7%]
+tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[   -reservacion-R0001] PASSED [  7%]
+tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion--R0001] PASSED [  8%]
+tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion-reservacion-None] PASSED [  8%]
+tests/test_auditoria_entidades.py::test_registrar_estudiante_genera_evento_de_auditoria PASSED [  9%]
+tests/test_auditoria_entidades.py::test_modificar_estudiante_genera_evento_de_auditoria PASSED [  9%]
+tests/test_auditoria_entidades.py::test_registrar_sala_genera_evento_de_auditoria PASSED [  9%]
+tests/test_auditoria_entidades.py::test_modificar_sala_genera_evento_de_auditoria PASSED [ 10%]
+tests/test_auditoria_entidades.py::test_operaciones_fallidas_no_generan_eventos PASSED [ 10%]
+tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_estudiante PASSED [ 11%]
+tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_estudiante PASSED [ 11%]
+tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_sala PASSED [ 12%]
+tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_sala PASSED [ 12%]
+tests/test_cierre_aplicacion.py::test_cierra_directamente_cuando_no_hay_cambios_pendientes PASSED [ 12%]
+tests/test_cierre_aplicacion.py::test_cancela_el_cierre_si_hay_cambios_pendientes PASSED [ 13%]
+tests/test_cierre_aplicacion.py::test_confirma_el_cierre_si_hay_cambios_pendientes PASSED [ 13%]
+tests/test_controller.py::test_controlador_solicita_panel_con_filtros PASSED [ 14%]
+tests/test_controller.py::test_controlador_devuelve_codigos_de_sala PASSED [ 14%]
+tests/test_controller.py::test_controlador_cierra_la_conexion PASSED     [ 15%]
+tests/test_controller.py::test_controlador_delega_operaciones_recurrentes PASSED [ 15%]
+tests/test_controller.py::test_controlador_delega_generacion_de_reporte PASSED [ 16%]
+tests/test_controller.py::test_controlador_delega_consulta_de_auditoria PASSED [ 16%]
+tests/test_dialogo_auditoria.py::test_auditoria_muestra_eventos_en_solo_lectura PASSED [ 16%]
+tests/test_dialogo_auditoria.py::test_auditoria_muestra_estado_vacio PASSED [ 17%]
+tests/test_dialogo_auditoria.py::test_error_de_auditoria_no_reemplaza_los_datos_visibles PASSED [ 17%]
+tests/test_dialogo_recurrencia.py::test_previsualizacion_valida_habilita_creacion PASSED [ 18%]
+tests/test_dialogo_recurrencia.py::test_conflicto_mantiene_creacion_deshabilitada PASSED [ 18%]
+tests/test_dialogo_recurrencia.py::test_creacion_exitosa_refresca_panel_y_cierra PASSED [ 19%]
+tests/test_dialogo_recurrencia.py::test_cancelar_permite_conservar_formulario PASSED [ 19%]
+tests/test_dialogo_reporte.py::test_no_abre_selector_si_el_rango_es_invalido PASSED [ 19%]
+tests/test_dialogo_reporte.py::test_cancelar_selector_no_crea_reporte PASSED [ 20%]
+tests/test_dialogo_reporte.py::test_reporte_exitoso_informa_y_cierra_dialogo PASSED [ 20%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_01_consulta_horario_libre PASSED [ 21%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_03_rechaza_fecha_pasada PASSED [ 21%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_04_rechaza_hora_pasada_de_hoy PASSED [ 22%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[07:00-1] PASSED [ 22%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[20:00-1] PASSED [ 22%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[19:00-2] PASSED [ 23%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_07_rechaza_tres_horas PASSED [ 23%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_08_rechaza_superposicion_total PASSED [ 24%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_09_rechaza_superposicion_inicial PASSED [ 24%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_10_rechaza_superposicion_final PASSED [ 25%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_11_rechaza_superposicion_envolvente PASSED [ 25%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_12_permite_horarios_consecutivos[12:00-1] PASSED [ 25%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_12_permite_horarios_consecutivos[08:00-2] PASSED [ 26%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_13_consulta_no_persiste_cambios PASSED [ 26%]
+tests/test_disponibilidad_ampliacion_fase5.py::test_f5_dis_01_hora_sin_cero_no_ignora_conflicto FAILED [ 27%]
+tests/test_estudiantes.py::test_registrar_estudiante_correctamente PASSED [ 27%]
+tests/test_estudiantes.py::test_rechazar_carne_duplicado PASSED          [ 28%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[123-Ana Rodr\xedguez-ana@tec.ac.cr] PASSED [ 28%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[123456789!-Ana Rodr\xedguez-ana@tec.ac.cr] PASSED [ 29%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-A-ana@tec.ac.cr] PASSED [ 29%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-   -ana@tec.ac.cr] PASSED [ 29%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-anatec.ac.cr] PASSED [ 30%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@] PASSED [ 30%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@@tec.ac.cr] PASSED [ 31%]
+tests/test_estudiantes.py::test_consultar_estudiantes_registrados PASSED [ 31%]
+tests/test_estudiantes.py::test_consultar_estudiantes_ordenados PASSED   [ 32%]
+tests/test_estudiantes.py::test_consultar_sin_estudiantes PASSED         [ 32%]
+tests/test_estudiantes.py::test_estudiante_sin_reservaciones PASSED      [ 32%]
+tests/test_estudiantes.py::test_buscar_reservaciones_estudiante_inexistente PASSED [ 33%]
+tests/test_estudiantes.py::test_buscar_reservaciones_existentes PASSED   [ 33%]
+tests/test_estudiantes.py::test_modificar_estudiante_correctamente PASSED [ 34%]
+tests/test_estudiantes.py::test_modificar_estudiante_inexistente PASSED  [ 34%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[A-ana@tec.ac.cr-activo] PASSED [ 35%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[   -ana@tec.ac.cr-activo] PASSED [ 35%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-correo_invalido-activo] PASSED [ 35%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-ana@tec.ac.cr-pendiente] PASSED [ 36%]
+tests/test_estudiantes.py::test_registrar_con_espacios PASSED            [ 36%]
+tests/test_estudiantes.py::test_buscar_reservaciones_carne_vacio PASSED  [ 37%]
+tests/test_estudiantes.py::test_modificar_estado_a_activo PASSED         [ 37%]
+tests/test_estudiantes_historial_fase5.py::test_cp_est_13_consulta_incluye_estudiantes_activos_e_inactivos PASSED [ 38%]
+tests/test_estudiantes_historial_fase5.py::test_cp_est_18_buscar_carne_en_minusculas_devuelve_mismo_historial PASSED [ 38%]
+tests/test_estudiantes_historial_fase5.py::test_cp_est_19_busqueda_incluye_reservacion_activa_y_cancelada PASSED [ 38%]
+tests/test_estudiantes_historial_fase5.py::test_cp_est_21_inactivar_estudiante_conserva_historial_e_identificadores PASSED [ 39%]
+tests/test_estudiantes_historial_fase5.py::test_cp_est_20_modificar_nombre_y_correo_mantiene_carne_y_estado_activo PASSED [ 39%]
+tests/test_estudiantes_limites_fase5.py::test_cp_est_04_rechaza_carne_de_9_caracteres PASSED [ 40%]
+tests/test_estudiantes_limites_fase5.py::test_cp_est_05_rechaza_carne_de_11_caracteres PASSED [ 40%]
+tests/test_estudiantes_limites_fase5.py::test_cp_est_07_rechaza_nombre_de_2_caracteres PASSED [ 41%]
+tests/test_estudiantes_limites_fase5.py::test_cp_est_08_acepta_nombre_de_3_caracteres PASSED [ 41%]
+tests/test_inicializacion_persistencia.py::test_rf01_crea_archivo_y_reporta_primera_ejecucion PASSED [ 41%]
+tests/test_inicializacion_persistencia.py::test_rf01_crea_todas_las_tablas_e_indices PASSED [ 42%]
+tests/test_inicializacion_persistencia.py::test_rf01_reservaciones_tiene_columnas_requeridas PASSED [ 42%]
+tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_con_valores_y_estado_especificados PASSED [ 43%]
+tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_disponibles_para_consulta PASSED [ 43%]
+tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales XFAILciales de estudiantes.) [ 44%]
+tests/test_inicializacion_persistencia.py::test_rf01_segunda_ejecucion_reutiliza_base_sin_duplicar PASSED [ 44%]
+tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_no_sobrescribe_datos_modificados PASSED [ 45%]
+tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_conserva_reservaciones_existentes PASSED [ 45%]
+tests/test_inicializacion_persistencia.py::test_rf01_archivo_corrupto_se_informa_sin_excepcion PASSED [ 45%]
+tests/test_inicializacion_persistencia.py::test_rf01_esquema_incompatible_se_informa_sin_excepcion PASSED [ 46%]
+tests/test_inicializacion_persistencia.py::test_rf01_archivo_vacio_se_inicializa_correctamente PASSED [ 46%]
+tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion XFAILinválida lanza OSError sin controlar
+(RF-01, RNF-05).)                                                        [ 47%]
+tests/test_inicializacion_persistencia.py::test_persistencia_datos_sobreviven_al_cerrar_y_reabrir PASSED [ 47%]
+tests/test_inicializacion_persistencia.py::test_rf10_cerrar_aplicacion_deja_datos_guardados_y_libera_conexion PASSED [ 48%]
+tests/test_inicializacion_persistencia.py::test_persistencia_operacion_rechazada_no_altera_datos PASSED [ 48%]
+tests/test_inicializacion_persistencia.py::test_rnf06_rollback_descarta_cambios_parciales PASSED [ 48%]
+tests/test_inicializacion_persistencia.py::test_conexion_es_unica_y_reutilizada PASSED [ 49%]
+tests/test_inicializacion_persistencia.py::test_conexion_cerrar_es_idempotente PASSED [ 49%]
+tests/test_inicializacion_persistencia.py::test_conexion_configurar_ruta_cierra_conexion_previa PASSED [ 50%]
+tests/test_inicializacion_persistencia.py::test_conexion_la_base_existe_se_consulta_antes_de_crearla PASSED [ 50%]
+tests/test_inicializacion_persistencia.py::test_conexion_crea_carpeta_destino_si_no_existe PASSED [ 51%]
+tests/test_inicializacion_persistencia.py::test_rnf03_ruta_por_defecto_no_usa_rutas_absolutas_fijas PASSED [ 51%]
+tests/test_inicializacion_persistencia.py::test_rnf06_llaves_foraneas_activas PASSED [ 51%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-01-fk_estudiante_inexistente] PASSED [ 52%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-duracion_3_horas] PASSED [ 52%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-cantidad_personas_0] PASSED [ 53%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_reservacion_invalido] PASSED [ 53%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-capacidad_sala_0] PASSED [ 54%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_sala_invalido] PASSED [ 54%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-04-codigo_sala_duplicado] PASSED [ 54%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_estudiante_invalido] PASSED [ 55%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-carne_nulo] PASSED [ 55%]
+tests/test_inicializacion_persistencia.py::test_rnf06_carne_de_estudiante_es_unico PASSED [ 56%]
+tests/test_inicializacion_persistencia.py::test_rnf08_tildes_y_enie_se_conservan_tras_reabrir PASSED [ 56%]
+tests/test_panel.py::test_panel_consolida_ocupacion_hoy_y_proximas PASSED [ 57%]
+tests/test_panel.py::test_filtros_se_combinan_simultaneamente PASSED     [ 57%]
+tests/test_panel.py::test_panel_devuelve_estado_vacio_claro PASSED       [ 58%]
+tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros0-formato] PASSED [ 58%]
+tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros1-activa o cancelada] PASSED [ 58%]
+tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros2-referencia] PASSED [ 59%]
+tests/test_panel.py::test_panel_refleja_operaciones_sin_cache PASSED     [ 59%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[1] PASSED [ 60%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[9] PASSED [ 60%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[True] PASSED [ 61%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2.5] PASSED [ 61%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2] PASSED [ 61%]
+tests/test_recurrencias.py::test_previsualiza_fechas_consecutivas_sin_guardar PASSED [ 62%]
+tests/test_recurrencias.py::test_previsualizacion_identifica_conflicto_por_ocurrencia PASSED [ 62%]
+tests/test_recurrencias.py::test_crea_serie_atomica_con_identificador_compartido PASSED [ 63%]
+tests/test_recurrencias.py::test_conflicto_impide_guardar_toda_la_serie PASSED [ 63%]
+tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_toda_la_serie PASSED [ 64%]
+tests/test_recurrencias.py::test_serie_cuenta_como_un_cupo_del_limite PASSED [ 64%]
+tests/test_recurrencias.py::test_cancelar_una_ocurrencia_conserva_las_demas PASSED [ 64%]
+tests/test_recurrencias.py::test_cancelar_ocurrencia_y_futuras_de_la_serie PASSED [ 65%]
+tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_cancelacion_futura PASSED [ 65%]
+tests/test_recurrencias.py::test_no_cancela_futuras_de_una_reservacion_individual PASSED [ 66%]
+tests/test_recurrencias.py::test_operaciones_de_serie_generan_auditoria PASSED [ 66%]
+tests/test_reportes.py::test_generar_reporte_csv_utf8_con_encabezados PASSED [ 67%]
+tests/test_reportes.py::test_validar_rango_antes_de_seleccionar_destino PASSED [ 67%]
+tests/test_reportes.py::test_reporte_filtra_rango_inclusivo PASSED       [ 67%]
+tests/test_reportes.py::test_rechazar_rango_invalido[-2026-10-10-inicial] PASSED [ 68%]
+tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-10--final] PASSED [ 68%]
+tests/test_reportes.py::test_rechazar_rango_invalido[10-10-2026-2026-10-11-formato] PASSED [ 69%]
+tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-11-2026-10-10-anterior] PASSED [ 69%]
+tests/test_reportes.py::test_cancelar_destino_no_crea_archivos PASSED    [ 70%]
+tests/test_reportes.py::test_reporte_sin_datos_contiene_solo_encabezados PASSED [ 70%]
+tests/test_reportes.py::test_error_de_escritura_no_deja_archivo_temporal PASSED [ 70%]
+tests/test_reservaciones.py::test_crear_reservacion_exitosa PASSED       [ 71%]
+tests/test_reservaciones.py::test_terminar_a_las_20_00_es_valido PASSED  [ 71%]
+tests/test_reservaciones.py::test_rechazar_estudiante_inexistente PASSED [ 72%]
+tests/test_reservaciones.py::test_rechazar_estudiante_inactivo PASSED    [ 72%]
+tests/test_reservaciones.py::test_rechazar_sala_inexistente PASSED       [ 73%]
+tests/test_reservaciones.py::test_rechazar_sala_fuera_de_servicio PASSED [ 73%]
+tests/test_reservaciones.py::test_rechazar_fecha_pasada PASSED           [ 74%]
+tests/test_reservaciones.py::test_rechazar_fecha_formato_invalido PASSED [ 74%]
+tests/test_reservaciones.py::test_rechazar_hora_ya_transcurrida_si_es_hoy SKIPPEDrido.) [ 74%]
+tests/test_reservaciones.py::test_rechazar_hora_no_completa PASSED       [ 75%]
+tests/test_reservaciones.py::test_rechazar_hora_antes_de_apertura PASSED [ 75%]
+tests/test_reservaciones.py::test_rechazar_reserva_que_termina_despues_de_cierre PASSED [ 76%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[0] PASSED   [ 76%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[3] PASSED   [ 77%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[-1] PASSED  [ 77%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[1.5] PASSED [ 77%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[1] PASSED   [ 78%]
+tests/test_reservaciones.py::test_rechazar_cantidad_cero PASSED          [ 78%]
+tests/test_reservaciones.py::test_rechazar_capacidad_excedida PASSED     [ 79%]
+tests/test_reservaciones.py::test_rechazar_capacidad_cubiculo PASSED     [ 79%]
+tests/test_reservaciones.py::test_tabla_superposicion[10:00-2-False-total] PASSED [ 80%]
+tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-parcial_inicio] PASSED [ 80%]
+tests/test_reservaciones.py::test_tabla_superposicion[11:00-2-False-parcial_fin] PASSED [ 80%]
+tests/test_reservaciones.py::test_tabla_superposicion[10:00-1-False-contenida] PASSED [ 81%]
+tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-envolvente] PASSED [ 81%]
+tests/test_reservaciones.py::test_tabla_superposicion[12:00-1-True-consecutiva_despues] PASSED [ 82%]
+tests/test_reservaciones.py::test_tabla_superposicion[08:00-2-True-consecutiva_antes] PASSED [ 82%]
+tests/test_reservaciones.py::test_tabla_superposicion[14:00-1-True-sin_traslape] PASSED [ 83%]
+tests/test_reservaciones.py::test_superposicion_envolvente_sobre_reserva_de_una_hora PASSED [ 83%]
+tests/test_reservaciones.py::test_limite_de_tres_reservaciones_activas PASSED [ 83%]
+tests/test_reservaciones.py::test_consultar_reservaciones_orden_y_historial PASSED [ 84%]
+tests/test_reservaciones.py::test_consultar_sin_reservaciones PASSED     [ 84%]
+tests/test_reservaciones.py::test_cancelar_libera_horario PASSED         [ 85%]
+tests/test_reservaciones.py::test_cancelar_con_entero PASSED             [ 85%]
+tests/test_reservaciones.py::test_cancelar_inexistente PASSED            [ 86%]
+tests/test_reservaciones.py::test_cancelar_dos_veces PASSED              [ 86%]
+tests/test_reservaciones.py::test_cancelar_permite_nueva_reserva_al_mismo_estudiante PASSED [ 87%]
+tests/test_reservaciones.py::test_id_cancelado_no_se_reutiliza PASSED    [ 87%]
+tests/test_reservaciones.py::test_modificar_conserva_id PASSED           [ 87%]
+tests/test_reservaciones.py::test_modificar_con_conflicto_no_cambia_nada PASSED [ 88%]
+tests/test_reservaciones.py::test_modificar_excluye_la_propia_reservacion_del_conflicto PASSED [ 88%]
+tests/test_reservaciones.py::test_no_modificar_reservacion_cancelada PASSED [ 89%]
+tests/test_reservaciones.py::test_modificar_reservacion_inexistente PASSED [ 89%]
+tests/test_salas.py::test_rf04_consultar_salas_iniciales PASSED          [ 90%]
+tests/test_salas.py::test_rf12_registrar_sala_capacidad_invalida PASSED  [ 90%]
+tests/test_salas.py::test_rf12_registrar_sala_codigo_duplicado PASSED    [ 90%]
+tests/test_salas.py::test_rf08_disponibilidad_hora_incompleta PASSED     [ 91%]
+tests/test_salas.py::test_rf08_disponibilidad_fuera_de_horario PASSED    [ 91%]
+tests/test_salas.py::test_rf08_disponibilidad_sala_fuera_servicio PASSED [ 92%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_01_catalogo_inicial_completo PASSED [ 92%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_02_orden_ascendente_de_todos_los_codigos PASSED [ 93%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_03_incluye_sala_fuera_de_servicio PASSED [ 93%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_05_registro_valido_aparece_en_catalogo PASSED [ 93%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_06_rechaza_duplicado_exacto PASSED [ 94%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_07_rechaza_duplicado_en_minusculas FAILED [ 94%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_08_rechaza_capacidad_cero PASSED [ 95%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_09_rechaza_capacidad_negativa PASSED [ 95%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_10_rechaza_capacidad_decimal PASSED [ 96%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_11_modifica_nombre_y_estado PASSED [ 96%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_13_reduce_capacidad_sin_reservas_futuras PASSED [ 96%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_14_rechaza_capacidad_menor_a_reserva_futura PASSED [ 97%]
+tests/test_salas_ampliacion_fase5.py::test_cp_sal_15_acepta_capacidad_igual_a_reserva_futura PASSED [ 97%]
+tests/test_selector_fecha.py::test_calendario_inicia_en_lunes_y_mantiene_seis_filas PASSED [ 98%]
+tests/test_selector_fecha.py::test_navegacion_de_meses_cambia_de_anio_correctamente PASSED [ 98%]
+tests/test_tema.py::test_recursos_de_identidad_visual_estan_disponibles PASSED [ 99%]
+tests/test_tema.py::test_fuente_interfaz_elige_primera_geometrica_disponible PASSED [ 99%]
+tests/test_tema.py::test_tipografia_global_actualiza_fuentes_nativas PASSED [100%]
+
+=================================== FAILURES ===================================
+_______________ test_f5_dis_01_hora_sin_cero_no_ignora_conflicto _______________
+
+base_temporal = <sqlite3.Connection object at 0x1094627a0>
+
+    def test_f5_dis_01_hora_sin_cero_no_ignora_conflicto(base_temporal):
+        """Caso nuevo de robustez: rechazar 9:00 o detectar el conflicto de 09:00."""
+        fecha = _manana()
+        _reservar(base_temporal, fecha, hora="08:00", duracion=2)
+        resultado = _consultar(
+            base_temporal, "F5-DIS-01", fecha, "9:00", 1,
+            "No disponible: rechazar el formato o reconocer el traslape 09:00–10:00 con 08:00–10:00.",
+        )
+>       assert resultado["disponible"] is False, (
+            "La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00."
+        )
+E       AssertionError: La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00.
+E       assert True is False
+
+tests/test_disponibilidad_ampliacion_fase5.py:177: AssertionError
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "F5-DIS-01", "datos": {"duracion": 1, "fecha": "2026-10-31", "hora": "9:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "No disponible: rechazar el formato o reconocer el traslape 09:00–10:00 con 08:00–10:00.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "08:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "08:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": true, "motivo": "La sala está disponible."}, "sin_cambios": true}, "requisito": "RF-08; RN-09; RNF-06"}
+________________ test_cp_sal_07_rechaza_duplicado_en_minusculas ________________
+
+base_datos_salas = <sqlite3.Connection object at 0x1094f89a0>
+
+    def test_cp_sal_07_rechaza_duplicado_en_minusculas(base_datos_salas):
+>       _verificar_registro_rechazado("CP-SAL-07", capacidad=5, codigo="s01")
+
+tests/test_salas_ampliacion_fase5.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+caso = 'CP-SAL-07', capacidad = 5, codigo = 's01'
+
+    def _verificar_registro_rechazado(caso, capacidad, codigo="S06"):
+        antes = _fotografia_bd()
+        nombre = "Duplicada" if codigo in ("S01", "s01") else "Sala Nueva"
+        resultado = registrar_sala(codigo, nombre, capacidad)
+        despues = _fotografia_bd()
+        _observar(
+            caso, "RF-12",
+            {"codigo": codigo, "nombre": nombre, "capacidad": capacidad},
+            {"exito": False, "mensaje_informativo": True,
+             "datos_y_auditoria_sin_cambios": True},
+            {"respuesta": resultado, "antes": antes, "despues": despues},
+        )
+>       assert resultado["exito"] is False
+E       assert True is False
+
+tests/test_salas_ampliacion_fase5.py:92: AssertionError
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-07", "datos": {"capacidad": 5, "codigo": "s01", "nombre": "Duplicada"}, "esperado": {"datos_y_auditoria_sin_cambios": true, "exito": false, "mensaje_informativo": true}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [{"accion": "creacion", "detalle": "Sala s01 registrada correctamente.", "entidad": "sala", "entidad_id": "s01", "fecha_hora": "2026-10-30 06:40:53", "id": 1}], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}, {"capacidad": 5, "codigo": "s01", "estado": "disponible", "id": 6, "nombre": "Duplicada"}]}, "respuesta": {"exito": true, "mensaje": "Sala s01 registrada exitosamente."}}, "requisito": "RF-12"}
+==================================== PASSES ====================================
+____________________ test_cp_dis_01_consulta_horario_libre _____________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-01", "datos": {"duracion": 1, "fecha": "2026-10-31", "hora": "10:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Disponible en horario libre.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": true, "motivo": "La sala está disponible."}, "sin_cambios": true}, "requisito": "RF-08"}
+_____________________ test_cp_dis_03_rechaza_fecha_pasada ______________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-03", "datos": {"duracion": 1, "fecha": "2020-01-01", "hora": "10:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Rechazar fecha pasada.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "La fecha no puede ser anterior a la fecha actual."}, "sin_cambios": true}, "requisito": "RF-08"}
+__________________ test_cp_dis_04_rechaza_hora_pasada_de_hoy ___________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-04", "datos": {"duracion": 1, "fecha": "2026-10-30", "hora": "14:00", "reloj_simulado_del_modulo": "2026-10-30 14:25:00", "sala": "S01"}, "esperado": "Rechazar las 14:00 cuando el reloj del módulo marca hoy a las 14:25.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "El horario solicitado para hoy ya transcurrió."}, "sin_cambios": true}, "requisito": "RF-08"}
+__________ test_cp_dis_06_rechaza_horarios_fuera_de_jornada[07:00-1] ___________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-06", "datos": {"duracion": 1, "fecha": "2026-10-31", "hora": "07:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "El horario permitido de uso es de 08:00 a 20:00."}, "sin_cambios": true}, "requisito": "RF-08"}
+__________ test_cp_dis_06_rechaza_horarios_fuera_de_jornada[20:00-1] ___________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-06", "datos": {"duracion": 1, "fecha": "2026-10-31", "hora": "20:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "El horario permitido de uso es de 08:00 a 20:00."}, "sin_cambios": true}, "requisito": "RF-08"}
+__________ test_cp_dis_06_rechaza_horarios_fuera_de_jornada[19:00-2] ___________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-06", "datos": {"duracion": 2, "fecha": "2026-10-31", "hora": "19:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "El horario permitido de uso es de 08:00 a 20:00."}, "sin_cambios": true}, "requisito": "RF-08"}
+______________________ test_cp_dis_07_rechaza_tres_horas _______________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-07", "datos": {"duracion": 3, "fecha": "2026-10-31", "hora": "10:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Rechazar duración de tres horas.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "La duración permitida es únicamente de 1 o 2 horas."}, "sin_cambios": true}, "requisito": "RF-08"}
+__________________ test_cp_dis_08_rechaza_superposicion_total __________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-08", "datos": {"duracion": 2, "fecha": "2026-10-31", "hora": "10:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "No disponible por superposición con la reservación activa preparada.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."}, "sin_cambios": true}, "requisito": "RF-08"}
+_________________ test_cp_dis_09_rechaza_superposicion_inicial _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-09", "datos": {"duracion": 2, "fecha": "2026-10-31", "hora": "09:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "No disponible por superposición con la reservación activa preparada.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."}, "sin_cambios": true}, "requisito": "RF-08"}
+__________________ test_cp_dis_10_rechaza_superposicion_final __________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-10", "datos": {"duracion": 2, "fecha": "2026-10-31", "hora": "11:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "No disponible por superposición con la reservación activa preparada.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."}, "sin_cambios": true}, "requisito": "RF-08"}
+_______________ test_cp_dis_11_rechaza_superposicion_envolvente ________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-11", "datos": {"duracion": 2, "fecha": "2026-10-31", "hora": "10:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "No disponible por superposición con la reservación activa preparada.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 1, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 1, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": false, "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 11:00."}, "sin_cambios": true}, "requisito": "RF-08"}
+____________ test_cp_dis_12_permite_horarios_consecutivos[12:00-1] _____________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-12", "datos": {"duracion": 1, "fecha": "2026-10-31", "hora": "12:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Disponible al terminar exactamente donde empieza otra reserva o iniciar donde termina.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": true, "motivo": "La sala está disponible."}, "sin_cambios": true}, "requisito": "RF-08"}
+____________ test_cp_dis_12_permite_horarios_consecutivos[08:00-2] _____________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-12", "datos": {"duracion": 2, "fecha": "2026-10-31", "hora": "08:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Disponible al terminar exactamente donde empieza otra reserva o iniciar donde termina.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": true, "motivo": "La sala está disponible."}, "sin_cambios": true}, "requisito": "RF-08"}
+_________________ test_cp_dis_13_consulta_no_persiste_cambios __________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-DIS-13", "datos": {"duracion": 1, "fecha": "2026-10-31", "hora": "14:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "Disponible sin crear, modificar ni eliminar ningún registro.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": true, "motivo": "La sala está disponible."}, "sin_cambios": true}, "requisito": "RF-08"}
+_______ test_cp_est_13_consulta_incluye_estudiantes_activos_e_inactivos ________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-EST-13", "datos": {"estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "nombre_completo": "Ana Rodríguez"}, {"carne": "A123456789", "correo": "carlos@tec.ac.cr", "estado": "inactivo", "nombre_completo": "Carlos López"}], "preparacion": "Dos estudiantes insertados en SQLite temporal"}, "esperado": {"estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "nombre_completo": "Ana Rodríguez"}, {"carne": "A123456789", "correo": "carlos@tec.ac.cr", "estado": "inactivo", "nombre_completo": "Carlos López"}], "exito": true}, "obtenido": {"estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "nombre_completo": "Ana Rodríguez"}, {"carne": "A123456789", "correo": "carlos@tec.ac.cr", "estado": "inactivo", "nombre_completo": "Carlos López"}], "exito": true, "mensaje": "Consulta realizada correctamente."}, "requisito": "RF-03"}
+______ test_cp_est_18_buscar_carne_en_minusculas_devuelve_mismo_historial ______
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-EST-18", "datos": {"carnes": ["C123456789", "c123456789"], "reservacion_preparada_por_sql": {"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala": "S01"}}, "esperado": {"exito_ambas": true, "historial_ambas": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala": "S01"}], "persistencia_sin_cambios": true}, "obtenido": {"mayusculas": {"exito": true, "historial": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala": "S01"}], "mensaje": "Reservaciones encontradas."}, "minusculas": {"exito": true, "historial": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala": "S01"}], "mensaje": "Reservaciones encontradas."}, "persistencia_antes": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "persistencia_despues": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}]}, "requisito": "RF-07"}
+________ test_cp_est_19_busqueda_incluye_reservacion_activa_y_cancelada ________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-EST-19", "datos": {"carne": "C123456789", "reservaciones_preparadas_por_sql": [{"cantidad_personas": 2, "duracion_horas": 1, "estado": "activa", "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala": "S01"}, {"cantidad_personas": 2, "duracion_horas": 1, "estado": "cancelada", "fecha": "2026-11-01", "hora_inicio": "10:00", "id": 2, "sala": "S01"}]}, "esperado": {"exito": true, "historial": [{"cantidad_personas": 2, "duracion_horas": 1, "estado": "activa", "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala": "S01"}, {"cantidad_personas": 2, "duracion_horas": 1, "estado": "cancelada", "fecha": "2026-11-01", "hora_inicio": "10:00", "id": 2, "sala": "S01"}], "persistencia_sin_cambios": true}, "obtenido": {"exito": true, "historial": [{"cantidad_personas": 2, "duracion_horas": 1, "estado": "activa", "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala": "S01"}, {"cantidad_personas": 2, "duracion_horas": 1, "estado": "cancelada", "fecha": "2026-11-01", "hora_inicio": "10:00", "id": 2, "sala": "S01"}], "mensaje": "Reservaciones encontradas.", "persistencia_antes": [{"cantidad_personas": 2, "duracion_horas": 1, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}, {"cantidad_personas": 2, "duracion_horas": 1, "estado": "cancelada", "estudiante_id": 1, "fecha": "2026-11-01", "hora_inicio": "10:00", "id": 2, "sala_id": 1, "serie_id": null}], "persistencia_despues": [{"cantidad_personas": 2, "duracion_horas": 1, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}, {"cantidad_personas": 2, "duracion_horas": 1, "estado": "cancelada", "estudiante_id": 1, "fecha": "2026-11-01", "hora_inicio": "10:00", "id": 2, "sala_id": 1, "serie_id": null}]}, "requisito": "RF-07"}
+___ test_cp_est_21_inactivar_estudiante_conserva_historial_e_identificadores ___
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-EST-21", "datos": {"carne": "C123456789", "nuevo_estado": "inactivo", "reservacion_preparada_por_sql": {"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala": "S01"}}, "esperado": {"estudiante": {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "inactivo", "nombre_completo": "Ana Rodríguez"}, "exito_modificacion": true, "historial_antes_y_despues": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala": "S01"}]}, "obtenido": {"consulta_estudiantes": {"estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "inactivo", "nombre_completo": "Ana Rodríguez"}], "exito": true, "mensaje": "Consulta realizada correctamente."}, "consulta_historial_antes": {"exito": true, "historial": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala": "S01"}], "mensaje": "Reservaciones encontradas."}, "consulta_historial_despues": {"exito": true, "historial": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala": "S01"}], "mensaje": "Reservaciones encontradas."}, "estudiante_persistido": {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "inactivo", "id": 1, "nombre_completo": "Ana Rodríguez"}, "modificacion": {"exito": true, "mensaje": "Estudiante modificado correctamente."}, "persistencia_reservaciones_antes": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "persistencia_reservaciones_despues": [{"cantidad_personas": 3, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}]}, "requisito": "RF-11"}
+___ test_cp_est_20_modificar_nombre_y_correo_mantiene_carne_y_estado_activo ____
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-EST-20", "datos": {"carne": "C123456789", "correo_nuevo": "ana.lopez@tec.ac.cr", "correo_original": "ana@tec.ac.cr", "estado_solicitado": "activo", "nombre_nuevo": "Ana Rodríguez López", "nombre_original": "Ana Rodríguez"}, "esperado": {"estudiante": {"carne": "C123456789", "correo": "ana.lopez@tec.ac.cr", "estado": "activo", "nombre_completo": "Ana Rodríguez López"}, "exito_modificacion": true, "mismo_id": true}, "obtenido": {"consulta": {"estudiantes": [{"carne": "C123456789", "correo": "ana.lopez@tec.ac.cr", "estado": "activo", "nombre_completo": "Ana Rodríguez López"}], "exito": true, "mensaje": "Consulta realizada correctamente."}, "modificacion": {"exito": true, "mensaje": "Estudiante modificado correctamente."}, "persistido_antes": {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}, "persistido_despues": {"carne": "C123456789", "correo": "ana.lopez@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez López"}, "registro": {"exito": true, "mensaje": "Estudiante registrado correctamente."}}, "requisito": "RF-11"}
+_________________ test_cp_est_04_rechaza_carne_de_9_caracteres _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"carne": "C12345678", "caso": "CP-EST-04", "correo": "ana@tec.ac.cr", "estado_antes": {"auditoria": [], "estudiantes": []}, "estado_despues": {"auditoria": [], "estudiantes": []}, "exito_obtenido": false, "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.", "nombre": "Ana Rodríguez", "requisito": "RF-02", "sin_cambios": true}
+________________ test_cp_est_05_rechaza_carne_de_11_caracteres _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"carne": "C1234567890", "caso": "CP-EST-05", "correo": "ana@tec.ac.cr", "estado_antes": {"auditoria": [], "estudiantes": []}, "estado_despues": {"auditoria": [], "estudiantes": []}, "exito_obtenido": false, "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.", "nombre": "Ana Rodríguez", "requisito": "RF-02", "sin_cambios": true}
+________________ test_cp_est_07_rechaza_nombre_de_2_caracteres _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"carne": "C123456789", "caso": "CP-EST-07", "correo": "ana@tec.ac.cr", "estado_antes": {"auditoria": [], "estudiantes": []}, "estado_despues": {"auditoria": [], "estudiantes": []}, "exito_obtenido": false, "mensaje_obtenido": "El nombre debe contener al menos 3 caracteres sin contar espacios.", "nombre": "Al", "requisito": "RF-02", "sin_cambios": true}
+_________________ test_cp_est_08_acepta_nombre_de_3_caracteres _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"carne": "C123456789", "caso": "CP-EST-08", "correo": "ana@tec.ac.cr", "estado_antes": {"auditoria": [], "estudiantes": []}, "estado_despues": {"auditoria": [{"accion": "creacion", "detalle": "Estudiante C123456789 registrado correctamente.", "entidad": "estudiante", "entidad_id": "C123456789", "fecha_hora": "2026-10-30 06:40:52", "id": 1}], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "nombre_completo": "Ana"}]}, "exito_obtenido": true, "mensaje_obtenido": "Estudiante registrado correctamente.", "nombre": "Ana", "requisito": "RF-02", "sin_cambios": false}
+___________________ test_cp_sal_01_catalogo_inicial_completo ___________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-01", "datos": {"consulta": "salas iniciales"}, "esperado": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "nombre": "Cubículo individual"}], "obtenido": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "nombre": "Cubículo individual"}], "requisito": "RF-04"}
+_____________ test_cp_sal_02_orden_ascendente_de_todos_los_codigos _____________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-02", "datos": {"consulta": "catálogo inicial"}, "esperado": ["S01", "S02", "S03", "S04", "S05"], "obtenido": ["S01", "S02", "S03", "S04", "S05"], "requisito": "RF-04"}
+________________ test_cp_sal_03_incluye_sala_fuera_de_servicio _________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-03", "datos": {"codigo": "S04"}, "esperado": [{"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "nombre": "Sala multimedia"}], "obtenido": [{"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "nombre": "Sala multimedia"}], "requisito": "RF-04; RN-08"}
+______________ test_cp_sal_05_registro_valido_aparece_en_catalogo ______________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-05", "datos": {"capacidad": 6, "codigo": "S06", "estado": "disponible", "nombre": "Sala de estudio 6"}, "esperado": {"cantidad_salas": 6, "exito": true, "nueva_sala": {"capacidad": 6, "codigo": "S06", "estado": "disponible", "nombre": "Sala de estudio 6"}, "salas_previas_sin_cambios": true}, "obtenido": {"respuesta": {"exito": true, "mensaje": "Sala S06 registrada exitosamente."}, "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "nombre": "Cubículo individual"}, {"capacidad": 6, "codigo": "S06", "estado": "disponible", "nombre": "Sala de estudio 6"}]}, "requisito": "RF-12"}
+___________________ test_cp_sal_06_rechaza_duplicado_exacto ____________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-06", "datos": {"capacidad": 5, "codigo": "S01", "nombre": "Duplicada"}, "esperado": {"datos_y_auditoria_sin_cambios": true, "exito": false, "mensaje_informativo": true}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"exito": false, "mensaje": "El código de sala ya se encuentra registrado."}}, "requisito": "RF-12"}
+____________________ test_cp_sal_08_rechaza_capacidad_cero _____________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-08", "datos": {"capacidad": 0, "codigo": "S06", "nombre": "Sala Nueva"}, "esperado": {"datos_y_auditoria_sin_cambios": true, "exito": false, "mensaje_informativo": true}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"exito": false, "mensaje": "La capacidad debe ser un entero mayor que cero."}}, "requisito": "RF-12"}
+__________________ test_cp_sal_09_rechaza_capacidad_negativa ___________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-09", "datos": {"capacidad": -1, "codigo": "S06", "nombre": "Sala Nueva"}, "esperado": {"datos_y_auditoria_sin_cambios": true, "exito": false, "mensaje_informativo": true}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"exito": false, "mensaje": "La capacidad debe ser un entero mayor que cero."}}, "requisito": "RF-12"}
+___________________ test_cp_sal_10_rechaza_capacidad_decimal ___________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-10", "datos": {"capacidad": 2.5, "codigo": "S06", "nombre": "Sala Nueva"}, "esperado": {"datos_y_auditoria_sin_cambios": true, "exito": false, "mensaje_informativo": true}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"exito": false, "mensaje": "La capacidad debe ser un entero mayor que cero."}}, "requisito": "RF-12"}
+___________________ test_cp_sal_11_modifica_nombre_y_estado ____________________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-11", "datos": {"capacidad": 6, "codigo": "S02", "estado": "fuera_de_servicio", "nombre": "Sala Biblioteca 2B"}, "esperado": {"exito": true, "otras_salas_sin_cambios": true, "sala": {"capacidad": 6, "codigo": "S02", "estado": "fuera_de_servicio", "nombre": "Sala Biblioteca 2B"}}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [{"accion": "modificacion", "detalle": "Sala S02 modificada correctamente.", "entidad": "sala", "entidad_id": "S02", "fecha_hora": "2026-10-30 06:40:53", "id": 1}], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "fuera_de_servicio", "id": 2, "nombre": "Sala Biblioteca 2B"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"exito": true, "mensaje": "Sala modificada correctamente."}, "sala": {"capacidad": 6, "codigo": "S02", "estado": "fuera_de_servicio", "nombre": "Sala Biblioteca 2B"}}, "requisito": "RF-12"}
+_____________ test_cp_sal_13_reduce_capacidad_sin_reservas_futuras _____________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-13", "datos": {"capacidad_anterior": 10, "codigo": "S03", "nueva_capacidad": 5, "reservaciones_antes": []}, "esperado": {"exito": true, "reservaciones_sin_cambios": true, "sala": {"capacidad": 5, "codigo": "S03", "estado": "disponible", "nombre": "Laboratorio de estudio"}}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [{"accion": "modificacion", "detalle": "Sala S03 modificada correctamente.", "entidad": "sala", "entidad_id": "S03", "fecha_hora": "2026-10-30 06:40:53", "id": 1}], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 5, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"exito": true, "mensaje": "Sala modificada correctamente."}, "sala": {"capacidad": 5, "codigo": "S03", "estado": "disponible", "nombre": "Laboratorio de estudio"}}, "requisito": "RF-12"}
+___________ test_cp_sal_14_rechaza_capacidad_menor_a_reserva_futura ____________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-14", "datos": {"nueva_capacidad": 4, "reserva": {"cantidad_personas": 5, "carne": "C123456789", "duracion_horas": 1, "estado": "activa", "fecha": "2026-10-31", "hora_inicio": "10:00", "sala": "S02"}}, "esperado": {"datos_y_auditoria_sin_cambios": true, "exito": false}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 5, "duracion_horas": 1, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 2, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 5, "duracion_horas": 1, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 2, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"exito": false, "mensaje": "No se puede reducir la capacidad a 4. Hay reservas futuras activas para 5 personas."}}, "requisito": "RF-12; RN-07"}
+____________ test_cp_sal_15_acepta_capacidad_igual_a_reserva_futura ____________
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-SAL-15", "datos": {"nueva_capacidad": 5, "reserva": {"cantidad_personas": 5, "carne": "C123456789", "duracion_horas": 1, "estado": "activa", "fecha": "2026-10-31", "hora_inicio": "10:00", "sala": "S02"}}, "esperado": {"exito": true, "reservaciones_sin_cambios": true, "sala": {"capacidad": 5, "codigo": "S02", "estado": "disponible", "nombre": "Sala Biblioteca 2"}}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 5, "duracion_horas": 1, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 2, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [{"accion": "modificacion", "detalle": "Sala S02 modificada correctamente.", "entidad": "sala", "entidad_id": "S02", "fecha_hora": "2026-10-30 06:40:53", "id": 1}], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 5, "duracion_horas": 1, "estado": "activa", "estudiante_id": 1, "fecha": "2026-10-31", "hora_inicio": "10:00", "id": 1, "sala_id": 2, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 5, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"exito": true, "mensaje": "Sala modificada correctamente."}, "sala": {"capacidad": 5, "codigo": "S02", "estado": "disponible", "nombre": "Sala Biblioteca 2"}}, "requisito": "RF-12; RN-07"}
+- generated xml file: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_Persona_1_cierre_1e26149/regresion/resultado_pytest.xml -
+=========================== short test summary info ============================
+PASSED tests/test_acciones_panel.py::test_cancelacion_individual_delega_reservacion_seleccionada
+PASSED tests/test_acciones_panel.py::test_cancelacion_futura_delega_serie_seleccionada
+PASSED tests/test_acciones_panel.py::test_resultado_exitoso_actualiza_el_panel
+PASSED tests/test_acciones_panel.py::test_estado_vacio_se_muestra_centrado_en_la_tabla
+PASSED tests/test_acciones_panel.py::test_estado_vacio_se_oculta_cuando_hay_resultados
+PASSED tests/test_auditoria.py::test_registrar_evento_guarda_datos
+PASSED tests/test_auditoria.py::test_consultar_auditoria_muestra_eventos_mas_recientes_primero
+PASSED tests/test_auditoria.py::test_crear_reservacion_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_creacion_fallida_no_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_modificar_reservacion_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_modificacion_fallida_no_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_cancelar_reservacion_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_cancelacion_repetida_no_genera_otro_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_fallo_de_auditoria_revierte_creacion
+PASSED tests/test_auditoria.py::test_fallo_de_auditoria_revierte_modificacion
+PASSED tests/test_auditoria.py::test_fallo_de_auditoria_revierte_cancelacion
+PASSED tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[-reservacion-R0001]
+PASSED tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[   -reservacion-R0001]
+PASSED tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion--R0001]
+PASSED tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion-reservacion-None]
+PASSED tests/test_auditoria_entidades.py::test_registrar_estudiante_genera_evento_de_auditoria
+PASSED tests/test_auditoria_entidades.py::test_modificar_estudiante_genera_evento_de_auditoria
+PASSED tests/test_auditoria_entidades.py::test_registrar_sala_genera_evento_de_auditoria
+PASSED tests/test_auditoria_entidades.py::test_modificar_sala_genera_evento_de_auditoria
+PASSED tests/test_auditoria_entidades.py::test_operaciones_fallidas_no_generan_eventos
+PASSED tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_estudiante
+PASSED tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_estudiante
+PASSED tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_sala
+PASSED tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_sala
+PASSED tests/test_cierre_aplicacion.py::test_cierra_directamente_cuando_no_hay_cambios_pendientes
+PASSED tests/test_cierre_aplicacion.py::test_cancela_el_cierre_si_hay_cambios_pendientes
+PASSED tests/test_cierre_aplicacion.py::test_confirma_el_cierre_si_hay_cambios_pendientes
+PASSED tests/test_controller.py::test_controlador_solicita_panel_con_filtros
+PASSED tests/test_controller.py::test_controlador_devuelve_codigos_de_sala
+PASSED tests/test_controller.py::test_controlador_cierra_la_conexion
+PASSED tests/test_controller.py::test_controlador_delega_operaciones_recurrentes
+PASSED tests/test_controller.py::test_controlador_delega_generacion_de_reporte
+PASSED tests/test_controller.py::test_controlador_delega_consulta_de_auditoria
+PASSED tests/test_dialogo_auditoria.py::test_auditoria_muestra_eventos_en_solo_lectura
+PASSED tests/test_dialogo_auditoria.py::test_auditoria_muestra_estado_vacio
+PASSED tests/test_dialogo_auditoria.py::test_error_de_auditoria_no_reemplaza_los_datos_visibles
+PASSED tests/test_dialogo_recurrencia.py::test_previsualizacion_valida_habilita_creacion
+PASSED tests/test_dialogo_recurrencia.py::test_conflicto_mantiene_creacion_deshabilitada
+PASSED tests/test_dialogo_recurrencia.py::test_creacion_exitosa_refresca_panel_y_cierra
+PASSED tests/test_dialogo_recurrencia.py::test_cancelar_permite_conservar_formulario
+PASSED tests/test_dialogo_reporte.py::test_no_abre_selector_si_el_rango_es_invalido
+PASSED tests/test_dialogo_reporte.py::test_cancelar_selector_no_crea_reporte
+PASSED tests/test_dialogo_reporte.py::test_reporte_exitoso_informa_y_cierra_dialogo
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_01_consulta_horario_libre
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_03_rechaza_fecha_pasada
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_04_rechaza_hora_pasada_de_hoy
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[07:00-1]
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[20:00-1]
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[19:00-2]
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_07_rechaza_tres_horas
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_08_rechaza_superposicion_total
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_09_rechaza_superposicion_inicial
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_10_rechaza_superposicion_final
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_11_rechaza_superposicion_envolvente
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_12_permite_horarios_consecutivos[12:00-1]
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_12_permite_horarios_consecutivos[08:00-2]
+PASSED tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_13_consulta_no_persiste_cambios
+PASSED tests/test_estudiantes.py::test_registrar_estudiante_correctamente
+PASSED tests/test_estudiantes.py::test_rechazar_carne_duplicado
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[123-Ana Rodr\xedguez-ana@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[123456789!-Ana Rodr\xedguez-ana@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-A-ana@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-   -ana@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-anatec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_consultar_estudiantes_registrados
+PASSED tests/test_estudiantes.py::test_consultar_estudiantes_ordenados
+PASSED tests/test_estudiantes.py::test_consultar_sin_estudiantes
+PASSED tests/test_estudiantes.py::test_estudiante_sin_reservaciones
+PASSED tests/test_estudiantes.py::test_buscar_reservaciones_estudiante_inexistente
+PASSED tests/test_estudiantes.py::test_buscar_reservaciones_existentes
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_correctamente
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_inexistente
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[A-ana@tec.ac.cr-activo]
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[   -ana@tec.ac.cr-activo]
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-correo_invalido-activo]
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-ana@tec.ac.cr-pendiente]
+PASSED tests/test_estudiantes.py::test_registrar_con_espacios
+PASSED tests/test_estudiantes.py::test_buscar_reservaciones_carne_vacio
+PASSED tests/test_estudiantes.py::test_modificar_estado_a_activo
+PASSED tests/test_estudiantes_historial_fase5.py::test_cp_est_13_consulta_incluye_estudiantes_activos_e_inactivos
+PASSED tests/test_estudiantes_historial_fase5.py::test_cp_est_18_buscar_carne_en_minusculas_devuelve_mismo_historial
+PASSED tests/test_estudiantes_historial_fase5.py::test_cp_est_19_busqueda_incluye_reservacion_activa_y_cancelada
+PASSED tests/test_estudiantes_historial_fase5.py::test_cp_est_21_inactivar_estudiante_conserva_historial_e_identificadores
+PASSED tests/test_estudiantes_historial_fase5.py::test_cp_est_20_modificar_nombre_y_correo_mantiene_carne_y_estado_activo
+PASSED tests/test_estudiantes_limites_fase5.py::test_cp_est_04_rechaza_carne_de_9_caracteres
+PASSED tests/test_estudiantes_limites_fase5.py::test_cp_est_05_rechaza_carne_de_11_caracteres
+PASSED tests/test_estudiantes_limites_fase5.py::test_cp_est_07_rechaza_nombre_de_2_caracteres
+PASSED tests/test_estudiantes_limites_fase5.py::test_cp_est_08_acepta_nombre_de_3_caracteres
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_crea_archivo_y_reporta_primera_ejecucion
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_crea_todas_las_tablas_e_indices
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_reservaciones_tiene_columnas_requeridas
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_con_valores_y_estado_especificados
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_disponibles_para_consulta
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_segunda_ejecucion_reutiliza_base_sin_duplicar
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_no_sobrescribe_datos_modificados
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_conserva_reservaciones_existentes
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_archivo_corrupto_se_informa_sin_excepcion
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_esquema_incompatible_se_informa_sin_excepcion
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_archivo_vacio_se_inicializa_correctamente
+PASSED tests/test_inicializacion_persistencia.py::test_persistencia_datos_sobreviven_al_cerrar_y_reabrir
+PASSED tests/test_inicializacion_persistencia.py::test_rf10_cerrar_aplicacion_deja_datos_guardados_y_libera_conexion
+PASSED tests/test_inicializacion_persistencia.py::test_persistencia_operacion_rechazada_no_altera_datos
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_rollback_descarta_cambios_parciales
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_es_unica_y_reutilizada
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_cerrar_es_idempotente
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_configurar_ruta_cierra_conexion_previa
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_la_base_existe_se_consulta_antes_de_crearla
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_crea_carpeta_destino_si_no_existe
+PASSED tests/test_inicializacion_persistencia.py::test_rnf03_ruta_por_defecto_no_usa_rutas_absolutas_fijas
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_llaves_foraneas_activas
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-01-fk_estudiante_inexistente]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-duracion_3_horas]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-cantidad_personas_0]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_reservacion_invalido]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-capacidad_sala_0]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_sala_invalido]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-04-codigo_sala_duplicado]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_estudiante_invalido]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-carne_nulo]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_carne_de_estudiante_es_unico
+PASSED tests/test_inicializacion_persistencia.py::test_rnf08_tildes_y_enie_se_conservan_tras_reabrir
+PASSED tests/test_panel.py::test_panel_consolida_ocupacion_hoy_y_proximas
+PASSED tests/test_panel.py::test_filtros_se_combinan_simultaneamente
+PASSED tests/test_panel.py::test_panel_devuelve_estado_vacio_claro
+PASSED tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros0-formato]
+PASSED tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros1-activa o cancelada]
+PASSED tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros2-referencia]
+PASSED tests/test_panel.py::test_panel_refleja_operaciones_sin_cache
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[1]
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[9]
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[True]
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2.5]
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2]
+PASSED tests/test_recurrencias.py::test_previsualiza_fechas_consecutivas_sin_guardar
+PASSED tests/test_recurrencias.py::test_previsualizacion_identifica_conflicto_por_ocurrencia
+PASSED tests/test_recurrencias.py::test_crea_serie_atomica_con_identificador_compartido
+PASSED tests/test_recurrencias.py::test_conflicto_impide_guardar_toda_la_serie
+PASSED tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_toda_la_serie
+PASSED tests/test_recurrencias.py::test_serie_cuenta_como_un_cupo_del_limite
+PASSED tests/test_recurrencias.py::test_cancelar_una_ocurrencia_conserva_las_demas
+PASSED tests/test_recurrencias.py::test_cancelar_ocurrencia_y_futuras_de_la_serie
+PASSED tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_cancelacion_futura
+PASSED tests/test_recurrencias.py::test_no_cancela_futuras_de_una_reservacion_individual
+PASSED tests/test_recurrencias.py::test_operaciones_de_serie_generan_auditoria
+PASSED tests/test_reportes.py::test_generar_reporte_csv_utf8_con_encabezados
+PASSED tests/test_reportes.py::test_validar_rango_antes_de_seleccionar_destino
+PASSED tests/test_reportes.py::test_reporte_filtra_rango_inclusivo
+PASSED tests/test_reportes.py::test_rechazar_rango_invalido[-2026-10-10-inicial]
+PASSED tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-10--final]
+PASSED tests/test_reportes.py::test_rechazar_rango_invalido[10-10-2026-2026-10-11-formato]
+PASSED tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-11-2026-10-10-anterior]
+PASSED tests/test_reportes.py::test_cancelar_destino_no_crea_archivos
+PASSED tests/test_reportes.py::test_reporte_sin_datos_contiene_solo_encabezados
+PASSED tests/test_reportes.py::test_error_de_escritura_no_deja_archivo_temporal
+PASSED tests/test_reservaciones.py::test_crear_reservacion_exitosa
+PASSED tests/test_reservaciones.py::test_terminar_a_las_20_00_es_valido
+PASSED tests/test_reservaciones.py::test_rechazar_estudiante_inexistente
+PASSED tests/test_reservaciones.py::test_rechazar_estudiante_inactivo
+PASSED tests/test_reservaciones.py::test_rechazar_sala_inexistente
+PASSED tests/test_reservaciones.py::test_rechazar_sala_fuera_de_servicio
+PASSED tests/test_reservaciones.py::test_rechazar_fecha_pasada
+PASSED tests/test_reservaciones.py::test_rechazar_fecha_formato_invalido
+PASSED tests/test_reservaciones.py::test_rechazar_hora_no_completa
+PASSED tests/test_reservaciones.py::test_rechazar_hora_antes_de_apertura
+PASSED tests/test_reservaciones.py::test_rechazar_reserva_que_termina_despues_de_cierre
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[0]
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[3]
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[-1]
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[1.5]
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[1]
+PASSED tests/test_reservaciones.py::test_rechazar_cantidad_cero
+PASSED tests/test_reservaciones.py::test_rechazar_capacidad_excedida
+PASSED tests/test_reservaciones.py::test_rechazar_capacidad_cubiculo
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[10:00-2-False-total]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-parcial_inicio]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[11:00-2-False-parcial_fin]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[10:00-1-False-contenida]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-envolvente]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[12:00-1-True-consecutiva_despues]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[08:00-2-True-consecutiva_antes]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[14:00-1-True-sin_traslape]
+PASSED tests/test_reservaciones.py::test_superposicion_envolvente_sobre_reserva_de_una_hora
+PASSED tests/test_reservaciones.py::test_limite_de_tres_reservaciones_activas
+PASSED tests/test_reservaciones.py::test_consultar_reservaciones_orden_y_historial
+PASSED tests/test_reservaciones.py::test_consultar_sin_reservaciones
+PASSED tests/test_reservaciones.py::test_cancelar_libera_horario
+PASSED tests/test_reservaciones.py::test_cancelar_con_entero
+PASSED tests/test_reservaciones.py::test_cancelar_inexistente
+PASSED tests/test_reservaciones.py::test_cancelar_dos_veces
+PASSED tests/test_reservaciones.py::test_cancelar_permite_nueva_reserva_al_mismo_estudiante
+PASSED tests/test_reservaciones.py::test_id_cancelado_no_se_reutiliza
+PASSED tests/test_reservaciones.py::test_modificar_conserva_id
+PASSED tests/test_reservaciones.py::test_modificar_con_conflicto_no_cambia_nada
+PASSED tests/test_reservaciones.py::test_modificar_excluye_la_propia_reservacion_del_conflicto
+PASSED tests/test_reservaciones.py::test_no_modificar_reservacion_cancelada
+PASSED tests/test_reservaciones.py::test_modificar_reservacion_inexistente
+PASSED tests/test_salas.py::test_rf04_consultar_salas_iniciales
+PASSED tests/test_salas.py::test_rf12_registrar_sala_capacidad_invalida
+PASSED tests/test_salas.py::test_rf12_registrar_sala_codigo_duplicado
+PASSED tests/test_salas.py::test_rf08_disponibilidad_hora_incompleta
+PASSED tests/test_salas.py::test_rf08_disponibilidad_fuera_de_horario
+PASSED tests/test_salas.py::test_rf08_disponibilidad_sala_fuera_servicio
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_01_catalogo_inicial_completo
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_02_orden_ascendente_de_todos_los_codigos
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_03_incluye_sala_fuera_de_servicio
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_05_registro_valido_aparece_en_catalogo
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_06_rechaza_duplicado_exacto
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_08_rechaza_capacidad_cero
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_09_rechaza_capacidad_negativa
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_10_rechaza_capacidad_decimal
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_11_modifica_nombre_y_estado
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_13_reduce_capacidad_sin_reservas_futuras
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_14_rechaza_capacidad_menor_a_reserva_futura
+PASSED tests/test_salas_ampliacion_fase5.py::test_cp_sal_15_acepta_capacidad_igual_a_reserva_futura
+PASSED tests/test_selector_fecha.py::test_calendario_inicia_en_lunes_y_mantiene_seis_filas
+PASSED tests/test_selector_fecha.py::test_navegacion_de_meses_cambia_de_anio_correctamente
+PASSED tests/test_tema.py::test_recursos_de_identidad_visual_estan_disponibles
+PASSED tests/test_tema.py::test_fuente_interfaz_elige_primera_geometrica_disponible
+PASSED tests/test_tema.py::test_tipografia_global_actualiza_fuentes_nativas
+SKIPPED [1] tests/test_reservaciones.py:131: Antes de las 08:00 no hay una hora válida del día que ya haya transcurrido.
+XFAIL tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales - Hallazgo: semilla.py solo inserta salas; RF-01 exige también datos iniciales de estudiantes.
+XFAIL tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion - Hallazgo: inicializar_base_datos solo captura sqlite3.Error; una ruta inválida lanza OSError sin controlar (RF-01, RNF-05).
+FAILED tests/test_disponibilidad_ampliacion_fase5.py::test_f5_dis_01_hora_sin_cero_no_ignora_conflicto - AssertionError: La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00.
+assert True is False
+FAILED tests/test_salas_ampliacion_fase5.py::test_cp_sal_07_rechaza_duplicado_en_minusculas - assert True is False
+============= 2 failed, 226 passed, 1 skipped, 2 xfailed in 1.82s ==============

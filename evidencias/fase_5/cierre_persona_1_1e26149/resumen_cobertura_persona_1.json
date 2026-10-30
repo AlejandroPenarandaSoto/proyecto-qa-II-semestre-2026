@@ -1,0 +1,28 @@
+{
+  "plan_cases_assigned": 60,
+  "plan_case_counts": {
+    "aprobado": 54,
+    "fallido": 1,
+    "no_ejecutado": 5
+  },
+  "extra_robustness_cases": 1,
+  "extra_robustness_counts": {
+    "fallido": 1
+  },
+  "own_pytest_items": 72,
+  "own_item_counts": {
+    "aprobado": 70,
+    "fallido": 2
+  },
+  "new_pytest_items_this_block": 33,
+  "new_case_ids_this_block": 30,
+  "note": "60 casos del plan y 1 caso adicional no equivalen a 72 ítems de los archivos asignados ni a los 231 de la suite completa. Las referencias transversales no se suman como nuevas pruebas.",
+  "gui_exclusions": {
+    "CP-EST-25": "El caso del plan requiere intentar cambiar el carné en la pantalla de estudiantes, ausente en la versión evaluada. La API identifica por carné y no recibe uno nuevo; esa lectura no sustituye ejecutar el caso gráfico.",
+    "CP-EST-26": "Requiere confirmación/cancelación en una pantalla de modificación de estudiantes ausente. No se implementó una GUI para realizar esta fase.",
+    "CP-SAL-04": "Claridad de estados visuales en una vista de salas ausente en la versión evaluada; no se automatizaron clics ni se comprobó apariencia.",
+    "CP-SAL-12": "El caso prevé intentar cambiar un código desde la interfaz. La firma de modificar_sala no recibe un código nuevo, pero no demuestra el caso gráfico.",
+    "CP-SAL-16": "Confirmación/cancelación de la modificación de sala: requiere una vista específica ausente en la versión evaluada."
+  },
+  "suspension": "No hubo bloqueos de preparación/colección. Las cinco exclusiones gráficas quedan no ejecutadas fuera del alcance automatizado. No se calcula ni certifica el porcentaje de bloqueo de todo el equipo a partir de este subconjunto."
+}

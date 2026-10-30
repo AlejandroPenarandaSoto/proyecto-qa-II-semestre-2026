@@ -1,0 +1,57 @@
+{
+  "repository": "https://github.com/AlejandroPenarandaSoto/proyecto-qa-II-semestre-2026",
+  "branch": "dev-vega",
+  "base_commit": "1e26149877598d2699de52b14834fd88eb01da09",
+  "new_test_files_sha256": {
+    "tests/test_estudiantes_historial_fase5.py": "555f03681a7c793bb260d50f514731e214c848040227ce28c1d495d7e1f7f544",
+    "tests/test_salas_ampliacion_fase5.py": "f07b367448754258890b5c706ae41f00bd8e619a0f1ec5069d84752473016197",
+    "tests/test_disponibilidad_ampliacion_fase5.py": "2f7579d96eb1979bb654993dcc6e62c0f4998f2679d6a727465de6df31788417"
+  },
+  "source_note": "Commit base más tres archivos nuevos de pruebas, todavía sin commit ni push.",
+  "python": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "pytest": "9.1.1",
+  "sqlite": "3.50.4",
+  "timezone": "America/Costa_Rica",
+  "cwd": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_persona1_cierre/repositorio",
+  "command": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14 -B -m pytest tests/test_estudiantes_historial_fase5.py tests/test_salas_ampliacion_fase5.py tests/test_disponibilidad_ampliacion_fase5.py -vv -rA --tb=long --capture=fd --color=no --import-mode=importlib --rootdir=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_persona1_cierre/repositorio -p no:cacheprovider -o junit_family=xunit1 -o junit_logging=system-out -o junit_log_passing_tests=true --junitxml=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_Persona_1_cierre_1e26149/ampliacion/resultado_pytest.xml --basetemp=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_persona1_cierre/temporales_ampliacion",
+  "command_argv": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_estudiantes_historial_fase5.py",
+    "tests/test_salas_ampliacion_fase5.py",
+    "tests/test_disponibilidad_ampliacion_fase5.py",
+    "-vv",
+    "-rA",
+    "--tb=long",
+    "--capture=fd",
+    "--color=no",
+    "--import-mode=importlib",
+    "--rootdir=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_persona1_cierre/repositorio",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "junit_family=xunit1",
+    "-o",
+    "junit_logging=system-out",
+    "-o",
+    "junit_log_passing_tests=true",
+    "--junitxml=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_Persona_1_cierre_1e26149/ampliacion/resultado_pytest.xml",
+    "--basetemp=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_persona1_cierre/temporales_ampliacion"
+  ],
+  "environment_settings": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONPATH": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_persona1_cierre/repositorio",
+    "TZ": "America/Costa_Rica",
+    "NO_COLOR": "1"
+  },
+  "removed_environment_keys": [
+    "PYTEST_ADDOPTS",
+    "PYTEST_PLUGINS"
+  ],
+  "clock_simulation": "Solo CP-DIS-04 sustituye servicio.datetime por un reloj fijo de módulo a las 14:25; se restaura con monkeypatch. El reloj del proceso/sistema no se modifica."
+}

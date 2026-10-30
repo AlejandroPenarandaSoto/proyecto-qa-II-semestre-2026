@@ -1,0 +1,47 @@
+{
+  "base_commit": "1e26149877598d2699de52b14834fd88eb01da09",
+  "runs": [
+    {
+      "branch": "dev-vega",
+      "base_commit": "1e26149877598d2699de52b14834fd88eb01da09",
+      "run": "ampliacion",
+      "start_costa_rica": "2026-10-30T06:40:50-06:00",
+      "finish_costa_rica": "2026-10-30T06:40:51-06:00",
+      "process_duration_seconds": 0.597628,
+      "pytest_exit_code": 1,
+      "total_items": 33,
+      "counts": {
+        "aprobado": 31,
+        "fallido": 2
+      },
+      "new_items_with_observations": 33,
+      "integrity_unchanged": true,
+      "productive_code_changed": false,
+      "initial_evidence_overwritten": false,
+      "commit_or_push_performed": false
+    },
+    {
+      "branch": "dev-vega",
+      "base_commit": "1e26149877598d2699de52b14834fd88eb01da09",
+      "run": "regresion",
+      "start_costa_rica": "2026-10-30T06:40:51-06:00",
+      "finish_costa_rica": "2026-10-30T06:40:53-06:00",
+      "process_duration_seconds": 2.084969,
+      "pytest_exit_code": 1,
+      "total_items": 231,
+      "counts": {
+        "aprobado": 226,
+        "fallido": 2,
+        "xfail": 2,
+        "omitido": 1
+      },
+      "new_items_with_observations": 33,
+      "integrity_unchanged": true,
+      "productive_code_changed": false,
+      "initial_evidence_overwritten": false,
+      "commit_or_push_performed": false
+    }
+  ],
+  "original_unchanged": true,
+  "note": "Los códigos de salida de pytest y cada fallo se conservan; completar el registro no significa que todas las pruebas aprobaron."
+}

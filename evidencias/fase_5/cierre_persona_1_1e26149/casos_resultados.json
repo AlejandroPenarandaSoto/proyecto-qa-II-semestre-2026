@@ -1,0 +1,5312 @@
+[
+  {
+    "id": "CP-EST-01",
+    "requisitos": "RF-02",
+    "caso": "Registrar estudiante con datos válidos y carné de 10 caracteres",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 17,
+    "resultado_esperado_plan": "El estudiante se registra con estado activo.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_registrar_estudiante_correctamente",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      },
+      {
+        "nodeid": "tests/test_estudiantes.py::test_consultar_estudiantes_registrados",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-02",
+    "requisitos": "RF-02",
+    "caso": "Registrar carné duplicado",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 18,
+    "resultado_esperado_plan": "Se rechaza el registro sin duplicar información.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "Respaldo transversal de auditoría de entidades: incluye el intento de duplicar exactamente C123456789 y comprueba rechazo y ausencia de evento nuevo.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_auditoria_entidades.py::test_operaciones_fallidas_no_generan_eventos",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-03",
+    "requisitos": "RF-02",
+    "caso": "Registrar carné duplicado en minúsculas",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 19,
+    "resultado_esperado_plan": "Se identifica el carné existente sin distinguir mayúsculas.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_rechazar_carne_duplicado",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-04",
+    "requisitos": "RF-02",
+    "caso": "Registrar carné con 9 caracteres",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 20,
+    "resultado_esperado_plan": "Se rechaza por longitud incorrecta.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_limites_fase5.py::test_cp_est_04_rechaza_carne_de_9_caracteres",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "carne": "C12345678",
+            "caso": "CP-EST-04",
+            "correo": "ana@tec.ac.cr",
+            "estado_antes": {
+              "auditoria": [],
+              "estudiantes": []
+            },
+            "estado_despues": {
+              "auditoria": [],
+              "estudiantes": []
+            },
+            "exito_obtenido": false,
+            "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.",
+            "nombre": "Ana Rodríguez",
+            "requisito": "RF-02",
+            "sin_cambios": true
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-05",
+    "requisitos": "RF-02",
+    "caso": "Registrar carné con 11 caracteres",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 21,
+    "resultado_esperado_plan": "Se rechaza por longitud incorrecta.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_limites_fase5.py::test_cp_est_05_rechaza_carne_de_11_caracteres",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "carne": "C1234567890",
+            "caso": "CP-EST-05",
+            "correo": "ana@tec.ac.cr",
+            "estado_antes": {
+              "auditoria": [],
+              "estudiantes": []
+            },
+            "estado_despues": {
+              "auditoria": [],
+              "estudiantes": []
+            },
+            "exito_obtenido": false,
+            "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.",
+            "nombre": "Ana Rodríguez",
+            "requisito": "RF-02",
+            "sin_cambios": true
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-06",
+    "requisitos": "RF-02",
+    "caso": "Registrar carné con símbolos",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 22,
+    "resultado_esperado_plan": "Se rechazan caracteres no alfanuméricos.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[123456789!-Ana Rodr\\xedguez-ana@tec.ac.cr]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-07",
+    "requisitos": "RF-02",
+    "caso": "Registrar nombre con 2 caracteres",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 23,
+    "resultado_esperado_plan": "Se rechaza el nombre.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_limites_fase5.py::test_cp_est_07_rechaza_nombre_de_2_caracteres",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "carne": "C123456789",
+            "caso": "CP-EST-07",
+            "correo": "ana@tec.ac.cr",
+            "estado_antes": {
+              "auditoria": [],
+              "estudiantes": []
+            },
+            "estado_despues": {
+              "auditoria": [],
+              "estudiantes": []
+            },
+            "exito_obtenido": false,
+            "mensaje_obtenido": "El nombre debe contener al menos 3 caracteres sin contar espacios.",
+            "nombre": "Al",
+            "requisito": "RF-02",
+            "sin_cambios": true
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-08",
+    "requisitos": "RF-02",
+    "caso": "Registrar nombre con 3 caracteres",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 24,
+    "resultado_esperado_plan": "Se acepta el nombre si los demás datos son válidos.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_limites_fase5.py::test_cp_est_08_acepta_nombre_de_3_caracteres",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "carne": "C123456789",
+            "caso": "CP-EST-08",
+            "correo": "ana@tec.ac.cr",
+            "estado_antes": {
+              "auditoria": [],
+              "estudiantes": []
+            },
+            "estado_despues": {
+              "auditoria": [
+                {
+                  "accion": "creacion",
+                  "detalle": "Estudiante C123456789 registrado correctamente.",
+                  "entidad": "estudiante",
+                  "entidad_id": "C123456789",
+                  "fecha_hora": "2026-10-30 06:40:52",
+                  "id": 1
+                }
+              ],
+              "estudiantes": [
+                {
+                  "carne": "C123456789",
+                  "correo": "ana@tec.ac.cr",
+                  "estado": "activo",
+                  "nombre_completo": "Ana"
+                }
+              ]
+            },
+            "exito_obtenido": true,
+            "mensaje_obtenido": "Estudiante registrado correctamente.",
+            "nombre": "Ana",
+            "requisito": "RF-02",
+            "sin_cambios": false
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-09",
+    "requisitos": "RF-02",
+    "caso": "Registrar correo inválido",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 25,
+    "resultado_esperado_plan": "Se rechaza el correo y se informa el error.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-anatec.ac.cr]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      },
+      {
+        "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-ana@]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      },
+      {
+        "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-ana@@tec.ac.cr]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-10",
+    "requisitos": "RF-02",
+    "caso": "Registrar datos con espacios al inicio y al final",
+    "tecnica_plan": "Partición de equivalencia y pruebas basadas en escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 26,
+    "resultado_esperado_plan": "Se eliminan los espacios periféricos y se registra correctamente.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_registrar_con_espacios",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-11",
+    "requisitos": "RF-03",
+    "caso": "Consultar estudiantes registrados",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 27,
+    "resultado_esperado_plan": "Se muestra carné, nombre, correo y estado.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_consultar_estudiantes_registrados",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-12",
+    "requisitos": "RF-03",
+    "caso": "Consultar sin estudiantes registrados",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 28,
+    "resultado_esperado_plan": "Se muestra un mensaje informativo.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_consultar_sin_estudiantes",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-13",
+    "requisitos": "RF-03",
+    "caso": "Consultar estudiantes activos e inactivos",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 29,
+    "resultado_esperado_plan": "Se incluyen ambos estados.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_13_consulta_incluye_estudiantes_activos_e_inactivos",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-EST-13",
+            "datos": {
+              "estudiantes": [
+                {
+                  "carne": "C123456789",
+                  "correo": "ana@tec.ac.cr",
+                  "estado": "activo",
+                  "nombre_completo": "Ana Rodríguez"
+                },
+                {
+                  "carne": "A123456789",
+                  "correo": "carlos@tec.ac.cr",
+                  "estado": "inactivo",
+                  "nombre_completo": "Carlos López"
+                }
+              ],
+              "preparacion": "Dos estudiantes insertados en SQLite temporal"
+            },
+            "esperado": {
+              "estudiantes": [
+                {
+                  "carne": "C123456789",
+                  "correo": "ana@tec.ac.cr",
+                  "estado": "activo",
+                  "nombre_completo": "Ana Rodríguez"
+                },
+                {
+                  "carne": "A123456789",
+                  "correo": "carlos@tec.ac.cr",
+                  "estado": "inactivo",
+                  "nombre_completo": "Carlos López"
+                }
+              ],
+              "exito": true
+            },
+            "obtenido": {
+              "estudiantes": [
+                {
+                  "carne": "C123456789",
+                  "correo": "ana@tec.ac.cr",
+                  "estado": "activo",
+                  "nombre_completo": "Ana Rodríguez"
+                },
+                {
+                  "carne": "A123456789",
+                  "correo": "carlos@tec.ac.cr",
+                  "estado": "inactivo",
+                  "nombre_completo": "Carlos López"
+                }
+              ],
+              "exito": true,
+              "mensaje": "Consulta realizada correctamente."
+            },
+            "requisito": "RF-03"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-14",
+    "requisitos": "RF-03",
+    "caso": "Verificar orden alfabético",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 30,
+    "resultado_esperado_plan": "Los estudiantes aparecen ordenados por nombre.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_consultar_estudiantes_ordenados",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-15",
+    "requisitos": "RF-07",
+    "caso": "Buscar estudiante con reservaciones",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 31,
+    "resultado_esperado_plan": "Se muestran reservaciones.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "La prueba original prepara una reserva por SQL con fecha fija 2026-10-15; demuestra consulta e historial, no creación de reservas ni aceptación de fechas pasadas.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_buscar_reservaciones_existentes",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-16",
+    "requisitos": "RF-07",
+    "caso": "Buscar estudiante sin reservaciones",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 32,
+    "resultado_esperado_plan": "Se informa que no tiene reservaciones.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_estudiante_sin_reservaciones",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-17",
+    "requisitos": "RF-07",
+    "caso": "Buscar estudiante inexistente",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 33,
+    "resultado_esperado_plan": "Se informa que el estudiante no existe.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_buscar_reservaciones_estudiante_inexistente",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-18",
+    "requisitos": "RF-07",
+    "caso": "Buscar carné en minúscula",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 34,
+    "resultado_esperado_plan": "Se encuentran las mismas reservaciones.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_18_buscar_carne_en_minusculas_devuelve_mismo_historial",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-EST-18",
+            "datos": {
+              "carnes": [
+                "C123456789",
+                "c123456789"
+              ],
+              "reservacion_preparada_por_sql": {
+                "cantidad_personas": 3,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala": "S01"
+              }
+            },
+            "esperado": {
+              "exito_ambas": true,
+              "historial_ambas": [
+                {
+                  "cantidad_personas": 3,
+                  "duracion_horas": 2,
+                  "estado": "activa",
+                  "fecha": "2026-11-04",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala": "S01"
+                }
+              ],
+              "persistencia_sin_cambios": true
+            },
+            "obtenido": {
+              "mayusculas": {
+                "exito": true,
+                "historial": [
+                  {
+                    "cantidad_personas": 3,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "fecha": "2026-11-04",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala": "S01"
+                  }
+                ],
+                "mensaje": "Reservaciones encontradas."
+              },
+              "minusculas": {
+                "exito": true,
+                "historial": [
+                  {
+                    "cantidad_personas": 3,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "fecha": "2026-11-04",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala": "S01"
+                  }
+                ],
+                "mensaje": "Reservaciones encontradas."
+              },
+              "persistencia_antes": [
+                {
+                  "cantidad_personas": 3,
+                  "duracion_horas": 2,
+                  "estado": "activa",
+                  "estudiante_id": 1,
+                  "fecha": "2026-11-04",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala_id": 1,
+                  "serie_id": null
+                }
+              ],
+              "persistencia_despues": [
+                {
+                  "cantidad_personas": 3,
+                  "duracion_horas": 2,
+                  "estado": "activa",
+                  "estudiante_id": 1,
+                  "fecha": "2026-11-04",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala_id": 1,
+                  "serie_id": null
+                }
+              ]
+            },
+            "requisito": "RF-07"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-19",
+    "requisitos": "RF-07",
+    "caso": "Buscar reservaciones activas y canceladas",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 35,
+    "resultado_esperado_plan": "Se muestran ambas en el historial.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_19_busqueda_incluye_reservacion_activa_y_cancelada",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-EST-19",
+            "datos": {
+              "carne": "C123456789",
+              "reservaciones_preparadas_por_sql": [
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "activa",
+                  "fecha": "2026-10-31",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala": "S01"
+                },
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "cancelada",
+                  "fecha": "2026-11-01",
+                  "hora_inicio": "10:00",
+                  "id": 2,
+                  "sala": "S01"
+                }
+              ]
+            },
+            "esperado": {
+              "exito": true,
+              "historial": [
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "activa",
+                  "fecha": "2026-10-31",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala": "S01"
+                },
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "cancelada",
+                  "fecha": "2026-11-01",
+                  "hora_inicio": "10:00",
+                  "id": 2,
+                  "sala": "S01"
+                }
+              ],
+              "persistencia_sin_cambios": true
+            },
+            "obtenido": {
+              "exito": true,
+              "historial": [
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "activa",
+                  "fecha": "2026-10-31",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala": "S01"
+                },
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "cancelada",
+                  "fecha": "2026-11-01",
+                  "hora_inicio": "10:00",
+                  "id": 2,
+                  "sala": "S01"
+                }
+              ],
+              "mensaje": "Reservaciones encontradas.",
+              "persistencia_antes": [
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "activa",
+                  "estudiante_id": 1,
+                  "fecha": "2026-10-31",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala_id": 1,
+                  "serie_id": null
+                },
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "cancelada",
+                  "estudiante_id": 1,
+                  "fecha": "2026-11-01",
+                  "hora_inicio": "10:00",
+                  "id": 2,
+                  "sala_id": 1,
+                  "serie_id": null
+                }
+              ],
+              "persistencia_despues": [
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "activa",
+                  "estudiante_id": 1,
+                  "fecha": "2026-10-31",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala_id": 1,
+                  "serie_id": null
+                },
+                {
+                  "cantidad_personas": 2,
+                  "duracion_horas": 1,
+                  "estado": "cancelada",
+                  "estudiante_id": 1,
+                  "fecha": "2026-11-01",
+                  "hora_inicio": "10:00",
+                  "id": 2,
+                  "sala_id": 1,
+                  "serie_id": null
+                }
+              ]
+            },
+            "requisito": "RF-07"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-20",
+    "requisitos": "RF-11",
+    "caso": "Modificar nombre y correo válidos",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 36,
+    "resultado_esperado_plan": "Los cambios se guardan y el carné permanece igual.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_20_modificar_nombre_y_correo_mantiene_carne_y_estado_activo",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-EST-20",
+            "datos": {
+              "carne": "C123456789",
+              "correo_nuevo": "ana.lopez@tec.ac.cr",
+              "correo_original": "ana@tec.ac.cr",
+              "estado_solicitado": "activo",
+              "nombre_nuevo": "Ana Rodríguez López",
+              "nombre_original": "Ana Rodríguez"
+            },
+            "esperado": {
+              "estudiante": {
+                "carne": "C123456789",
+                "correo": "ana.lopez@tec.ac.cr",
+                "estado": "activo",
+                "nombre_completo": "Ana Rodríguez López"
+              },
+              "exito_modificacion": true,
+              "mismo_id": true
+            },
+            "obtenido": {
+              "consulta": {
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana.lopez@tec.ac.cr",
+                    "estado": "activo",
+                    "nombre_completo": "Ana Rodríguez López"
+                  }
+                ],
+                "exito": true,
+                "mensaje": "Consulta realizada correctamente."
+              },
+              "modificacion": {
+                "exito": true,
+                "mensaje": "Estudiante modificado correctamente."
+              },
+              "persistido_antes": {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              },
+              "persistido_despues": {
+                "carne": "C123456789",
+                "correo": "ana.lopez@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez López"
+              },
+              "registro": {
+                "exito": true,
+                "mensaje": "Estudiante registrado correctamente."
+              }
+            },
+            "requisito": "RF-11"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-21",
+    "requisitos": "RF-11",
+    "caso": "Inactivar estudiante",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 37,
+    "resultado_esperado_plan": "Cambia a inactivo y conserva su historial.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_21_inactivar_estudiante_conserva_historial_e_identificadores",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-EST-21",
+            "datos": {
+              "carne": "C123456789",
+              "nuevo_estado": "inactivo",
+              "reservacion_preparada_por_sql": {
+                "cantidad_personas": 3,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala": "S01"
+              }
+            },
+            "esperado": {
+              "estudiante": {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "inactivo",
+                "nombre_completo": "Ana Rodríguez"
+              },
+              "exito_modificacion": true,
+              "historial_antes_y_despues": [
+                {
+                  "cantidad_personas": 3,
+                  "duracion_horas": 2,
+                  "estado": "activa",
+                  "fecha": "2026-11-04",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala": "S01"
+                }
+              ]
+            },
+            "obtenido": {
+              "consulta_estudiantes": {
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "inactivo",
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "exito": true,
+                "mensaje": "Consulta realizada correctamente."
+              },
+              "consulta_historial_antes": {
+                "exito": true,
+                "historial": [
+                  {
+                    "cantidad_personas": 3,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "fecha": "2026-11-04",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala": "S01"
+                  }
+                ],
+                "mensaje": "Reservaciones encontradas."
+              },
+              "consulta_historial_despues": {
+                "exito": true,
+                "historial": [
+                  {
+                    "cantidad_personas": 3,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "fecha": "2026-11-04",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala": "S01"
+                  }
+                ],
+                "mensaje": "Reservaciones encontradas."
+              },
+              "estudiante_persistido": {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "inactivo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              },
+              "modificacion": {
+                "exito": true,
+                "mensaje": "Estudiante modificado correctamente."
+              },
+              "persistencia_reservaciones_antes": [
+                {
+                  "cantidad_personas": 3,
+                  "duracion_horas": 2,
+                  "estado": "activa",
+                  "estudiante_id": 1,
+                  "fecha": "2026-11-04",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala_id": 1,
+                  "serie_id": null
+                }
+              ],
+              "persistencia_reservaciones_despues": [
+                {
+                  "cantidad_personas": 3,
+                  "duracion_horas": 2,
+                  "estado": "activa",
+                  "estudiante_id": 1,
+                  "fecha": "2026-11-04",
+                  "hora_inicio": "10:00",
+                  "id": 1,
+                  "sala_id": 1,
+                  "serie_id": null
+                }
+              ]
+            },
+            "requisito": "RF-11"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-22",
+    "requisitos": "RF-11",
+    "caso": "Reactivar estudiante",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 38,
+    "resultado_esperado_plan": "El estado cambia a activo.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_modificar_estado_a_activo",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-23",
+    "requisitos": "RF-11",
+    "caso": "Modificar con datos inválidos",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 39,
+    "resultado_esperado_plan": "Se rechaza la modificación y se conservan los datos originales.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[A-ana@tec.ac.cr-activo]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      },
+      {
+        "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[   -ana@tec.ac.cr-activo]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      },
+      {
+        "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\\xedguez-correo_invalido-activo]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      },
+      {
+        "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\\xedguez-ana@tec.ac.cr-pendiente]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-24",
+    "requisitos": "RF-11; RF-05; RN-01",
+    "caso": "Intentar reservar con estudiante inactivo",
+    "tecnica_plan": "Tabla de decisión / integración",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 40,
+    "resultado_esperado_plan": "Se rechaza la nueva reservación.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "Caso compartido con reservaciones. Se referencia el resultado existente; no se suma como un ítem nuevo de Persona 1.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_reservaciones.py::test_rechazar_estudiante_inactivo",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-25",
+    "requisitos": "RF-11",
+    "caso": "Intentar modificar el carné de un estudiante",
+    "tecnica_plan": "Pruebas basadas en escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 41,
+    "resultado_esperado_plan": "El sistema impide cambiar el carné registrado.",
+    "estado": "no_ejecutado",
+    "resultado_obtenido": "El caso del plan requiere intentar cambiar el carné en la pantalla de estudiantes, ausente en la versión evaluada. La API identifica por carné y no recibe uno nuevo; esa lectura no sustituye ejecutar el caso gráfico.",
+    "limites": null,
+    "pruebas": [],
+    "evidencias": [],
+    "defectos": []
+  },
+  {
+    "id": "CP-EST-26",
+    "requisitos": "RF-11",
+    "caso": "Confirmar o cancelar una modificación",
+    "tecnica_plan": "Pruebas basadas en escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 42,
+    "resultado_esperado_plan": "Los cambios se guardan únicamente cuando el usuario confirma la operación.",
+    "estado": "no_ejecutado",
+    "resultado_obtenido": "Requiere confirmación/cancelación en una pantalla de modificación de estudiantes ausente. No se implementó una GUI para realizar esta fase.",
+    "limites": null,
+    "pruebas": [],
+    "evidencias": [],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-01",
+    "requisitos": "RF-04",
+    "caso": "Consultar la lista inicial de salas",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 43,
+    "resultado_esperado_plan": "Se muestran las cinco salas iniciales con su código, nombre, capacidad y estado.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_01_catalogo_inicial_completo",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-01",
+            "datos": {
+              "consulta": "salas iniciales"
+            },
+            "esperado": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "nombre": "Cubículo individual"
+              }
+            ],
+            "obtenido": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "nombre": "Cubículo individual"
+              }
+            ],
+            "requisito": "RF-04"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-02",
+    "requisitos": "RF-04",
+    "caso": "Verificar el ordenamiento de las salas",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 44,
+    "resultado_esperado_plan": "Las salas aparecen ordenadas ascendentemente por su código.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_02_orden_ascendente_de_todos_los_codigos",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-02",
+            "datos": {
+              "consulta": "catálogo inicial"
+            },
+            "esperado": [
+              "S01",
+              "S02",
+              "S03",
+              "S04",
+              "S05"
+            ],
+            "obtenido": [
+              "S01",
+              "S02",
+              "S03",
+              "S04",
+              "S05"
+            ],
+            "requisito": "RF-04"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-03",
+    "requisitos": "RF-04; RN-08",
+    "caso": "Visualizar salas fuera de servicio",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 45,
+    "resultado_esperado_plan": "La sala S04 aparece en la consulta sin ser omitida por su estado.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_03_incluye_sala_fuera_de_servicio",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-03",
+            "datos": {
+              "codigo": "S04"
+            },
+            "esperado": [
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "nombre": "Sala multimedia"
+              }
+            ],
+            "obtenido": [
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "nombre": "Sala multimedia"
+              }
+            ],
+            "requisito": "RF-04; RN-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-04",
+    "requisitos": "RF-04; RNF-04",
+    "caso": "Validar la claridad de los estados visuales",
+    "tecnica_plan": "Pruebas basadas en escenarios",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 46,
+    "resultado_esperado_plan": "La interfaz muestra los textos explícitos “Disponible” o “Fuera de servicio”, sin estados ambiguos ni booleanos.",
+    "estado": "no_ejecutado",
+    "resultado_obtenido": "Claridad de estados visuales en una vista de salas ausente en la versión evaluada; no se automatizaron clics ni se comprobó apariencia.",
+    "limites": null,
+    "pruebas": [],
+    "evidencias": [],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-05",
+    "requisitos": "RF-12",
+    "caso": "Registrar sala con datos válidos",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 47,
+    "resultado_esperado_plan": "La sala se guarda correctamente y aparece en la consulta.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_05_registro_valido_aparece_en_catalogo",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-05",
+            "datos": {
+              "capacidad": 6,
+              "codigo": "S06",
+              "estado": "disponible",
+              "nombre": "Sala de estudio 6"
+            },
+            "esperado": {
+              "cantidad_salas": 6,
+              "exito": true,
+              "nueva_sala": {
+                "capacidad": 6,
+                "codigo": "S06",
+                "estado": "disponible",
+                "nombre": "Sala de estudio 6"
+              },
+              "salas_previas_sin_cambios": true
+            },
+            "obtenido": {
+              "respuesta": {
+                "exito": true,
+                "mensaje": "Sala S06 registrada exitosamente."
+              },
+              "salas": [
+                {
+                  "capacidad": 4,
+                  "codigo": "S01",
+                  "estado": "disponible",
+                  "nombre": "Sala Biblioteca 1"
+                },
+                {
+                  "capacidad": 6,
+                  "codigo": "S02",
+                  "estado": "disponible",
+                  "nombre": "Sala Biblioteca 2"
+                },
+                {
+                  "capacidad": 10,
+                  "codigo": "S03",
+                  "estado": "disponible",
+                  "nombre": "Laboratorio de estudio"
+                },
+                {
+                  "capacidad": 8,
+                  "codigo": "S04",
+                  "estado": "fuera_de_servicio",
+                  "nombre": "Sala multimedia"
+                },
+                {
+                  "capacidad": 1,
+                  "codigo": "S05",
+                  "estado": "disponible",
+                  "nombre": "Cubículo individual"
+                },
+                {
+                  "capacidad": 6,
+                  "codigo": "S06",
+                  "estado": "disponible",
+                  "nombre": "Sala de estudio 6"
+                }
+              ]
+            },
+            "requisito": "RF-12"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-06",
+    "requisitos": "RF-12",
+    "caso": "Registrar sala con código duplicado exacto",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 48,
+    "resultado_esperado_plan": "Se rechaza el registro, el código debe ser único.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_06_rechaza_duplicado_exacto",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-06",
+            "datos": {
+              "capacidad": 5,
+              "codigo": "S01",
+              "nombre": "Duplicada"
+            },
+            "esperado": {
+              "datos_y_auditoria_sin_cambios": true,
+              "exito": false,
+              "mensaje_informativo": true
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": false,
+                "mensaje": "El código de sala ya se encuentra registrado."
+              }
+            },
+            "requisito": "RF-12"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-07",
+    "requisitos": "RF-12",
+    "caso": "Registrar sala con código duplicado en minúscula",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 49,
+    "resultado_esperado_plan": "Se rechaza el registro, identificando el código independientemente de la capitalización.",
+    "estado": "fallido",
+    "resultado_obtenido": "Falla de comportamiento reproducida; ver las respuestas y los estados capturados.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_07_rechaza_duplicado_en_minusculas",
+        "estado": "fallido",
+        "detalle": "assert True is False",
+        "observaciones": [
+          {
+            "caso": "CP-SAL-07",
+            "datos": {
+              "capacidad": 5,
+              "codigo": "s01",
+              "nombre": "Duplicada"
+            },
+            "esperado": {
+              "datos_y_auditoria_sin_cambios": true,
+              "exito": false,
+              "mensaje_informativo": true
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [
+                  {
+                    "accion": "creacion",
+                    "detalle": "Sala s01 registrada correctamente.",
+                    "entidad": "sala",
+                    "entidad_id": "s01",
+                    "fecha_hora": "2026-10-30 06:40:53",
+                    "id": 1
+                  }
+                ],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  },
+                  {
+                    "capacidad": 5,
+                    "codigo": "s01",
+                    "estado": "disponible",
+                    "id": 6,
+                    "nombre": "Duplicada"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": true,
+                "mensaje": "Sala s01 registrada exitosamente."
+              }
+            },
+            "requisito": "RF-12"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": [
+      "BUG-P1-SAL-01"
+    ]
+  },
+  {
+    "id": "CP-SAL-08",
+    "requisitos": "RF-12",
+    "caso": "Registrar sala con capacidad en 0",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 50,
+    "resultado_esperado_plan": "Se rechaza la operación, la capacidad debe ser un entero mayor que cero.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_08_rechaza_capacidad_cero",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-08",
+            "datos": {
+              "capacidad": 0,
+              "codigo": "S06",
+              "nombre": "Sala Nueva"
+            },
+            "esperado": {
+              "datos_y_auditoria_sin_cambios": true,
+              "exito": false,
+              "mensaje_informativo": true
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": false,
+                "mensaje": "La capacidad debe ser un entero mayor que cero."
+              }
+            },
+            "requisito": "RF-12"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-09",
+    "requisitos": "RF-12",
+    "caso": "Registrar sala con capacidad negativa",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 51,
+    "resultado_esperado_plan": "Se rechaza la operación indicando el error de capacidad.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_09_rechaza_capacidad_negativa",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-09",
+            "datos": {
+              "capacidad": -1,
+              "codigo": "S06",
+              "nombre": "Sala Nueva"
+            },
+            "esperado": {
+              "datos_y_auditoria_sin_cambios": true,
+              "exito": false,
+              "mensaje_informativo": true
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": false,
+                "mensaje": "La capacidad debe ser un entero mayor que cero."
+              }
+            },
+            "requisito": "RF-12"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-10",
+    "requisitos": "RF-12",
+    "caso": "Registrar sala con capacidad decimal",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 52,
+    "resultado_esperado_plan": "Se rechaza por no ser un número entero.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_10_rechaza_capacidad_decimal",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-10",
+            "datos": {
+              "capacidad": 2.5,
+              "codigo": "S06",
+              "nombre": "Sala Nueva"
+            },
+            "esperado": {
+              "datos_y_auditoria_sin_cambios": true,
+              "exito": false,
+              "mensaje_informativo": true
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": false,
+                "mensaje": "La capacidad debe ser un entero mayor que cero."
+              }
+            },
+            "requisito": "RF-12"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-11",
+    "requisitos": "RF-12",
+    "caso": "Modificar el nombre y estado de una sala",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 53,
+    "resultado_esperado_plan": "Los cambios se guardan exitosamente y se reflejan en el catálogo.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_11_modifica_nombre_y_estado",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-11",
+            "datos": {
+              "capacidad": 6,
+              "codigo": "S02",
+              "estado": "fuera_de_servicio",
+              "nombre": "Sala Biblioteca 2B"
+            },
+            "esperado": {
+              "exito": true,
+              "otras_salas_sin_cambios": true,
+              "sala": {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "fuera_de_servicio",
+                "nombre": "Sala Biblioteca 2B"
+              }
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [
+                  {
+                    "accion": "modificacion",
+                    "detalle": "Sala S02 modificada correctamente.",
+                    "entidad": "sala",
+                    "entidad_id": "S02",
+                    "fecha_hora": "2026-10-30 06:40:53",
+                    "id": 1
+                  }
+                ],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "fuera_de_servicio",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2B"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": true,
+                "mensaje": "Sala modificada correctamente."
+              },
+              "sala": {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "fuera_de_servicio",
+                "nombre": "Sala Biblioteca 2B"
+              }
+            },
+            "requisito": "RF-12"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-12",
+    "requisitos": "RF-12",
+    "caso": "Intentar modificar el código de una sala",
+    "tecnica_plan": "Pruebas basadas en escenarios",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 54,
+    "resultado_esperado_plan": "El sistema o la interfaz impiden editar el código original de la sala.",
+    "estado": "no_ejecutado",
+    "resultado_obtenido": "El caso prevé intentar cambiar un código desde la interfaz. La firma de modificar_sala no recibe un código nuevo, pero no demuestra el caso gráfico.",
+    "limites": null,
+    "pruebas": [],
+    "evidencias": [],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-13",
+    "requisitos": "RF-12",
+    "caso": "Reducir capacidad de sala sin reservaciones futuras",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 55,
+    "resultado_esperado_plan": "El sistema permite guardar la nueva capacidad reducida.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_13_reduce_capacidad_sin_reservas_futuras",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-13",
+            "datos": {
+              "capacidad_anterior": 10,
+              "codigo": "S03",
+              "nueva_capacidad": 5,
+              "reservaciones_antes": []
+            },
+            "esperado": {
+              "exito": true,
+              "reservaciones_sin_cambios": true,
+              "sala": {
+                "capacidad": 5,
+                "codigo": "S03",
+                "estado": "disponible",
+                "nombre": "Laboratorio de estudio"
+              }
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [
+                  {
+                    "accion": "modificacion",
+                    "detalle": "Sala S03 modificada correctamente.",
+                    "entidad": "sala",
+                    "entidad_id": "S03",
+                    "fecha_hora": "2026-10-30 06:40:53",
+                    "id": 1
+                  }
+                ],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 5,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": true,
+                "mensaje": "Sala modificada correctamente."
+              },
+              "sala": {
+                "capacidad": 5,
+                "codigo": "S03",
+                "estado": "disponible",
+                "nombre": "Laboratorio de estudio"
+              }
+            },
+            "requisito": "RF-12"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-14",
+    "requisitos": "RF-12; RN-07",
+    "caso": "Reducir capacidad por debajo de una reserva futura",
+    "tecnica_plan": "Valores límite / Integración",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 56,
+    "resultado_esperado_plan": "Se rechaza la modificación y se mantienen los datos originales.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_14_rechaza_capacidad_menor_a_reserva_futura",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-14",
+            "datos": {
+              "nueva_capacidad": 4,
+              "reserva": {
+                "cantidad_personas": 5,
+                "carne": "C123456789",
+                "duracion_horas": 1,
+                "estado": "activa",
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "sala": "S02"
+              }
+            },
+            "esperado": {
+              "datos_y_auditoria_sin_cambios": true,
+              "exito": false
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 5,
+                    "duracion_horas": 1,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 2,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 5,
+                    "duracion_horas": 1,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 2,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": false,
+                "mensaje": "No se puede reducir la capacidad a 4. Hay reservas futuras activas para 5 personas."
+              }
+            },
+            "requisito": "RF-12; RN-07"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-15",
+    "requisitos": "RF-12; RN-07",
+    "caso": "Reducir capacidad exactamente al límite de reserva futura",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 57,
+    "resultado_esperado_plan": "El sistema acepta el cambio, ya que la capacidad no es menor a la reserva existente.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_15_acepta_capacidad_igual_a_reserva_futura",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-SAL-15",
+            "datos": {
+              "nueva_capacidad": 5,
+              "reserva": {
+                "cantidad_personas": 5,
+                "carne": "C123456789",
+                "duracion_horas": 1,
+                "estado": "activa",
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "sala": "S02"
+              }
+            },
+            "esperado": {
+              "exito": true,
+              "reservaciones_sin_cambios": true,
+              "sala": {
+                "capacidad": 5,
+                "codigo": "S02",
+                "estado": "disponible",
+                "nombre": "Sala Biblioteca 2"
+              }
+            },
+            "obtenido": {
+              "antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 5,
+                    "duracion_horas": 1,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 2,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "despues": {
+                "auditoria": [
+                  {
+                    "accion": "modificacion",
+                    "detalle": "Sala S02 modificada correctamente.",
+                    "entidad": "sala",
+                    "entidad_id": "S02",
+                    "fecha_hora": "2026-10-30 06:40:53",
+                    "id": 1
+                  }
+                ],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 5,
+                    "duracion_horas": 1,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 2,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 5,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "exito": true,
+                "mensaje": "Sala modificada correctamente."
+              },
+              "sala": {
+                "capacidad": 5,
+                "codigo": "S02",
+                "estado": "disponible",
+                "nombre": "Sala Biblioteca 2"
+              }
+            },
+            "requisito": "RF-12; RN-07"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-SAL-16",
+    "requisitos": "RF-12; RNF-04",
+    "caso": "Cancelar modificación (Descartar cambios)",
+    "tecnica_plan": "Pruebas basadas en escenarios",
+    "prioridad_plan": "Media",
+    "fila_matriz_fuente": 58,
+    "resultado_esperado_plan": "Los datos originales se conservan intactos al cancelar o cerrar.",
+    "estado": "no_ejecutado",
+    "resultado_obtenido": "Confirmación/cancelación de la modificación de sala: requiere una vista específica ausente en la versión evaluada.",
+    "limites": null,
+    "pruebas": [],
+    "evidencias": [],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-01",
+    "requisitos": "RF-08",
+    "caso": "Consultar disponibilidad en horario completamente libre",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 59,
+    "resultado_esperado_plan": "El sistema indica que la sala está disponible.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_01_consulta_horario_libre",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-01",
+            "datos": {
+              "duracion": 1,
+              "fecha": "2026-10-31",
+              "hora": "10:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Disponible en horario libre.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": true,
+                "motivo": "La sala está disponible."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-02",
+    "requisitos": "RF-08; RN-08",
+    "caso": "Consultar sala en estado \"fuera de servicio\"",
+    "tecnica_plan": "Tabla de decisión",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 60,
+    "resultado_esperado_plan": "Se rechaza la solicitud directamente, informando el estado de la sala (RN-08).",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas.py::test_rf08_disponibilidad_sala_fuera_servicio",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-03",
+    "requisitos": "RF-08; RN-02",
+    "caso": "Consultar fecha en el pasado",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 61,
+    "resultado_esperado_plan": "Se rechaza por incumplir la regla de fechas (RN-02).",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_03_rechaza_fecha_pasada",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-03",
+            "datos": {
+              "duracion": 1,
+              "fecha": "2020-01-01",
+              "hora": "10:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Rechazar fecha pasada.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "La fecha no puede ser anterior a la fecha actual."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-04",
+    "requisitos": "RF-08; RN-03",
+    "caso": "Consultar fecha presente con hora en el pasado",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 62,
+    "resultado_esperado_plan": "Se rechaza por incumplir el horario de la fecha actual (RN-03).",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "Reloj del módulo simulado en 2026-10-30 14:25 para comprobar 14:00 sin depender de la hora real; el monkeypatch se restaura al finalizar.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_04_rechaza_hora_pasada_de_hoy",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-04",
+            "datos": {
+              "duracion": 1,
+              "fecha": "2026-10-30",
+              "hora": "14:00",
+              "reloj_simulado_del_modulo": "2026-10-30 14:25:00",
+              "sala": "S01"
+            },
+            "esperado": "Rechazar las 14:00 cuando el reloj del módulo marca hoy a las 14:25.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "El horario solicitado para hoy ya transcurrió."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-05",
+    "requisitos": "RF-08; RN-04",
+    "caso": "Consultar hora de inicio no exacta",
+    "tecnica_plan": "Partición de equivalencia",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 63,
+    "resultado_esperado_plan": "Se rechaza indicando que debe iniciar en una hora completa (RN-04).",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_salas.py::test_rf08_disponibilidad_hora_incompleta",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-06",
+    "requisitos": "RF-08; RN-05",
+    "caso": "Consultar fuera del horario de uso (ej. 07:00 o 20:00)",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 64,
+    "resultado_esperado_plan": "Se rechaza porque ninguna reserva puede salir de 08:00 a 20:00 (RN-05).",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[07:00-1]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-06",
+            "datos": {
+              "duracion": 1,
+              "fecha": "2026-10-31",
+              "hora": "07:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "El horario permitido de uso es de 08:00 a 20:00."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      },
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[20:00-1]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-06",
+            "datos": {
+              "duracion": 1,
+              "fecha": "2026-10-31",
+              "hora": "20:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "El horario permitido de uso es de 08:00 a 20:00."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      },
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[19:00-2]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-06",
+            "datos": {
+              "duracion": 2,
+              "fecha": "2026-10-31",
+              "hora": "19:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "El horario permitido de uso es de 08:00 a 20:00."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-07",
+    "requisitos": "RF-08; RN-06",
+    "caso": "Consultar duración inválida (ej. 3 horas)",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 65,
+    "resultado_esperado_plan": "Se rechaza indicando que solo se permiten 1 o 2 horas (RN-06).",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_07_rechaza_tres_horas",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-07",
+            "datos": {
+              "duracion": 3,
+              "fecha": "2026-10-31",
+              "hora": "10:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Rechazar duración de tres horas.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [],
+                "reservaciones": [],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "La duración permitida es únicamente de 1 o 2 horas."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-08",
+    "requisitos": "RF-08; RN-09",
+    "caso": "Superposición  total (Mínimo inicio y fin)",
+    "tecnica_plan": "Tablas de decisión",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 66,
+    "resultado_esperado_plan": "Se reporta \"No disponible\" por conflicto directo (RN-09).",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_08_rechaza_superposicion_total",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-08",
+            "datos": {
+              "duracion": 2,
+              "fecha": "2026-10-31",
+              "hora": "10:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "No disponible por superposición con la reservación activa preparada.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-09",
+    "requisitos": "RF-08; RN-09",
+    "caso": "Superposición parcial inicial",
+    "tecnica_plan": "Tablas de decisión",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 67,
+    "resultado_esperado_plan": "Se reporta \"No disponible\" por traslape al inicio de una reserva activa.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_09_rechaza_superposicion_inicial",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-09",
+            "datos": {
+              "duracion": 2,
+              "fecha": "2026-10-31",
+              "hora": "09:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "No disponible por superposición con la reservación activa preparada.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-10",
+    "requisitos": "RF-08; RN-09",
+    "caso": "Superposición parcial final",
+    "tecnica_plan": "Tablas de decisión",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 68,
+    "resultado_esperado_plan": "Se reporta \"No disponible\" por traslape al final de una reserva activa.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_10_rechaza_superposicion_final",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-10",
+            "datos": {
+              "duracion": 2,
+              "fecha": "2026-10-31",
+              "hora": "11:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "No disponible por superposición con la reservación activa preparada.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-11",
+    "requisitos": "RF-08; RN-09",
+    "caso": "Superposición envolvente",
+    "tecnica_plan": "Tablas de decisión",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 69,
+    "resultado_esperado_plan": "Se reporta \"No disponible\" porque el nuevo horario abarca por completo uno existente",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_11_rechaza_superposicion_envolvente",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-11",
+            "datos": {
+              "duracion": 2,
+              "fecha": "2026-10-31",
+              "hora": "10:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "No disponible por superposición con la reservación activa preparada.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 1,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 1,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": false,
+                "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 11:00."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-12",
+    "requisitos": "RF-08; RN-10",
+    "caso": "Horarios consecutivos exactos",
+    "tecnica_plan": "Tablas de decisión",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 70,
+    "resultado_esperado_plan": "El sistema reporta \"Disponible\" si inicia en el minuto exacto que otra termina (RN-10).",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_12_permite_horarios_consecutivos[12:00-1]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-12",
+            "datos": {
+              "duracion": 1,
+              "fecha": "2026-10-31",
+              "hora": "12:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Disponible al terminar exactamente donde empieza otra reserva o iniciar donde termina.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": true,
+                "motivo": "La sala está disponible."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      },
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_12_permite_horarios_consecutivos[08:00-2]",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-12",
+            "datos": {
+              "duracion": 2,
+              "fecha": "2026-10-31",
+              "hora": "08:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Disponible al terminar exactamente donde empieza otra reserva o iniciar donde termina.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": true,
+                "motivo": "La sala está disponible."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-DIS-13",
+    "requisitos": "RF-08; RNF-06",
+    "caso": "Integridad de consulta (No persistencia)",
+    "tecnica_plan": "Pruebas de integración",
+    "prioridad_plan": "Alta",
+    "fila_matriz_fuente": 71,
+    "resultado_esperado_plan": "Se verifica en la base de datos que la consulta no creó ni modificó ningún registro.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": null,
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_13_consulta_no_persiste_cambios",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": [
+          {
+            "caso": "CP-DIS-13",
+            "datos": {
+              "duracion": 1,
+              "fecha": "2026-10-31",
+              "hora": "14:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "Disponible sin crear, modificar ni eliminar ningún registro.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "10:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": true,
+                "motivo": "La sala está disponible."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08"
+          }
+        ]
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-INT-08",
+    "requisitos": "RNF-04",
+    "caso": "Construir la matriz del calendario correspondiente a septiembre de 2026",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Baja",
+    "fila_matriz_fuente": 166,
+    "resultado_esperado_plan": "Se generan seis filas de siete posiciones, comenzando en lunes. Los días del 1 al 30 aparecen en orden y las posiciones ajenas al mes se representan como vacías.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "Verifica la matriz lógica de septiembre de 2026; no la interacción real del calendario ni todos los meses.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_selector_fecha.py::test_calendario_inicia_en_lunes_y_mantiene_seis_filas",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-INT-09",
+    "requisitos": "RNF-04",
+    "caso": "Calcular el mes siguiente a diciembre y el anterior a enero",
+    "tecnica_plan": "Valores límite",
+    "prioridad_plan": "Baja",
+    "fila_matriz_fuente": 167,
+    "resultado_esperado_plan": "Diciembre de 2026 más un mes produce enero de 2027. Enero de 2026 menos un mes produce diciembre de 2025.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "Verifica dos transiciones de mes entre años; no demuestra el comportamiento visual de botones.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_selector_fecha.py::test_navegacion_de_meses_cambia_de_anio_correctamente",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-INT-10",
+    "requisitos": "RNF-04",
+    "caso": "Comprobar la disponibilidad de los recursos de identidad visual",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Baja",
+    "fila_matriz_fuente": 168,
+    "resultado_esperado_plan": "Las rutas del logo completo y del isotipo de cabecera corresponden a archivos existentes.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "Comprueba existencia de archivos; no demuestra carga real del PNG, nitidez ni apariencia.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_tema.py::test_recursos_de_identidad_visual_estan_disponibles",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-INT-11",
+    "requisitos": "RNF-04",
+    "caso": "Seleccionar la tipografía cuando se simula que están disponibles Helvetica Neue, Segoe UI y Roboto",
+    "tecnica_plan": "Tablas de decisión",
+    "prioridad_plan": "Baja",
+    "fila_matriz_fuente": 169,
+    "resultado_esperado_plan": "Se devuelve Segoe UI, por ser la primera fuente disponible según la lista de preferencias de la aplicación.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "Disponibilidad de fuentes simulada; no certifica fuentes instaladas en el equipo.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_tema.py::test_fuente_interfaz_elige_primera_geometrica_disponible",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "CP-INT-12",
+    "requisitos": "RNF-04",
+    "caso": "Solicitar la configuración global de las fuentes nativas utilizando Segoe UI",
+    "tecnica_plan": "Escenarios",
+    "prioridad_plan": "Baja",
+    "fila_matriz_fuente": 170,
+    "resultado_esperado_plan": "Se realizan ocho solicitudes de fuentes y ocho llamadas de configuración con la familia Segoe UI.",
+    "estado": "aprobado",
+    "resultado_obtenido": "Las aserciones de las pruebas referenciadas aprobaron en la regresión. Las observaciones explícitas se incluyen cuando existen; las demás comprobaciones se describen en el código de la prueba.",
+    "limites": "Ocho llamadas de configuración simuladas; no certifica apariencia ni aplicación real de fuentes en ventanas.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_tema.py::test_tipografia_global_actualiza_fuentes_nativas",
+        "estado": "aprobado",
+        "detalle": null,
+        "observaciones": []
+      }
+    ],
+    "evidencias": [
+      "regresion/resultado_pytest.txt",
+      "regresion/resultado_pytest.xml",
+      "regresion/resultados_por_prueba.json"
+    ],
+    "defectos": []
+  },
+  {
+    "id": "F5-DIS-01",
+    "requisitos": "RF-08; RN-09",
+    "caso": "Hora 9:00 no puede ignorar un conflicto 08:00–10:00.",
+    "tecnica_plan": "Partición de equivalencia / escenario de robustez adicional",
+    "fila_matriz_fuente": null,
+    "estado": "fallido",
+    "resultado_esperado_plan": "Rechazar formato o detectar el traslape, disponible=False.",
+    "resultado_obtenido": "disponible=True; motivo: La sala está disponible.; sin escrituras en la consulta.",
+    "pruebas": [
+      {
+        "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_f5_dis_01_hora_sin_cero_no_ignora_conflicto",
+        "estado": "fallido",
+        "detalle": "AssertionError: La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00.\nassert True is False",
+        "observaciones": [
+          {
+            "caso": "F5-DIS-01",
+            "datos": {
+              "duracion": 1,
+              "fecha": "2026-10-31",
+              "hora": "9:00",
+              "reloj_simulado_del_modulo": null,
+              "sala": "S01"
+            },
+            "esperado": "No disponible: rechazar el formato o reconocer el traslape 09:00–10:00 con 08:00–10:00.",
+            "obtenido": {
+              "estado_antes": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "08:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "estado_despues": {
+                "auditoria": [],
+                "estudiantes": [
+                  {
+                    "carne": "C123456789",
+                    "correo": "ana@tec.ac.cr",
+                    "estado": "activo",
+                    "id": 1,
+                    "nombre_completo": "Ana Rodríguez"
+                  }
+                ],
+                "reservaciones": [
+                  {
+                    "cantidad_personas": 2,
+                    "duracion_horas": 2,
+                    "estado": "activa",
+                    "estudiante_id": 1,
+                    "fecha": "2026-10-31",
+                    "hora_inicio": "08:00",
+                    "id": 1,
+                    "sala_id": 1,
+                    "serie_id": null
+                  }
+                ],
+                "salas": [
+                  {
+                    "capacidad": 4,
+                    "codigo": "S01",
+                    "estado": "disponible",
+                    "id": 1,
+                    "nombre": "Sala Biblioteca 1"
+                  },
+                  {
+                    "capacidad": 6,
+                    "codigo": "S02",
+                    "estado": "disponible",
+                    "id": 2,
+                    "nombre": "Sala Biblioteca 2"
+                  },
+                  {
+                    "capacidad": 10,
+                    "codigo": "S03",
+                    "estado": "disponible",
+                    "id": 3,
+                    "nombre": "Laboratorio de estudio"
+                  },
+                  {
+                    "capacidad": 8,
+                    "codigo": "S04",
+                    "estado": "fuera_de_servicio",
+                    "id": 4,
+                    "nombre": "Sala multimedia"
+                  },
+                  {
+                    "capacidad": 1,
+                    "codigo": "S05",
+                    "estado": "disponible",
+                    "id": 5,
+                    "nombre": "Cubículo individual"
+                  }
+                ]
+              },
+              "respuesta": {
+                "disponible": true,
+                "motivo": "La sala está disponible."
+              },
+              "sin_cambios": true
+            },
+            "requisito": "RF-08; RN-09; RNF-06"
+          }
+        ]
+      }
+    ],
+    "defectos": [
+      "BUG-P1-DIS-01"
+    ],
+    "evidencias": [
+      "ampliacion/resultado_pytest.txt",
+      "regresion/resultados_por_prueba.json"
+    ]
+  }
+]

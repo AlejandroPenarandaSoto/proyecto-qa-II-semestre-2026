@@ -1,0 +1,6036 @@
+[
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_acciones_panel.py::test_cancelacion_individual_delega_reservacion_seleccionada",
+    "file": "tests/test_acciones_panel.py",
+    "test_name": "test_cancelacion_individual_delega_reservacion_seleccionada",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_acciones_panel.py::test_cancelacion_futura_delega_serie_seleccionada",
+    "file": "tests/test_acciones_panel.py",
+    "test_name": "test_cancelacion_futura_delega_serie_seleccionada",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_acciones_panel.py::test_resultado_exitoso_actualiza_el_panel",
+    "file": "tests/test_acciones_panel.py",
+    "test_name": "test_resultado_exitoso_actualiza_el_panel",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_acciones_panel.py::test_estado_vacio_se_muestra_centrado_en_la_tabla",
+    "file": "tests/test_acciones_panel.py",
+    "test_name": "test_estado_vacio_se_muestra_centrado_en_la_tabla",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_acciones_panel.py::test_estado_vacio_se_oculta_cuando_hay_resultados",
+    "file": "tests/test_acciones_panel.py",
+    "test_name": "test_estado_vacio_se_oculta_cuando_hay_resultados",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_registrar_evento_guarda_datos",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_registrar_evento_guarda_datos",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_consultar_auditoria_muestra_eventos_mas_recientes_primero",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_consultar_auditoria_muestra_eventos_mas_recientes_primero",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_crear_reservacion_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_crear_reservacion_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_creacion_fallida_no_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_creacion_fallida_no_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.004",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_modificar_reservacion_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_modificar_reservacion_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_modificacion_fallida_no_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_modificacion_fallida_no_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_cancelar_reservacion_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_cancelar_reservacion_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_cancelacion_repetida_no_genera_otro_evento_de_auditoria",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_cancelacion_repetida_no_genera_otro_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_fallo_de_auditoria_revierte_creacion",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_fallo_de_auditoria_revierte_creacion",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_fallo_de_auditoria_revierte_modificacion",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_fallo_de_auditoria_revierte_modificacion",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_fallo_de_auditoria_revierte_cancelacion",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_fallo_de_auditoria_revierte_cancelacion",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[-reservacion-R0001]",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_registrar_evento_rechaza_datos_obligatorios_vacios[-reservacion-R0001]",
+    "status": "aprobado",
+    "duration_seconds": "0.004",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[   -reservacion-R0001]",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_registrar_evento_rechaza_datos_obligatorios_vacios[   -reservacion-R0001]",
+    "status": "aprobado",
+    "duration_seconds": "0.004",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion--R0001]",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion--R0001]",
+    "status": "aprobado",
+    "duration_seconds": "0.004",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion-reservacion-None]",
+    "file": "tests/test_auditoria.py",
+    "test_name": "test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion-reservacion-None]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_registrar_estudiante_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_registrar_estudiante_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_modificar_estudiante_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_modificar_estudiante_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_registrar_sala_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_registrar_sala_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_modificar_sala_genera_evento_de_auditoria",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_modificar_sala_genera_evento_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_operaciones_fallidas_no_generan_eventos",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_operaciones_fallidas_no_generan_eventos",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_estudiante",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_fallo_de_auditoria_revierte_registro_de_estudiante",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_estudiante",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_fallo_de_auditoria_revierte_modificacion_de_estudiante",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_sala",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_fallo_de_auditoria_revierte_registro_de_sala",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_sala",
+    "file": "tests/test_auditoria_entidades.py",
+    "test_name": "test_fallo_de_auditoria_revierte_modificacion_de_sala",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_cierre_aplicacion.py::test_cierra_directamente_cuando_no_hay_cambios_pendientes",
+    "file": "tests/test_cierre_aplicacion.py",
+    "test_name": "test_cierra_directamente_cuando_no_hay_cambios_pendientes",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_cierre_aplicacion.py::test_cancela_el_cierre_si_hay_cambios_pendientes",
+    "file": "tests/test_cierre_aplicacion.py",
+    "test_name": "test_cancela_el_cierre_si_hay_cambios_pendientes",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_cierre_aplicacion.py::test_confirma_el_cierre_si_hay_cambios_pendientes",
+    "file": "tests/test_cierre_aplicacion.py",
+    "test_name": "test_confirma_el_cierre_si_hay_cambios_pendientes",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_controller.py::test_controlador_solicita_panel_con_filtros",
+    "file": "tests/test_controller.py",
+    "test_name": "test_controlador_solicita_panel_con_filtros",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_controller.py::test_controlador_devuelve_codigos_de_sala",
+    "file": "tests/test_controller.py",
+    "test_name": "test_controlador_devuelve_codigos_de_sala",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_controller.py::test_controlador_cierra_la_conexion",
+    "file": "tests/test_controller.py",
+    "test_name": "test_controlador_cierra_la_conexion",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_controller.py::test_controlador_delega_operaciones_recurrentes",
+    "file": "tests/test_controller.py",
+    "test_name": "test_controlador_delega_operaciones_recurrentes",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_controller.py::test_controlador_delega_generacion_de_reporte",
+    "file": "tests/test_controller.py",
+    "test_name": "test_controlador_delega_generacion_de_reporte",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_controller.py::test_controlador_delega_consulta_de_auditoria",
+    "file": "tests/test_controller.py",
+    "test_name": "test_controlador_delega_consulta_de_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_auditoria.py::test_auditoria_muestra_eventos_en_solo_lectura",
+    "file": "tests/test_dialogo_auditoria.py",
+    "test_name": "test_auditoria_muestra_eventos_en_solo_lectura",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_auditoria.py::test_auditoria_muestra_estado_vacio",
+    "file": "tests/test_dialogo_auditoria.py",
+    "test_name": "test_auditoria_muestra_estado_vacio",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_auditoria.py::test_error_de_auditoria_no_reemplaza_los_datos_visibles",
+    "file": "tests/test_dialogo_auditoria.py",
+    "test_name": "test_error_de_auditoria_no_reemplaza_los_datos_visibles",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_recurrencia.py::test_previsualizacion_valida_habilita_creacion",
+    "file": "tests/test_dialogo_recurrencia.py",
+    "test_name": "test_previsualizacion_valida_habilita_creacion",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_recurrencia.py::test_conflicto_mantiene_creacion_deshabilitada",
+    "file": "tests/test_dialogo_recurrencia.py",
+    "test_name": "test_conflicto_mantiene_creacion_deshabilitada",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_recurrencia.py::test_creacion_exitosa_refresca_panel_y_cierra",
+    "file": "tests/test_dialogo_recurrencia.py",
+    "test_name": "test_creacion_exitosa_refresca_panel_y_cierra",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_recurrencia.py::test_cancelar_permite_conservar_formulario",
+    "file": "tests/test_dialogo_recurrencia.py",
+    "test_name": "test_cancelar_permite_conservar_formulario",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_reporte.py::test_no_abre_selector_si_el_rango_es_invalido",
+    "file": "tests/test_dialogo_reporte.py",
+    "test_name": "test_no_abre_selector_si_el_rango_es_invalido",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_reporte.py::test_cancelar_selector_no_crea_reporte",
+    "file": "tests/test_dialogo_reporte.py",
+    "test_name": "test_cancelar_selector_no_crea_reporte",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_dialogo_reporte.py::test_reporte_exitoso_informa_y_cierra_dialogo",
+    "file": "tests/test_dialogo_reporte.py",
+    "test_name": "test_reporte_exitoso_informa_y_cierra_dialogo",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": "CP-DIS-01",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_01_consulta_horario_libre",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_01_consulta_horario_libre",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-01",
+        "datos": {
+          "duracion": 1,
+          "fecha": "2026-10-31",
+          "hora": "10:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Disponible en horario libre.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": true,
+            "motivo": "La sala está disponible."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-03",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_03_rechaza_fecha_pasada",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_03_rechaza_fecha_pasada",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-03",
+        "datos": {
+          "duracion": 1,
+          "fecha": "2020-01-01",
+          "hora": "10:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Rechazar fecha pasada.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "La fecha no puede ser anterior a la fecha actual."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-04",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_04_rechaza_hora_pasada_de_hoy",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_04_rechaza_hora_pasada_de_hoy",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-04",
+        "datos": {
+          "duracion": 1,
+          "fecha": "2026-10-30",
+          "hora": "14:00",
+          "reloj_simulado_del_modulo": "2026-10-30 14:25:00",
+          "sala": "S01"
+        },
+        "esperado": "Rechazar las 14:00 cuando el reloj del módulo marca hoy a las 14:25.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "El horario solicitado para hoy ya transcurrió."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-06",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[07:00-1]",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_06_rechaza_horarios_fuera_de_jornada[07:00-1]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-06",
+        "datos": {
+          "duracion": 1,
+          "fecha": "2026-10-31",
+          "hora": "07:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "El horario permitido de uso es de 08:00 a 20:00."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-06",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[20:00-1]",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_06_rechaza_horarios_fuera_de_jornada[20:00-1]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-06",
+        "datos": {
+          "duracion": 1,
+          "fecha": "2026-10-31",
+          "hora": "20:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "El horario permitido de uso es de 08:00 a 20:00."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-06",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_06_rechaza_horarios_fuera_de_jornada[19:00-2]",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_06_rechaza_horarios_fuera_de_jornada[19:00-2]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-06",
+        "datos": {
+          "duracion": 2,
+          "fecha": "2026-10-31",
+          "hora": "19:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Rechazar horarios que salen de la jornada 08:00–20:00.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "El horario permitido de uso es de 08:00 a 20:00."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-07",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_07_rechaza_tres_horas",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_07_rechaza_tres_horas",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-07",
+        "datos": {
+          "duracion": 3,
+          "fecha": "2026-10-31",
+          "hora": "10:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Rechazar duración de tres horas.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "La duración permitida es únicamente de 1 o 2 horas."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-08",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_08_rechaza_superposicion_total",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_08_rechaza_superposicion_total",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-08",
+        "datos": {
+          "duracion": 2,
+          "fecha": "2026-10-31",
+          "hora": "10:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "No disponible por superposición con la reservación activa preparada.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-09",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_09_rechaza_superposicion_inicial",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_09_rechaza_superposicion_inicial",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-09",
+        "datos": {
+          "duracion": 2,
+          "fecha": "2026-10-31",
+          "hora": "09:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "No disponible por superposición con la reservación activa preparada.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-10",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_10_rechaza_superposicion_final",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_10_rechaza_superposicion_final",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-10",
+        "datos": {
+          "duracion": 2,
+          "fecha": "2026-10-31",
+          "hora": "11:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "No disponible por superposición con la reservación activa preparada.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 12:00."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-11",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_11_rechaza_superposicion_envolvente",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_11_rechaza_superposicion_envolvente",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-11",
+        "datos": {
+          "duracion": 2,
+          "fecha": "2026-10-31",
+          "hora": "10:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "No disponible por superposición con la reservación activa preparada.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 1,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 1,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": false,
+            "motivo": "Conflicto: la sala tiene una reservación activa de 10:00 a 11:00."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-12",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_12_permite_horarios_consecutivos[12:00-1]",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_12_permite_horarios_consecutivos[12:00-1]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-12",
+        "datos": {
+          "duracion": 1,
+          "fecha": "2026-10-31",
+          "hora": "12:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Disponible al terminar exactamente donde empieza otra reserva o iniciar donde termina.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": true,
+            "motivo": "La sala está disponible."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-12",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_12_permite_horarios_consecutivos[08:00-2]",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_12_permite_horarios_consecutivos[08:00-2]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-12",
+        "datos": {
+          "duracion": 2,
+          "fecha": "2026-10-31",
+          "hora": "08:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Disponible al terminar exactamente donde empieza otra reserva o iniciar donde termina.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": true,
+            "motivo": "La sala está disponible."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-DIS-13",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_cp_dis_13_consulta_no_persiste_cambios",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_cp_dis_13_consulta_no_persiste_cambios",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-DIS-13",
+        "datos": {
+          "duracion": 1,
+          "fecha": "2026-10-31",
+          "hora": "14:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "Disponible sin crear, modificar ni eliminar ningún registro.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": true,
+            "motivo": "La sala está disponible."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "F5-DIS-01",
+    "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_f5_dis_01_hora_sin_cero_no_ignora_conflicto",
+    "file": "tests/test_disponibilidad_ampliacion_fase5.py",
+    "test_name": "test_f5_dis_01_hora_sin_cero_no_ignora_conflicto",
+    "status": "fallido",
+    "duration_seconds": "0.007",
+    "detail": "AssertionError: La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00.\nassert True is False",
+    "observations": [
+      {
+        "caso": "F5-DIS-01",
+        "datos": {
+          "duracion": 1,
+          "fecha": "2026-10-31",
+          "hora": "9:00",
+          "reloj_simulado_del_modulo": null,
+          "sala": "S01"
+        },
+        "esperado": "No disponible: rechazar el formato o reconocer el traslape 09:00–10:00 con 08:00–10:00.",
+        "obtenido": {
+          "estado_antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "08:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "08:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "disponible": true,
+            "motivo": "La sala está disponible."
+          },
+          "sin_cambios": true
+        },
+        "requisito": "RF-08; RN-09; RNF-06"
+      }
+    ]
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_registrar_estudiante_correctamente",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_registrar_estudiante_correctamente",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_rechazar_carne_duplicado",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_rechazar_carne_duplicado",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[123-Ana Rodr\\xedguez-ana@tec.ac.cr]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_rechazar_datos_invalidos[123-Ana Rodr\\xedguez-ana@tec.ac.cr]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[123456789!-Ana Rodr\\xedguez-ana@tec.ac.cr]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_rechazar_datos_invalidos[123456789!-Ana Rodr\\xedguez-ana@tec.ac.cr]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-A-ana@tec.ac.cr]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_rechazar_datos_invalidos[C123456789-A-ana@tec.ac.cr]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-   -ana@tec.ac.cr]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_rechazar_datos_invalidos[C123456789-   -ana@tec.ac.cr]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-anatec.ac.cr]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-anatec.ac.cr]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-ana@]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-ana@]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-ana@@tec.ac.cr]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_rechazar_datos_invalidos[C123456789-Ana Rodr\\xedguez-ana@@tec.ac.cr]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_consultar_estudiantes_registrados",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_consultar_estudiantes_registrados",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_consultar_estudiantes_ordenados",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_consultar_estudiantes_ordenados",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_consultar_sin_estudiantes",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_consultar_sin_estudiantes",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_estudiante_sin_reservaciones",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_estudiante_sin_reservaciones",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_buscar_reservaciones_estudiante_inexistente",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_buscar_reservaciones_estudiante_inexistente",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_buscar_reservaciones_existentes",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_buscar_reservaciones_existentes",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_correctamente",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_modificar_estudiante_correctamente",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_inexistente",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_modificar_estudiante_inexistente",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[A-ana@tec.ac.cr-activo]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_modificar_estudiante_datos_invalidos[A-ana@tec.ac.cr-activo]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[   -ana@tec.ac.cr-activo]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_modificar_estudiante_datos_invalidos[   -ana@tec.ac.cr-activo]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\\xedguez-correo_invalido-activo]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_modificar_estudiante_datos_invalidos[Ana Rodr\\xedguez-correo_invalido-activo]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\\xedguez-ana@tec.ac.cr-pendiente]",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_modificar_estudiante_datos_invalidos[Ana Rodr\\xedguez-ana@tec.ac.cr-pendiente]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_registrar_con_espacios",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_registrar_con_espacios",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_buscar_reservaciones_carne_vacio",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_buscar_reservaciones_carne_vacio",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_estudiantes.py::test_modificar_estado_a_activo",
+    "file": "tests/test_estudiantes.py",
+    "test_name": "test_modificar_estado_a_activo",
+    "status": "aprobado",
+    "duration_seconds": "0.012",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": "CP-EST-13",
+    "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_13_consulta_incluye_estudiantes_activos_e_inactivos",
+    "file": "tests/test_estudiantes_historial_fase5.py",
+    "test_name": "test_cp_est_13_consulta_incluye_estudiantes_activos_e_inactivos",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-EST-13",
+        "datos": {
+          "estudiantes": [
+            {
+              "carne": "C123456789",
+              "correo": "ana@tec.ac.cr",
+              "estado": "activo",
+              "nombre_completo": "Ana Rodríguez"
+            },
+            {
+              "carne": "A123456789",
+              "correo": "carlos@tec.ac.cr",
+              "estado": "inactivo",
+              "nombre_completo": "Carlos López"
+            }
+          ],
+          "preparacion": "Dos estudiantes insertados en SQLite temporal"
+        },
+        "esperado": {
+          "estudiantes": [
+            {
+              "carne": "C123456789",
+              "correo": "ana@tec.ac.cr",
+              "estado": "activo",
+              "nombre_completo": "Ana Rodríguez"
+            },
+            {
+              "carne": "A123456789",
+              "correo": "carlos@tec.ac.cr",
+              "estado": "inactivo",
+              "nombre_completo": "Carlos López"
+            }
+          ],
+          "exito": true
+        },
+        "obtenido": {
+          "estudiantes": [
+            {
+              "carne": "C123456789",
+              "correo": "ana@tec.ac.cr",
+              "estado": "activo",
+              "nombre_completo": "Ana Rodríguez"
+            },
+            {
+              "carne": "A123456789",
+              "correo": "carlos@tec.ac.cr",
+              "estado": "inactivo",
+              "nombre_completo": "Carlos López"
+            }
+          ],
+          "exito": true,
+          "mensaje": "Consulta realizada correctamente."
+        },
+        "requisito": "RF-03"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-EST-18",
+    "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_18_buscar_carne_en_minusculas_devuelve_mismo_historial",
+    "file": "tests/test_estudiantes_historial_fase5.py",
+    "test_name": "test_cp_est_18_buscar_carne_en_minusculas_devuelve_mismo_historial",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-EST-18",
+        "datos": {
+          "carnes": [
+            "C123456789",
+            "c123456789"
+          ],
+          "reservacion_preparada_por_sql": {
+            "cantidad_personas": 3,
+            "duracion_horas": 2,
+            "estado": "activa",
+            "fecha": "2026-11-04",
+            "hora_inicio": "10:00",
+            "id": 1,
+            "sala": "S01"
+          }
+        },
+        "esperado": {
+          "exito_ambas": true,
+          "historial_ambas": [
+            {
+              "cantidad_personas": 3,
+              "duracion_horas": 2,
+              "estado": "activa",
+              "fecha": "2026-11-04",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala": "S01"
+            }
+          ],
+          "persistencia_sin_cambios": true
+        },
+        "obtenido": {
+          "mayusculas": {
+            "exito": true,
+            "historial": [
+              {
+                "cantidad_personas": 3,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala": "S01"
+              }
+            ],
+            "mensaje": "Reservaciones encontradas."
+          },
+          "minusculas": {
+            "exito": true,
+            "historial": [
+              {
+                "cantidad_personas": 3,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala": "S01"
+              }
+            ],
+            "mensaje": "Reservaciones encontradas."
+          },
+          "persistencia_antes": [
+            {
+              "cantidad_personas": 3,
+              "duracion_horas": 2,
+              "estado": "activa",
+              "estudiante_id": 1,
+              "fecha": "2026-11-04",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala_id": 1,
+              "serie_id": null
+            }
+          ],
+          "persistencia_despues": [
+            {
+              "cantidad_personas": 3,
+              "duracion_horas": 2,
+              "estado": "activa",
+              "estudiante_id": 1,
+              "fecha": "2026-11-04",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala_id": 1,
+              "serie_id": null
+            }
+          ]
+        },
+        "requisito": "RF-07"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-EST-19",
+    "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_19_busqueda_incluye_reservacion_activa_y_cancelada",
+    "file": "tests/test_estudiantes_historial_fase5.py",
+    "test_name": "test_cp_est_19_busqueda_incluye_reservacion_activa_y_cancelada",
+    "status": "aprobado",
+    "duration_seconds": "0.008",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-EST-19",
+        "datos": {
+          "carne": "C123456789",
+          "reservaciones_preparadas_por_sql": [
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "activa",
+              "fecha": "2026-10-31",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala": "S01"
+            },
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "cancelada",
+              "fecha": "2026-11-01",
+              "hora_inicio": "10:00",
+              "id": 2,
+              "sala": "S01"
+            }
+          ]
+        },
+        "esperado": {
+          "exito": true,
+          "historial": [
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "activa",
+              "fecha": "2026-10-31",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala": "S01"
+            },
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "cancelada",
+              "fecha": "2026-11-01",
+              "hora_inicio": "10:00",
+              "id": 2,
+              "sala": "S01"
+            }
+          ],
+          "persistencia_sin_cambios": true
+        },
+        "obtenido": {
+          "exito": true,
+          "historial": [
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "activa",
+              "fecha": "2026-10-31",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala": "S01"
+            },
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "cancelada",
+              "fecha": "2026-11-01",
+              "hora_inicio": "10:00",
+              "id": 2,
+              "sala": "S01"
+            }
+          ],
+          "mensaje": "Reservaciones encontradas.",
+          "persistencia_antes": [
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "activa",
+              "estudiante_id": 1,
+              "fecha": "2026-10-31",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala_id": 1,
+              "serie_id": null
+            },
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "cancelada",
+              "estudiante_id": 1,
+              "fecha": "2026-11-01",
+              "hora_inicio": "10:00",
+              "id": 2,
+              "sala_id": 1,
+              "serie_id": null
+            }
+          ],
+          "persistencia_despues": [
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "activa",
+              "estudiante_id": 1,
+              "fecha": "2026-10-31",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala_id": 1,
+              "serie_id": null
+            },
+            {
+              "cantidad_personas": 2,
+              "duracion_horas": 1,
+              "estado": "cancelada",
+              "estudiante_id": 1,
+              "fecha": "2026-11-01",
+              "hora_inicio": "10:00",
+              "id": 2,
+              "sala_id": 1,
+              "serie_id": null
+            }
+          ]
+        },
+        "requisito": "RF-07"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-EST-21",
+    "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_21_inactivar_estudiante_conserva_historial_e_identificadores",
+    "file": "tests/test_estudiantes_historial_fase5.py",
+    "test_name": "test_cp_est_21_inactivar_estudiante_conserva_historial_e_identificadores",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-EST-21",
+        "datos": {
+          "carne": "C123456789",
+          "nuevo_estado": "inactivo",
+          "reservacion_preparada_por_sql": {
+            "cantidad_personas": 3,
+            "duracion_horas": 2,
+            "estado": "activa",
+            "fecha": "2026-11-04",
+            "hora_inicio": "10:00",
+            "id": 1,
+            "sala": "S01"
+          }
+        },
+        "esperado": {
+          "estudiante": {
+            "carne": "C123456789",
+            "correo": "ana@tec.ac.cr",
+            "estado": "inactivo",
+            "nombre_completo": "Ana Rodríguez"
+          },
+          "exito_modificacion": true,
+          "historial_antes_y_despues": [
+            {
+              "cantidad_personas": 3,
+              "duracion_horas": 2,
+              "estado": "activa",
+              "fecha": "2026-11-04",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala": "S01"
+            }
+          ]
+        },
+        "obtenido": {
+          "consulta_estudiantes": {
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "inactivo",
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "exito": true,
+            "mensaje": "Consulta realizada correctamente."
+          },
+          "consulta_historial_antes": {
+            "exito": true,
+            "historial": [
+              {
+                "cantidad_personas": 3,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala": "S01"
+              }
+            ],
+            "mensaje": "Reservaciones encontradas."
+          },
+          "consulta_historial_despues": {
+            "exito": true,
+            "historial": [
+              {
+                "cantidad_personas": 3,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala": "S01"
+              }
+            ],
+            "mensaje": "Reservaciones encontradas."
+          },
+          "estudiante_persistido": {
+            "carne": "C123456789",
+            "correo": "ana@tec.ac.cr",
+            "estado": "inactivo",
+            "id": 1,
+            "nombre_completo": "Ana Rodríguez"
+          },
+          "modificacion": {
+            "exito": true,
+            "mensaje": "Estudiante modificado correctamente."
+          },
+          "persistencia_reservaciones_antes": [
+            {
+              "cantidad_personas": 3,
+              "duracion_horas": 2,
+              "estado": "activa",
+              "estudiante_id": 1,
+              "fecha": "2026-11-04",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala_id": 1,
+              "serie_id": null
+            }
+          ],
+          "persistencia_reservaciones_despues": [
+            {
+              "cantidad_personas": 3,
+              "duracion_horas": 2,
+              "estado": "activa",
+              "estudiante_id": 1,
+              "fecha": "2026-11-04",
+              "hora_inicio": "10:00",
+              "id": 1,
+              "sala_id": 1,
+              "serie_id": null
+            }
+          ]
+        },
+        "requisito": "RF-11"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-EST-20",
+    "nodeid": "tests/test_estudiantes_historial_fase5.py::test_cp_est_20_modificar_nombre_y_correo_mantiene_carne_y_estado_activo",
+    "file": "tests/test_estudiantes_historial_fase5.py",
+    "test_name": "test_cp_est_20_modificar_nombre_y_correo_mantiene_carne_y_estado_activo",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-EST-20",
+        "datos": {
+          "carne": "C123456789",
+          "correo_nuevo": "ana.lopez@tec.ac.cr",
+          "correo_original": "ana@tec.ac.cr",
+          "estado_solicitado": "activo",
+          "nombre_nuevo": "Ana Rodríguez López",
+          "nombre_original": "Ana Rodríguez"
+        },
+        "esperado": {
+          "estudiante": {
+            "carne": "C123456789",
+            "correo": "ana.lopez@tec.ac.cr",
+            "estado": "activo",
+            "nombre_completo": "Ana Rodríguez López"
+          },
+          "exito_modificacion": true,
+          "mismo_id": true
+        },
+        "obtenido": {
+          "consulta": {
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana.lopez@tec.ac.cr",
+                "estado": "activo",
+                "nombre_completo": "Ana Rodríguez López"
+              }
+            ],
+            "exito": true,
+            "mensaje": "Consulta realizada correctamente."
+          },
+          "modificacion": {
+            "exito": true,
+            "mensaje": "Estudiante modificado correctamente."
+          },
+          "persistido_antes": {
+            "carne": "C123456789",
+            "correo": "ana@tec.ac.cr",
+            "estado": "activo",
+            "id": 1,
+            "nombre_completo": "Ana Rodríguez"
+          },
+          "persistido_despues": {
+            "carne": "C123456789",
+            "correo": "ana.lopez@tec.ac.cr",
+            "estado": "activo",
+            "id": 1,
+            "nombre_completo": "Ana Rodríguez López"
+          },
+          "registro": {
+            "exito": true,
+            "mensaje": "Estudiante registrado correctamente."
+          }
+        },
+        "requisito": "RF-11"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-EST-04",
+    "nodeid": "tests/test_estudiantes_limites_fase5.py::test_cp_est_04_rechaza_carne_de_9_caracteres",
+    "file": "tests/test_estudiantes_limites_fase5.py",
+    "test_name": "test_cp_est_04_rechaza_carne_de_9_caracteres",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": [
+      {
+        "carne": "C12345678",
+        "caso": "CP-EST-04",
+        "correo": "ana@tec.ac.cr",
+        "estado_antes": {
+          "auditoria": [],
+          "estudiantes": []
+        },
+        "estado_despues": {
+          "auditoria": [],
+          "estudiantes": []
+        },
+        "exito_obtenido": false,
+        "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.",
+        "nombre": "Ana Rodríguez",
+        "requisito": "RF-02",
+        "sin_cambios": true
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-EST-05",
+    "nodeid": "tests/test_estudiantes_limites_fase5.py::test_cp_est_05_rechaza_carne_de_11_caracteres",
+    "file": "tests/test_estudiantes_limites_fase5.py",
+    "test_name": "test_cp_est_05_rechaza_carne_de_11_caracteres",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "carne": "C1234567890",
+        "caso": "CP-EST-05",
+        "correo": "ana@tec.ac.cr",
+        "estado_antes": {
+          "auditoria": [],
+          "estudiantes": []
+        },
+        "estado_despues": {
+          "auditoria": [],
+          "estudiantes": []
+        },
+        "exito_obtenido": false,
+        "mensaje_obtenido": "El carné debe tener exactamente 10 caracteres alfanuméricos.",
+        "nombre": "Ana Rodríguez",
+        "requisito": "RF-02",
+        "sin_cambios": true
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-EST-07",
+    "nodeid": "tests/test_estudiantes_limites_fase5.py::test_cp_est_07_rechaza_nombre_de_2_caracteres",
+    "file": "tests/test_estudiantes_limites_fase5.py",
+    "test_name": "test_cp_est_07_rechaza_nombre_de_2_caracteres",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": [
+      {
+        "carne": "C123456789",
+        "caso": "CP-EST-07",
+        "correo": "ana@tec.ac.cr",
+        "estado_antes": {
+          "auditoria": [],
+          "estudiantes": []
+        },
+        "estado_despues": {
+          "auditoria": [],
+          "estudiantes": []
+        },
+        "exito_obtenido": false,
+        "mensaje_obtenido": "El nombre debe contener al menos 3 caracteres sin contar espacios.",
+        "nombre": "Al",
+        "requisito": "RF-02",
+        "sin_cambios": true
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-EST-08",
+    "nodeid": "tests/test_estudiantes_limites_fase5.py::test_cp_est_08_acepta_nombre_de_3_caracteres",
+    "file": "tests/test_estudiantes_limites_fase5.py",
+    "test_name": "test_cp_est_08_acepta_nombre_de_3_caracteres",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "carne": "C123456789",
+        "caso": "CP-EST-08",
+        "correo": "ana@tec.ac.cr",
+        "estado_antes": {
+          "auditoria": [],
+          "estudiantes": []
+        },
+        "estado_despues": {
+          "auditoria": [
+            {
+              "accion": "creacion",
+              "detalle": "Estudiante C123456789 registrado correctamente.",
+              "entidad": "estudiante",
+              "entidad_id": "C123456789",
+              "fecha_hora": "2026-10-30 06:40:52",
+              "id": 1
+            }
+          ],
+          "estudiantes": [
+            {
+              "carne": "C123456789",
+              "correo": "ana@tec.ac.cr",
+              "estado": "activo",
+              "nombre_completo": "Ana"
+            }
+          ]
+        },
+        "exito_obtenido": true,
+        "mensaje_obtenido": "Estudiante registrado correctamente.",
+        "nombre": "Ana",
+        "requisito": "RF-02",
+        "sin_cambios": false
+      }
+    ]
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_crea_archivo_y_reporta_primera_ejecucion",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_crea_archivo_y_reporta_primera_ejecucion",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_crea_todas_las_tablas_e_indices",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_crea_todas_las_tablas_e_indices",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_reservaciones_tiene_columnas_requeridas",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_reservaciones_tiene_columnas_requeridas",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_con_valores_y_estado_especificados",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_salas_iniciales_con_valores_y_estado_especificados",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_disponibles_para_consulta",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_salas_iniciales_disponibles_para_consulta",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_crea_estudiantes_iniciales",
+    "status": "xfail",
+    "duration_seconds": "0.005",
+    "detail": "Hallazgo: semilla.py solo inserta salas; RF-01 exige también datos iniciales de estudiantes.",
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_segunda_ejecucion_reutiliza_base_sin_duplicar",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_segunda_ejecucion_reutiliza_base_sin_duplicar",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_no_sobrescribe_datos_modificados",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_reinicializar_no_sobrescribe_datos_modificados",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_conserva_reservaciones_existentes",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_reinicializar_conserva_reservaciones_existentes",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_archivo_corrupto_se_informa_sin_excepcion",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_archivo_corrupto_se_informa_sin_excepcion",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_esquema_incompatible_se_informa_sin_excepcion",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_esquema_incompatible_se_informa_sin_excepcion",
+    "status": "aprobado",
+    "duration_seconds": "0.004",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_archivo_vacio_se_inicializa_correctamente",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_archivo_vacio_se_inicializa_correctamente",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_ruta_imposible_se_informa_sin_excepcion",
+    "status": "xfail",
+    "duration_seconds": "0.001",
+    "detail": "Hallazgo: inicializar_base_datos solo captura sqlite3.Error; una ruta inválida lanza OSError sin controlar (RF-01, RNF-05).",
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_persistencia_datos_sobreviven_al_cerrar_y_reabrir",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_persistencia_datos_sobreviven_al_cerrar_y_reabrir",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf10_cerrar_aplicacion_deja_datos_guardados_y_libera_conexion",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf10_cerrar_aplicacion_deja_datos_guardados_y_libera_conexion",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_persistencia_operacion_rechazada_no_altera_datos",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_persistencia_operacion_rechazada_no_altera_datos",
+    "status": "aprobado",
+    "duration_seconds": "0.004",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_rollback_descarta_cambios_parciales",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_rollback_descarta_cambios_parciales",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_conexion_es_unica_y_reutilizada",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_conexion_es_unica_y_reutilizada",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_conexion_cerrar_es_idempotente",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_conexion_cerrar_es_idempotente",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_conexion_configurar_ruta_cierra_conexion_previa",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_conexion_configurar_ruta_cierra_conexion_previa",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_conexion_la_base_existe_se_consulta_antes_de_crearla",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_conexion_la_base_existe_se_consulta_antes_de_crearla",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_conexion_crea_carpeta_destino_si_no_existe",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_conexion_crea_carpeta_destino_si_no_existe",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf03_ruta_por_defecto_no_usa_rutas_absolutas_fijas",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf03_ruta_por_defecto_no_usa_rutas_absolutas_fijas",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_llaves_foraneas_activas",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_llaves_foraneas_activas",
+    "status": "aprobado",
+    "duration_seconds": "0.004",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-01-fk_estudiante_inexistente]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-01-fk_estudiante_inexistente]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-duracion_3_horas]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-duracion_3_horas]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-cantidad_personas_0]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-cantidad_personas_0]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_reservacion_invalido]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_reservacion_invalido]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-capacidad_sala_0]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-capacidad_sala_0]",
+    "status": "aprobado",
+    "duration_seconds": "0.008",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_sala_invalido]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_sala_invalido]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-04-codigo_sala_duplicado]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-04-codigo_sala_duplicado]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_estudiante_invalido]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_estudiante_invalido]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-carne_nulo]",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-carne_nulo]",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf06_carne_de_estudiante_es_unico",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf06_carne_de_estudiante_es_unico",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rnf08_tildes_y_enie_se_conservan_tras_reabrir",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rnf08_tildes_y_enie_se_conservan_tras_reabrir",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_panel.py::test_panel_consolida_ocupacion_hoy_y_proximas",
+    "file": "tests/test_panel.py",
+    "test_name": "test_panel_consolida_ocupacion_hoy_y_proximas",
+    "status": "aprobado",
+    "duration_seconds": "0.013",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_panel.py::test_filtros_se_combinan_simultaneamente",
+    "file": "tests/test_panel.py",
+    "test_name": "test_filtros_se_combinan_simultaneamente",
+    "status": "aprobado",
+    "duration_seconds": "0.010",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_panel.py::test_panel_devuelve_estado_vacio_claro",
+    "file": "tests/test_panel.py",
+    "test_name": "test_panel_devuelve_estado_vacio_claro",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros0-formato]",
+    "file": "tests/test_panel.py",
+    "test_name": "test_panel_rechaza_filtros_invalidos[parametros0-formato]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros1-activa o cancelada]",
+    "file": "tests/test_panel.py",
+    "test_name": "test_panel_rechaza_filtros_invalidos[parametros1-activa o cancelada]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros2-referencia]",
+    "file": "tests/test_panel.py",
+    "test_name": "test_panel_rechaza_filtros_invalidos[parametros2-referencia]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_panel.py::test_panel_refleja_operaciones_sin_cache",
+    "file": "tests/test_panel.py",
+    "test_name": "test_panel_refleja_operaciones_sin_cache",
+    "status": "aprobado",
+    "duration_seconds": "0.013",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[1]",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_rechaza_cantidad_de_semanas_invalida[1]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[9]",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_rechaza_cantidad_de_semanas_invalida[9]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[True]",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_rechaza_cantidad_de_semanas_invalida[True]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2.5]",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_rechaza_cantidad_de_semanas_invalida[2.5]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2]",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_rechaza_cantidad_de_semanas_invalida[2]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_previsualiza_fechas_consecutivas_sin_guardar",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_previsualiza_fechas_consecutivas_sin_guardar",
+    "status": "aprobado",
+    "duration_seconds": "0.009",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_previsualizacion_identifica_conflicto_por_ocurrencia",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_previsualizacion_identifica_conflicto_por_ocurrencia",
+    "status": "aprobado",
+    "duration_seconds": "0.011",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_crea_serie_atomica_con_identificador_compartido",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_crea_serie_atomica_con_identificador_compartido",
+    "status": "aprobado",
+    "duration_seconds": "0.011",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_conflicto_impide_guardar_toda_la_serie",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_conflicto_impide_guardar_toda_la_serie",
+    "status": "aprobado",
+    "duration_seconds": "0.012",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_toda_la_serie",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_fallo_de_auditoria_revierte_toda_la_serie",
+    "status": "aprobado",
+    "duration_seconds": "0.009",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_serie_cuenta_como_un_cupo_del_limite",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_serie_cuenta_como_un_cupo_del_limite",
+    "status": "aprobado",
+    "duration_seconds": "0.016",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_cancelar_una_ocurrencia_conserva_las_demas",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_cancelar_una_ocurrencia_conserva_las_demas",
+    "status": "aprobado",
+    "duration_seconds": "0.011",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_cancelar_ocurrencia_y_futuras_de_la_serie",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_cancelar_ocurrencia_y_futuras_de_la_serie",
+    "status": "aprobado",
+    "duration_seconds": "0.015",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_cancelacion_futura",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_fallo_de_auditoria_revierte_cancelacion_futura",
+    "status": "aprobado",
+    "duration_seconds": "0.014",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_no_cancela_futuras_de_una_reservacion_individual",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_no_cancela_futuras_de_una_reservacion_individual",
+    "status": "aprobado",
+    "duration_seconds": "0.008",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_recurrencias.py::test_operaciones_de_serie_generan_auditoria",
+    "file": "tests/test_recurrencias.py",
+    "test_name": "test_operaciones_de_serie_generan_auditoria",
+    "status": "aprobado",
+    "duration_seconds": "0.009",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_generar_reporte_csv_utf8_con_encabezados",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_generar_reporte_csv_utf8_con_encabezados",
+    "status": "aprobado",
+    "duration_seconds": "0.008",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_validar_rango_antes_de_seleccionar_destino",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_validar_rango_antes_de_seleccionar_destino",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_reporte_filtra_rango_inclusivo",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_reporte_filtra_rango_inclusivo",
+    "status": "aprobado",
+    "duration_seconds": "0.012",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_rechazar_rango_invalido[-2026-10-10-inicial]",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_rechazar_rango_invalido[-2026-10-10-inicial]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-10--final]",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_rechazar_rango_invalido[2026-10-10--final]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_rechazar_rango_invalido[10-10-2026-2026-10-11-formato]",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_rechazar_rango_invalido[10-10-2026-2026-10-11-formato]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-11-2026-10-10-anterior]",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_rechazar_rango_invalido[2026-10-11-2026-10-10-anterior]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_cancelar_destino_no_crea_archivos",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_cancelar_destino_no_crea_archivos",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_reporte_sin_datos_contiene_solo_encabezados",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_reporte_sin_datos_contiene_solo_encabezados",
+    "status": "aprobado",
+    "duration_seconds": "0.008",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reportes.py::test_error_de_escritura_no_deja_archivo_temporal",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_error_de_escritura_no_deja_archivo_temporal",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_crear_reservacion_exitosa",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_crear_reservacion_exitosa",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_terminar_a_las_20_00_es_valido",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_terminar_a_las_20_00_es_valido",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_estudiante_inexistente",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_estudiante_inexistente",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_estudiante_inactivo",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_estudiante_inactivo",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_sala_inexistente",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_sala_inexistente",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_sala_fuera_de_servicio",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_sala_fuera_de_servicio",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_fecha_pasada",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_fecha_pasada",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_fecha_formato_invalido",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_fecha_formato_invalido",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_hora_ya_transcurrida_si_es_hoy",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_hora_ya_transcurrida_si_es_hoy",
+    "status": "omitido",
+    "duration_seconds": "0.006",
+    "detail": "Antes de las 08:00 no hay una hora válida del día que ya haya transcurrido.",
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_hora_no_completa",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_hora_no_completa",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_hora_antes_de_apertura",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_hora_antes_de_apertura",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_reserva_que_termina_despues_de_cierre",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_reserva_que_termina_despues_de_cierre",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_duracion_invalida[0]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_duracion_invalida[0]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_duracion_invalida[3]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_duracion_invalida[3]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_duracion_invalida[-1]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_duracion_invalida[-1]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_duracion_invalida[1.5]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_duracion_invalida[1.5]",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_duracion_invalida[1]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_duracion_invalida[1]",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_cantidad_cero",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_cantidad_cero",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_capacidad_excedida",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_capacidad_excedida",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_rechazar_capacidad_cubiculo",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_rechazar_capacidad_cubiculo",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_tabla_superposicion[10:00-2-False-total]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_tabla_superposicion[10:00-2-False-total]",
+    "status": "aprobado",
+    "duration_seconds": "0.010",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-parcial_inicio]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_tabla_superposicion[09:00-2-False-parcial_inicio]",
+    "status": "aprobado",
+    "duration_seconds": "0.010",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_tabla_superposicion[11:00-2-False-parcial_fin]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_tabla_superposicion[11:00-2-False-parcial_fin]",
+    "status": "aprobado",
+    "duration_seconds": "0.011",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_tabla_superposicion[10:00-1-False-contenida]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_tabla_superposicion[10:00-1-False-contenida]",
+    "status": "aprobado",
+    "duration_seconds": "0.011",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-envolvente]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_tabla_superposicion[09:00-2-False-envolvente]",
+    "status": "aprobado",
+    "duration_seconds": "0.010",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_tabla_superposicion[12:00-1-True-consecutiva_despues]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_tabla_superposicion[12:00-1-True-consecutiva_despues]",
+    "status": "aprobado",
+    "duration_seconds": "0.012",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_tabla_superposicion[08:00-2-True-consecutiva_antes]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_tabla_superposicion[08:00-2-True-consecutiva_antes]",
+    "status": "aprobado",
+    "duration_seconds": "0.011",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_tabla_superposicion[14:00-1-True-sin_traslape]",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_tabla_superposicion[14:00-1-True-sin_traslape]",
+    "status": "aprobado",
+    "duration_seconds": "0.012",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_superposicion_envolvente_sobre_reserva_de_una_hora",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_superposicion_envolvente_sobre_reserva_de_una_hora",
+    "status": "aprobado",
+    "duration_seconds": "0.010",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_limite_de_tres_reservaciones_activas",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_limite_de_tres_reservaciones_activas",
+    "status": "aprobado",
+    "duration_seconds": "0.013",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_consultar_reservaciones_orden_y_historial",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_consultar_reservaciones_orden_y_historial",
+    "status": "aprobado",
+    "duration_seconds": "0.014",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_consultar_sin_reservaciones",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_consultar_sin_reservaciones",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_cancelar_libera_horario",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_cancelar_libera_horario",
+    "status": "aprobado",
+    "duration_seconds": "0.012",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_cancelar_con_entero",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_cancelar_con_entero",
+    "status": "aprobado",
+    "duration_seconds": "0.010",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_cancelar_inexistente",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_cancelar_inexistente",
+    "status": "aprobado",
+    "duration_seconds": "0.007",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_cancelar_dos_veces",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_cancelar_dos_veces",
+    "status": "aprobado",
+    "duration_seconds": "0.009",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_cancelar_permite_nueva_reserva_al_mismo_estudiante",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_cancelar_permite_nueva_reserva_al_mismo_estudiante",
+    "status": "aprobado",
+    "duration_seconds": "0.019",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_id_cancelado_no_se_reutiliza",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_id_cancelado_no_se_reutiliza",
+    "status": "aprobado",
+    "duration_seconds": "0.017",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_modificar_conserva_id",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_modificar_conserva_id",
+    "status": "aprobado",
+    "duration_seconds": "0.013",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_modificar_con_conflicto_no_cambia_nada",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_modificar_con_conflicto_no_cambia_nada",
+    "status": "aprobado",
+    "duration_seconds": "0.012",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_modificar_excluye_la_propia_reservacion_del_conflicto",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_modificar_excluye_la_propia_reservacion_del_conflicto",
+    "status": "aprobado",
+    "duration_seconds": "0.012",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_no_modificar_reservacion_cancelada",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_no_modificar_reservacion_cancelada",
+    "status": "aprobado",
+    "duration_seconds": "0.011",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_reservaciones.py::test_modificar_reservacion_inexistente",
+    "file": "tests/test_reservaciones.py",
+    "test_name": "test_modificar_reservacion_inexistente",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_salas.py::test_rf04_consultar_salas_iniciales",
+    "file": "tests/test_salas.py",
+    "test_name": "test_rf04_consultar_salas_iniciales",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_salas.py::test_rf12_registrar_sala_capacidad_invalida",
+    "file": "tests/test_salas.py",
+    "test_name": "test_rf12_registrar_sala_capacidad_invalida",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_salas.py::test_rf12_registrar_sala_codigo_duplicado",
+    "file": "tests/test_salas.py",
+    "test_name": "test_rf12_registrar_sala_codigo_duplicado",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_salas.py::test_rf08_disponibilidad_hora_incompleta",
+    "file": "tests/test_salas.py",
+    "test_name": "test_rf08_disponibilidad_hora_incompleta",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_salas.py::test_rf08_disponibilidad_fuera_de_horario",
+    "file": "tests/test_salas.py",
+    "test_name": "test_rf08_disponibilidad_fuera_de_horario",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_salas.py::test_rf08_disponibilidad_sala_fuera_servicio",
+    "file": "tests/test_salas.py",
+    "test_name": "test_rf08_disponibilidad_sala_fuera_servicio",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": "CP-SAL-01",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_01_catalogo_inicial_completo",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_01_catalogo_inicial_completo",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-01",
+        "datos": {
+          "consulta": "salas iniciales"
+        },
+        "esperado": [
+          {
+            "capacidad": 4,
+            "codigo": "S01",
+            "estado": "disponible",
+            "nombre": "Sala Biblioteca 1"
+          },
+          {
+            "capacidad": 6,
+            "codigo": "S02",
+            "estado": "disponible",
+            "nombre": "Sala Biblioteca 2"
+          },
+          {
+            "capacidad": 10,
+            "codigo": "S03",
+            "estado": "disponible",
+            "nombre": "Laboratorio de estudio"
+          },
+          {
+            "capacidad": 8,
+            "codigo": "S04",
+            "estado": "fuera_de_servicio",
+            "nombre": "Sala multimedia"
+          },
+          {
+            "capacidad": 1,
+            "codigo": "S05",
+            "estado": "disponible",
+            "nombre": "Cubículo individual"
+          }
+        ],
+        "obtenido": [
+          {
+            "capacidad": 4,
+            "codigo": "S01",
+            "estado": "disponible",
+            "nombre": "Sala Biblioteca 1"
+          },
+          {
+            "capacidad": 6,
+            "codigo": "S02",
+            "estado": "disponible",
+            "nombre": "Sala Biblioteca 2"
+          },
+          {
+            "capacidad": 10,
+            "codigo": "S03",
+            "estado": "disponible",
+            "nombre": "Laboratorio de estudio"
+          },
+          {
+            "capacidad": 8,
+            "codigo": "S04",
+            "estado": "fuera_de_servicio",
+            "nombre": "Sala multimedia"
+          },
+          {
+            "capacidad": 1,
+            "codigo": "S05",
+            "estado": "disponible",
+            "nombre": "Cubículo individual"
+          }
+        ],
+        "requisito": "RF-04"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-02",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_02_orden_ascendente_de_todos_los_codigos",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_02_orden_ascendente_de_todos_los_codigos",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-02",
+        "datos": {
+          "consulta": "catálogo inicial"
+        },
+        "esperado": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "obtenido": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "requisito": "RF-04"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-03",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_03_incluye_sala_fuera_de_servicio",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_03_incluye_sala_fuera_de_servicio",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-03",
+        "datos": {
+          "codigo": "S04"
+        },
+        "esperado": [
+          {
+            "capacidad": 8,
+            "codigo": "S04",
+            "estado": "fuera_de_servicio",
+            "nombre": "Sala multimedia"
+          }
+        ],
+        "obtenido": [
+          {
+            "capacidad": 8,
+            "codigo": "S04",
+            "estado": "fuera_de_servicio",
+            "nombre": "Sala multimedia"
+          }
+        ],
+        "requisito": "RF-04; RN-08"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-05",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_05_registro_valido_aparece_en_catalogo",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_05_registro_valido_aparece_en_catalogo",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-05",
+        "datos": {
+          "capacidad": 6,
+          "codigo": "S06",
+          "estado": "disponible",
+          "nombre": "Sala de estudio 6"
+        },
+        "esperado": {
+          "cantidad_salas": 6,
+          "exito": true,
+          "nueva_sala": {
+            "capacidad": 6,
+            "codigo": "S06",
+            "estado": "disponible",
+            "nombre": "Sala de estudio 6"
+          },
+          "salas_previas_sin_cambios": true
+        },
+        "obtenido": {
+          "respuesta": {
+            "exito": true,
+            "mensaje": "Sala S06 registrada exitosamente."
+          },
+          "salas": [
+            {
+              "capacidad": 4,
+              "codigo": "S01",
+              "estado": "disponible",
+              "nombre": "Sala Biblioteca 1"
+            },
+            {
+              "capacidad": 6,
+              "codigo": "S02",
+              "estado": "disponible",
+              "nombre": "Sala Biblioteca 2"
+            },
+            {
+              "capacidad": 10,
+              "codigo": "S03",
+              "estado": "disponible",
+              "nombre": "Laboratorio de estudio"
+            },
+            {
+              "capacidad": 8,
+              "codigo": "S04",
+              "estado": "fuera_de_servicio",
+              "nombre": "Sala multimedia"
+            },
+            {
+              "capacidad": 1,
+              "codigo": "S05",
+              "estado": "disponible",
+              "nombre": "Cubículo individual"
+            },
+            {
+              "capacidad": 6,
+              "codigo": "S06",
+              "estado": "disponible",
+              "nombre": "Sala de estudio 6"
+            }
+          ]
+        },
+        "requisito": "RF-12"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-06",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_06_rechaza_duplicado_exacto",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_06_rechaza_duplicado_exacto",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-06",
+        "datos": {
+          "capacidad": 5,
+          "codigo": "S01",
+          "nombre": "Duplicada"
+        },
+        "esperado": {
+          "datos_y_auditoria_sin_cambios": true,
+          "exito": false,
+          "mensaje_informativo": true
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": false,
+            "mensaje": "El código de sala ya se encuentra registrado."
+          }
+        },
+        "requisito": "RF-12"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-07",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_07_rechaza_duplicado_en_minusculas",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_07_rechaza_duplicado_en_minusculas",
+    "status": "fallido",
+    "duration_seconds": "0.007",
+    "detail": "assert True is False",
+    "observations": [
+      {
+        "caso": "CP-SAL-07",
+        "datos": {
+          "capacidad": 5,
+          "codigo": "s01",
+          "nombre": "Duplicada"
+        },
+        "esperado": {
+          "datos_y_auditoria_sin_cambios": true,
+          "exito": false,
+          "mensaje_informativo": true
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [
+              {
+                "accion": "creacion",
+                "detalle": "Sala s01 registrada correctamente.",
+                "entidad": "sala",
+                "entidad_id": "s01",
+                "fecha_hora": "2026-10-30 06:40:53",
+                "id": 1
+              }
+            ],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              },
+              {
+                "capacidad": 5,
+                "codigo": "s01",
+                "estado": "disponible",
+                "id": 6,
+                "nombre": "Duplicada"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": true,
+            "mensaje": "Sala s01 registrada exitosamente."
+          }
+        },
+        "requisito": "RF-12"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-08",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_08_rechaza_capacidad_cero",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_08_rechaza_capacidad_cero",
+    "status": "aprobado",
+    "duration_seconds": "0.006",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-08",
+        "datos": {
+          "capacidad": 0,
+          "codigo": "S06",
+          "nombre": "Sala Nueva"
+        },
+        "esperado": {
+          "datos_y_auditoria_sin_cambios": true,
+          "exito": false,
+          "mensaje_informativo": true
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": false,
+            "mensaje": "La capacidad debe ser un entero mayor que cero."
+          }
+        },
+        "requisito": "RF-12"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-09",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_09_rechaza_capacidad_negativa",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_09_rechaza_capacidad_negativa",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-09",
+        "datos": {
+          "capacidad": -1,
+          "codigo": "S06",
+          "nombre": "Sala Nueva"
+        },
+        "esperado": {
+          "datos_y_auditoria_sin_cambios": true,
+          "exito": false,
+          "mensaje_informativo": true
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": false,
+            "mensaje": "La capacidad debe ser un entero mayor que cero."
+          }
+        },
+        "requisito": "RF-12"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-10",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_10_rechaza_capacidad_decimal",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_10_rechaza_capacidad_decimal",
+    "status": "aprobado",
+    "duration_seconds": "0.005",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-10",
+        "datos": {
+          "capacidad": 2.5,
+          "codigo": "S06",
+          "nombre": "Sala Nueva"
+        },
+        "esperado": {
+          "datos_y_auditoria_sin_cambios": true,
+          "exito": false,
+          "mensaje_informativo": true
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": false,
+            "mensaje": "La capacidad debe ser un entero mayor que cero."
+          }
+        },
+        "requisito": "RF-12"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-11",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_11_modifica_nombre_y_estado",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_11_modifica_nombre_y_estado",
+    "status": "aprobado",
+    "duration_seconds": "0.008",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-11",
+        "datos": {
+          "capacidad": 6,
+          "codigo": "S02",
+          "estado": "fuera_de_servicio",
+          "nombre": "Sala Biblioteca 2B"
+        },
+        "esperado": {
+          "exito": true,
+          "otras_salas_sin_cambios": true,
+          "sala": {
+            "capacidad": 6,
+            "codigo": "S02",
+            "estado": "fuera_de_servicio",
+            "nombre": "Sala Biblioteca 2B"
+          }
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [
+              {
+                "accion": "modificacion",
+                "detalle": "Sala S02 modificada correctamente.",
+                "entidad": "sala",
+                "entidad_id": "S02",
+                "fecha_hora": "2026-10-30 06:40:53",
+                "id": 1
+              }
+            ],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "fuera_de_servicio",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2B"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": true,
+            "mensaje": "Sala modificada correctamente."
+          },
+          "sala": {
+            "capacidad": 6,
+            "codigo": "S02",
+            "estado": "fuera_de_servicio",
+            "nombre": "Sala Biblioteca 2B"
+          }
+        },
+        "requisito": "RF-12"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-13",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_13_reduce_capacidad_sin_reservas_futuras",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_13_reduce_capacidad_sin_reservas_futuras",
+    "status": "aprobado",
+    "duration_seconds": "0.008",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-13",
+        "datos": {
+          "capacidad_anterior": 10,
+          "codigo": "S03",
+          "nueva_capacidad": 5,
+          "reservaciones_antes": []
+        },
+        "esperado": {
+          "exito": true,
+          "reservaciones_sin_cambios": true,
+          "sala": {
+            "capacidad": 5,
+            "codigo": "S03",
+            "estado": "disponible",
+            "nombre": "Laboratorio de estudio"
+          }
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [
+              {
+                "accion": "modificacion",
+                "detalle": "Sala S03 modificada correctamente.",
+                "entidad": "sala",
+                "entidad_id": "S03",
+                "fecha_hora": "2026-10-30 06:40:53",
+                "id": 1
+              }
+            ],
+            "estudiantes": [],
+            "reservaciones": [],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 5,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": true,
+            "mensaje": "Sala modificada correctamente."
+          },
+          "sala": {
+            "capacidad": 5,
+            "codigo": "S03",
+            "estado": "disponible",
+            "nombre": "Laboratorio de estudio"
+          }
+        },
+        "requisito": "RF-12"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-14",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_14_rechaza_capacidad_menor_a_reserva_futura",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_14_rechaza_capacidad_menor_a_reserva_futura",
+    "status": "aprobado",
+    "duration_seconds": "0.023",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-14",
+        "datos": {
+          "nueva_capacidad": 4,
+          "reserva": {
+            "cantidad_personas": 5,
+            "carne": "C123456789",
+            "duracion_horas": 1,
+            "estado": "activa",
+            "fecha": "2026-10-31",
+            "hora_inicio": "10:00",
+            "sala": "S02"
+          }
+        },
+        "esperado": {
+          "datos_y_auditoria_sin_cambios": true,
+          "exito": false
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 5,
+                "duracion_horas": 1,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 2,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 5,
+                "duracion_horas": 1,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 2,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": false,
+            "mensaje": "No se puede reducir la capacidad a 4. Hay reservas futuras activas para 5 personas."
+          }
+        },
+        "requisito": "RF-12; RN-07"
+      }
+    ]
+  },
+  {
+    "id_caso": "CP-SAL-15",
+    "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_15_acepta_capacidad_igual_a_reserva_futura",
+    "file": "tests/test_salas_ampliacion_fase5.py",
+    "test_name": "test_cp_sal_15_acepta_capacidad_igual_a_reserva_futura",
+    "status": "aprobado",
+    "duration_seconds": "0.013",
+    "detail": null,
+    "observations": [
+      {
+        "caso": "CP-SAL-15",
+        "datos": {
+          "nueva_capacidad": 5,
+          "reserva": {
+            "cantidad_personas": 5,
+            "carne": "C123456789",
+            "duracion_horas": 1,
+            "estado": "activa",
+            "fecha": "2026-10-31",
+            "hora_inicio": "10:00",
+            "sala": "S02"
+          }
+        },
+        "esperado": {
+          "exito": true,
+          "reservaciones_sin_cambios": true,
+          "sala": {
+            "capacidad": 5,
+            "codigo": "S02",
+            "estado": "disponible",
+            "nombre": "Sala Biblioteca 2"
+          }
+        },
+        "obtenido": {
+          "antes": {
+            "auditoria": [],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 5,
+                "duracion_horas": 1,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 2,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "despues": {
+            "auditoria": [
+              {
+                "accion": "modificacion",
+                "detalle": "Sala S02 modificada correctamente.",
+                "entidad": "sala",
+                "entidad_id": "S02",
+                "fecha_hora": "2026-10-30 06:40:53",
+                "id": 1
+              }
+            ],
+            "estudiantes": [
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 5,
+                "duracion_horas": 1,
+                "estado": "activa",
+                "estudiante_id": 1,
+                "fecha": "2026-10-31",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 2,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 5,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "respuesta": {
+            "exito": true,
+            "mensaje": "Sala modificada correctamente."
+          },
+          "sala": {
+            "capacidad": 5,
+            "codigo": "S02",
+            "estado": "disponible",
+            "nombre": "Sala Biblioteca 2"
+          }
+        },
+        "requisito": "RF-12; RN-07"
+      }
+    ]
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_selector_fecha.py::test_calendario_inicia_en_lunes_y_mantiene_seis_filas",
+    "file": "tests/test_selector_fecha.py",
+    "test_name": "test_calendario_inicia_en_lunes_y_mantiene_seis_filas",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_selector_fecha.py::test_navegacion_de_meses_cambia_de_anio_correctamente",
+    "file": "tests/test_selector_fecha.py",
+    "test_name": "test_navegacion_de_meses_cambia_de_anio_correctamente",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_tema.py::test_recursos_de_identidad_visual_estan_disponibles",
+    "file": "tests/test_tema.py",
+    "test_name": "test_recursos_de_identidad_visual_estan_disponibles",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_tema.py::test_fuente_interfaz_elige_primera_geometrica_disponible",
+    "file": "tests/test_tema.py",
+    "test_name": "test_fuente_interfaz_elige_primera_geometrica_disponible",
+    "status": "aprobado",
+    "duration_seconds": "0.000",
+    "detail": null,
+    "observations": []
+  },
+  {
+    "id_caso": null,
+    "nodeid": "tests/test_tema.py::test_tipografia_global_actualiza_fuentes_nativas",
+    "file": "tests/test_tema.py",
+    "test_name": "test_tipografia_global_actualiza_fuentes_nativas",
+    "status": "aprobado",
+    "duration_seconds": "0.001",
+    "detail": null,
+    "observations": []
+  }
+]
