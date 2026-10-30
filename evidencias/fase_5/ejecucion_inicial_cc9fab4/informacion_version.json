@@ -1,0 +1,82 @@
+{
+  "repository": "https://github.com/AlejandroPenarandaSoto/proyecto-qa-II-semestre-2026.git",
+  "evaluated_branch": "dev-alejandro",
+  "commit": "cc9fab4cd268782cbdc9eb9921aa350903ce1e61",
+  "commit_subject": "Merge pull request #7 from AlejandroPenarandaSoto/dev-alejandro",
+  "copy_directory": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_cc9fab4/repositorio",
+  "python_executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+  "python_version": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "pytest_version": "9.1.1",
+  "sqlite_version": "3.50.4",
+  "tk_version": 9.0,
+  "tcl_version": 9.0,
+  "timezone": "America/Costa_Rica",
+  "environment_settings": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "TZ": "America/Costa_Rica",
+    "NO_COLOR": "1"
+  },
+  "pythonpath_inherited": false,
+  "command_argv": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/",
+    "-vv",
+    "-rA",
+    "--tb=long",
+    "--capture=fd",
+    "--color=no",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "junit_family=xunit1",
+    "--junitxml=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_dev-alejandro_cc9fab4/Ejecucion_inicial/resultado_pytest.xml",
+    "--basetemp=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_cc9fab4/temporales_pytest_inicial"
+  ],
+  "command": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14 -B -m pytest tests/ -vv -rA --tb=long --capture=fd --color=no -p no:cacheprovider -o junit_family=xunit1 --junitxml=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_dev-alejandro_cc9fab4/Ejecucion_inicial/resultado_pytest.xml --basetemp=/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_cc9fab4/temporales_pytest_inicial",
+  "dependencies": [
+    {
+      "name": "iniconfig",
+      "version": "2.3.0"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0"
+    },
+    {
+      "name": "pip",
+      "version": "26.2.1"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0"
+    },
+    {
+      "name": "pytest",
+      "version": "9.1.1"
+    }
+  ],
+  "productive_code_changed_before_initial_run": false,
+  "tests_changed_before_initial_run": false,
+  "preparation_notes": [
+    "Se usó una copia nueva descargada de GitHub; no se actualizó el repositorio de trabajo.",
+    "La .venv original no dispone de pytest; no se instaló ni modificó nada allí.",
+    "El Python global 3.14.7 ya dispone de pytest 9.1.1 y tkinter; es el entorno evaluado.",
+    "La carga automática de plugins externos se desactivó explícitamente para esta modalidad.",
+    "No se abrieron ventanas ni se automatizaron clics.",
+    "No se agregaron, eliminaron ni modificaron pruebas antes de esta ejecución."
+  ]
+}

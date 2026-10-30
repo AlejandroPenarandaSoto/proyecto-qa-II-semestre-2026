@@ -1,0 +1,399 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14
+rootdir: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase5_cc9fab4/repositorio
+collecting ... collected 194 items
+
+tests/test_acciones_panel.py::test_cancelacion_individual_delega_reservacion_seleccionada PASSED [  0%]
+tests/test_acciones_panel.py::test_cancelacion_futura_delega_serie_seleccionada PASSED [  1%]
+tests/test_acciones_panel.py::test_resultado_exitoso_actualiza_el_panel PASSED [  1%]
+tests/test_acciones_panel.py::test_estado_vacio_se_muestra_centrado_en_la_tabla PASSED [  2%]
+tests/test_acciones_panel.py::test_estado_vacio_se_oculta_cuando_hay_resultados PASSED [  2%]
+tests/test_auditoria.py::test_registrar_evento_guarda_datos PASSED       [  3%]
+tests/test_auditoria.py::test_consultar_auditoria_muestra_eventos_mas_recientes_primero PASSED [  3%]
+tests/test_auditoria.py::test_crear_reservacion_genera_evento_de_auditoria PASSED [  4%]
+tests/test_auditoria.py::test_creacion_fallida_no_genera_evento_de_auditoria PASSED [  4%]
+tests/test_auditoria.py::test_modificar_reservacion_genera_evento_de_auditoria PASSED [  5%]
+tests/test_auditoria.py::test_modificacion_fallida_no_genera_evento_de_auditoria PASSED [  5%]
+tests/test_auditoria.py::test_cancelar_reservacion_genera_evento_de_auditoria PASSED [  6%]
+tests/test_auditoria.py::test_cancelacion_repetida_no_genera_otro_evento_de_auditoria PASSED [  6%]
+tests/test_auditoria.py::test_fallo_de_auditoria_revierte_creacion PASSED [  7%]
+tests/test_auditoria.py::test_fallo_de_auditoria_revierte_modificacion PASSED [  7%]
+tests/test_auditoria.py::test_fallo_de_auditoria_revierte_cancelacion PASSED [  8%]
+tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[-reservacion-R0001] PASSED [  8%]
+tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[   -reservacion-R0001] PASSED [  9%]
+tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion--R0001] PASSED [  9%]
+tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion-reservacion-None] PASSED [ 10%]
+tests/test_auditoria_entidades.py::test_registrar_estudiante_genera_evento_de_auditoria PASSED [ 10%]
+tests/test_auditoria_entidades.py::test_modificar_estudiante_genera_evento_de_auditoria PASSED [ 11%]
+tests/test_auditoria_entidades.py::test_registrar_sala_genera_evento_de_auditoria PASSED [ 11%]
+tests/test_auditoria_entidades.py::test_modificar_sala_genera_evento_de_auditoria PASSED [ 12%]
+tests/test_auditoria_entidades.py::test_operaciones_fallidas_no_generan_eventos PASSED [ 12%]
+tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_estudiante PASSED [ 13%]
+tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_estudiante PASSED [ 13%]
+tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_sala PASSED [ 14%]
+tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_sala PASSED [ 14%]
+tests/test_cierre_aplicacion.py::test_cierra_directamente_cuando_no_hay_cambios_pendientes PASSED [ 15%]
+tests/test_cierre_aplicacion.py::test_cancela_el_cierre_si_hay_cambios_pendientes PASSED [ 15%]
+tests/test_cierre_aplicacion.py::test_confirma_el_cierre_si_hay_cambios_pendientes PASSED [ 16%]
+tests/test_controller.py::test_controlador_solicita_panel_con_filtros PASSED [ 17%]
+tests/test_controller.py::test_controlador_devuelve_codigos_de_sala PASSED [ 17%]
+tests/test_controller.py::test_controlador_cierra_la_conexion PASSED     [ 18%]
+tests/test_controller.py::test_controlador_delega_operaciones_recurrentes PASSED [ 18%]
+tests/test_controller.py::test_controlador_delega_generacion_de_reporte PASSED [ 19%]
+tests/test_controller.py::test_controlador_delega_consulta_de_auditoria PASSED [ 19%]
+tests/test_dialogo_auditoria.py::test_auditoria_muestra_eventos_en_solo_lectura PASSED [ 20%]
+tests/test_dialogo_auditoria.py::test_auditoria_muestra_estado_vacio PASSED [ 20%]
+tests/test_dialogo_auditoria.py::test_error_de_auditoria_no_reemplaza_los_datos_visibles PASSED [ 21%]
+tests/test_dialogo_recurrencia.py::test_previsualizacion_valida_habilita_creacion PASSED [ 21%]
+tests/test_dialogo_recurrencia.py::test_conflicto_mantiene_creacion_deshabilitada PASSED [ 22%]
+tests/test_dialogo_recurrencia.py::test_creacion_exitosa_refresca_panel_y_cierra PASSED [ 22%]
+tests/test_dialogo_recurrencia.py::test_cancelar_permite_conservar_formulario PASSED [ 23%]
+tests/test_dialogo_reporte.py::test_no_abre_selector_si_el_rango_es_invalido PASSED [ 23%]
+tests/test_dialogo_reporte.py::test_cancelar_selector_no_crea_reporte PASSED [ 24%]
+tests/test_dialogo_reporte.py::test_reporte_exitoso_informa_y_cierra_dialogo PASSED [ 24%]
+tests/test_estudiantes.py::test_registrar_estudiante_correctamente PASSED [ 25%]
+tests/test_estudiantes.py::test_rechazar_carne_duplicado PASSED          [ 25%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[123-Ana Rodr\xedguez-ana@tec.ac.cr] PASSED [ 26%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[123456789!-Ana Rodr\xedguez-ana@tec.ac.cr] PASSED [ 26%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-A-ana@tec.ac.cr] PASSED [ 27%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-   -ana@tec.ac.cr] PASSED [ 27%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-anatec.ac.cr] PASSED [ 28%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@] PASSED [ 28%]
+tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@@tec.ac.cr] PASSED [ 29%]
+tests/test_estudiantes.py::test_consultar_estudiantes_registrados PASSED [ 29%]
+tests/test_estudiantes.py::test_consultar_estudiantes_ordenados PASSED   [ 30%]
+tests/test_estudiantes.py::test_consultar_sin_estudiantes PASSED         [ 30%]
+tests/test_estudiantes.py::test_estudiante_sin_reservaciones PASSED      [ 31%]
+tests/test_estudiantes.py::test_buscar_reservaciones_estudiante_inexistente PASSED [ 31%]
+tests/test_estudiantes.py::test_buscar_reservaciones_existentes PASSED   [ 32%]
+tests/test_estudiantes.py::test_modificar_estudiante_correctamente PASSED [ 32%]
+tests/test_estudiantes.py::test_modificar_estudiante_inexistente PASSED  [ 33%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[A-ana@tec.ac.cr-activo] PASSED [ 34%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[   -ana@tec.ac.cr-activo] PASSED [ 34%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-correo_invalido-activo] PASSED [ 35%]
+tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-ana@tec.ac.cr-pendiente] PASSED [ 35%]
+tests/test_estudiantes.py::test_registrar_con_espacios PASSED            [ 36%]
+tests/test_estudiantes.py::test_buscar_reservaciones_carne_vacio PASSED  [ 36%]
+tests/test_estudiantes.py::test_modificar_estado_a_activo PASSED         [ 37%]
+tests/test_inicializacion_persistencia.py::test_rf01_crea_archivo_y_reporta_primera_ejecucion PASSED [ 37%]
+tests/test_inicializacion_persistencia.py::test_rf01_crea_todas_las_tablas_e_indices PASSED [ 38%]
+tests/test_inicializacion_persistencia.py::test_rf01_reservaciones_tiene_columnas_requeridas PASSED [ 38%]
+tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_con_valores_y_estado_especificados PASSED [ 39%]
+tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_disponibles_para_consulta PASSED [ 39%]
+tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales XFAILciales de estudiantes.) [ 40%]
+tests/test_inicializacion_persistencia.py::test_rf01_segunda_ejecucion_reutiliza_base_sin_duplicar PASSED [ 40%]
+tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_no_sobrescribe_datos_modificados PASSED [ 41%]
+tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_conserva_reservaciones_existentes PASSED [ 41%]
+tests/test_inicializacion_persistencia.py::test_rf01_archivo_corrupto_se_informa_sin_excepcion PASSED [ 42%]
+tests/test_inicializacion_persistencia.py::test_rf01_esquema_incompatible_se_informa_sin_excepcion PASSED [ 42%]
+tests/test_inicializacion_persistencia.py::test_rf01_archivo_vacio_se_inicializa_correctamente PASSED [ 43%]
+tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion XFAILinválida lanza OSError sin controlar
+(RF-01, RNF-05).)                                                        [ 43%]
+tests/test_inicializacion_persistencia.py::test_persistencia_datos_sobreviven_al_cerrar_y_reabrir PASSED [ 44%]
+tests/test_inicializacion_persistencia.py::test_rf10_cerrar_aplicacion_deja_datos_guardados_y_libera_conexion PASSED [ 44%]
+tests/test_inicializacion_persistencia.py::test_persistencia_operacion_rechazada_no_altera_datos PASSED [ 45%]
+tests/test_inicializacion_persistencia.py::test_rnf06_rollback_descarta_cambios_parciales PASSED [ 45%]
+tests/test_inicializacion_persistencia.py::test_conexion_es_unica_y_reutilizada PASSED [ 46%]
+tests/test_inicializacion_persistencia.py::test_conexion_cerrar_es_idempotente PASSED [ 46%]
+tests/test_inicializacion_persistencia.py::test_conexion_configurar_ruta_cierra_conexion_previa PASSED [ 47%]
+tests/test_inicializacion_persistencia.py::test_conexion_la_base_existe_se_consulta_antes_de_crearla PASSED [ 47%]
+tests/test_inicializacion_persistencia.py::test_conexion_crea_carpeta_destino_si_no_existe PASSED [ 48%]
+tests/test_inicializacion_persistencia.py::test_rnf03_ruta_por_defecto_no_usa_rutas_absolutas_fijas PASSED [ 48%]
+tests/test_inicializacion_persistencia.py::test_rnf06_llaves_foraneas_activas PASSED [ 49%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-01-fk_estudiante_inexistente] PASSED [ 50%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-duracion_3_horas] PASSED [ 50%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-cantidad_personas_0] PASSED [ 51%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_reservacion_invalido] PASSED [ 51%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-capacidad_sala_0] PASSED [ 52%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_sala_invalido] PASSED [ 52%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-04-codigo_sala_duplicado] PASSED [ 53%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_estudiante_invalido] PASSED [ 53%]
+tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-carne_nulo] PASSED [ 54%]
+tests/test_inicializacion_persistencia.py::test_rnf06_carne_de_estudiante_es_unico PASSED [ 54%]
+tests/test_inicializacion_persistencia.py::test_rnf08_tildes_y_enie_se_conservan_tras_reabrir PASSED [ 55%]
+tests/test_panel.py::test_panel_consolida_ocupacion_hoy_y_proximas PASSED [ 55%]
+tests/test_panel.py::test_filtros_se_combinan_simultaneamente PASSED     [ 56%]
+tests/test_panel.py::test_panel_devuelve_estado_vacio_claro PASSED       [ 56%]
+tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros0-formato] PASSED [ 57%]
+tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros1-activa o cancelada] PASSED [ 57%]
+tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros2-referencia] PASSED [ 58%]
+tests/test_panel.py::test_panel_refleja_operaciones_sin_cache PASSED     [ 58%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[1] PASSED [ 59%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[9] PASSED [ 59%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[True] PASSED [ 60%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2.5] PASSED [ 60%]
+tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2] PASSED [ 61%]
+tests/test_recurrencias.py::test_previsualiza_fechas_consecutivas_sin_guardar PASSED [ 61%]
+tests/test_recurrencias.py::test_previsualizacion_identifica_conflicto_por_ocurrencia PASSED [ 62%]
+tests/test_recurrencias.py::test_crea_serie_atomica_con_identificador_compartido PASSED [ 62%]
+tests/test_recurrencias.py::test_conflicto_impide_guardar_toda_la_serie PASSED [ 63%]
+tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_toda_la_serie PASSED [ 63%]
+tests/test_recurrencias.py::test_serie_cuenta_como_un_cupo_del_limite PASSED [ 64%]
+tests/test_recurrencias.py::test_cancelar_una_ocurrencia_conserva_las_demas PASSED [ 64%]
+tests/test_recurrencias.py::test_cancelar_ocurrencia_y_futuras_de_la_serie PASSED [ 65%]
+tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_cancelacion_futura PASSED [ 65%]
+tests/test_recurrencias.py::test_no_cancela_futuras_de_una_reservacion_individual PASSED [ 66%]
+tests/test_recurrencias.py::test_operaciones_de_serie_generan_auditoria PASSED [ 67%]
+tests/test_reportes.py::test_generar_reporte_csv_utf8_con_encabezados PASSED [ 67%]
+tests/test_reportes.py::test_validar_rango_antes_de_seleccionar_destino PASSED [ 68%]
+tests/test_reportes.py::test_reporte_filtra_rango_inclusivo PASSED       [ 68%]
+tests/test_reportes.py::test_rechazar_rango_invalido[-2026-10-10-inicial] PASSED [ 69%]
+tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-10--final] PASSED [ 69%]
+tests/test_reportes.py::test_rechazar_rango_invalido[10-10-2026-2026-10-11-formato] PASSED [ 70%]
+tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-11-2026-10-10-anterior] PASSED [ 70%]
+tests/test_reportes.py::test_cancelar_destino_no_crea_archivos PASSED    [ 71%]
+tests/test_reportes.py::test_reporte_sin_datos_contiene_solo_encabezados PASSED [ 71%]
+tests/test_reportes.py::test_error_de_escritura_no_deja_archivo_temporal PASSED [ 72%]
+tests/test_reservaciones.py::test_crear_reservacion_exitosa PASSED       [ 72%]
+tests/test_reservaciones.py::test_terminar_a_las_20_00_es_valido PASSED  [ 73%]
+tests/test_reservaciones.py::test_rechazar_estudiante_inexistente PASSED [ 73%]
+tests/test_reservaciones.py::test_rechazar_estudiante_inactivo PASSED    [ 74%]
+tests/test_reservaciones.py::test_rechazar_sala_inexistente PASSED       [ 74%]
+tests/test_reservaciones.py::test_rechazar_sala_fuera_de_servicio PASSED [ 75%]
+tests/test_reservaciones.py::test_rechazar_fecha_pasada PASSED           [ 75%]
+tests/test_reservaciones.py::test_rechazar_fecha_formato_invalido PASSED [ 76%]
+tests/test_reservaciones.py::test_rechazar_hora_ya_transcurrida_si_es_hoy PASSED [ 76%]
+tests/test_reservaciones.py::test_rechazar_hora_no_completa PASSED       [ 77%]
+tests/test_reservaciones.py::test_rechazar_hora_antes_de_apertura PASSED [ 77%]
+tests/test_reservaciones.py::test_rechazar_reserva_que_termina_despues_de_cierre PASSED [ 78%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[0] PASSED   [ 78%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[3] PASSED   [ 79%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[-1] PASSED  [ 79%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[1.5] PASSED [ 80%]
+tests/test_reservaciones.py::test_rechazar_duracion_invalida[1] PASSED   [ 80%]
+tests/test_reservaciones.py::test_rechazar_cantidad_cero PASSED          [ 81%]
+tests/test_reservaciones.py::test_rechazar_capacidad_excedida PASSED     [ 81%]
+tests/test_reservaciones.py::test_rechazar_capacidad_cubiculo PASSED     [ 82%]
+tests/test_reservaciones.py::test_tabla_superposicion[10:00-2-False-total] PASSED [ 82%]
+tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-parcial_inicio] PASSED [ 83%]
+tests/test_reservaciones.py::test_tabla_superposicion[11:00-2-False-parcial_fin] PASSED [ 84%]
+tests/test_reservaciones.py::test_tabla_superposicion[10:00-1-False-contenida] PASSED [ 84%]
+tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-envolvente] PASSED [ 85%]
+tests/test_reservaciones.py::test_tabla_superposicion[12:00-1-True-consecutiva_despues] PASSED [ 85%]
+tests/test_reservaciones.py::test_tabla_superposicion[08:00-2-True-consecutiva_antes] PASSED [ 86%]
+tests/test_reservaciones.py::test_tabla_superposicion[14:00-1-True-sin_traslape] PASSED [ 86%]
+tests/test_reservaciones.py::test_superposicion_envolvente_sobre_reserva_de_una_hora PASSED [ 87%]
+tests/test_reservaciones.py::test_limite_de_tres_reservaciones_activas PASSED [ 87%]
+tests/test_reservaciones.py::test_consultar_reservaciones_orden_y_historial PASSED [ 88%]
+tests/test_reservaciones.py::test_consultar_sin_reservaciones PASSED     [ 88%]
+tests/test_reservaciones.py::test_cancelar_libera_horario PASSED         [ 89%]
+tests/test_reservaciones.py::test_cancelar_con_entero PASSED             [ 89%]
+tests/test_reservaciones.py::test_cancelar_inexistente PASSED            [ 90%]
+tests/test_reservaciones.py::test_cancelar_dos_veces PASSED              [ 90%]
+tests/test_reservaciones.py::test_cancelar_permite_nueva_reserva_al_mismo_estudiante PASSED [ 91%]
+tests/test_reservaciones.py::test_id_cancelado_no_se_reutiliza PASSED    [ 91%]
+tests/test_reservaciones.py::test_modificar_conserva_id PASSED           [ 92%]
+tests/test_reservaciones.py::test_modificar_con_conflicto_no_cambia_nada PASSED [ 92%]
+tests/test_reservaciones.py::test_modificar_excluye_la_propia_reservacion_del_conflicto PASSED [ 93%]
+tests/test_reservaciones.py::test_no_modificar_reservacion_cancelada PASSED [ 93%]
+tests/test_reservaciones.py::test_modificar_reservacion_inexistente PASSED [ 94%]
+tests/test_salas.py::test_rf04_consultar_salas_iniciales PASSED          [ 94%]
+tests/test_salas.py::test_rf12_registrar_sala_capacidad_invalida PASSED  [ 95%]
+tests/test_salas.py::test_rf12_registrar_sala_codigo_duplicado PASSED    [ 95%]
+tests/test_salas.py::test_rf08_disponibilidad_hora_incompleta PASSED     [ 96%]
+tests/test_salas.py::test_rf08_disponibilidad_fuera_de_horario PASSED    [ 96%]
+tests/test_salas.py::test_rf08_disponibilidad_sala_fuera_servicio PASSED [ 97%]
+tests/test_selector_fecha.py::test_calendario_inicia_en_lunes_y_mantiene_seis_filas PASSED [ 97%]
+tests/test_selector_fecha.py::test_navegacion_de_meses_cambia_de_anio_correctamente PASSED [ 98%]
+tests/test_tema.py::test_recursos_de_identidad_visual_estan_disponibles PASSED [ 98%]
+tests/test_tema.py::test_fuente_interfaz_elige_primera_geometrica_disponible PASSED [ 99%]
+tests/test_tema.py::test_tipografia_global_actualiza_fuentes_nativas PASSED [100%]
+
+==================================== PASSES ====================================
+- generated xml file: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_5_dev-alejandro_cc9fab4/Ejecucion_inicial/resultado_pytest.xml -
+=========================== short test summary info ============================
+PASSED tests/test_acciones_panel.py::test_cancelacion_individual_delega_reservacion_seleccionada
+PASSED tests/test_acciones_panel.py::test_cancelacion_futura_delega_serie_seleccionada
+PASSED tests/test_acciones_panel.py::test_resultado_exitoso_actualiza_el_panel
+PASSED tests/test_acciones_panel.py::test_estado_vacio_se_muestra_centrado_en_la_tabla
+PASSED tests/test_acciones_panel.py::test_estado_vacio_se_oculta_cuando_hay_resultados
+PASSED tests/test_auditoria.py::test_registrar_evento_guarda_datos
+PASSED tests/test_auditoria.py::test_consultar_auditoria_muestra_eventos_mas_recientes_primero
+PASSED tests/test_auditoria.py::test_crear_reservacion_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_creacion_fallida_no_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_modificar_reservacion_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_modificacion_fallida_no_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_cancelar_reservacion_genera_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_cancelacion_repetida_no_genera_otro_evento_de_auditoria
+PASSED tests/test_auditoria.py::test_fallo_de_auditoria_revierte_creacion
+PASSED tests/test_auditoria.py::test_fallo_de_auditoria_revierte_modificacion
+PASSED tests/test_auditoria.py::test_fallo_de_auditoria_revierte_cancelacion
+PASSED tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[-reservacion-R0001]
+PASSED tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[   -reservacion-R0001]
+PASSED tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion--R0001]
+PASSED tests/test_auditoria.py::test_registrar_evento_rechaza_datos_obligatorios_vacios[creacion-reservacion-None]
+PASSED tests/test_auditoria_entidades.py::test_registrar_estudiante_genera_evento_de_auditoria
+PASSED tests/test_auditoria_entidades.py::test_modificar_estudiante_genera_evento_de_auditoria
+PASSED tests/test_auditoria_entidades.py::test_registrar_sala_genera_evento_de_auditoria
+PASSED tests/test_auditoria_entidades.py::test_modificar_sala_genera_evento_de_auditoria
+PASSED tests/test_auditoria_entidades.py::test_operaciones_fallidas_no_generan_eventos
+PASSED tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_estudiante
+PASSED tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_estudiante
+PASSED tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_registro_de_sala
+PASSED tests/test_auditoria_entidades.py::test_fallo_de_auditoria_revierte_modificacion_de_sala
+PASSED tests/test_cierre_aplicacion.py::test_cierra_directamente_cuando_no_hay_cambios_pendientes
+PASSED tests/test_cierre_aplicacion.py::test_cancela_el_cierre_si_hay_cambios_pendientes
+PASSED tests/test_cierre_aplicacion.py::test_confirma_el_cierre_si_hay_cambios_pendientes
+PASSED tests/test_controller.py::test_controlador_solicita_panel_con_filtros
+PASSED tests/test_controller.py::test_controlador_devuelve_codigos_de_sala
+PASSED tests/test_controller.py::test_controlador_cierra_la_conexion
+PASSED tests/test_controller.py::test_controlador_delega_operaciones_recurrentes
+PASSED tests/test_controller.py::test_controlador_delega_generacion_de_reporte
+PASSED tests/test_controller.py::test_controlador_delega_consulta_de_auditoria
+PASSED tests/test_dialogo_auditoria.py::test_auditoria_muestra_eventos_en_solo_lectura
+PASSED tests/test_dialogo_auditoria.py::test_auditoria_muestra_estado_vacio
+PASSED tests/test_dialogo_auditoria.py::test_error_de_auditoria_no_reemplaza_los_datos_visibles
+PASSED tests/test_dialogo_recurrencia.py::test_previsualizacion_valida_habilita_creacion
+PASSED tests/test_dialogo_recurrencia.py::test_conflicto_mantiene_creacion_deshabilitada
+PASSED tests/test_dialogo_recurrencia.py::test_creacion_exitosa_refresca_panel_y_cierra
+PASSED tests/test_dialogo_recurrencia.py::test_cancelar_permite_conservar_formulario
+PASSED tests/test_dialogo_reporte.py::test_no_abre_selector_si_el_rango_es_invalido
+PASSED tests/test_dialogo_reporte.py::test_cancelar_selector_no_crea_reporte
+PASSED tests/test_dialogo_reporte.py::test_reporte_exitoso_informa_y_cierra_dialogo
+PASSED tests/test_estudiantes.py::test_registrar_estudiante_correctamente
+PASSED tests/test_estudiantes.py::test_rechazar_carne_duplicado
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[123-Ana Rodr\xedguez-ana@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[123456789!-Ana Rodr\xedguez-ana@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-A-ana@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-   -ana@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-anatec.ac.cr]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@]
+PASSED tests/test_estudiantes.py::test_rechazar_datos_invalidos[C123456789-Ana Rodr\xedguez-ana@@tec.ac.cr]
+PASSED tests/test_estudiantes.py::test_consultar_estudiantes_registrados
+PASSED tests/test_estudiantes.py::test_consultar_estudiantes_ordenados
+PASSED tests/test_estudiantes.py::test_consultar_sin_estudiantes
+PASSED tests/test_estudiantes.py::test_estudiante_sin_reservaciones
+PASSED tests/test_estudiantes.py::test_buscar_reservaciones_estudiante_inexistente
+PASSED tests/test_estudiantes.py::test_buscar_reservaciones_existentes
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_correctamente
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_inexistente
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[A-ana@tec.ac.cr-activo]
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[   -ana@tec.ac.cr-activo]
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-correo_invalido-activo]
+PASSED tests/test_estudiantes.py::test_modificar_estudiante_datos_invalidos[Ana Rodr\xedguez-ana@tec.ac.cr-pendiente]
+PASSED tests/test_estudiantes.py::test_registrar_con_espacios
+PASSED tests/test_estudiantes.py::test_buscar_reservaciones_carne_vacio
+PASSED tests/test_estudiantes.py::test_modificar_estado_a_activo
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_crea_archivo_y_reporta_primera_ejecucion
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_crea_todas_las_tablas_e_indices
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_reservaciones_tiene_columnas_requeridas
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_con_valores_y_estado_especificados
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_salas_iniciales_disponibles_para_consulta
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_segunda_ejecucion_reutiliza_base_sin_duplicar
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_no_sobrescribe_datos_modificados
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_reinicializar_conserva_reservaciones_existentes
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_archivo_corrupto_se_informa_sin_excepcion
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_esquema_incompatible_se_informa_sin_excepcion
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_archivo_vacio_se_inicializa_correctamente
+PASSED tests/test_inicializacion_persistencia.py::test_persistencia_datos_sobreviven_al_cerrar_y_reabrir
+PASSED tests/test_inicializacion_persistencia.py::test_rf10_cerrar_aplicacion_deja_datos_guardados_y_libera_conexion
+PASSED tests/test_inicializacion_persistencia.py::test_persistencia_operacion_rechazada_no_altera_datos
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_rollback_descarta_cambios_parciales
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_es_unica_y_reutilizada
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_cerrar_es_idempotente
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_configurar_ruta_cierra_conexion_previa
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_la_base_existe_se_consulta_antes_de_crearla
+PASSED tests/test_inicializacion_persistencia.py::test_conexion_crea_carpeta_destino_si_no_existe
+PASSED tests/test_inicializacion_persistencia.py::test_rnf03_ruta_por_defecto_no_usa_rutas_absolutas_fijas
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_llaves_foraneas_activas
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-01-fk_estudiante_inexistente]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-duracion_3_horas]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-cantidad_personas_0]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_reservacion_invalido]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-02-capacidad_sala_0]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_sala_invalido]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-04-codigo_sala_duplicado]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-estado_estudiante_invalido]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_esquema_rechaza_datos_invalidos[CP-BD-03-carne_nulo]
+PASSED tests/test_inicializacion_persistencia.py::test_rnf06_carne_de_estudiante_es_unico
+PASSED tests/test_inicializacion_persistencia.py::test_rnf08_tildes_y_enie_se_conservan_tras_reabrir
+PASSED tests/test_panel.py::test_panel_consolida_ocupacion_hoy_y_proximas
+PASSED tests/test_panel.py::test_filtros_se_combinan_simultaneamente
+PASSED tests/test_panel.py::test_panel_devuelve_estado_vacio_claro
+PASSED tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros0-formato]
+PASSED tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros1-activa o cancelada]
+PASSED tests/test_panel.py::test_panel_rechaza_filtros_invalidos[parametros2-referencia]
+PASSED tests/test_panel.py::test_panel_refleja_operaciones_sin_cache
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[1]
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[9]
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[True]
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2.5]
+PASSED tests/test_recurrencias.py::test_rechaza_cantidad_de_semanas_invalida[2]
+PASSED tests/test_recurrencias.py::test_previsualiza_fechas_consecutivas_sin_guardar
+PASSED tests/test_recurrencias.py::test_previsualizacion_identifica_conflicto_por_ocurrencia
+PASSED tests/test_recurrencias.py::test_crea_serie_atomica_con_identificador_compartido
+PASSED tests/test_recurrencias.py::test_conflicto_impide_guardar_toda_la_serie
+PASSED tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_toda_la_serie
+PASSED tests/test_recurrencias.py::test_serie_cuenta_como_un_cupo_del_limite
+PASSED tests/test_recurrencias.py::test_cancelar_una_ocurrencia_conserva_las_demas
+PASSED tests/test_recurrencias.py::test_cancelar_ocurrencia_y_futuras_de_la_serie
+PASSED tests/test_recurrencias.py::test_fallo_de_auditoria_revierte_cancelacion_futura
+PASSED tests/test_recurrencias.py::test_no_cancela_futuras_de_una_reservacion_individual
+PASSED tests/test_recurrencias.py::test_operaciones_de_serie_generan_auditoria
+PASSED tests/test_reportes.py::test_generar_reporte_csv_utf8_con_encabezados
+PASSED tests/test_reportes.py::test_validar_rango_antes_de_seleccionar_destino
+PASSED tests/test_reportes.py::test_reporte_filtra_rango_inclusivo
+PASSED tests/test_reportes.py::test_rechazar_rango_invalido[-2026-10-10-inicial]
+PASSED tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-10--final]
+PASSED tests/test_reportes.py::test_rechazar_rango_invalido[10-10-2026-2026-10-11-formato]
+PASSED tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-11-2026-10-10-anterior]
+PASSED tests/test_reportes.py::test_cancelar_destino_no_crea_archivos
+PASSED tests/test_reportes.py::test_reporte_sin_datos_contiene_solo_encabezados
+PASSED tests/test_reportes.py::test_error_de_escritura_no_deja_archivo_temporal
+PASSED tests/test_reservaciones.py::test_crear_reservacion_exitosa
+PASSED tests/test_reservaciones.py::test_terminar_a_las_20_00_es_valido
+PASSED tests/test_reservaciones.py::test_rechazar_estudiante_inexistente
+PASSED tests/test_reservaciones.py::test_rechazar_estudiante_inactivo
+PASSED tests/test_reservaciones.py::test_rechazar_sala_inexistente
+PASSED tests/test_reservaciones.py::test_rechazar_sala_fuera_de_servicio
+PASSED tests/test_reservaciones.py::test_rechazar_fecha_pasada
+PASSED tests/test_reservaciones.py::test_rechazar_fecha_formato_invalido
+PASSED tests/test_reservaciones.py::test_rechazar_hora_ya_transcurrida_si_es_hoy
+PASSED tests/test_reservaciones.py::test_rechazar_hora_no_completa
+PASSED tests/test_reservaciones.py::test_rechazar_hora_antes_de_apertura
+PASSED tests/test_reservaciones.py::test_rechazar_reserva_que_termina_despues_de_cierre
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[0]
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[3]
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[-1]
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[1.5]
+PASSED tests/test_reservaciones.py::test_rechazar_duracion_invalida[1]
+PASSED tests/test_reservaciones.py::test_rechazar_cantidad_cero
+PASSED tests/test_reservaciones.py::test_rechazar_capacidad_excedida
+PASSED tests/test_reservaciones.py::test_rechazar_capacidad_cubiculo
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[10:00-2-False-total]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-parcial_inicio]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[11:00-2-False-parcial_fin]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[10:00-1-False-contenida]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[09:00-2-False-envolvente]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[12:00-1-True-consecutiva_despues]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[08:00-2-True-consecutiva_antes]
+PASSED tests/test_reservaciones.py::test_tabla_superposicion[14:00-1-True-sin_traslape]
+PASSED tests/test_reservaciones.py::test_superposicion_envolvente_sobre_reserva_de_una_hora
+PASSED tests/test_reservaciones.py::test_limite_de_tres_reservaciones_activas
+PASSED tests/test_reservaciones.py::test_consultar_reservaciones_orden_y_historial
+PASSED tests/test_reservaciones.py::test_consultar_sin_reservaciones
+PASSED tests/test_reservaciones.py::test_cancelar_libera_horario
+PASSED tests/test_reservaciones.py::test_cancelar_con_entero
+PASSED tests/test_reservaciones.py::test_cancelar_inexistente
+PASSED tests/test_reservaciones.py::test_cancelar_dos_veces
+PASSED tests/test_reservaciones.py::test_cancelar_permite_nueva_reserva_al_mismo_estudiante
+PASSED tests/test_reservaciones.py::test_id_cancelado_no_se_reutiliza
+PASSED tests/test_reservaciones.py::test_modificar_conserva_id
+PASSED tests/test_reservaciones.py::test_modificar_con_conflicto_no_cambia_nada
+PASSED tests/test_reservaciones.py::test_modificar_excluye_la_propia_reservacion_del_conflicto
+PASSED tests/test_reservaciones.py::test_no_modificar_reservacion_cancelada
+PASSED tests/test_reservaciones.py::test_modificar_reservacion_inexistente
+PASSED tests/test_salas.py::test_rf04_consultar_salas_iniciales
+PASSED tests/test_salas.py::test_rf12_registrar_sala_capacidad_invalida
+PASSED tests/test_salas.py::test_rf12_registrar_sala_codigo_duplicado
+PASSED tests/test_salas.py::test_rf08_disponibilidad_hora_incompleta
+PASSED tests/test_salas.py::test_rf08_disponibilidad_fuera_de_horario
+PASSED tests/test_salas.py::test_rf08_disponibilidad_sala_fuera_servicio
+PASSED tests/test_selector_fecha.py::test_calendario_inicia_en_lunes_y_mantiene_seis_filas
+PASSED tests/test_selector_fecha.py::test_navegacion_de_meses_cambia_de_anio_correctamente
+PASSED tests/test_tema.py::test_recursos_de_identidad_visual_estan_disponibles
+PASSED tests/test_tema.py::test_fuente_interfaz_elige_primera_geometrica_disponible
+PASSED tests/test_tema.py::test_tipografia_global_actualiza_fuentes_nativas
+XFAIL tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales - Hallazgo: semilla.py solo inserta salas; RF-01 exige también datos iniciales de estudiantes.
+XFAIL tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion - Hallazgo: inicializar_base_datos solo captura sqlite3.Error; una ruta inválida lanza OSError sin controlar (RF-01, RNF-05).
+======================== 192 passed, 2 xfailed in 0.79s ========================

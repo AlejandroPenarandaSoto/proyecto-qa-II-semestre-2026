@@ -1,0 +1,74 @@
+{
+  "branch": "dev-alejandro",
+  "commit": "cc9fab4cd268782cbdc9eb9921aa350903ce1e61",
+  "start_costa_rica": "2026-10-29T23:02:48-06:00",
+  "finish_costa_rica": "2026-10-29T23:02:49-06:00",
+  "wall_duration_seconds": 1.039543,
+  "pytest_exit_code": 0,
+  "execution_error": null,
+  "junit_test_records": 194,
+  "counts_pytest": {
+    "passed": 192,
+    "xfail": 2
+  },
+  "counts_by_module": {
+    "tests/test_acciones_panel.py": {
+      "passed": 5
+    },
+    "tests/test_auditoria.py": {
+      "passed": 15
+    },
+    "tests/test_auditoria_entidades.py": {
+      "passed": 9
+    },
+    "tests/test_cierre_aplicacion.py": {
+      "passed": 3
+    },
+    "tests/test_controller.py": {
+      "passed": 6
+    },
+    "tests/test_dialogo_auditoria.py": {
+      "passed": 3
+    },
+    "tests/test_dialogo_recurrencia.py": {
+      "passed": 4
+    },
+    "tests/test_dialogo_reporte.py": {
+      "passed": 3
+    },
+    "tests/test_estudiantes.py": {
+      "passed": 24
+    },
+    "tests/test_inicializacion_persistencia.py": {
+      "passed": 33,
+      "xfail": 2
+    },
+    "tests/test_panel.py": {
+      "passed": 7
+    },
+    "tests/test_recurrencias.py": {
+      "passed": 16
+    },
+    "tests/test_reportes.py": {
+      "passed": 10
+    },
+    "tests/test_reservaciones.py": {
+      "passed": 43
+    },
+    "tests/test_salas.py": {
+      "passed": 6
+    },
+    "tests/test_selector_fecha.py": {
+      "passed": 2
+    },
+    "tests/test_tema.py": {
+      "passed": 3
+    }
+  },
+  "nodeids_unresolved": 0,
+  "postprocessing_note": "Se completaron los dos identificadores XFAIL del JSON derivado usando las líneas 397 y 398 del resumen original de pytest. No se cambiaron resultados ni archivos TXT/XML originales y no se repitió la ejecución.",
+  "confirmed_blocked_cases": null,
+  "blocked_cases_note": "No se equiparan skipped/xfail/errores a bloqueados. La clasificación por CP requiere análisis posterior.",
+  "planned_cp_execution_status": "No determinado: 174 casos CP no equivalen al número de pruebas pytest.",
+  "integrity_ok": true
+}
