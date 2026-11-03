@@ -21,6 +21,13 @@ def registrar_sala(codigo: str, nombre: str, capacidad: int, estado: str = 'disp
 
     conexion = obtener_conexion()
     try:
+        existente = conexion.execute(
+            "SELECT 1 FROM salas WHERE codigo = ? COLLATE NOCASE",
+            (codigo,),
+        ).fetchone()
+        if existente:
+            return {"exito": False, "mensaje": "El código de sala ya se encuentra registrado."}
+
         conexion.execute(
             "INSERT INTO salas (codigo, nombre, capacidad, estado) VALUES (?, ?, ?, ?)",
             (codigo, nombre, capacidad, estado)
@@ -137,6 +144,8 @@ def consultar_disponibilidad(codigo_sala: str, fecha: str, hora_inicio: str, dur
         hora_dt = datetime.strptime(hora_inicio, '%H:%M')
     except ValueError:
         return {"disponible": False, "motivo": "Formato de fecha (AAAA-MM-DD) u hora (HH:MM) inválido."}
+
+    hora_inicio = hora_dt.strftime('%H:%M')
         
     if duracion not in (1, 2):
         return {"disponible": False, "motivo": "La duración permitida es únicamente de 1 o 2 horas."}

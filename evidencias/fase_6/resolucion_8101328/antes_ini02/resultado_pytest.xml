@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.051" timestamp="2026-11-02T18:30:55.561037-06:00" hostname="MacBook-Air-de-Alejandro.local"><testcase classname="tests.test_inicializacion_persistencia" name="test_rf01_ruta_imposible_se_informa_sin_excepcion" file="tests/test_inicializacion_persistencia.py" line="229" time="0.001"><failure message="NotADirectoryError: [Errno 20] Not a directory: '/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_ini02/test_rf01_ruta_imposible_se_in0/es_un_archivo/subcarpeta'">tmp_path = PosixPath('/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_ini02/test_rf01_ruta_imposible_se_in0')
+
+    @pytest.mark.xfail(
+        strict=True,
+        raises=OSError,
+        reason="Hallazgo: inicializar_base_datos solo captura sqlite3.Error; una "
+               "ruta inválida lanza OSError sin controlar (RF-01, RNF-05).",
+    )
+    def test_rf01_ruta_imposible_se_informa_sin_excepcion(tmp_path):
+        """CP-INI-06"""
+        cerrar_conexion()
+        archivo = tmp_path / "es_un_archivo"
+        archivo.write_text("x")
+        configurar_ruta_base_datos(archivo / "subcarpeta" / "reservas.db")
+        try:
+&gt;           resultado = inicializar_base_datos()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inicializacion_persistencia.py:243: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def inicializar_base_datos() -&gt; ResultadoInicializacion:
+        """Abre (o crea) la base de datos SQLite, aplica el esquema y carga
+        los datos iniciales cuando corresponde.
+    
+        Criterios de aceptación cubiertos:
+        - Si la base de datos existe y es válida, se utiliza sin duplicar
+          registros.
+        - Si la base de datos no existe, se crea con su estructura y datos
+          iniciales.
+        - Las salas iniciales quedan disponibles desde la primera ejecución.
+        - Ningún error durante este proceso produce el cierre inesperado de
+          la aplicación: toda excepción de SQLite se captura y se informa
+          mediante el resultado devuelto.
+        """
+        base_datos_ya_existia = conexion_bd.la_base_datos_existe()
+    
+        try:
+&gt;           conexion = conexion_bd.obtener_conexion()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/db/inicializador.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def obtener_conexion() -&gt; sqlite3.Connection:
+        """Devuelve la única conexión SQLite de la aplicación (patrón
+        singleton), abriéndola la primera vez que se solicita.
+        """
+        global _conexion
+        if _conexion is None:
+&gt;           _ruta_base_datos.parent.mkdir(parents=True, exist_ok=True)
+
+src/db/conexion.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_ini02/test_rf01_ruta_imposible_se_in0/es_un_archivo/subcarpeta')
+mode = 511, parents = True, exist_ok = True
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           NotADirectoryError: [Errno 20] Not a directory: '/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_ini02/test_rf01_ruta_imposible_se_in0/es_un_archivo/subcarpeta'
+
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py:1011: NotADirectoryError</failure><system-out>--------------------------------- Captured Out ---------------------------------
+
+</system-out></testcase></testsuite></testsuites>

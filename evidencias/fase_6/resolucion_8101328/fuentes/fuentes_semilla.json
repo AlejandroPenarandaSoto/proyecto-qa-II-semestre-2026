@@ -1,0 +1,92 @@
+{
+  "defect_reference": "INI01: falta de estudiantes iniciales",
+  "scope": "Oráculo reproducible para RF-01 y CP-INI-02 basado en el plan final de Fase 4 y su matriz de equipo.",
+  "authority_limit": "Estas fuentes son el plan de Fase 4 y la matriz final del equipo. No se comprobó el enunciado primario al que la celda de datos atribuye una sección 10. No se presenta esa atribución como verificada.",
+  "sources": [
+    {
+      "kind": "team_test_plan_pdf",
+      "path": "/Users/avega/Downloads/Fase 4/Fase 4.pdf",
+      "filename": "Fase 4.pdf",
+      "sha256": "4d9aee821fc164b127d1b713380d86ae22d37dd72cea492d94c25628c1d334b1",
+      "page_count": 64,
+      "extraction_method": "pdfplumber extract_text; se conserva el texto relevante y sus saltos de línea sin reescritura.",
+      "excerpts": [
+        {
+          "pdf_page_1_based": 11,
+          "section": "Conjunto de datos de prueba / Datos de estado inicial (precondiciones)",
+          "text_exact": "Se utilizará el catálogo base establecido en el modelo de información del proyecto. El sistema\ndebe contar obligatoriamente con los siguientes registros cargados desde su primera\nejecución:\n● Estudiantes iniciales: A001234567 (Andrea Solano, activo), B009876543 (Carlos\nMéndez, activo), C004567890 (Daniela Rojas, inactivo)."
+        },
+        {
+          "pdf_page_1_based": 20,
+          "section": "Casos de prueba / CP-INI-02",
+          "text_exact": "CP-INI-02 Verificar la carga de Partición de Existen al menos tres estudiantes\nestudiantes iniciales equivalencia cargados."
+        }
+      ]
+    },
+    {
+      "kind": "team_final_test_case_matrix",
+      "path": "/Users/avega/Downloads/Fase 4/Matriz_Casos_Prueba_Equipo_final_v3.xlsx",
+      "filename": "Matriz_Casos_Prueba_Equipo_final_v3.xlsx",
+      "sha256": "7127fb33b796d02afa5fa6a93b8bfc6d900b2fe91481ae6faa2939967aeaf4da",
+      "extraction_method": "openpyxl read_only=True, data_only=False; sin guardar ni modificar el libro.",
+      "case": {
+        "sheet": "Casos detallados",
+        "row": 3,
+        "cells": [
+          {
+            "cell": "A3",
+            "header": "ID",
+            "value_exact": "CP-INI-02"
+          },
+          {
+            "cell": "B3",
+            "header": "Requisito(s)",
+            "value_exact": "RF-01"
+          },
+          {
+            "cell": "D3",
+            "header": "Caso de prueba",
+            "value_exact": "Verificar la carga de estudiantes iniciales"
+          },
+          {
+            "cell": "H3",
+            "header": "Precondiciones",
+            "value_exact": "No existe archivo de base de datos en la ruta de prueba."
+          },
+          {
+            "cell": "I3",
+            "header": "Datos de entrada",
+            "value_exact": "Ruta de prueba sin archivo src/db/reservas.db. Estudiantes esperados (enunciado, sección 10): A001234567 Andrea Solano, andrea@universidad.ac.cr, activo; B009876543 Carlos Méndez, carlos@universidad.ac.cr, activo; C004567890 Daniela Rojas, daniela@universidad.ac.cr, inactivo."
+          },
+          {
+            "cell": "K3",
+            "header": "Resultado esperado",
+            "value_exact": "Existe al menos tres estudiantes cargados"
+          }
+        ]
+      }
+    }
+  ],
+  "seed_rows_derived": [
+    {
+      "carne": "A001234567",
+      "nombre_completo": "Andrea Solano",
+      "correo": "andrea@universidad.ac.cr",
+      "estado": "activo"
+    },
+    {
+      "carne": "B009876543",
+      "nombre_completo": "Carlos Méndez",
+      "correo": "carlos@universidad.ac.cr",
+      "estado": "activo"
+    },
+    {
+      "carne": "C004567890",
+      "nombre_completo": "Daniela Rojas",
+      "correo": "daniela@universidad.ac.cr",
+      "estado": "inactivo"
+    }
+  ],
+  "provenance_note": "Carnés, nombres y estados: PDF final de Fase 4, página 11, y matriz CP-INI-02. Correos: celda de Datos de entrada de CP-INI-02 en la matriz final v3. Cantidad mínima de tres: PDF página 20 y celda Resultado esperado de la matriz. La prueba histórica COUNT(*) > 0 es más débil que ese oráculo.",
+  "runtime_bundle": "26.1026.10807"
+}

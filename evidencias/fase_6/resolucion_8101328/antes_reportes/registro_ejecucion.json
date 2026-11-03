@@ -1,0 +1,16 @@
+{
+  "stage": "antes_reportes",
+  "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+  "start_costa_rica": "2026-11-02T18:45:50-06:00",
+  "finish_costa_rica": "2026-11-02T18:45:50-06:00",
+  "pytest_exit_code": 1,
+  "process_duration_seconds": 0.212179,
+  "total_items": 3,
+  "counts": {
+    "fallido": 2,
+    "aprobado": 1
+  },
+  "integrity_unchanged_during_run": true,
+  "original_repo_changed_during_run": false,
+  "commit_or_push_performed": false
+}

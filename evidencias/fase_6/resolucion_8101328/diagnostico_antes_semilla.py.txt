@@ -1,0 +1,214 @@
+"""Diagnósticos independientes de cuatro reportes de Fase 5.
+
+Diseñados para una copia de 8101328, usando funciones y diccionarios reales.
+No son los tests originales del autor ni prueban una interfaz gráfica.
+No se importa ni se presupone la existencia de sus fixtures/adaptadores.
+"""
+
+import json
+from datetime import date, datetime, timedelta
+
+import pytest
+
+from src.db.conexion import (
+    cerrar_conexion,
+    configurar_ruta_base_datos,
+    obtener_conexion,
+    obtener_ruta_base_datos,
+)
+from src.db.inicializador import inicializar_base_datos
+from src.model.estudiantes.servicio import registrar_estudiante
+from src.model.panel.servicio import consultar_panel
+from src.model.reservaciones.servicio import (
+    cancelar_ocurrencias_futuras,
+    consultar_reservaciones,
+    crear_reservacion,
+    crear_reservaciones_recurrentes,
+    modificar_reservacion,
+)
+
+
+CARNE = "A001234567"
+
+
+@pytest.fixture
+def bd_diagnostico(tmp_path):
+    """Aísla SQLite y prepara el estudiante que los reportes presuponen."""
+    ruta_anterior = obtener_ruta_base_datos()
+    cerrar_conexion()
+    try:
+        configurar_ruta_base_datos(tmp_path / "diagnosticos_reportes.db")
+        inicializacion = inicializar_base_datos()
+        assert inicializacion.exito, inicializacion.mensaje
+        exito, mensaje = registrar_estudiante(
+            CARNE, "Andrea Solano", "andrea@universidad.ac.cr"
+        )
+        assert exito, mensaje
+        conexion = obtener_conexion()
+        estudiante = conexion.execute(
+            "SELECT estado FROM estudiantes WHERE carne = ?", (CARNE,)
+        ).fetchone()
+        assert estudiante is not None and estudiante["estado"] == "activo"
+        yield conexion
+    finally:
+        cerrar_conexion()
+        configurar_ruta_base_datos(ruta_anterior)
+
+
+def _estado(conexion):
+    tablas = ("estudiantes", "salas", "reservaciones", "auditoria")
+    return {
+        tabla: [dict(fila) for fila in conexion.execute(
+            f"SELECT * FROM {tabla} ORDER BY id"
+        )]
+        for tabla in tablas
+    }
+
+
+def _observar(reporte, datos, esperado, obtenido):
+    print("OBSERVACION_CP " + json.dumps(
+        {
+            "caso": reporte,
+            "tipo": "diagnostico_independiente_api_real",
+            "limite": "No ejecuta el test original ni una interfaz gráfica.",
+            "datos": datos,
+            "esperado": esperado,
+            "obtenido": obtenido,
+        },
+        ensure_ascii=False,
+        sort_keys=True,
+    ))
+
+
+def _fecha_futura():
+    return (date.today() + timedelta(days=10)).isoformat()
+
+
+def _crear_serie(fecha, semanas):
+    serie = crear_reservaciones_recurrentes(
+        carne=CARNE,
+        codigo_sala="S01",
+        fecha=fecha,
+        hora_inicio="10:00",
+        duracion=1,
+        cantidad_personas=2,
+        semanas=semanas,
+    )
+    assert serie["exito"] is True, serie
+    assert len(serie["ids"]) == semanas
+    return serie
+
+
+def _reservaciones_por_id():
+    consulta = consultar_reservaciones()
+    assert consulta["exito"] is True, consulta
+    return {fila["id"]: fila for fila in consulta["reservaciones"]}
+
+
+def test_diagnostico_bug_res_01_fecha_inexistente_se_rechaza_sin_excepcion(bd_diagnostico):
+    datos = {
+        "carne": CARNE, "codigo_sala": "S01", "fecha": "2026-02-30",
+        "hora_inicio": "10:00", "duracion": 1, "cantidad_personas": 2,
+    }
+    antes = _estado(bd_diagnostico)
+    esperado = {"exito": False, "error_fecha_controlado": True, "sin_cambios": True}
+    try:
+        resultado = crear_reservacion(**datos)
+    except ValueError as error:
+        _observar(
+            "BUG-RES-01", datos, esperado,
+            {"excepcion": {"tipo": type(error).__name__, "mensaje": str(error)},
+             "antes": antes, "despues": _estado(bd_diagnostico)},
+        )
+        raise
+    despues = _estado(bd_diagnostico)
+    _observar(
+        "BUG-RES-01", datos, esperado,
+        {"respuesta": resultado, "antes": antes, "despues": despues,
+         "sin_cambios": antes == despues},
+    )
+    assert resultado["exito"] is False
+    assert "formato" in resultado["mensaje"].lower(), resultado
+    assert despues == antes
+
+
+def test_diagnostico_bug_res_02_cambiar_a_cubiculo_revalida_capacidad(bd_diagnostico):
+    fecha = _fecha_futura()
+    creada = crear_reservacion(CARNE, "S02", fecha, "10:00", 1, 4)
+    assert creada["exito"] is True, creada
+    antes = _estado(bd_diagnostico)
+    resultado = modificar_reservacion(creada["id"], codigo_sala="S05")
+    despues = _estado(bd_diagnostico)
+    _observar(
+        "BUG-RES-02",
+        {"reserva": creada["id"], "fecha": fecha, "sala_original": "S02",
+         "personas_originales": 4, "sala_nueva": "S05", "capacidad_nueva": 1},
+        {"exito": False, "motivo_capacidad": True, "sin_cambios": True},
+        {"respuesta": resultado, "antes": antes, "despues": despues,
+         "sin_cambios": antes == despues},
+    )
+    assert resultado["exito"] is False
+    assert "capacidad" in resultado["mensaje"].lower(), resultado
+    assert despues == antes
+
+
+def test_diagnostico_bug_rec_01_modificar_ocurrencia_preserva_serie(bd_diagnostico):
+    fecha = _fecha_futura()
+    serie = _crear_serie(fecha, semanas=3)
+    antes = _reservaciones_por_id()
+    seleccionada = serie["ids"][1]
+    resultado = modificar_reservacion(seleccionada, hora_inicio="14:00")
+    despues = _reservaciones_por_id()
+    esperado = {identificador: dict(fila) for identificador, fila in antes.items()}
+    esperado[seleccionada].update(hora_inicio="14:00", hora_fin="15:00")
+    _observar(
+        "BUG-REC-01",
+        {"fecha_inicial": fecha, "serie": serie["serie_id"],
+         "ids": serie["ids"], "seleccionada": seleccionada, "hora_nueva": "14:00"},
+        {"exito": True, "reservaciones": esperado,
+         "serie_preservada": serie["serie_id"], "otras_ocurrencias_sin_cambios": True},
+        {"respuesta": resultado, "antes": antes, "despues": despues,
+         "persistencia": _estado(bd_diagnostico)},
+    )
+    assert resultado["exito"] is True, resultado
+    assert set(antes) == set(serie["ids"])
+    assert despues == esperado
+    assert {fila["serie_id"] for fila in despues.values()} == {serie["serie_id"]}
+
+
+def test_diagnostico_bug_pan_01_cancelar_serie_actualiza_consulta_panel(bd_diagnostico):
+    fecha = _fecha_futura()
+    serie = _crear_serie(fecha, semanas=2)
+    referencia = datetime.strptime(f"{fecha} 08:00", "%Y-%m-%d %H:%M")
+    antes = consultar_panel(ahora=referencia)
+    assert antes["exito"] is True, antes
+    cancelacion = cancelar_ocurrencias_futuras(serie["ids"][0])
+    despues = consultar_panel(ahora=referencia)
+    _observar(
+        "BUG-PAN-01",
+        {"fecha_inicial": fecha, "referencia_panel": referencia.isoformat(),
+         "serie": serie["serie_id"], "ids": serie["ids"],
+         "cancelar_desde": serie["ids"][0]},
+        {"cantidad_cancelada": 2, "proximas_reservaciones": [],
+         "ocupacion_S01": 0, "S01_y_S03_permanecen_en_catalogo": True,
+         "ocupacion_S03": 0,
+         "limite": "Nueva consulta del servicio; no actualización visual de ventanas."},
+        {"cancelacion": cancelacion, "panel_antes": antes,
+         "panel_despues": despues, "persistencia": _estado(bd_diagnostico)},
+    )
+    assert cancelacion["exito"] is True, cancelacion
+    assert cancelacion["cantidad_cancelada"] == 2
+    assert despues["exito"] is True, despues
+    assert {fila["id"] for fila in antes["proximas_reservaciones"]} == set(serie["ids"])
+    assert despues["proximas_reservaciones"] == []
+    ocupacion_antes = {fila["codigo"]: fila for fila in antes["ocupacion_salas"]}
+    ocupacion_despues = {fila["codigo"]: fila for fila in despues["ocupacion_salas"]}
+    assert ocupacion_antes.keys() == ocupacion_despues.keys()
+    assert {"S01", "S03"} <= ocupacion_despues.keys()
+    assert ocupacion_antes["S01"]["reservaciones_activas"] == 1
+    for campo in ("reservaciones_activas", "horas_reservadas", "personas_reservadas"):
+        assert ocupacion_despues["S01"][campo] == 0
+        assert ocupacion_antes["S03"][campo] == ocupacion_despues["S03"][campo] == 0
+    reservaciones = _reservaciones_por_id()
+    assert set(reservaciones) == set(serie["ids"])
+    assert {fila["estado"] for fila in reservaciones.values()} == {"cancelada"}

@@ -1,0 +1,26 @@
+{
+  "src/model/reservaciones/servicio.py": {
+    "cc9fab4_sha256": "f8de9d95ae54d3baee4821508119cd1d8a98e782dbc0318fc45dd965ff1d26fb",
+    "8101328_sha256": "f8de9d95ae54d3baee4821508119cd1d8a98e782dbc0318fc45dd965ff1d26fb",
+    "fase6_sha256": "f8de9d95ae54d3baee4821508119cd1d8a98e782dbc0318fc45dd965ff1d26fb",
+    "sin_cambios_productivos": true
+  },
+  "src/model/panel/servicio.py": {
+    "cc9fab4_sha256": "e0bd4827732b54a463f8e24e701ddf39429ca95f9a718c7871548beae7c1b206",
+    "8101328_sha256": "e0bd4827732b54a463f8e24e701ddf39429ca95f9a718c7871548beae7c1b206",
+    "fase6_sha256": "e0bd4827732b54a463f8e24e701ddf39429ca95f9a718c7871548beae7c1b206",
+    "sin_cambios_productivos": true
+  },
+  "src/controller/controller.py": {
+    "cc9fab4_sha256": "14f721150e6ec472c1dca6e7075ca4b95a95ff1f1948f88583f1b9238dd71635",
+    "8101328_sha256": "14f721150e6ec472c1dca6e7075ca4b95a95ff1f1948f88583f1b9238dd71635",
+    "fase6_sha256": "14f721150e6ec472c1dca6e7075ca4b95a95ff1f1948f88583f1b9238dd71635",
+    "sin_cambios_productivos": true
+  },
+  "src/view/app.py": {
+    "cc9fab4_sha256": "7e2b0ac4dc1959810a0da61a7100eef63ee19cd3146348c056802fdfcd61343a",
+    "8101328_sha256": "7e2b0ac4dc1959810a0da61a7100eef63ee19cd3146348c056802fdfcd61343a",
+    "fase6_sha256": "7e2b0ac4dc1959810a0da61a7100eef63ee19cd3146348c056802fdfcd61343a",
+    "sin_cambios_productivos": true
+  }
+}

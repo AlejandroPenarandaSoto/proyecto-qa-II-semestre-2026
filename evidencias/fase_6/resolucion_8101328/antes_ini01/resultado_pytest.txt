@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14
+rootdir: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/repositorio
+collecting ... collected 1 item
+
+tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales FAILED [100%]
+
+=================================== FAILURES ===================================
+_____________________ test_rf01_crea_estudiantes_iniciales _____________________
+
+ruta_bd = PosixPath('/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_ini01/test_rf01_crea_estudiantes_ini0/reservas_prueba.db')
+
+    @pytest.mark.xfail(
+        strict=True,
+        reason="Hallazgo: semilla.py solo inserta salas; RF-01 exige también "
+               "datos iniciales de estudiantes.",
+    )
+    def test_rf01_crea_estudiantes_iniciales(ruta_bd):
+        """CP-INI-02"""
+        inicializar_base_datos()
+    
+        (total,) = obtener_conexion().execute(
+            "SELECT COUNT(*) FROM estudiantes").fetchone()
+    
+>       assert total > 0
+E       assert 0 > 0
+
+tests/test_inicializacion_persistencia.py:133: AssertionError
+- generated xml file: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_6_Persona_1_8101328/antes_ini01/resultado_pytest.xml -
+=========================== short test summary info ============================
+FAILED tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales - assert 0 > 0
+============================== 1 failed in 0.05s ===============================

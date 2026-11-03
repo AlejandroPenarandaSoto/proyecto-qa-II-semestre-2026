@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="0.045" timestamp="2026-11-02T18:18:28.086234-06:00" hostname="MacBook-Air-de-Alejandro.local"><testcase classname="tests.test_salas_ampliacion_fase5" name="test_cp_sal_07_rechaza_duplicado_en_minusculas" file="tests/test_salas_ampliacion_fase5.py" line="164" time="0.004"><failure message="assert True is False">base_datos_salas = &lt;sqlite3.Connection object at 0x107188c70&gt;
+
+    def test_cp_sal_07_rechaza_duplicado_en_minusculas(base_datos_salas):
+&gt;       _verificar_registro_rechazado("CP-SAL-07", capacidad=5, codigo="s01")
+
+tests/test_salas_ampliacion_fase5.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+caso = 'CP-SAL-07', capacidad = 5, codigo = 's01'
+
+    def _verificar_registro_rechazado(caso, capacidad, codigo="S06"):
+        antes = _fotografia_bd()
+        nombre = "Duplicada" if codigo in ("S01", "s01") else "Sala Nueva"
+        resultado = registrar_sala(codigo, nombre, capacidad)
+        despues = _fotografia_bd()
+        _observar(
+            caso, "RF-12",
+            {"codigo": codigo, "nombre": nombre, "capacidad": capacidad},
+            {"exito": False, "mensaje_informativo": True,
+             "datos_y_auditoria_sin_cambios": True},
+            {"respuesta": resultado, "antes": antes, "despues": despues},
+        )
+&gt;       assert resultado["exito"] is False
+E       assert True is False
+
+tests/test_salas_ampliacion_fase5.py:92: AssertionError</failure><system-out>--------------------------------- Captured Out ---------------------------------
+OBSERVACION_CP {"caso": "CP-SAL-07", "datos": {"capacidad": 5, "codigo": "s01", "nombre": "Duplicada"}, "esperado": {"datos_y_auditoria_sin_cambios": true, "exito": false, "mensaje_informativo": true}, "obtenido": {"antes": {"auditoria": [], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "despues": {"auditoria": [{"accion": "creacion", "detalle": "Sala s01 registrada correctamente.", "entidad": "sala", "entidad_id": "s01", "fecha_hora": "2026-11-02 18:18:28", "id": 1}], "estudiantes": [], "reservaciones": [], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}, {"capacidad": 5, "codigo": "s01", "estado": "disponible", "id": 6, "nombre": "Duplicada"}]}, "respuesta": {"exito": true, "mensaje": "Sala s01 registrada exitosamente."}}, "requisito": "RF-12"}
+
+</system-out></testcase><testcase classname="tests.test_disponibilidad_ampliacion_fase5" name="test_f5_dis_01_hora_sin_cero_no_ignora_conflicto" file="tests/test_disponibilidad_ampliacion_fase5.py" line="168" time="0.007"><failure message="AssertionError: La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00.&#10;assert True is False">base_temporal = &lt;sqlite3.Connection object at 0x10718a4d0&gt;
+
+    def test_f5_dis_01_hora_sin_cero_no_ignora_conflicto(base_temporal):
+        """Caso nuevo de robustez: rechazar 9:00 o detectar el conflicto de 09:00."""
+        fecha = _manana()
+        _reservar(base_temporal, fecha, hora="08:00", duracion=2)
+        resultado = _consultar(
+            base_temporal, "F5-DIS-01", fecha, "9:00", 1,
+            "No disponible: rechazar el formato o reconocer el traslape 09:00–10:00 con 08:00–10:00.",
+        )
+&gt;       assert resultado["disponible"] is False, (
+            "La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00."
+        )
+E       AssertionError: La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00.
+E       assert True is False
+
+tests/test_disponibilidad_ampliacion_fase5.py:177: AssertionError</failure><system-out>--------------------------------- Captured Out ---------------------------------
+OBSERVACION_CP {"caso": "F5-DIS-01", "datos": {"duracion": 1, "fecha": "2026-11-03", "hora": "9:00", "reloj_simulado_del_modulo": null, "sala": "S01"}, "esperado": "No disponible: rechazar el formato o reconocer el traslape 09:00–10:00 con 08:00–10:00.", "obtenido": {"estado_antes": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-11-03", "hora_inicio": "08:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_despues": {"auditoria": [], "estudiantes": [{"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 1, "fecha": "2026-11-03", "hora_inicio": "08:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "respuesta": {"disponible": true, "motivo": "La sala está disponible."}, "sin_cambios": true}, "requisito": "RF-08; RN-09; RNF-06"}
+
+</system-out></testcase></testsuite></testsuites>

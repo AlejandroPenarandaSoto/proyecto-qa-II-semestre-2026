@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14
+rootdir: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/repositorio
+collecting ... collected 5 items
+
+tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales PASSED [ 20%]
+tests/test_semilla_verificacion_fase6.py::test_f6_ini01_carga_estudiantes_exactos_sin_reservas_ni_auditoria PASSED [ 40%]
+tests/test_semilla_verificacion_fase6.py::test_f6_ini01_reinicializar_preserva_modificaciones_sin_duplicar PASSED [ 60%]
+tests/test_semilla_verificacion_fase6.py::test_f6_ini01_no_inyecta_semilla_si_existe_estudiante_del_usuario PASSED [ 80%]
+tests/test_semilla_verificacion_fase6.py::test_f6_ini01_fallo_semilla_estudiantes_revierte_datos_parciales PASSED [100%]
+
+==================================== PASSES ====================================
+______ test_f6_ini01_carga_estudiantes_exactos_sin_reservas_ni_auditoria _______
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-INI-02", "esperado": {"auditoria": 0, "estudiantes": [{"carne": "A001234567", "correo": "andrea@universidad.ac.cr", "estado": "activo", "nombre_completo": "Andrea Solano"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "nombre_completo": "Daniela Rojas"}], "exito": true, "reservaciones": 0}, "obtenido": {"conteos": {"auditoria": 0, "estudiantes": 3, "reservaciones": 0, "salas": 5}, "estudiantes": [{"carne": "A001234567", "correo": "andrea@universidad.ac.cr", "estado": "activo", "nombre_completo": "Andrea Solano"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "nombre_completo": "Daniela Rojas"}], "exito": true, "mensaje": "Base de datos creada e inicializada correctamente."}, "requisito": "RF-01", "variante_fase6": "primera_carga_exacta"}
+_______ test_f6_ini01_reinicializar_preserva_modificaciones_sin_duplicar _______
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-INI-02", "esperado": {"cantidad": 3, "estudiantes": [{"carne": "A001234567", "correo": "andrea.nuevo@universidad.ac.cr", "estado": "inactivo", "nombre_completo": "Andrea Solano Actualizada"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "nombre_completo": "Daniela Rojas"}], "exito": true}, "obtenido": {"conteos": {"auditoria": 0, "estudiantes": 3, "reservaciones": 0, "salas": 5}, "estudiantes": [{"carne": "A001234567", "correo": "andrea.nuevo@universidad.ac.cr", "estado": "inactivo", "nombre_completo": "Andrea Solano Actualizada"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "nombre_completo": "Daniela Rojas"}], "exito": true, "mensaje": "Base de datos existente cargada correctamente."}, "requisito": "RF-01", "variante_fase6": "segunda_carga_conserva_datos"}
+______ test_f6_ini01_no_inyecta_semilla_si_existe_estudiante_del_usuario _______
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-INI-02", "esperado": {"estudiantes": [{"carne": "U123456789", "correo": "propio@universidad.ac.cr", "estado": "inactivo", "nombre_completo": "Usuario Propio"}], "exito": true}, "obtenido": {"conteos": {"auditoria": 0, "estudiantes": 1, "reservaciones": 0, "salas": 5}, "estudiantes": [{"carne": "U123456789", "correo": "propio@universidad.ac.cr", "estado": "inactivo", "nombre_completo": "Usuario Propio"}], "exito": true, "mensaje": "Base de datos existente cargada correctamente."}, "requisito": "RF-01", "variante_fase6": "base_con_datos_del_usuario"}
+_______ test_f6_ini01_fallo_semilla_estudiantes_revierte_datos_parciales _______
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "CP-INI-02", "esperado": {"conteos": {"auditoria": 0, "estudiantes": 0, "reservaciones": 0, "salas": 0}, "exito": false}, "obtenido": {"conteos": {"auditoria": 0, "estudiantes": 0, "reservaciones": 0, "salas": 0}, "exito": false, "mensaje": "No fue posible inicializar la base de datos: Fallo simulado al completar la semilla de estudiantes", "salas_insertadas": 0}, "requisito": "RF-01", "variante_fase6": "fallo_de_semilla_atomica"}
+- generated xml file: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_6_Persona_1_8101328/despues_ini01/resultado_pytest.xml -
+=========================== short test summary info ============================
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales
+PASSED tests/test_semilla_verificacion_fase6.py::test_f6_ini01_carga_estudiantes_exactos_sin_reservas_ni_auditoria
+PASSED tests/test_semilla_verificacion_fase6.py::test_f6_ini01_reinicializar_preserva_modificaciones_sin_duplicar
+PASSED tests/test_semilla_verificacion_fase6.py::test_f6_ini01_no_inyecta_semilla_si_existe_estudiante_del_usuario
+PASSED tests/test_semilla_verificacion_fase6.py::test_f6_ini01_fallo_semilla_estudiantes_revierte_datos_parciales
+============================== 5 passed in 0.05s ===============================

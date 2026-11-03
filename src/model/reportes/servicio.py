@@ -83,15 +83,20 @@ def generar_reporte_csv(
             "mensaje": "No fue posible generar el reporte CSV.",
         }
     finally:
-        if archivo_temporal is not None:
-            try:
-                Path(archivo_temporal).unlink(missing_ok=True)
-            except OSError as error_limpieza:
-                _LOGGER.warning(
-                    "No fue posible eliminar el archivo temporal %s: %s",
-                    archivo_temporal,
-                    error_limpieza,
-                )
+        _eliminar_archivo_temporal(archivo_temporal)
+
+
+def _eliminar_archivo_temporal(archivo_temporal):
+    if archivo_temporal is None:
+        return
+    try:
+        Path(archivo_temporal).unlink(missing_ok=True)
+    except OSError as error_limpieza:
+        _LOGGER.warning(
+            "No fue posible eliminar el archivo temporal %s: %s",
+            archivo_temporal,
+            error_limpieza,
+        )
 
 
 def _validar_rango_fechas(fecha_inicio, fecha_fin):
@@ -152,22 +157,28 @@ def _consultar_reservaciones(fecha_inicio, fecha_fin):
 
 
 def _escribir_archivo_temporal(destino, filas):
-    with tempfile.NamedTemporaryFile(
-        mode="w",
-        encoding="utf-8",
-        newline="",
-        prefix=f".{destino.name}.",
-        suffix=".tmp",
-        dir=destino.parent,
-        delete=False,
-    ) as temporal:
-        escritor = csv.DictWriter(
-            temporal,
-            fieldnames=ENCABEZADOS_REPORTE,
-        )
-        escritor.writeheader()
-        escritor.writerows(filas)
-        return temporal.name
+    archivo_temporal = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            newline="",
+            prefix=f".{destino.name}.",
+            suffix=".tmp",
+            dir=destino.parent,
+            delete=False,
+        ) as temporal:
+            archivo_temporal = temporal.name
+            escritor = csv.DictWriter(
+                temporal,
+                fieldnames=ENCABEZADOS_REPORTE,
+            )
+            escritor.writeheader()
+            escritor.writerows(filas)
+        return archivo_temporal
+    except OSError:
+        _eliminar_archivo_temporal(archivo_temporal)
+        raise
 
 
 def _calcular_hora_fin(hora_inicio, duracion_horas):

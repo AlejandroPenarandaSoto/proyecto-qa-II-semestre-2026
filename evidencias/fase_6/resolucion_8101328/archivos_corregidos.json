@@ -1,0 +1,86 @@
+[
+  {
+    "archivo": "src/db/inicializador.py",
+    "nuevo": false,
+    "sha256_antes": "942eec65f75f595ea11c554c9b43fbe01769ebc455a907e7399ecdce5ecd01d8",
+    "sha256_despues": "6734cb47640ff88bd066e1e1d171d02a9cc5d89569dd4ddeb8af685bdf6536bd"
+  },
+  {
+    "archivo": "src/db/semilla.py",
+    "nuevo": false,
+    "sha256_antes": "8c4fcc6037869a03c0419a8d8fb021db896342482aa6529a07540bcc346dec8b",
+    "sha256_despues": "48e3baa495b411433cc7b3550e186ca0195446505172ec184c74503228f559ff"
+  },
+  {
+    "archivo": "src/model/reportes/servicio.py",
+    "nuevo": false,
+    "sha256_antes": "95a79aff56d0ef4802fa104df74a5dc895b2966a1e4573973026fda6014b3ef1",
+    "sha256_despues": "a2ab8ed6687221656e626daa37f9eab7745db0a07fa7532044ad2092e761b476"
+  },
+  {
+    "archivo": "src/model/salas/servicio.py",
+    "nuevo": false,
+    "sha256_antes": "f81b79960439900f304198d2071dd649cf2affc38b2a57a40b751004599b3f53",
+    "sha256_despues": "5fd8efc623c92406b508c0838d7048798886edacfb51fa56b0c782e2cb978eee"
+  },
+  {
+    "archivo": "tests/test_auditoria_entidades.py",
+    "nuevo": false,
+    "sha256_antes": "6c85f071105cc42e968123dcbb9a4238c4f9df66b8c86b6af0e2ea55d693c2bd",
+    "sha256_despues": "b2bef5834a002cf72456c633a80fe5a2265b5740f20abf212fd5c9521fbfdbc0"
+  },
+  {
+    "archivo": "tests/test_contraste_reportes_fase6.py",
+    "nuevo": true,
+    "sha256_antes": null,
+    "sha256_despues": "945e489dbe4b0327bdef837736ef6619b753fd32b9cafe82842ca9b653c2b5cc"
+  },
+  {
+    "archivo": "tests/test_estudiantes.py",
+    "nuevo": false,
+    "sha256_antes": "b3bca211b63025c864b3c845407e513d23d4c916ec8c2ccbeb5c09f38b5c0ee4",
+    "sha256_despues": "f076672a2b470e81ce9ab3baf9318e7109add66ae30d1eb3a343dfc0f954dfb7"
+  },
+  {
+    "archivo": "tests/test_estudiantes_historial_fase5.py",
+    "nuevo": false,
+    "sha256_antes": "555f03681a7c793bb260d50f514731e214c848040227ce28c1d495d7e1f7f544",
+    "sha256_despues": "3044468b418d6529ace89f63e5f299caedc3283bf4b393053a127bc95be13902"
+  },
+  {
+    "archivo": "tests/test_estudiantes_limites_fase5.py",
+    "nuevo": false,
+    "sha256_antes": "88470ea44380123280560a62d3bf9a89b783053843ed9f6ef033559534fff817",
+    "sha256_despues": "4d3d53bef0e41ce9a1e878c123881039f3b52029f88c539b3a27014833faef8c"
+  },
+  {
+    "archivo": "tests/test_inicializacion_persistencia.py",
+    "nuevo": false,
+    "sha256_antes": "710e2a4962dd85f89ee11fee7a41f0b186a0097a5af7169bb374dc5e3697d0a4",
+    "sha256_despues": "f06a3dd34c639c3170fd917bd996bbc782ec8441ab2c5f9a109838cf8e74d226"
+  },
+  {
+    "archivo": "tests/test_inicializacion_verificacion_fase6.py",
+    "nuevo": true,
+    "sha256_antes": null,
+    "sha256_despues": "2ea2e1e7934cca6848432a3f7e7f206ed5b5fb074a4b1889ebe3939e94314cff"
+  },
+  {
+    "archivo": "tests/test_reportes_verificacion_fase6.py",
+    "nuevo": true,
+    "sha256_antes": null,
+    "sha256_despues": "1611e1658d546610a3e51ff571b61f4e6eb319ccef3dccaff9dda636ec7c2d34"
+  },
+  {
+    "archivo": "tests/test_salas_verificacion_fase6.py",
+    "nuevo": true,
+    "sha256_antes": null,
+    "sha256_despues": "6ac035734da36876d60cec7c980a9171d310d29c0cc89c827936a199d9905a38"
+  },
+  {
+    "archivo": "tests/test_semilla_verificacion_fase6.py",
+    "nuevo": true,
+    "sha256_antes": null,
+    "sha256_despues": "a9588c936d0702a50144155fb9e25422839bb8f4aebe4b390ae20115b073d38b"
+  }
+]

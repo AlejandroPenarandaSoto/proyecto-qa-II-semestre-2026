@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="3" time="0.045" timestamp="2026-11-02T18:45:50.757397-06:00" hostname="MacBook-Air-de-Alejandro.local"><testcase classname="tests.test_reportes_verificacion_fase6" name="test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writeheader]" file="tests/test_reportes_verificacion_fase6.py" line="124" time="0.006"><failure message="AssertionError: No deben quedar temporales ocultos incompletos.&#10;assert ['.reporte.csv.3x9dxqnc.tmp'] == []&#10;  &#10;  Left contains one more item: '.reporte.csv.3x9dxqnc.tmp'&#10;  &#10;  Full diff:&#10;  - []&#10;  + [&#10;  +     '.reporte.csv.3x9dxqnc.tmp',&#10;  + ]">escenario_reporte = (&lt;sqlite3.Connection object at 0x10ac5e4d0&gt;, '2026-11-04', PosixPath('/Users/avega/Documents/Codex/2026-09-28/referenc...es_reportes/test_verificacion_bug_p5_rep_00/exportacion/reporte.csv'), b'reporte_anterior\ncontenido_previo_intacto\n')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10ac4e3f0&gt;
+operacion = 'writeheader'
+
+    @pytest.mark.parametrize("operacion", ("writeheader", "writerows"))
+    def test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal(
+        escenario_reporte, monkeypatch, operacion
+    ):
+        conexion, fecha, destino, _contenido = escenario_reporte
+        antes = _estado_bd(conexion)
+        archivos_antes = _archivos(destino.parent)
+        inyecciones = []
+    
+        def fallar_escritura(_escritor, *_argumentos, **_opciones):
+            inyecciones.append({
+                "operacion": operacion,
+                "archivos_al_inyectar": _archivos(destino.parent),
+                "error": "OSError simulado durante escritura del CSV temporal.",
+            })
+            raise OSError(f"Fallo de prueba en {operacion}")
+    
+        with monkeypatch.context() as parche:
+            parche.setattr(servicio.csv.DictWriter, operacion, fallar_escritura)
+            resultado = servicio.generar_reporte_csv(fecha, fecha, destino)
+    
+&gt;       _registrar_y_comprobar(
+            escenario_reporte, operacion, resultado, antes, archivos_antes, inyecciones
+        )
+
+tests/test_reportes_verificacion_fase6.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+escenario = (&lt;sqlite3.Connection object at 0x10ac5e4d0&gt;, '2026-11-04', PosixPath('/Users/avega/Documents/Codex/2026-09-28/referenc...es_reportes/test_verificacion_bug_p5_rep_00/exportacion/reporte.csv'), b'reporte_anterior\ncontenido_previo_intacto\n')
+variante = 'writeheader'
+resultado = {'exito': False, 'cancelado': False, 'mensaje': 'No fue posible generar el reporte CSV.'}
+antes = {'estudiantes': [{'id': 1, 'carne': 'A001234567', 'nombre_completo': 'Andrea Solano', 'correo': 'andrea@universidad.ac...studiante', ...}, {'id': 2, 'fecha_hora': '2026-11-02 18:45:50', 'accion': 'creacion', 'entidad': 'reservacion', ...}]}
+archivos_antes = ['reporte.csv']
+inyecciones = [{'operacion': 'writeheader', 'archivos_al_inyectar': ['.reporte.csv.3x9dxqnc.tmp', 'reporte.csv'], 'error': 'OSError simulado durante escritura del CSV temporal.'}]
+
+    def _registrar_y_comprobar(
+        escenario, variante, resultado, antes, archivos_antes, inyecciones
+    ):
+        conexion, fecha, destino, contenido_anterior = escenario
+        despues = _estado_bd(conexion)
+        archivos_despues = _archivos(destino.parent)
+        contenido_despues = destino.read_bytes() if destino.is_file() else None
+        temporales_despues = sorted(
+            ruta.name for ruta in destino.parent.glob(f".{destino.name}.*.tmp")
+        )
+        observacion = {
+            "caso": "BUG-P5-REP-01",
+            "caso_plan": "CP-REP-12",
+            "variante": variante,
+            "origen": "Verificación independiente derivada del reporte PDF, no test original.",
+            "datos": {
+                "carne": "C123456789", "estudiante": "Ana Rodríguez",
+                "sala": "S01", "fecha_inicio": fecha, "fecha_fin": fecha,
+                "horario": "10:00-12:00", "personas": 2,
+                "ruta_destino": str(destino),
+            },
+            "esperado": {
+                "exito": False, "cancelado": False, "mensaje_de_error": True,
+                "destino_anterior_intacto": True, "datos_y_auditoria_sin_cambios": True,
+                "archivos_exportacion": archivos_antes, "temporales_residuales": [],
+            },
+            "obtenido": {
+                "respuesta": resultado, "inyecciones": inyecciones,
+                "archivos_antes": archivos_antes, "archivos_despues": archivos_despues,
+                "temporales_residuales": temporales_despues,
+                "contenido_destino_antes_hex": contenido_anterior.hex(),
+                "contenido_destino_despues_hex": (
+                    None if contenido_despues is None else contenido_despues.hex()
+                ),
+                "destino_anterior_intacto": contenido_despues == contenido_anterior,
+                "estado_bd_antes": antes, "estado_bd_despues": despues,
+                "datos_y_auditoria_sin_cambios": antes == despues,
+            },
+        }
+        print("OBSERVACION_CP " + json.dumps(
+            observacion, ensure_ascii=False, sort_keys=True
+        ))
+    
+        # La evidencia anterior se conserva aunque una aserción falle.
+        assert len(inyecciones) == 1, "El error previsto debe haberse inyectado."
+        assert inyecciones[0]["operacion"] == variante
+        assert resultado["exito"] is False
+        assert resultado["cancelado"] is False
+        assert "no fue posible" in resultado["mensaje"].lower(), resultado
+        assert despues == antes, "Exportar no debe modificar datos ni auditoría."
+        assert contenido_despues == contenido_anterior, "Debe conservarse el CSV anterior."
+&gt;       assert temporales_despues == [], "No deben quedar temporales ocultos incompletos."
+E       AssertionError: No deben quedar temporales ocultos incompletos.
+E       assert ['.reporte.csv.3x9dxqnc.tmp'] == []
+E         
+E         Left contains one more item: '.reporte.csv.3x9dxqnc.tmp'
+E         
+E         Full diff:
+E         - []
+E         + [
+E         +     '.reporte.csv.3x9dxqnc.tmp',
+E         + ]
+
+tests/test_reportes_verificacion_fase6.py:121: AssertionError</failure><system-out>--------------------------------- Captured Out ---------------------------------
+OBSERVACION_CP {"caso": "BUG-P5-REP-01", "caso_plan": "CP-REP-12", "datos": {"carne": "C123456789", "estudiante": "Ana Rodríguez", "fecha_fin": "2026-11-04", "fecha_inicio": "2026-11-04", "horario": "10:00-12:00", "personas": 2, "ruta_destino": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_reportes/test_verificacion_bug_p5_rep_00/exportacion/reporte.csv", "sala": "S01"}, "esperado": {"archivos_exportacion": ["reporte.csv"], "cancelado": false, "datos_y_auditoria_sin_cambios": true, "destino_anterior_intacto": true, "exito": false, "mensaje_de_error": true, "temporales_residuales": []}, "obtenido": {"archivos_antes": ["reporte.csv"], "archivos_despues": [".reporte.csv.3x9dxqnc.tmp", "reporte.csv"], "contenido_destino_antes_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a", "contenido_destino_despues_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a", "datos_y_auditoria_sin_cambios": true, "destino_anterior_intacto": true, "estado_bd_antes": {"auditoria": [{"accion": "creacion", "detalle": "Estudiante C123456789 registrado correctamente.", "entidad": "estudiante", "entidad_id": "C123456789", "fecha_hora": "2026-11-02 18:45:50", "id": 1}, {"accion": "creacion", "detalle": "Reservación R0001 creada correctamente.", "entidad": "reservacion", "entidad_id": "R0001", "fecha_hora": "2026-11-02 18:45:50", "id": 2}], "estudiantes": [{"carne": "A001234567", "correo": "andrea@universidad.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Andrea Solano"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "id": 2, "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "id": 3, "nombre_completo": "Daniela Rojas"}, {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 4, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 4, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_bd_despues": {"auditoria": [{"accion": "creacion", "detalle": "Estudiante C123456789 registrado correctamente.", "entidad": "estudiante", "entidad_id": "C123456789", "fecha_hora": "2026-11-02 18:45:50", "id": 1}, {"accion": "creacion", "detalle": "Reservación R0001 creada correctamente.", "entidad": "reservacion", "entidad_id": "R0001", "fecha_hora": "2026-11-02 18:45:50", "id": 2}], "estudiantes": [{"carne": "A001234567", "correo": "andrea@universidad.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Andrea Solano"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "id": 2, "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "id": 3, "nombre_completo": "Daniela Rojas"}, {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 4, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 4, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "inyecciones": [{"archivos_al_inyectar": [".reporte.csv.3x9dxqnc.tmp", "reporte.csv"], "error": "OSError simulado durante escritura del CSV temporal.", "operacion": "writeheader"}], "respuesta": {"cancelado": false, "exito": false, "mensaje": "No fue posible generar el reporte CSV."}, "temporales_residuales": [".reporte.csv.3x9dxqnc.tmp"]}, "origen": "Verificación independiente derivada del reporte PDF, no test original.", "variante": "writeheader"}
+
+</system-out></testcase><testcase classname="tests.test_reportes_verificacion_fase6" name="test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writerows]" file="tests/test_reportes_verificacion_fase6.py" line="124" time="0.005"><failure message="AssertionError: No deben quedar temporales ocultos incompletos.&#10;assert ['.reporte.csv.zlsexfc7.tmp'] == []&#10;  &#10;  Left contains one more item: '.reporte.csv.zlsexfc7.tmp'&#10;  &#10;  Full diff:&#10;  - []&#10;  + [&#10;  +     '.reporte.csv.zlsexfc7.tmp',&#10;  + ]">escenario_reporte = (&lt;sqlite3.Connection object at 0x10ac5f790&gt;, '2026-11-04', PosixPath('/Users/avega/Documents/Codex/2026-09-28/referenc...es_reportes/test_verificacion_bug_p5_rep_01/exportacion/reporte.csv'), b'reporte_anterior\ncontenido_previo_intacto\n')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10ae779b0&gt;
+operacion = 'writerows'
+
+    @pytest.mark.parametrize("operacion", ("writeheader", "writerows"))
+    def test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal(
+        escenario_reporte, monkeypatch, operacion
+    ):
+        conexion, fecha, destino, _contenido = escenario_reporte
+        antes = _estado_bd(conexion)
+        archivos_antes = _archivos(destino.parent)
+        inyecciones = []
+    
+        def fallar_escritura(_escritor, *_argumentos, **_opciones):
+            inyecciones.append({
+                "operacion": operacion,
+                "archivos_al_inyectar": _archivos(destino.parent),
+                "error": "OSError simulado durante escritura del CSV temporal.",
+            })
+            raise OSError(f"Fallo de prueba en {operacion}")
+    
+        with monkeypatch.context() as parche:
+            parche.setattr(servicio.csv.DictWriter, operacion, fallar_escritura)
+            resultado = servicio.generar_reporte_csv(fecha, fecha, destino)
+    
+&gt;       _registrar_y_comprobar(
+            escenario_reporte, operacion, resultado, antes, archivos_antes, inyecciones
+        )
+
+tests/test_reportes_verificacion_fase6.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+escenario = (&lt;sqlite3.Connection object at 0x10ac5f790&gt;, '2026-11-04', PosixPath('/Users/avega/Documents/Codex/2026-09-28/referenc...es_reportes/test_verificacion_bug_p5_rep_01/exportacion/reporte.csv'), b'reporte_anterior\ncontenido_previo_intacto\n')
+variante = 'writerows'
+resultado = {'exito': False, 'cancelado': False, 'mensaje': 'No fue posible generar el reporte CSV.'}
+antes = {'estudiantes': [{'id': 1, 'carne': 'A001234567', 'nombre_completo': 'Andrea Solano', 'correo': 'andrea@universidad.ac...studiante', ...}, {'id': 2, 'fecha_hora': '2026-11-02 18:45:50', 'accion': 'creacion', 'entidad': 'reservacion', ...}]}
+archivos_antes = ['reporte.csv']
+inyecciones = [{'operacion': 'writerows', 'archivos_al_inyectar': ['.reporte.csv.zlsexfc7.tmp', 'reporte.csv'], 'error': 'OSError simulado durante escritura del CSV temporal.'}]
+
+    def _registrar_y_comprobar(
+        escenario, variante, resultado, antes, archivos_antes, inyecciones
+    ):
+        conexion, fecha, destino, contenido_anterior = escenario
+        despues = _estado_bd(conexion)
+        archivos_despues = _archivos(destino.parent)
+        contenido_despues = destino.read_bytes() if destino.is_file() else None
+        temporales_despues = sorted(
+            ruta.name for ruta in destino.parent.glob(f".{destino.name}.*.tmp")
+        )
+        observacion = {
+            "caso": "BUG-P5-REP-01",
+            "caso_plan": "CP-REP-12",
+            "variante": variante,
+            "origen": "Verificación independiente derivada del reporte PDF, no test original.",
+            "datos": {
+                "carne": "C123456789", "estudiante": "Ana Rodríguez",
+                "sala": "S01", "fecha_inicio": fecha, "fecha_fin": fecha,
+                "horario": "10:00-12:00", "personas": 2,
+                "ruta_destino": str(destino),
+            },
+            "esperado": {
+                "exito": False, "cancelado": False, "mensaje_de_error": True,
+                "destino_anterior_intacto": True, "datos_y_auditoria_sin_cambios": True,
+                "archivos_exportacion": archivos_antes, "temporales_residuales": [],
+            },
+            "obtenido": {
+                "respuesta": resultado, "inyecciones": inyecciones,
+                "archivos_antes": archivos_antes, "archivos_despues": archivos_despues,
+                "temporales_residuales": temporales_despues,
+                "contenido_destino_antes_hex": contenido_anterior.hex(),
+                "contenido_destino_despues_hex": (
+                    None if contenido_despues is None else contenido_despues.hex()
+                ),
+                "destino_anterior_intacto": contenido_despues == contenido_anterior,
+                "estado_bd_antes": antes, "estado_bd_despues": despues,
+                "datos_y_auditoria_sin_cambios": antes == despues,
+            },
+        }
+        print("OBSERVACION_CP " + json.dumps(
+            observacion, ensure_ascii=False, sort_keys=True
+        ))
+    
+        # La evidencia anterior se conserva aunque una aserción falle.
+        assert len(inyecciones) == 1, "El error previsto debe haberse inyectado."
+        assert inyecciones[0]["operacion"] == variante
+        assert resultado["exito"] is False
+        assert resultado["cancelado"] is False
+        assert "no fue posible" in resultado["mensaje"].lower(), resultado
+        assert despues == antes, "Exportar no debe modificar datos ni auditoría."
+        assert contenido_despues == contenido_anterior, "Debe conservarse el CSV anterior."
+&gt;       assert temporales_despues == [], "No deben quedar temporales ocultos incompletos."
+E       AssertionError: No deben quedar temporales ocultos incompletos.
+E       assert ['.reporte.csv.zlsexfc7.tmp'] == []
+E         
+E         Left contains one more item: '.reporte.csv.zlsexfc7.tmp'
+E         
+E         Full diff:
+E         - []
+E         + [
+E         +     '.reporte.csv.zlsexfc7.tmp',
+E         + ]
+
+tests/test_reportes_verificacion_fase6.py:121: AssertionError</failure><system-out>--------------------------------- Captured Out ---------------------------------
+OBSERVACION_CP {"caso": "BUG-P5-REP-01", "caso_plan": "CP-REP-12", "datos": {"carne": "C123456789", "estudiante": "Ana Rodríguez", "fecha_fin": "2026-11-04", "fecha_inicio": "2026-11-04", "horario": "10:00-12:00", "personas": 2, "ruta_destino": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_reportes/test_verificacion_bug_p5_rep_01/exportacion/reporte.csv", "sala": "S01"}, "esperado": {"archivos_exportacion": ["reporte.csv"], "cancelado": false, "datos_y_auditoria_sin_cambios": true, "destino_anterior_intacto": true, "exito": false, "mensaje_de_error": true, "temporales_residuales": []}, "obtenido": {"archivos_antes": ["reporte.csv"], "archivos_despues": [".reporte.csv.zlsexfc7.tmp", "reporte.csv"], "contenido_destino_antes_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a", "contenido_destino_despues_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a", "datos_y_auditoria_sin_cambios": true, "destino_anterior_intacto": true, "estado_bd_antes": {"auditoria": [{"accion": "creacion", "detalle": "Estudiante C123456789 registrado correctamente.", "entidad": "estudiante", "entidad_id": "C123456789", "fecha_hora": "2026-11-02 18:45:50", "id": 1}, {"accion": "creacion", "detalle": "Reservación R0001 creada correctamente.", "entidad": "reservacion", "entidad_id": "R0001", "fecha_hora": "2026-11-02 18:45:50", "id": 2}], "estudiantes": [{"carne": "A001234567", "correo": "andrea@universidad.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Andrea Solano"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "id": 2, "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "id": 3, "nombre_completo": "Daniela Rojas"}, {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 4, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 4, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_bd_despues": {"auditoria": [{"accion": "creacion", "detalle": "Estudiante C123456789 registrado correctamente.", "entidad": "estudiante", "entidad_id": "C123456789", "fecha_hora": "2026-11-02 18:45:50", "id": 1}, {"accion": "creacion", "detalle": "Reservación R0001 creada correctamente.", "entidad": "reservacion", "entidad_id": "R0001", "fecha_hora": "2026-11-02 18:45:50", "id": 2}], "estudiantes": [{"carne": "A001234567", "correo": "andrea@universidad.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Andrea Solano"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "id": 2, "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "id": 3, "nombre_completo": "Daniela Rojas"}, {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 4, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 4, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "inyecciones": [{"archivos_al_inyectar": [".reporte.csv.zlsexfc7.tmp", "reporte.csv"], "error": "OSError simulado durante escritura del CSV temporal.", "operacion": "writerows"}], "respuesta": {"cancelado": false, "exito": false, "mensaje": "No fue posible generar el reporte CSV."}, "temporales_residuales": [".reporte.csv.zlsexfc7.tmp"]}, "origen": "Verificación independiente derivada del reporte PDF, no test original.", "variante": "writerows"}
+
+</system-out></testcase><testcase classname="tests.test_reportes_verificacion_fase6" name="test_control_bug_p5_rep_01_error_reemplazo_limpia_temporal" file="tests/test_reportes_verificacion_fase6.py" line="150" time="0.004"><system-out>--------------------------------- Captured Out ---------------------------------
+OBSERVACION_CP {"caso": "BUG-P5-REP-01", "caso_plan": "CP-REP-12", "datos": {"carne": "C123456789", "estudiante": "Ana Rodríguez", "fecha_fin": "2026-11-04", "fecha_inicio": "2026-11-04", "horario": "10:00-12:00", "personas": 2, "ruta_destino": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_reportes/test_control_bug_p5_rep_01_err0/exportacion/reporte.csv", "sala": "S01"}, "esperado": {"archivos_exportacion": ["reporte.csv"], "cancelado": false, "datos_y_auditoria_sin_cambios": true, "destino_anterior_intacto": true, "exito": false, "mensaje_de_error": true, "temporales_residuales": []}, "obtenido": {"archivos_antes": ["reporte.csv"], "archivos_despues": ["reporte.csv"], "contenido_destino_antes_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a", "contenido_destino_despues_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a", "datos_y_auditoria_sin_cambios": true, "destino_anterior_intacto": true, "estado_bd_antes": {"auditoria": [{"accion": "creacion", "detalle": "Estudiante C123456789 registrado correctamente.", "entidad": "estudiante", "entidad_id": "C123456789", "fecha_hora": "2026-11-02 18:45:50", "id": 1}, {"accion": "creacion", "detalle": "Reservación R0001 creada correctamente.", "entidad": "reservacion", "entidad_id": "R0001", "fecha_hora": "2026-11-02 18:45:50", "id": 2}], "estudiantes": [{"carne": "A001234567", "correo": "andrea@universidad.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Andrea Solano"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "id": 2, "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "id": 3, "nombre_completo": "Daniela Rojas"}, {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 4, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 4, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "estado_bd_despues": {"auditoria": [{"accion": "creacion", "detalle": "Estudiante C123456789 registrado correctamente.", "entidad": "estudiante", "entidad_id": "C123456789", "fecha_hora": "2026-11-02 18:45:50", "id": 1}, {"accion": "creacion", "detalle": "Reservación R0001 creada correctamente.", "entidad": "reservacion", "entidad_id": "R0001", "fecha_hora": "2026-11-02 18:45:50", "id": 2}], "estudiantes": [{"carne": "A001234567", "correo": "andrea@universidad.ac.cr", "estado": "activo", "id": 1, "nombre_completo": "Andrea Solano"}, {"carne": "B009876543", "correo": "carlos@universidad.ac.cr", "estado": "activo", "id": 2, "nombre_completo": "Carlos Méndez"}, {"carne": "C004567890", "correo": "daniela@universidad.ac.cr", "estado": "inactivo", "id": 3, "nombre_completo": "Daniela Rojas"}, {"carne": "C123456789", "correo": "ana@tec.ac.cr", "estado": "activo", "id": 4, "nombre_completo": "Ana Rodríguez"}], "reservaciones": [{"cantidad_personas": 2, "duracion_horas": 2, "estado": "activa", "estudiante_id": 4, "fecha": "2026-11-04", "hora_inicio": "10:00", "id": 1, "sala_id": 1, "serie_id": null}], "salas": [{"capacidad": 4, "codigo": "S01", "estado": "disponible", "id": 1, "nombre": "Sala Biblioteca 1"}, {"capacidad": 6, "codigo": "S02", "estado": "disponible", "id": 2, "nombre": "Sala Biblioteca 2"}, {"capacidad": 10, "codigo": "S03", "estado": "disponible", "id": 3, "nombre": "Laboratorio de estudio"}, {"capacidad": 8, "codigo": "S04", "estado": "fuera_de_servicio", "id": 4, "nombre": "Sala multimedia"}, {"capacidad": 1, "codigo": "S05", "estado": "disponible", "id": 5, "nombre": "Cubículo individual"}]}, "inyecciones": [{"archivos_al_inyectar": [".reporte.csv.5eijsiv4.tmp", "reporte.csv"], "destino": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_reportes/test_control_bug_p5_rep_01_err0/exportacion/reporte.csv", "error": "OSError simulado al reemplazar el CSV anterior.", "operacion": "os.replace", "origen": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_reportes/test_control_bug_p5_rep_01_err0/exportacion/.reporte.csv.5eijsiv4.tmp"}], "respuesta": {"cancelado": false, "exito": false, "mensaje": "No fue posible generar el reporte CSV."}, "temporales_residuales": []}, "origen": "Verificación independiente derivada del reporte PDF, no test original.", "variante": "os.replace"}
+
+</system-out></testcase></testsuite></testsuites>

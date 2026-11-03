@@ -1,0 +1,705 @@
+{
+  "fase": 6,
+  "responsable": "Alejandro Vega Gamboa",
+  "fecha_corte": "2026-11-02",
+  "rama_entrega": "dev-vega",
+  "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+  "resumen": {
+    "reportes_analizados": 9,
+    "aceptados_corregidos_verificados": 5,
+    "rechazados_con_justificacion": 4
+  },
+  "resultado_suite_final": {
+    "stage": "regresion_final",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:46:14-06:00",
+    "finish_costa_rica": "2026-11-02T18:46:15-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 1.125463,
+    "total_items": 248,
+    "counts": {
+      "aprobado": 248
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "identificacion_revision": "El commit que contiene esta carpeta versiona también las fuentes corregidas. Las huellas de regresion_final identifican exactamente las fuentes probadas.",
+  "actualizaciones_posteriores": "Contrastar cualquier ampliación posterior de Tamara antes del cierre del informe grupal.",
+  "defectos": [
+    {
+      "id_defecto": "BUG-P1-SAL-01",
+      "titulo": "Código de sala duplicado por capitalización",
+      "casos": [
+        "CP-SAL-07"
+      ],
+      "requisitos": [
+        "RF-12"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          5
+        ]
+      },
+      "decision": "aceptado_y_corregido",
+      "justificacion": "El caso original acepta s01 cuando ya existe S01. El mismo caso, sin cambiar sus aserciones, rechaza el duplicado después de corregir el servicio.",
+      "accion": "Comprobar la existencia con COLLATE NOCASE antes de insertar. El rechazo no escribe ni genera auditoría.",
+      "archivos_productivos": [
+        "src/model/salas/servicio.py"
+      ],
+      "severidad_reportada": "media",
+      "prioridad_reportada": "alta",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "corregido_y_verificado",
+      "prueba_verificacion": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_07_rechaza_duplicado_en_minusculas",
+      "resultados_por_etapa": [
+        {
+          "corrida": "antes_correccion",
+          "resultados": [
+            {
+              "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_07_rechaza_duplicado_en_minusculas",
+              "resultado": "fallido",
+              "detalle": "assert True is False"
+            }
+          ],
+          "evidencia": "antes_correccion/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "despues_correccion",
+          "resultados": [
+            {
+              "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_07_rechaza_duplicado_en_minusculas",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "despues_correccion/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_salas_ampliacion_fase5.py::test_cp_sal_07_rechaza_duplicado_en_minusculas",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_salas_verificacion_fase6.py::test_f6_sal_01_rechaza_mayusculas_si_existe_codigo_en_minusculas",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_salas_verificacion_fase6.py::test_f6_sal_02_conserva_registro_de_codigo_nuevo_en_minusculas",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": [
+        "El control pertenece al servicio; no se añadió una restricción al esquema ni se consolidaron duplicados históricos."
+      ]
+    },
+    {
+      "id_defecto": "BUG-P1-DIS-01",
+      "titulo": "Disponibilidad incorrecta para la hora 9:00",
+      "casos": [
+        "F5-DIS-01"
+      ],
+      "requisitos": [
+        "RF-08",
+        "RN-09"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          5,
+          6
+        ]
+      },
+      "decision": "aceptado_y_corregido",
+      "justificacion": "El caso original devuelve disponible ante un traslape. Normalizar antes de comparar corrige esa respuesta y la validación de horas pasadas del día actual.",
+      "accion": "Tras analizar la hora, convertirla a HH:MM antes de las comparaciones. Se sigue aceptando 9:00 como equivalente a 09:00.",
+      "archivos_productivos": [
+        "src/model/salas/servicio.py"
+      ],
+      "severidad_reportada": "alta",
+      "prioridad_reportada": "alta",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "corregido_y_verificado",
+      "prueba_verificacion": "tests/test_disponibilidad_ampliacion_fase5.py::test_f5_dis_01_hora_sin_cero_no_ignora_conflicto",
+      "resultados_por_etapa": [
+        {
+          "corrida": "antes_correccion",
+          "resultados": [
+            {
+              "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_f5_dis_01_hora_sin_cero_no_ignora_conflicto",
+              "resultado": "fallido",
+              "detalle": "AssertionError: La consulta con 9:00 no puede declarar libre una sala ocupada entre 08:00 y 10:00.\nassert True is False"
+            }
+          ],
+          "evidencia": "antes_correccion/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "despues_correccion",
+          "resultados": [
+            {
+              "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_f5_dis_01_hora_sin_cero_no_ignora_conflicto",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "despues_correccion/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_disponibilidad_ampliacion_fase5.py::test_f5_dis_01_hora_sin_cero_no_ignora_conflicto",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_salas_verificacion_fase6.py::test_f6_dis_01_hora_con_y_sin_cero_coinciden_en_franja_libre",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_salas_verificacion_fase6.py::test_f6_dis_02_hora_sin_cero_pasada_de_hoy_se_rechaza",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": []
+    },
+    {
+      "id_defecto": "BUG-INI-01",
+      "titulo": "Faltan los estudiantes iniciales",
+      "casos": [
+        "CP-INI-02"
+      ],
+      "requisitos": [
+        "RF-01"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          9,
+          10
+        ]
+      },
+      "decision": "aceptado_y_corregido",
+      "justificacion": "La reproducción sin xfail devuelve cero estudiantes. El plan final F4 p.11 y CP-INI-02 de la matriz v3 requieren tres identidades y sus estados; la matriz aporta sus correos.",
+      "accion": "Añadir los tres estudiantes si la tabla está vacía. Confirmar salas y estudiantes en una única transacción; preservar datos propios y cambios anteriores. Retirar xfail tras la corrección.",
+      "archivos_productivos": [
+        "src/db/semilla.py",
+        "src/db/inicializador.py"
+      ],
+      "severidad_reportada": "media",
+      "prioridad_reportada": "media",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "corregido_y_verificado",
+      "prueba_verificacion": "tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales",
+      "resultados_por_etapa": [
+        {
+          "corrida": "antes_ini01",
+          "resultados": [
+            {
+              "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales",
+              "resultado": "fallido",
+              "detalle": "assert 0 > 0"
+            }
+          ],
+          "evidencia": "antes_ini01/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "despues_ini01",
+          "resultados": [
+            {
+              "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_semilla_verificacion_fase6.py::test_f6_ini01_carga_estudiantes_exactos_sin_reservas_ni_auditoria",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_semilla_verificacion_fase6.py::test_f6_ini01_reinicializar_preserva_modificaciones_sin_duplicar",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_semilla_verificacion_fase6.py::test_f6_ini01_no_inyecta_semilla_si_existe_estudiante_del_usuario",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_semilla_verificacion_fase6.py::test_f6_ini01_fallo_semilla_estudiantes_revierte_datos_parciales",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "despues_ini01/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_semilla_verificacion_fase6.py::test_f6_ini01_carga_estudiantes_exactos_sin_reservas_ni_auditoria",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_semilla_verificacion_fase6.py::test_f6_ini01_reinicializar_preserva_modificaciones_sin_duplicar",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_semilla_verificacion_fase6.py::test_f6_ini01_no_inyecta_semilla_si_existe_estudiante_del_usuario",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_semilla_verificacion_fase6.py::test_f6_ini01_fallo_semilla_estudiantes_revierte_datos_parciales",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": [
+        "Fuentes normativas usadas: plan y matriz finales del equipo. No se atribuyen los correos a un enunciado primario no comprobado.",
+        "La transacción cubre los datos semilla, no deshace la creación del archivo o del esquema. Una tabla ya poblada no recibe ejemplos adicionales."
+      ]
+    },
+    {
+      "id_defecto": "BUG-INI-02",
+      "titulo": "Ruta de base de datos inválida provoca una excepción no controlada",
+      "casos": [
+        "CP-INI-06"
+      ],
+      "requisitos": [
+        "RF-01",
+        "RNF-05"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          10,
+          11
+        ]
+      },
+      "decision": "aceptado_y_corregido",
+      "justificacion": "NotADirectoryError se reproduce sin xfail. Después se devuelve ResultadoInicializacion con exito=False y un mensaje; se conserva la posibilidad de reintentar con una ruta válida.",
+      "accion": "Incluir la comprobación de existencia dentro del try y capturar los tipos específicos sqlite3.Error y OSError. Retirar xfail tras la corrección.",
+      "archivos_productivos": [
+        "src/db/inicializador.py"
+      ],
+      "severidad_reportada": "alta",
+      "prioridad_reportada": "media",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "corregido_y_verificado",
+      "prueba_verificacion": "tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion",
+      "resultados_por_etapa": [
+        {
+          "corrida": "antes_ini02",
+          "resultados": [
+            {
+              "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion",
+              "resultado": "fallido",
+              "detalle": "NotADirectoryError: [Errno 20] Not a directory: '/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_ini02/test_rf01_ruta_imposible_se_in0/es_un_archivo/subcarpeta'"
+            }
+          ],
+          "evidencia": "antes_ini02/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "despues_ini02",
+          "resultados": [
+            {
+              "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_inicializacion_verificacion_fase6.py::test_f6_ini02_permission_error_al_consultar_existencia_se_informa",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_inicializacion_verificacion_fase6.py::test_f6_ini02_recupera_ruta_valida_despues_de_not_a_directory_error",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "despues_ini02/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_inicializacion_verificacion_fase6.py::test_f6_ini02_permission_error_al_consultar_existencia_se_informa",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_inicializacion_verificacion_fase6.py::test_f6_ini02_recupera_ruta_valida_despues_de_not_a_directory_error",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": []
+    },
+    {
+      "id_defecto": "BUG-P5-REP-01",
+      "titulo": "Temporal CSV residual cuando falla la escritura",
+      "casos": [
+        "CP-REP-12"
+      ],
+      "requisitos": [
+        "RF-16",
+        "RNF-05",
+        "RNF-06"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          16,
+          17
+        ]
+      },
+      "decision": "aceptado_y_corregido",
+      "justificacion": "Se reproduce al escribir encabezados o filas tras crear el temporal. La respuesta informa fallo y conserva el destino, pero deja un archivo oculto. El control de fallo al reemplazar el destino ya aprobaba.",
+      "accion": "Registrar la ruta del temporal inmediatamente después de crearlo y limpiarlo si la escritura o el cierre falla. Reutilizar una función privada de limpieza, conservar el error original y la respuesta pública.",
+      "archivos_productivos": [
+        "src/model/reportes/servicio.py"
+      ],
+      "severidad_reportada": "baja",
+      "prioridad_reportada": "media",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "corregido_y_verificado",
+      "prueba_verificacion": "tests/test_reportes_verificacion_fase6.py",
+      "resultados_por_etapa": [
+        {
+          "corrida": "antes_reportes",
+          "resultados": [
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writeheader]",
+              "resultado": "fallido",
+              "detalle": "AssertionError: No deben quedar temporales ocultos incompletos.\nassert ['.reporte.csv.3x9dxqnc.tmp'] == []\n  \n  Left contains one more item: '.reporte.csv.3x9dxqnc.tmp'\n  \n  Full diff:\n  - []\n  + [\n  +     '.reporte.csv.3x9dxqnc.tmp',\n  + ]"
+            },
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writerows]",
+              "resultado": "fallido",
+              "detalle": "AssertionError: No deben quedar temporales ocultos incompletos.\nassert ['.reporte.csv.zlsexfc7.tmp'] == []\n  \n  Left contains one more item: '.reporte.csv.zlsexfc7.tmp'\n  \n  Full diff:\n  - []\n  + [\n  +     '.reporte.csv.zlsexfc7.tmp',\n  + ]"
+            },
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_control_bug_p5_rep_01_error_reemplazo_limpia_temporal",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "antes_reportes/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "despues_reportes",
+          "resultados": [
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writeheader]",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writerows]",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_control_bug_p5_rep_01_error_reemplazo_limpia_temporal",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "despues_reportes/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writeheader]",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writerows]",
+              "resultado": "aprobado",
+              "detalle": null
+            },
+            {
+              "nodeid": "tests/test_reportes_verificacion_fase6.py::test_control_bug_p5_rep_01_error_reemplazo_limpia_temporal",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": [
+        "Pruebas independientes derivadas del reporte, no el archivo original de la autora.",
+        "Si el sistema operativo impide eliminar un temporal, la advertencia de limpieza se conserva."
+      ]
+    },
+    {
+      "id_defecto": "BUG-RES-01",
+      "titulo": "Fecha inexistente supuestamente provoca ValueError",
+      "casos": [
+        "CP-RES-24"
+      ],
+      "requisitos": [
+        "RF-05",
+        "RN-02",
+        "RNF-05"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          7,
+          8
+        ]
+      },
+      "decision": "rechazado_con_justificacion",
+      "justificacion": "La API real rechaza 2026-02-30 mediante un resultado controlado con exito=False y mensaje de formato; no lanza ValueError y conserva íntegros datos y auditoría. La conversión ya estaba protegida en cc9fab4 y 8101328.",
+      "accion": "No modificar la lógica productiva. Incorporar una prueba de contraste con las funciones y respuestas reales del proyecto.",
+      "archivos_productivos": [],
+      "severidad_reportada": "crítica",
+      "prioridad_reportada": "alta",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "rechazado_no_reproducible_en_version_evaluada",
+      "prueba_verificacion": "tests/test_contraste_reportes_fase6.py::test_diagnostico_bug_res_01_fecha_inexistente_se_rechaza_sin_excepcion",
+      "resultados_por_etapa": [
+        {
+          "corrida": "contraste_otros_antes_semilla",
+          "resultados": [
+            {
+              "nodeid": "../../fase6_contexto/test_analisis_reportes_otros.py::test_diagnostico_bug_res_01_fecha_inexistente_se_rechaza_sin_excepcion",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "contraste_otros_antes_semilla/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_contraste_reportes_fase6.py::test_diagnostico_bug_res_01_fecha_inexistente_se_rechaza_sin_excepcion",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": [
+        "La decisión corresponde al escenario de funciones y módulos descrito. No certifica una ventana real ni impide reabrir el reporte si aparece una reproducción nueva y comprobable."
+      ]
+    },
+    {
+      "id_defecto": "BUG-RES-02",
+      "titulo": "Cambio de sala supuestamente omite la capacidad",
+      "casos": [
+        "CP-RES-27"
+      ],
+      "requisitos": [
+        "RF-13",
+        "RN-07"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          8,
+          9
+        ]
+      },
+      "decision": "rechazado_con_justificacion",
+      "justificacion": "La API real rechaza cambiar una reserva de cuatro personas en S02 al cubículo S05 de capacidad uno. La reserva, las demás tablas y la auditoría permanecen iguales; el servicio ya revalida el conjunto final de datos.",
+      "accion": "No modificar la lógica productiva. Incorporar una prueba de contraste con las funciones y respuestas reales del proyecto.",
+      "archivos_productivos": [],
+      "severidad_reportada": "media",
+      "prioridad_reportada": "media",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "rechazado_no_reproducible_en_version_evaluada",
+      "prueba_verificacion": "tests/test_contraste_reportes_fase6.py::test_diagnostico_bug_res_02_cambiar_a_cubiculo_revalida_capacidad",
+      "resultados_por_etapa": [
+        {
+          "corrida": "contraste_otros_antes_semilla",
+          "resultados": [
+            {
+              "nodeid": "../../fase6_contexto/test_analisis_reportes_otros.py::test_diagnostico_bug_res_02_cambiar_a_cubiculo_revalida_capacidad",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "contraste_otros_antes_semilla/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_contraste_reportes_fase6.py::test_diagnostico_bug_res_02_cambiar_a_cubiculo_revalida_capacidad",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": [
+        "La decisión corresponde al escenario de funciones y módulos descrito. No certifica una ventana real ni impide reabrir el reporte si aparece una reproducción nueva y comprobable."
+      ]
+    },
+    {
+      "id_defecto": "BUG-REC-01",
+      "titulo": "Modificación supuestamente desvincula una ocurrencia",
+      "casos": [
+        "CP-REC-14"
+      ],
+      "requisitos": [
+        "RF-13",
+        "RF-14"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          12,
+          13
+        ]
+      },
+      "decision": "rechazado_con_justificacion",
+      "justificacion": "Modificar únicamente la hora de la segunda ocurrencia conserva el mismo serie_id en las tres reservas y no modifica las otras dos. El UPDATE productivo no escribe esa columna. El campo real es serie_id y la API devuelve diccionarios.",
+      "accion": "No modificar la lógica productiva. Incorporar una prueba de contraste con las funciones y respuestas reales del proyecto.",
+      "archivos_productivos": [],
+      "severidad_reportada": "media",
+      "prioridad_reportada": "alta",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "rechazado_no_reproducible_en_version_evaluada",
+      "prueba_verificacion": "tests/test_contraste_reportes_fase6.py::test_diagnostico_bug_rec_01_modificar_ocurrencia_preserva_serie",
+      "resultados_por_etapa": [
+        {
+          "corrida": "contraste_otros_antes_semilla",
+          "resultados": [
+            {
+              "nodeid": "../../fase6_contexto/test_analisis_reportes_otros.py::test_diagnostico_bug_rec_01_modificar_ocurrencia_preserva_serie",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "contraste_otros_antes_semilla/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_contraste_reportes_fase6.py::test_diagnostico_bug_rec_01_modificar_ocurrencia_preserva_serie",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": [
+        "La decisión corresponde al escenario de funciones y módulos descrito. No certifica una ventana real ni impide reabrir el reporte si aparece una reproducción nueva y comprobable."
+      ]
+    },
+    {
+      "id_defecto": "BUG-PAN-01",
+      "titulo": "Panel supuestamente conserva ocupación tras cancelar la serie",
+      "casos": [
+        "CP-PAN-12"
+      ],
+      "requisitos": [
+        "RF-14",
+        "RF-15"
+      ],
+      "fuente": {
+        "archivo": "fuentes/Fase_5_-_QA.pdf",
+        "paginas_pdf": [
+          13,
+          14
+        ]
+      },
+      "decision": "rechazado_con_justificacion",
+      "justificacion": "Una consulta nueva después de cancelar la serie devuelve próximas vacías y ocupación cero para S01. Que S01 siga apareciendo en el catálogo no significa que esté ocupada: se muestran también salas con cero reservas. consultar_panel lee SQLite en cada llamada.",
+      "accion": "No modificar la lógica productiva. Incorporar una prueba de contraste con las funciones y respuestas reales del proyecto.",
+      "archivos_productivos": [],
+      "severidad_reportada": "media",
+      "prioridad_reportada": "media",
+      "commit_base": "8101328cb52d2ae018d486fafc37576433b042f8",
+      "estado": "rechazado_no_reproducible_en_version_evaluada",
+      "prueba_verificacion": "tests/test_contraste_reportes_fase6.py::test_diagnostico_bug_pan_01_cancelar_serie_actualiza_consulta_panel",
+      "resultados_por_etapa": [
+        {
+          "corrida": "contraste_otros_antes_semilla",
+          "resultados": [
+            {
+              "nodeid": "../../fase6_contexto/test_analisis_reportes_otros.py::test_diagnostico_bug_pan_01_cancelar_serie_actualiza_consulta_panel",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "contraste_otros_antes_semilla/resultados_por_prueba.json"
+        },
+        {
+          "corrida": "regresion_final",
+          "resultados": [
+            {
+              "nodeid": "tests/test_contraste_reportes_fase6.py::test_diagnostico_bug_pan_01_cancelar_serie_actualiza_consulta_panel",
+              "resultado": "aprobado",
+              "detalle": null
+            }
+          ],
+          "evidencia": "regresion_final/resultados_por_prueba.json"
+        }
+      ],
+      "limites": [
+        "La decisión corresponde al escenario de funciones y módulos descrito. No certifica una ventana real ni impide reabrir el reporte si aparece una reproducción nueva y comprobable."
+      ]
+    }
+  ],
+  "verificacion_en_repositorio_original": {
+    "stage": "verificacion_integracion",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:57:17-06:00",
+    "finish_costa_rica": "2026-11-02T18:57:18-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 1.055927,
+    "total_items": 248,
+    "counts": {
+      "aprobado": 248
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  }
+}

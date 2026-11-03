@@ -1,0 +1,916 @@
+[
+  {
+    "nodeid": "tests/test_reportes_verificacion_fase6.py::test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writeheader]",
+    "file": "tests/test_reportes_verificacion_fase6.py",
+    "test_name": "test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writeheader]",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.007",
+    "observations": [
+      {
+        "caso": "BUG-P5-REP-01",
+        "caso_plan": "CP-REP-12",
+        "datos": {
+          "carne": "C123456789",
+          "estudiante": "Ana Rodríguez",
+          "fecha_fin": "2026-11-04",
+          "fecha_inicio": "2026-11-04",
+          "horario": "10:00-12:00",
+          "personas": 2,
+          "ruta_destino": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_reportes/test_verificacion_bug_p5_rep_00/exportacion/reporte.csv",
+          "sala": "S01"
+        },
+        "esperado": {
+          "archivos_exportacion": [
+            "reporte.csv"
+          ],
+          "cancelado": false,
+          "datos_y_auditoria_sin_cambios": true,
+          "destino_anterior_intacto": true,
+          "exito": false,
+          "mensaje_de_error": true,
+          "temporales_residuales": []
+        },
+        "obtenido": {
+          "archivos_antes": [
+            "reporte.csv"
+          ],
+          "archivos_despues": [
+            "reporte.csv"
+          ],
+          "contenido_destino_antes_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a",
+          "contenido_destino_despues_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a",
+          "datos_y_auditoria_sin_cambios": true,
+          "destino_anterior_intacto": true,
+          "estado_bd_antes": {
+            "auditoria": [
+              {
+                "accion": "creacion",
+                "detalle": "Estudiante C123456789 registrado correctamente.",
+                "entidad": "estudiante",
+                "entidad_id": "C123456789",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 1
+              },
+              {
+                "accion": "creacion",
+                "detalle": "Reservación R0001 creada correctamente.",
+                "entidad": "reservacion",
+                "entidad_id": "R0001",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 2
+              }
+            ],
+            "estudiantes": [
+              {
+                "carne": "A001234567",
+                "correo": "andrea@universidad.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Andrea Solano"
+              },
+              {
+                "carne": "B009876543",
+                "correo": "carlos@universidad.ac.cr",
+                "estado": "activo",
+                "id": 2,
+                "nombre_completo": "Carlos Méndez"
+              },
+              {
+                "carne": "C004567890",
+                "correo": "daniela@universidad.ac.cr",
+                "estado": "inactivo",
+                "id": 3,
+                "nombre_completo": "Daniela Rojas"
+              },
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 4,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 4,
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_bd_despues": {
+            "auditoria": [
+              {
+                "accion": "creacion",
+                "detalle": "Estudiante C123456789 registrado correctamente.",
+                "entidad": "estudiante",
+                "entidad_id": "C123456789",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 1
+              },
+              {
+                "accion": "creacion",
+                "detalle": "Reservación R0001 creada correctamente.",
+                "entidad": "reservacion",
+                "entidad_id": "R0001",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 2
+              }
+            ],
+            "estudiantes": [
+              {
+                "carne": "A001234567",
+                "correo": "andrea@universidad.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Andrea Solano"
+              },
+              {
+                "carne": "B009876543",
+                "correo": "carlos@universidad.ac.cr",
+                "estado": "activo",
+                "id": 2,
+                "nombre_completo": "Carlos Méndez"
+              },
+              {
+                "carne": "C004567890",
+                "correo": "daniela@universidad.ac.cr",
+                "estado": "inactivo",
+                "id": 3,
+                "nombre_completo": "Daniela Rojas"
+              },
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 4,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 4,
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "inyecciones": [
+            {
+              "archivos_al_inyectar": [
+                ".reporte.csv.1mgomf3_.tmp",
+                "reporte.csv"
+              ],
+              "error": "OSError simulado durante escritura del CSV temporal.",
+              "operacion": "writeheader"
+            }
+          ],
+          "respuesta": {
+            "cancelado": false,
+            "exito": false,
+            "mensaje": "No fue posible generar el reporte CSV."
+          },
+          "temporales_residuales": []
+        },
+        "origen": "Verificación independiente derivada del reporte PDF, no test original.",
+        "variante": "writeheader"
+      }
+    ]
+  },
+  {
+    "nodeid": "tests/test_reportes_verificacion_fase6.py::test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writerows]",
+    "file": "tests/test_reportes_verificacion_fase6.py",
+    "test_name": "test_verificacion_bug_p5_rep_01_error_escritura_limpia_temporal[writerows]",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.005",
+    "observations": [
+      {
+        "caso": "BUG-P5-REP-01",
+        "caso_plan": "CP-REP-12",
+        "datos": {
+          "carne": "C123456789",
+          "estudiante": "Ana Rodríguez",
+          "fecha_fin": "2026-11-04",
+          "fecha_inicio": "2026-11-04",
+          "horario": "10:00-12:00",
+          "personas": 2,
+          "ruta_destino": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_reportes/test_verificacion_bug_p5_rep_01/exportacion/reporte.csv",
+          "sala": "S01"
+        },
+        "esperado": {
+          "archivos_exportacion": [
+            "reporte.csv"
+          ],
+          "cancelado": false,
+          "datos_y_auditoria_sin_cambios": true,
+          "destino_anterior_intacto": true,
+          "exito": false,
+          "mensaje_de_error": true,
+          "temporales_residuales": []
+        },
+        "obtenido": {
+          "archivos_antes": [
+            "reporte.csv"
+          ],
+          "archivos_despues": [
+            "reporte.csv"
+          ],
+          "contenido_destino_antes_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a",
+          "contenido_destino_despues_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a",
+          "datos_y_auditoria_sin_cambios": true,
+          "destino_anterior_intacto": true,
+          "estado_bd_antes": {
+            "auditoria": [
+              {
+                "accion": "creacion",
+                "detalle": "Estudiante C123456789 registrado correctamente.",
+                "entidad": "estudiante",
+                "entidad_id": "C123456789",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 1
+              },
+              {
+                "accion": "creacion",
+                "detalle": "Reservación R0001 creada correctamente.",
+                "entidad": "reservacion",
+                "entidad_id": "R0001",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 2
+              }
+            ],
+            "estudiantes": [
+              {
+                "carne": "A001234567",
+                "correo": "andrea@universidad.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Andrea Solano"
+              },
+              {
+                "carne": "B009876543",
+                "correo": "carlos@universidad.ac.cr",
+                "estado": "activo",
+                "id": 2,
+                "nombre_completo": "Carlos Méndez"
+              },
+              {
+                "carne": "C004567890",
+                "correo": "daniela@universidad.ac.cr",
+                "estado": "inactivo",
+                "id": 3,
+                "nombre_completo": "Daniela Rojas"
+              },
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 4,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 4,
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_bd_despues": {
+            "auditoria": [
+              {
+                "accion": "creacion",
+                "detalle": "Estudiante C123456789 registrado correctamente.",
+                "entidad": "estudiante",
+                "entidad_id": "C123456789",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 1
+              },
+              {
+                "accion": "creacion",
+                "detalle": "Reservación R0001 creada correctamente.",
+                "entidad": "reservacion",
+                "entidad_id": "R0001",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 2
+              }
+            ],
+            "estudiantes": [
+              {
+                "carne": "A001234567",
+                "correo": "andrea@universidad.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Andrea Solano"
+              },
+              {
+                "carne": "B009876543",
+                "correo": "carlos@universidad.ac.cr",
+                "estado": "activo",
+                "id": 2,
+                "nombre_completo": "Carlos Méndez"
+              },
+              {
+                "carne": "C004567890",
+                "correo": "daniela@universidad.ac.cr",
+                "estado": "inactivo",
+                "id": 3,
+                "nombre_completo": "Daniela Rojas"
+              },
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 4,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 4,
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "inyecciones": [
+            {
+              "archivos_al_inyectar": [
+                ".reporte.csv.wrjhb5yy.tmp",
+                "reporte.csv"
+              ],
+              "error": "OSError simulado durante escritura del CSV temporal.",
+              "operacion": "writerows"
+            }
+          ],
+          "respuesta": {
+            "cancelado": false,
+            "exito": false,
+            "mensaje": "No fue posible generar el reporte CSV."
+          },
+          "temporales_residuales": []
+        },
+        "origen": "Verificación independiente derivada del reporte PDF, no test original.",
+        "variante": "writerows"
+      }
+    ]
+  },
+  {
+    "nodeid": "tests/test_reportes_verificacion_fase6.py::test_control_bug_p5_rep_01_error_reemplazo_limpia_temporal",
+    "file": "tests/test_reportes_verificacion_fase6.py",
+    "test_name": "test_control_bug_p5_rep_01_error_reemplazo_limpia_temporal",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.004",
+    "observations": [
+      {
+        "caso": "BUG-P5-REP-01",
+        "caso_plan": "CP-REP-12",
+        "datos": {
+          "carne": "C123456789",
+          "estudiante": "Ana Rodríguez",
+          "fecha_fin": "2026-11-04",
+          "fecha_inicio": "2026-11-04",
+          "horario": "10:00-12:00",
+          "personas": 2,
+          "ruta_destino": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_reportes/test_control_bug_p5_rep_01_err0/exportacion/reporte.csv",
+          "sala": "S01"
+        },
+        "esperado": {
+          "archivos_exportacion": [
+            "reporte.csv"
+          ],
+          "cancelado": false,
+          "datos_y_auditoria_sin_cambios": true,
+          "destino_anterior_intacto": true,
+          "exito": false,
+          "mensaje_de_error": true,
+          "temporales_residuales": []
+        },
+        "obtenido": {
+          "archivos_antes": [
+            "reporte.csv"
+          ],
+          "archivos_despues": [
+            "reporte.csv"
+          ],
+          "contenido_destino_antes_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a",
+          "contenido_destino_despues_hex": "7265706f7274655f616e746572696f720a636f6e74656e69646f5f70726576696f5f696e746163746f0a",
+          "datos_y_auditoria_sin_cambios": true,
+          "destino_anterior_intacto": true,
+          "estado_bd_antes": {
+            "auditoria": [
+              {
+                "accion": "creacion",
+                "detalle": "Estudiante C123456789 registrado correctamente.",
+                "entidad": "estudiante",
+                "entidad_id": "C123456789",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 1
+              },
+              {
+                "accion": "creacion",
+                "detalle": "Reservación R0001 creada correctamente.",
+                "entidad": "reservacion",
+                "entidad_id": "R0001",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 2
+              }
+            ],
+            "estudiantes": [
+              {
+                "carne": "A001234567",
+                "correo": "andrea@universidad.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Andrea Solano"
+              },
+              {
+                "carne": "B009876543",
+                "correo": "carlos@universidad.ac.cr",
+                "estado": "activo",
+                "id": 2,
+                "nombre_completo": "Carlos Méndez"
+              },
+              {
+                "carne": "C004567890",
+                "correo": "daniela@universidad.ac.cr",
+                "estado": "inactivo",
+                "id": 3,
+                "nombre_completo": "Daniela Rojas"
+              },
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 4,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 4,
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "estado_bd_despues": {
+            "auditoria": [
+              {
+                "accion": "creacion",
+                "detalle": "Estudiante C123456789 registrado correctamente.",
+                "entidad": "estudiante",
+                "entidad_id": "C123456789",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 1
+              },
+              {
+                "accion": "creacion",
+                "detalle": "Reservación R0001 creada correctamente.",
+                "entidad": "reservacion",
+                "entidad_id": "R0001",
+                "fecha_hora": "2026-11-02 18:46:13",
+                "id": 2
+              }
+            ],
+            "estudiantes": [
+              {
+                "carne": "A001234567",
+                "correo": "andrea@universidad.ac.cr",
+                "estado": "activo",
+                "id": 1,
+                "nombre_completo": "Andrea Solano"
+              },
+              {
+                "carne": "B009876543",
+                "correo": "carlos@universidad.ac.cr",
+                "estado": "activo",
+                "id": 2,
+                "nombre_completo": "Carlos Méndez"
+              },
+              {
+                "carne": "C004567890",
+                "correo": "daniela@universidad.ac.cr",
+                "estado": "inactivo",
+                "id": 3,
+                "nombre_completo": "Daniela Rojas"
+              },
+              {
+                "carne": "C123456789",
+                "correo": "ana@tec.ac.cr",
+                "estado": "activo",
+                "id": 4,
+                "nombre_completo": "Ana Rodríguez"
+              }
+            ],
+            "reservaciones": [
+              {
+                "cantidad_personas": 2,
+                "duracion_horas": 2,
+                "estado": "activa",
+                "estudiante_id": 4,
+                "fecha": "2026-11-04",
+                "hora_inicio": "10:00",
+                "id": 1,
+                "sala_id": 1,
+                "serie_id": null
+              }
+            ],
+            "salas": [
+              {
+                "capacidad": 4,
+                "codigo": "S01",
+                "estado": "disponible",
+                "id": 1,
+                "nombre": "Sala Biblioteca 1"
+              },
+              {
+                "capacidad": 6,
+                "codigo": "S02",
+                "estado": "disponible",
+                "id": 2,
+                "nombre": "Sala Biblioteca 2"
+              },
+              {
+                "capacidad": 10,
+                "codigo": "S03",
+                "estado": "disponible",
+                "id": 3,
+                "nombre": "Laboratorio de estudio"
+              },
+              {
+                "capacidad": 8,
+                "codigo": "S04",
+                "estado": "fuera_de_servicio",
+                "id": 4,
+                "nombre": "Sala multimedia"
+              },
+              {
+                "capacidad": 1,
+                "codigo": "S05",
+                "estado": "disponible",
+                "id": 5,
+                "nombre": "Cubículo individual"
+              }
+            ]
+          },
+          "inyecciones": [
+            {
+              "archivos_al_inyectar": [
+                ".reporte.csv.ortwzvll.tmp",
+                "reporte.csv"
+              ],
+              "destino": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_reportes/test_control_bug_p5_rep_01_err0/exportacion/reporte.csv",
+              "error": "OSError simulado al reemplazar el CSV anterior.",
+              "operacion": "os.replace",
+              "origen": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_reportes/test_control_bug_p5_rep_01_err0/exportacion/.reporte.csv.ortwzvll.tmp"
+            }
+          ],
+          "respuesta": {
+            "cancelado": false,
+            "exito": false,
+            "mensaje": "No fue posible generar el reporte CSV."
+          },
+          "temporales_residuales": []
+        },
+        "origen": "Verificación independiente derivada del reporte PDF, no test original.",
+        "variante": "os.replace"
+      }
+    ]
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_generar_reporte_csv_utf8_con_encabezados",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_generar_reporte_csv_utf8_con_encabezados",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.004",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_validar_rango_antes_de_seleccionar_destino",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_validar_rango_antes_de_seleccionar_destino",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.003",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_reporte_filtra_rango_inclusivo",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_reporte_filtra_rango_inclusivo",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.005",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_rechazar_rango_invalido[-2026-10-10-inicial]",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_rechazar_rango_invalido[-2026-10-10-inicial]",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.004",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-10--final]",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_rechazar_rango_invalido[2026-10-10--final]",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.004",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_rechazar_rango_invalido[10-10-2026-2026-10-11-formato]",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_rechazar_rango_invalido[10-10-2026-2026-10-11-formato]",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.003",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_rechazar_rango_invalido[2026-10-11-2026-10-10-anterior]",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_rechazar_rango_invalido[2026-10-11-2026-10-10-anterior]",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.003",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_cancelar_destino_no_crea_archivos",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_cancelar_destino_no_crea_archivos",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.003",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_reporte_sin_datos_contiene_solo_encabezados",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_reporte_sin_datos_contiene_solo_encabezados",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.003",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_reportes.py::test_error_de_escritura_no_deja_archivo_temporal",
+    "file": "tests/test_reportes.py",
+    "test_name": "test_error_de_escritura_no_deja_archivo_temporal",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.003",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_dialogo_reporte.py::test_no_abre_selector_si_el_rango_es_invalido",
+    "file": "tests/test_dialogo_reporte.py",
+    "test_name": "test_no_abre_selector_si_el_rango_es_invalido",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.000",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_dialogo_reporte.py::test_cancelar_selector_no_crea_reporte",
+    "file": "tests/test_dialogo_reporte.py",
+    "test_name": "test_cancelar_selector_no_crea_reporte",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.000",
+    "observations": []
+  },
+  {
+    "nodeid": "tests/test_dialogo_reporte.py::test_reporte_exitoso_informa_y_cierra_dialogo",
+    "file": "tests/test_dialogo_reporte.py",
+    "test_name": "test_reporte_exitoso_informa_y_cierra_dialogo",
+    "status": "aprobado",
+    "detail": null,
+    "duration_seconds": "0.000",
+    "observations": []
+  }
+]

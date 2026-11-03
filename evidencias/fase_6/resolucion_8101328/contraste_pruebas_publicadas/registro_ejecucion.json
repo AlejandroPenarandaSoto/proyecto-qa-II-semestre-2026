@@ -1,0 +1,15 @@
+{
+  "stage": "contraste_pruebas_publicadas",
+  "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+  "start_costa_rica": "2026-11-02T18:44:51-06:00",
+  "finish_costa_rica": "2026-11-02T18:44:51-06:00",
+  "pytest_exit_code": 1,
+  "process_duration_seconds": 0.153707,
+  "total_items": 4,
+  "counts": {
+    "error": 4
+  },
+  "integrity_unchanged_during_run": true,
+  "original_repo_changed_during_run": false,
+  "commit_or_push_performed": false
+}

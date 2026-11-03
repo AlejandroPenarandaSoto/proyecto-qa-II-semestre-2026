@@ -1,0 +1,230 @@
+{
+  "regresion_persona1": {
+    "stage": "regresion_persona1",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:19:22-06:00",
+    "finish_costa_rica": "2026-11-02T18:19:23-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 1.049973,
+    "total_items": 235,
+    "counts": {
+      "aprobado": 233,
+      "xfail": 2
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "antes_ini02": {
+    "stage": "antes_ini02",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:30:55-06:00",
+    "finish_costa_rica": "2026-11-02T18:30:55-06:00",
+    "pytest_exit_code": 1,
+    "process_duration_seconds": 0.211512,
+    "total_items": 1,
+    "counts": {
+      "fallido": 1
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "contraste_pruebas_publicadas": {
+    "stage": "contraste_pruebas_publicadas",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:44:51-06:00",
+    "finish_costa_rica": "2026-11-02T18:44:51-06:00",
+    "pytest_exit_code": 1,
+    "process_duration_seconds": 0.153707,
+    "total_items": 4,
+    "counts": {
+      "error": 4
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "regresion_tras_aislamiento": {
+    "stage": "regresion_tras_aislamiento",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:42:22-06:00",
+    "finish_costa_rica": "2026-11-02T18:42:23-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 1.128774,
+    "total_items": 245,
+    "counts": {
+      "aprobado": 245
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "antes_correccion": {
+    "stage": "antes_correccion",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:18:27-06:00",
+    "finish_costa_rica": "2026-11-02T18:18:28-06:00",
+    "pytest_exit_code": 1,
+    "process_duration_seconds": 0.335383,
+    "total_items": 2,
+    "counts": {
+      "fallido": 2
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "despues_ini01": {
+    "stage": "despues_ini01",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:38:54-06:00",
+    "finish_costa_rica": "2026-11-02T18:38:54-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 0.210065,
+    "total_items": 5,
+    "counts": {
+      "aprobado": 5
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "despues_correccion": {
+    "stage": "despues_correccion",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:19:05-06:00",
+    "finish_costa_rica": "2026-11-02T18:19:05-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 0.185082,
+    "total_items": 6,
+    "counts": {
+      "aprobado": 6
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "antes_ini01": {
+    "stage": "antes_ini01",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:35:14-06:00",
+    "finish_costa_rica": "2026-11-02T18:35:14-06:00",
+    "pytest_exit_code": 1,
+    "process_duration_seconds": 0.188559,
+    "total_items": 1,
+    "counts": {
+      "fallido": 1
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "contraste_otros_antes_semilla": {
+    "stage": "contraste_reportes",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:25:02-06:00",
+    "finish_costa_rica": "2026-11-02T18:25:02-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 0.185219,
+    "total_items": 4,
+    "counts": {
+      "aprobado": 4
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "impacto_semilla": {
+    "stage": "impacto_semilla",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:38:54-06:00",
+    "finish_costa_rica": "2026-11-02T18:38:55-06:00",
+    "pytest_exit_code": 1,
+    "process_duration_seconds": 1.054017,
+    "total_items": 241,
+    "counts": {
+      "aprobado": 231,
+      "fallido": 10
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "antes_reportes": {
+    "stage": "antes_reportes",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:45:50-06:00",
+    "finish_costa_rica": "2026-11-02T18:45:50-06:00",
+    "pytest_exit_code": 1,
+    "process_duration_seconds": 0.212179,
+    "total_items": 3,
+    "counts": {
+      "fallido": 2,
+      "aprobado": 1
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "regresion_final": {
+    "stage": "regresion_final",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:46:14-06:00",
+    "finish_costa_rica": "2026-11-02T18:46:15-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 1.125463,
+    "total_items": 248,
+    "counts": {
+      "aprobado": 248
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "despues_reportes": {
+    "stage": "despues_reportes",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:46:13-06:00",
+    "finish_costa_rica": "2026-11-02T18:46:13-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 0.250535,
+    "total_items": 16,
+    "counts": {
+      "aprobado": 16
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "despues_ini02": {
+    "stage": "despues_ini02",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:35:14-06:00",
+    "finish_costa_rica": "2026-11-02T18:35:15-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 0.139966,
+    "total_items": 3,
+    "counts": {
+      "aprobado": 3
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  },
+  "verificacion_integracion": {
+    "stage": "verificacion_integracion",
+    "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+    "start_costa_rica": "2026-11-02T18:57:17-06:00",
+    "finish_costa_rica": "2026-11-02T18:57:18-06:00",
+    "pytest_exit_code": 0,
+    "process_duration_seconds": 1.055927,
+    "total_items": 248,
+    "counts": {
+      "aprobado": 248
+    },
+    "integrity_unchanged_during_run": true,
+    "original_repo_changed_during_run": false,
+    "commit_or_push_performed": false
+  }
+}

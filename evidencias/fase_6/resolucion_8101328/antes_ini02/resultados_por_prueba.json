@@ -1,0 +1,11 @@
+[
+  {
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_ruta_imposible_se_informa_sin_excepcion",
+    "status": "fallido",
+    "detail": "NotADirectoryError: [Errno 20] Not a directory: '/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_ini02/test_rf01_ruta_imposible_se_in0/es_un_archivo/subcarpeta'",
+    "duration_seconds": "0.001",
+    "observations": []
+  }
+]

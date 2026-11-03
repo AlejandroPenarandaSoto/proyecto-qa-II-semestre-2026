@@ -28,6 +28,12 @@ def base_datos_prueba(tmp_path):
     resultado = inicializar_base_datos()
     assert resultado.exito, resultado.mensaje
 
+    # Estos escenarios requieren estudiantes vacíos sólo en esta BD temporal.
+    # La carga de estudiantes iniciales se verifica por separado en RF-01.
+    conexion = obtener_conexion()
+    conexion.execute("DELETE FROM estudiantes")
+    conexion.commit()
+
     yield
 
     cerrar_conexion()

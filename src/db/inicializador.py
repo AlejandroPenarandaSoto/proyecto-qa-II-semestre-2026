@@ -13,7 +13,7 @@ from dataclasses import dataclass
 
 from . import conexion as conexion_bd
 from .esquema import ESQUEMA_SQL
-from .semilla import insertar_salas_iniciales
+from .semilla import insertar_estudiantes_iniciales, insertar_salas_iniciales
 
 
 @dataclass
@@ -37,19 +37,21 @@ def inicializar_base_datos() -> ResultadoInicializacion:
       registros.
     - Si la base de datos no existe, se crea con su estructura y datos
       iniciales.
-    - Las salas iniciales quedan disponibles desde la primera ejecución.
-    - Ningún error durante este proceso produce el cierre inesperado de
-      la aplicación: toda excepción de SQLite se captura y se informa
+    - Las salas y los estudiantes iniciales quedan disponibles desde la
+      primera ejecución; la carga de ambos conjuntos es atómica.
+    - Ningún error de SQLite o del sistema de archivos durante este proceso
+      produce el cierre inesperado de la aplicación: se captura y se informa
       mediante el resultado devuelto.
     """
-    base_datos_ya_existia = conexion_bd.la_base_datos_existe()
-
     try:
+        base_datos_ya_existia = conexion_bd.la_base_datos_existe()
         conexion = conexion_bd.obtener_conexion()
         conexion.executescript(ESQUEMA_SQL)
         conexion.commit()
 
-        salas_insertadas = insertar_salas_iniciales(conexion)
+        with conexion:
+            salas_insertadas = insertar_salas_iniciales(conexion)
+            insertar_estudiantes_iniciales(conexion)
 
         if base_datos_ya_existia:
             mensaje = "Base de datos existente cargada correctamente."
@@ -62,7 +64,7 @@ def inicializar_base_datos() -> ResultadoInicializacion:
             salas_insertadas=salas_insertadas,
             mensaje=mensaje,
         )
-    except sqlite3.Error as error:
+    except (sqlite3.Error, OSError) as error:
         return ResultadoInicializacion(
             exito=False,
             base_datos_creada=False,

@@ -1,0 +1,16 @@
+{
+  "stage": "regresion_persona1",
+  "base_commit": "8101328cb52d2ae018d486fafc37576433b042f8",
+  "start_costa_rica": "2026-11-02T18:19:22-06:00",
+  "finish_costa_rica": "2026-11-02T18:19:23-06:00",
+  "pytest_exit_code": 0,
+  "process_duration_seconds": 1.049973,
+  "total_items": 235,
+  "counts": {
+    "aprobado": 233,
+    "xfail": 2
+  },
+  "integrity_unchanged_during_run": true,
+  "original_repo_changed_during_run": false,
+  "commit_or_push_performed": false
+}

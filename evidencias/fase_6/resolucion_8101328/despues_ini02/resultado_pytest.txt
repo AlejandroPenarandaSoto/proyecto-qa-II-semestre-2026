@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14
+rootdir: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/repositorio
+collecting ... collected 3 items
+
+tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion PASSED [ 33%]
+tests/test_inicializacion_verificacion_fase6.py::test_f6_ini02_permission_error_al_consultar_existencia_se_informa PASSED [ 66%]
+tests/test_inicializacion_verificacion_fase6.py::test_f6_ini02_recupera_ruta_valida_despues_de_not_a_directory_error PASSED [100%]
+
+==================================== PASSES ====================================
+______ test_f6_ini02_permission_error_al_consultar_existencia_se_informa _______
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "BUG-INI-02", "datos": {"excepcion_simulada": "PermissionError", "punto_de_inyeccion": "conexion_bd.la_base_datos_existe", "ruta_temporal": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_ini02/test_f6_ini02_permission_error0/reservas_verificacion.db", "variante": "permiso_denegado_en_comprobacion_previa"}, "esperado": {"archivo_creado": false, "base_datos_creada": false, "exito": false, "mensaje_informativo": true, "salas_insertadas": 0}, "obtenido": {"archivo_creado": false, "llamadas_comprobacion": 1, "resultado": {"base_datos_creada": false, "exito": false, "mensaje": "No fue posible inicializar la base de datos: [Errno 13] Permiso denegado simulado al comprobar la existencia de la base: '/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_ini02/test_f6_ini02_permission_error0/reservas_verificacion.db'", "salas_insertadas": 0}}, "requisito": "RF-01; RNF-05"}
+_____ test_f6_ini02_recupera_ruta_valida_despues_de_not_a_directory_error ______
+----------------------------- Captured stdout call -----------------------------
+OBSERVACION_CP {"caso": "BUG-INI-02", "datos": {"obstaculo_real": "archivo regular usado como directorio", "ruta_imposible": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_ini02/test_f6_ini02_recupera_ruta_va0/es_un_archivo/subcarpeta/reservas.db", "ruta_valida": "/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_ini02/test_f6_ini02_recupera_ruta_va0/recuperada/reservas.db", "variante": "recuperacion_despues_de_ruta_bajo_un_archivo"}, "esperado": {"base_datos_creada": true, "codigos_salas": ["S01", "S02", "S03", "S04", "S05"], "obstaculo_sin_cambios": true, "primer_inicio_exito": false, "segundo_inicio_exito": true}, "obtenido": {"archivo_valido_creado": true, "codigos_salas": ["S01", "S02", "S03", "S04", "S05"], "obstaculo_sin_cambios": true, "primer_resultado": {"base_datos_creada": false, "exito": false, "mensaje": "No fue posible inicializar la base de datos: [Errno 20] Not a directory: '/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_despues_ini02/test_f6_ini02_recupera_ruta_va0/es_un_archivo/subcarpeta'", "salas_insertadas": 0}, "segundo_resultado": {"base_datos_creada": true, "exito": true, "mensaje": "Base de datos creada e inicializada correctamente.", "salas_insertadas": 5}}, "requisito": "RF-01; RNF-05"}
+- generated xml file: /Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/outputs/Fase_6_Persona_1_8101328/despues_ini02/resultado_pytest.xml -
+=========================== short test summary info ============================
+PASSED tests/test_inicializacion_persistencia.py::test_rf01_ruta_imposible_se_informa_sin_excepcion
+PASSED tests/test_inicializacion_verificacion_fase6.py::test_f6_ini02_permission_error_al_consultar_existencia_se_informa
+PASSED tests/test_inicializacion_verificacion_fase6.py::test_f6_ini02_recupera_ruta_valida_despues_de_not_a_directory_error
+============================== 3 passed in 0.04s ===============================

@@ -1,0 +1,11 @@
+[
+  {
+    "nodeid": "tests/test_inicializacion_persistencia.py::test_rf01_crea_estudiantes_iniciales",
+    "file": "tests/test_inicializacion_persistencia.py",
+    "test_name": "test_rf01_crea_estudiantes_iniciales",
+    "status": "fallido",
+    "detail": "assert 0 > 0",
+    "duration_seconds": "0.007",
+    "observations": []
+  }
+]

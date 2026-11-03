@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.047" timestamp="2026-11-02T18:35:14.780124-06:00" hostname="MacBook-Air-de-Alejandro.local"><testcase classname="tests.test_inicializacion_persistencia" name="test_rf01_crea_estudiantes_iniciales" file="tests/test_inicializacion_persistencia.py" line="120" time="0.007"><failure message="assert 0 &gt; 0">ruta_bd = PosixPath('/Users/avega/Documents/Codex/2026-09-28/referenced-chatgpt-conversation-this-is-an/work/fase6_persona1/temporales_antes_ini01/test_rf01_crea_estudiantes_ini0/reservas_prueba.db')
+
+    @pytest.mark.xfail(
+        strict=True,
+        reason="Hallazgo: semilla.py solo inserta salas; RF-01 exige también "
+               "datos iniciales de estudiantes.",
+    )
+    def test_rf01_crea_estudiantes_iniciales(ruta_bd):
+        """CP-INI-02"""
+        inicializar_base_datos()
+    
+        (total,) = obtener_conexion().execute(
+            "SELECT COUNT(*) FROM estudiantes").fetchone()
+    
+&gt;       assert total &gt; 0
+E       assert 0 &gt; 0
+
+tests/test_inicializacion_persistencia.py:133: AssertionError</failure><system-out>--------------------------------- Captured Out ---------------------------------
+
+</system-out></testcase></testsuite></testsuites>

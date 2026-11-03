@@ -1,0 +1,14 @@
+[
+  {
+    "archivo": "test_reservaciones_f5.py",
+    "sha256": "a61769909ae8d2237d5e87016639701d17a38c10283c9a40823ae9123515cef3",
+    "url": "https://github.com/AlejandroPenarandaSoto/proyecto-qa-II-semestre-2026/blob/bcf1cfe90503b545c482de6ce274599c9e8e38be/tests/test_reservaciones_f5.py",
+    "blob_sha": "0d96bd9c7cd1a96317d8529d695549b8678ac00d"
+  },
+  {
+    "archivo": "test_recurrencias_f5.py",
+    "sha256": "5d83e7cda208fd76ad310d86583e518829cd47d089451b00dd9ad57bdb928656",
+    "url": "https://github.com/AlejandroPenarandaSoto/proyecto-qa-II-semestre-2026/blob/bcf1cfe90503b545c482de6ce274599c9e8e38be/tests/test_recurrencias_f5.py",
+    "blob_sha": "ddfc669cb63a3d966a4f61cac1490ea01410154b"
+  }
+]

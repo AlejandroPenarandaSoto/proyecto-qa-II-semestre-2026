@@ -61,3 +61,9 @@ Pendiente de definir...
 ## Estado del proyecto
 
 En desarrollo...
+
+## Fase 6 Corrección y verificación
+
+El [registro de resolución y las evidencias](evidencias/fase_6/resolucion_8101328/README.md) documentan la revisión central de los nueve reportes de Fase 5, las cinco correcciones verificadas y los cuatro rechazos justificados. Incluye el informe en Word y los resultados por prueba.
+
+Desde la raíz del repositorio, la suite se ejecuta con `python3 -m pytest tests`.
