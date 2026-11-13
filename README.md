@@ -64,6 +64,6 @@ En desarrollo...
 
 ## Fase 6 Corrección y verificación
 
-El [registro de resolución y las evidencias](evidencias/fase_6/resolucion_8101328/README.md) documentan la revisión central de los nueve reportes de Fase 5, las cinco correcciones verificadas y los cuatro rechazos justificados. Incluye el informe en Word y los resultados por prueba.
+El [registro de resolución](evidencias/fase_6/Registro_resolucion_Fase_6.docx) documenta la revisión de los nueve reportes de Fase 5, las cinco correcciones verificadas y los cuatro rechazos justificados. El resultado de la regresión final está en `evidencias/fase_6/resultado_regresion_final.txt`.
 
 Desde la raíz del repositorio, la suite se ejecuta con `python3 -m pytest tests`.
