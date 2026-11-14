@@ -61,3 +61,9 @@ Pendiente de definir...
 ## Estado del proyecto
 
 En desarrollo...
+
+## Fase 6 Corrección y verificación
+
+El [registro de resolución](evidencias/fase_6/Registro_resolucion_Fase_6.docx) documenta la revisión de los nueve reportes de Fase 5, las cinco correcciones verificadas y los cuatro rechazos justificados. El resultado de la regresión final está en `evidencias/fase_6/resultado_regresion_final.txt`.
+
+Desde la raíz del repositorio, la suite se ejecuta con `python3 -m pytest tests`.

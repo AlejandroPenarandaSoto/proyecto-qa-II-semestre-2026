@@ -6,10 +6,9 @@ RNF-03 (portabilidad), RNF-05 (robustez), RNF-06 (integridad) y RNF-08
 (codificación). Cada prueba usa un archivo SQLite temporal propio (tmp_path),
 de modo que se verifica la persistencia real en disco y no solo en memoria.
 
-Las pruebas marcadas con xfail(strict=True) documentan defectos encontrados
-(ver motivo en cada marca). Cuando el defecto se corrija, la prueba pasará
-"inesperadamente" y strict=True hará fallar la suite: ese es el aviso para
-quitar la marca xfail.
+En Fase 6 se retiran las marcas xfail de INI-01 e INI-02 tras reproducir
+los defectos y verificar sus correcciones. Las evidencias de Fase 5 se
+conservan por separado.
 
 Cada prueba lleva en su docstring el ID del caso (CP-INI, CP-BD o CP-PER) del plan de pruebas.
 
@@ -118,11 +117,6 @@ def test_rf01_salas_iniciales_disponibles_para_consulta(ruta_bd):
     assert codigos == ["S01", "S02", "S03", "S04", "S05"]
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="Hallazgo: semilla.py solo inserta salas; RF-01 exige también "
-           "datos iniciales de estudiantes.",
-)
 def test_rf01_crea_estudiantes_iniciales(ruta_bd):
     """CP-INI-02"""
     inicializar_base_datos()
@@ -169,14 +163,19 @@ def test_rf01_reinicializar_conserva_reservaciones_existentes(ruta_bd):
     """CP-INI-03"""
     inicializar_base_datos()
     conexion = obtener_conexion()
-    conexion.execute(
+    cursor_estudiante = conexion.execute(
         "INSERT INTO estudiantes (carne, nombre_completo, correo) "
         "VALUES ('E001', 'Ana Prueba', 'ana@u.cr')")
     conexion.execute(
         "INSERT INTO reservaciones (estudiante_id, sala_id, fecha, "
         "hora_inicio, duracion_horas, cantidad_personas) "
-        "VALUES (1, 1, '2026-11-02', '09:00', 1, 2)")
+        "VALUES (?, 1, '2026-11-02', '09:00', 1, 2)",
+        (cursor_estudiante.lastrowid,))
     conexion.commit()
+    estudiantes_antes = conexion.execute(
+        "SELECT * FROM estudiantes ORDER BY id").fetchall()
+    reservaciones_antes = conexion.execute(
+        "SELECT * FROM reservaciones ORDER BY id").fetchall()
 
     cerrar_conexion()
     inicializar_base_datos()
@@ -185,7 +184,9 @@ def test_rf01_reinicializar_conserva_reservaciones_existentes(ruta_bd):
     assert conexion.execute(
         "SELECT COUNT(*) FROM reservaciones").fetchone()[0] == 1
     assert conexion.execute(
-        "SELECT COUNT(*) FROM estudiantes").fetchone()[0] == 1
+        "SELECT * FROM estudiantes ORDER BY id").fetchall() == estudiantes_antes
+    assert conexion.execute(
+        "SELECT * FROM reservaciones ORDER BY id").fetchall() == reservaciones_antes
 
 
 # --------------------------------------------------------------------------
@@ -227,12 +228,6 @@ def test_rf01_archivo_vacio_se_inicializa_correctamente(ruta_bd):
     assert len(consultar_salas()) == len(SALAS_INICIALES)
 
 
-@pytest.mark.xfail(
-    strict=True,
-    raises=OSError,
-    reason="Hallazgo: inicializar_base_datos solo captura sqlite3.Error; una "
-           "ruta inválida lanza OSError sin controlar (RF-01, RNF-05).",
-)
 def test_rf01_ruta_imposible_se_informa_sin_excepcion(tmp_path):
     """CP-INI-06"""
     cerrar_conexion()

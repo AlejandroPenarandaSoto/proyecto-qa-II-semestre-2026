@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/avega/Documents/GitHub/proyecto-qa-II-semestre-2026
+collected 248 items
+
+tests/test_acciones_panel.py .....                                       [  2%]
+tests/test_auditoria.py ...............                                  [  8%]
+tests/test_auditoria_entidades.py .........                              [ 11%]
+tests/test_cierre_aplicacion.py ...                                      [ 12%]
+tests/test_contraste_reportes_fase6.py ....                              [ 14%]
+tests/test_controller.py ......                                          [ 16%]
+tests/test_dialogo_auditoria.py ...                                      [ 18%]
+tests/test_dialogo_recurrencia.py ....                                   [ 19%]
+tests/test_dialogo_reporte.py ...                                        [ 20%]
+tests/test_disponibilidad_ampliacion_fase5.py ...............            [ 27%]
+tests/test_estudiantes.py ........................                       [ 36%]
+tests/test_estudiantes_historial_fase5.py .....                          [ 38%]
+tests/test_estudiantes_limites_fase5.py ....                             [ 40%]
+tests/test_inicializacion_persistencia.py .............................. [ 52%]
+.....                                                                    [ 54%]
+tests/test_inicializacion_verificacion_fase6.py ..                       [ 55%]
+tests/test_panel.py .......                                              [ 58%]
+tests/test_recurrencias.py ................                              [ 64%]
+tests/test_reportes.py ..........                                        [ 68%]
+tests/test_reportes_verificacion_fase6.py ...                            [ 69%]
+tests/test_reservaciones.py ........s..................................  [ 87%]
+tests/test_salas.py ......                                               [ 89%]
+tests/test_salas_ampliacion_fase5.py .............                       [ 94%]
+tests/test_salas_verificacion_fase6.py ....                              [ 96%]
+tests/test_selector_fecha.py ..                                          [ 97%]
+tests/test_semilla_verificacion_fase6.py ....                            [ 98%]
+tests/test_tema.py ...                                                   [100%]
+
+======================= 247 passed, 1 skipped in 21.71s ========================

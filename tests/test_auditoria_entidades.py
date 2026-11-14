@@ -3,6 +3,7 @@ import pytest
 from src.db.conexion import (
     cerrar_conexion,
     configurar_ruta_base_datos,
+    obtener_conexion,
     obtener_ruta_base_datos,
 )
 from src.db.inicializador import inicializar_base_datos
@@ -28,6 +29,12 @@ def base_datos_entidades(tmp_path):
 
     resultado = inicializar_base_datos()
     assert resultado.exito, resultado.mensaje
+
+    # Estos escenarios requieren estudiantes vacíos sólo en esta BD temporal.
+    # La carga de estudiantes iniciales se verifica por separado en RF-01.
+    conexion = obtener_conexion()
+    conexion.execute("DELETE FROM estudiantes")
+    conexion.commit()
 
     try:
         yield
