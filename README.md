@@ -62,11 +62,10 @@ proyecto-qa-II-semestre-2026/
 4. Ejecutar la aplicación:
 
    ```bash
-   cd src
-   python3 main.py                 # en Windows: python main.py
+   python3 -m src.main             # en Windows: python -m src.main
    ```
 
-En la primera ejecución, el sistema crea automáticamente la base de datos SQLite (`src/db/reservaciones.db`) con la estructura y los datos iniciales (salas y estudiantes de ejemplo). En ejecuciones posteriores, reutiliza la base existente sin duplicar registros.
+En la primera ejecución, el sistema crea automáticamente la base de datos SQLite (`src/db/reservas.db`) con la estructura y los datos iniciales (salas y estudiantes de ejemplo). En ejecuciones posteriores, reutiliza la base existente sin duplicar registros.
 
 ## Ejecución de las pruebas
 
@@ -81,8 +80,8 @@ python3 -m pytest tests
 Para volver al estado inicial de datos (por ejemplo, antes de una ronda de pruebas):
 
 1. Cerrar la aplicación si está en ejecución.
-2. Eliminar el archivo `src/db/reservaciones.db`.
-3. Volver a ejecutar `python3 main.py` desde `src/`; la base se regenera con la estructura y los datos iniciales definidos en `src/data/datos_iniciales.sql`.
+2. Eliminar el archivo `src/db/reservas.db`.
+3. Volver a ejecutar `python3 -m src.main` desde la raíz del repositorio; la base se regenera con la estructura y los datos iniciales definidos en `src/db/semilla.py`.
 
 ## Descripción de las opciones del menú
 
