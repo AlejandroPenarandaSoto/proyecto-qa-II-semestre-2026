@@ -9,7 +9,7 @@ INTEGRANTES:
   4. Ernesto Cascante                      Carné: 2024083177
   5. Alejandro Vega Gamboa                 Carné: 2024109610
 
-PROYECTO:         Sistema de reservación de salas de estudio
-VERSIÓN:          1.0.0 (Final)
-FECHA:            [DD/MM/2026]
+PROYECTO:          Sistema de reservación de salas de estudio
+VERSIÓN:           1.0.0 (Final)
+FECHA:             [16/11/2026]
 ESTATUS DECLARADO: Fase 8 - Final. Proyecto completado y entregado.
