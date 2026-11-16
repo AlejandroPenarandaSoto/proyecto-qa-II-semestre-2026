@@ -18,16 +18,9 @@ def main() -> int:
     if resultado.salas_insertadas:
         print(f"Se cargaron {resultado.salas_insertadas} salas iniciales.")
 
-    # La interfaz gráfica (Tkinter/CustomTkinter/PySide) se conecta aquí
-    # una vez que el módulo de vista esté implementado por el equipo.
-    try:
-        from src.view.app import iniciar_aplicacion  # type: ignore
-    except ModuleNotFoundError:
-        print(
-            "Módulo de interfaz gráfica aún no disponible; "
-            "la base de datos quedó lista para operar."
-        )
-        return 0
+    # Se importa después de inicializar la base de datos para mantener el
+    # arranque de la capa de persistencia independiente de la interfaz.
+    from src.view.app import iniciar_aplicacion
 
     iniciar_aplicacion()
     return 0

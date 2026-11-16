@@ -1,12 +1,14 @@
 import sqlite3
 
 from src.db.conexion import obtener_conexion
-from src.model.estudiantes.validaciones import(
+from src.model.auditoria.servicio import registrar_evento
+from src.model.estudiantes.validaciones import (
     validar_carne,
     validar_correo,
     validar_estado,
     validar_nombre,
 )
+
 
 def registrar_estudiante(carne, nombre, correo):
     """Valida y registra un estudiante."""
@@ -46,6 +48,18 @@ def registrar_estudiante(carne, nombre, correo):
             """,
             (carne, nombre, correo, "activo")
         )
+
+        resultado_auditoria = registrar_evento(
+            accion="creacion",
+            entidad="estudiante",
+            entidad_id=carne,
+            detalle=f"Estudiante {carne} registrado correctamente.",
+            conexion=conexion,
+        )
+
+        if not resultado_auditoria["exito"]:
+            conexion.rollback()
+            return False, "No fue posible registrar al estudiante."
 
         conexion.commit()
         return True, "Estudiante registrado correctamente."
@@ -176,6 +190,18 @@ def modificar_estudiante(carne, nombre, correo, estado):
             """,
             (nombre, correo, estado, estudiante["id"])
         )
+
+        resultado_auditoria = registrar_evento(
+            accion="modificacion",
+            entidad="estudiante",
+            entidad_id=carne,
+            detalle=f"Estudiante {carne} modificado correctamente.",
+            conexion=conexion,
+        )
+
+        if not resultado_auditoria["exito"]:
+            conexion.rollback()
+            return False, "No fue posible modificar al estudiante."
 
         conexion.commit()
         return True, "Estudiante modificado correctamente."

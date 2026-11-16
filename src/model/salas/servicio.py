@@ -1,6 +1,9 @@
 import sqlite3
 from datetime import datetime, timedelta
+
 from src.db.conexion import obtener_conexion
+from src.model.auditoria.servicio import registrar_evento
+
 
 def consultar_salas() -> list:
     """RF-04: Retorna todas las salas ordenadas por código."""
@@ -10,6 +13,13 @@ def consultar_salas() -> list:
 
 def registrar_sala(codigo: str, nombre: str, capacidad: int, estado: str = 'disponible') -> dict:
     """RF-12: Registra una nueva sala validando capacidad y unicidad."""
+    codigo = codigo.strip() if isinstance(codigo, str) else codigo
+    nombre = nombre.strip() if isinstance(nombre, str) else nombre
+    if not codigo or not isinstance(codigo, str):
+        return {"exito": False, "mensaje": "El código de sala es obligatorio."}
+    if not nombre or not isinstance(nombre, str):
+        return {"exito": False, "mensaje": "El nombre de la sala es obligatorio."}
+
     if not isinstance(capacidad, int) or capacidad <= 0:
         return {"exito": False, "mensaje": "La capacidad debe ser un entero mayor que cero."}
     
@@ -18,57 +28,122 @@ def registrar_sala(codigo: str, nombre: str, capacidad: int, estado: str = 'disp
 
     conexion = obtener_conexion()
     try:
+        existente = conexion.execute(
+            "SELECT 1 FROM salas WHERE codigo = ? COLLATE NOCASE",
+            (codigo,),
+        ).fetchone()
+        if existente:
+            return {"exito": False, "mensaje": "El código de sala ya se encuentra registrado."}
+
         conexion.execute(
             "INSERT INTO salas (codigo, nombre, capacidad, estado) VALUES (?, ?, ?, ?)",
             (codigo, nombre, capacidad, estado)
         )
+
+        resultado_auditoria = registrar_evento(
+            accion="creacion",
+            entidad="sala",
+            entidad_id=codigo,
+            detalle=f"Sala {codigo} registrada correctamente.",
+            conexion=conexion,
+        )
+
+        if not resultado_auditoria["exito"]:
+            conexion.rollback()
+            return {"exito": False, "mensaje": "No fue posible registrar la sala."}
+
         conexion.commit()
         return {"exito": True, "mensaje": f"Sala {codigo} registrada exitosamente."}
     except sqlite3.IntegrityError:
+        conexion.rollback()
         return {"exito": False, "mensaje": "El código de sala ya se encuentra registrado."}
+    except sqlite3.Error:
+        conexion.rollback()
+        return {"exito": False, "mensaje": "No fue posible registrar la sala."}
+
 
 def modificar_sala(codigo: str, nuevo_nombre: str, nueva_capacidad: int, nuevo_estado: str) -> dict:
     """RF-12: Modifica una sala validando que la capacidad soporte reservas futuras."""
+    codigo = codigo.strip() if isinstance(codigo, str) else codigo
+    nuevo_nombre = nuevo_nombre.strip() if isinstance(nuevo_nombre, str) else nuevo_nombre
+    if not nuevo_nombre or not isinstance(nuevo_nombre, str):
+        return {"exito": False, "mensaje": "El nombre de la sala es obligatorio."}
+
     if not isinstance(nueva_capacidad, int) or nueva_capacidad <= 0:
         return {"exito": False, "mensaje": "La capacidad debe ser un entero mayor que cero."}
-        
+
+    if nuevo_estado not in ('disponible', 'fuera_de_servicio'):
+        return {"exito": False, "mensaje": "Estado de sala inválido."}
+
     conexion = obtener_conexion()
-    sala = conexion.execute("SELECT id FROM salas WHERE codigo = ?", (codigo,)).fetchone()
-    if not sala:
-        return {"exito": False, "mensaje": "La sala especificada no existe."}
-        
-    sala_id = sala['id']
-    ahora = datetime.now()
-    fecha_actual = ahora.strftime('%Y-%m-%d')
-    hora_actual = ahora.strftime('%H:%M')
-    
-    cursor = conexion.execute('''
-        SELECT MAX(cantidad_personas) as max_personas
-        FROM reservaciones 
-        WHERE sala_id = ? AND estado = 'activa' 
-          AND (fecha > ? OR (fecha = ? AND hora_inicio > ?))
-    ''', (sala_id, fecha_actual, fecha_actual, hora_actual))
-    resultado = cursor.fetchone()
-    
-    max_personas_futuras = resultado['max_personas'] if resultado['max_personas'] is not None else 0
-    
-    if nueva_capacidad < max_personas_futuras:
-        return {
-            "exito": False, 
-            "mensaje": f"No se puede reducir la capacidad a {nueva_capacidad}. Hay reservas futuras activas para {max_personas_futuras} personas."
-        }
-        
-    conexion.execute(
-        "UPDATE salas SET nombre = ?, capacidad = ?, estado = ? WHERE codigo = ?",
-        (nuevo_nombre, nueva_capacidad, nuevo_estado, codigo)
-    )
-    conexion.commit()
-    return {"exito": True, "mensaje": "Sala modificada correctamente."}
+    try:
+        sala = conexion.execute(
+            "SELECT id FROM salas WHERE codigo = ? COLLATE NOCASE",
+            (codigo,),
+        ).fetchone()
+        if not sala:
+            return {"exito": False, "mensaje": "La sala especificada no existe."}
+
+        sala_id = sala['id']
+        ahora = datetime.now()
+        fecha_actual = ahora.strftime('%Y-%m-%d')
+        hora_actual = ahora.strftime('%H:%M')
+
+        cursor = conexion.execute(
+            '''
+            SELECT MAX(cantidad_personas) as max_personas
+            FROM reservaciones
+            WHERE sala_id = ? AND estado = 'activa'
+              AND (fecha > ? OR (fecha = ? AND hora_inicio > ?))
+            ''',
+            (sala_id, fecha_actual, fecha_actual, hora_actual),
+        )
+        resultado = cursor.fetchone()
+
+        max_personas_futuras = (
+            resultado['max_personas']
+            if resultado['max_personas'] is not None
+            else 0
+        )
+
+        if nueva_capacidad < max_personas_futuras:
+            return {
+                "exito": False,
+                "mensaje": (
+                    f"No se puede reducir la capacidad a {nueva_capacidad}. "
+                    "Hay reservas futuras activas para "
+                    f"{max_personas_futuras} personas."
+                ),
+            }
+
+        conexion.execute(
+            "UPDATE salas SET nombre = ?, capacidad = ?, estado = ? WHERE id = ?",
+            (nuevo_nombre, nueva_capacidad, nuevo_estado, sala_id),
+        )
+
+        resultado_auditoria = registrar_evento(
+            accion="modificacion",
+            entidad="sala",
+            entidad_id=codigo,
+            detalle=f"Sala {codigo} modificada correctamente.",
+            conexion=conexion,
+        )
+
+        if not resultado_auditoria["exito"]:
+            conexion.rollback()
+            return {"exito": False, "mensaje": "No fue posible modificar la sala."}
+
+        conexion.commit()
+        return {"exito": True, "mensaje": "Sala modificada correctamente."}
+    except sqlite3.Error:
+        conexion.rollback()
+        return {"exito": False, "mensaje": "No fue posible modificar la sala."}
+
 
 def consultar_disponibilidad(codigo_sala: str, fecha: str, hora_inicio: str, duracion: int) -> dict:
     """RF-08: Evalúa la disponibilidad aplicando reglas de horario y superposición."""
     conexion = obtener_conexion()
-    sala = conexion.execute("SELECT id, estado FROM salas WHERE codigo = ?", (codigo_sala,)).fetchone()
+    sala = conexion.execute("SELECT id, estado FROM salas WHERE codigo = ? COLLATE NOCASE", (codigo_sala,)).fetchone()
     
     if not sala:
         return {"disponible": False, "motivo": "La sala especificada no existe."}
@@ -81,6 +156,8 @@ def consultar_disponibilidad(codigo_sala: str, fecha: str, hora_inicio: str, dur
         hora_dt = datetime.strptime(hora_inicio, '%H:%M')
     except ValueError:
         return {"disponible": False, "motivo": "Formato de fecha (AAAA-MM-DD) u hora (HH:MM) inválido."}
+
+    hora_inicio = hora_dt.strftime('%H:%M')
         
     if duracion not in (1, 2):
         return {"disponible": False, "motivo": "La duración permitida es únicamente de 1 o 2 horas."}
