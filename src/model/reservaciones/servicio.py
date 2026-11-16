@@ -179,7 +179,7 @@ def crear_reservaciones_recurrentes(
             entidad_id=serie_id,
             detalle=(
                 f"Serie {serie_id} creada correctamente con "
-                f"{len(ids)} ocurrencias."
+                f"{len(ids)} ocurrencias: {', '.join(ids)}."
             ),
             conexion=conexion,
         )
@@ -384,7 +384,8 @@ def cancelar_ocurrencias_futuras(id_reservacion):
             entidad_id=serie_id,
             detalle=(
                 f"Se cancelaron {len(ids_internos)} ocurrencias futuras "
-                f"de la serie {serie_id}."
+                f"de la serie {serie_id}: "
+                f"{', '.join(_formatear_id(i) for i in ids_internos)}."
             ),
             conexion=conexion,
         )
