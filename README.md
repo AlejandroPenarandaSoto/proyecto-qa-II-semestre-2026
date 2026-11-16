@@ -15,13 +15,13 @@ proyecto-qa-II-semestre-2026/
 ├── requirements.txt
 ├── .gitignore
 │
-├── docs/
+├── documentos/
 │
 ├── src/                    # Código fuente (patrón MVC)
 │   ├── main.py                  # Punto de entrada
-│   ├── modelo/                  # MODEL: entidades, reglas de negocio, persistencia
-│   ├── vista/                   # VIEW: pantallas y widgets de la GUI
-│   ├── controlador/             # CONTROLLER: conecta la Vista con el Modelo
+│   ├── model/                   # MODEL: entidades, reglas de negocio, persistencia
+│   ├── view/                    # VIEW: pantallas y widgets de la GUI
+│   ├── controller/              # CONTROLLER: conecta la Vista con el Modelo
 │   ├── util/                    # UTIL: lógica utilitaria del sistema
 │   └── db/                      # DB: lógica de acceso a datos
 │
@@ -85,16 +85,19 @@ Para volver al estado inicial de datos (por ejemplo, antes de una ronda de prueb
 
 ## Descripción de las opciones del menú
 
-| Opción | Descripción |
-|---|---|
-| **Estudiantes** | Registrar, consultar, modificar y eliminar estudiantes (carné, nombre y datos de contacto). |
-| **Salas** | Administrar las salas de estudio: capacidad, tipo (individual o grupal) y estado (disponible o fuera de servicio). |
-| **Nueva reservación** | Reservar una sala para un estudiante indicando fecha, hora de inicio, hora de fin y cantidad de personas. El sistema valida choques de horario, salas fuera de servicio y capacidad máxima. |
-| **Consultar reservaciones** | Ver y filtrar las reservaciones por estudiante, sala, fecha o estado. |
-| **Cancelar reservación** | Cancelar una reservación activa, dejando registro de la cancelación para mantener la trazabilidad. |
-| **Disponibilidad** | Consultar qué salas están libres en una fecha y franja horaria. |
-| **Reportes** | Exportar reportes en formato CSV (reservaciones, cancelaciones y ocupación por sala). |
-| **Salir** | Cierra la aplicación. |
+| Menú | Opción | Descripción |
+|---|---|---|
+| **Archivo** | Generar reporte CSV… | Exporta a un archivo CSV las reservaciones de un rango de fechas. |
+| **Archivo** | Salir | Cierra la aplicación; si hay datos sin guardar, pide confirmación. |
+| **Gestión** | Estudiantes… | Registrar, consultar y modificar estudiantes (carné, nombre, correo y estado activo o inactivo) y ver las reservaciones de cada uno. |
+| **Gestión** | Salas… | Registrar, consultar y modificar salas (código, nombre, capacidad y estado disponible o fuera de servicio). |
+| **Reservaciones** | Nueva reservación… | Crear una reservación indicando carné, sala, fecha, hora de inicio, duración y cantidad de personas. El sistema valida estudiante activo, sala disponible, capacidad, horario y choques. |
+| **Reservaciones** | Modificar reservación seleccionada… | Cambiar sala, fecha, hora, duración o personas de la reservación activa seleccionada en el panel. |
+| **Reservaciones** | Nueva recurrencia… | Crear una serie semanal de 2 a 8 reservaciones, con vista previa de la disponibilidad de cada semana. |
+| **Reservaciones** | Consultar disponibilidad… | Consultar si una sala está libre en una fecha, hora y duración, sin crear la reservación. |
+| **Ver** | Auditoría… | Consultar el historial de creaciones, modificaciones y cancelaciones (solo lectura). |
+
+En el **panel de control** se filtran las reservaciones por fecha, sala y estado, se ven las pestañas *Resultados*, *Ocupación por sala*, *Hoy* y *Próximas*, y se cancela la reservación seleccionada (o la seleccionada y las futuras de su serie). Los botones del encabezado son accesos directos a Nueva recurrencia, Auditoría, Reporte CSV y Salir.
 
 ## Control de versiones
 
