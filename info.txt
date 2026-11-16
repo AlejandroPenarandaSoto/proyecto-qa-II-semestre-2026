@@ -1,0 +1,15 @@
+CURSO:            Calidad en Sistemas de Información
+SEMESTRE:         II Semestre 2026
+GRUPO:            06
+
+INTEGRANTES:
+  1. Daniela Priscila Madrigal Sanabria    Carné: 2024062658
+  2. Tamara Ortega Villalobos              Carné: 2023105927
+  3. Alejandro Peñaranda Soto              Carné: 2024800100
+  4. Ernesto Cascante                      Carné: 2024083177
+  5. Alejandro Vega Gamboa                 Carné: 2024109610
+
+PROYECTO:          Sistema de reservación de salas de estudio
+VERSIÓN:           1.0.0 (Final)
+FECHA:             [16/11/2026]
+ESTATUS DECLARADO: Fase 8 - Final. Proyecto completado y entregado.
