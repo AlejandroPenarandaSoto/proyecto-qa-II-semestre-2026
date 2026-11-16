@@ -13,6 +13,13 @@ def consultar_salas() -> list:
 
 def registrar_sala(codigo: str, nombre: str, capacidad: int, estado: str = 'disponible') -> dict:
     """RF-12: Registra una nueva sala validando capacidad y unicidad."""
+    codigo = codigo.strip() if isinstance(codigo, str) else codigo
+    nombre = nombre.strip() if isinstance(nombre, str) else nombre
+    if not codigo or not isinstance(codigo, str):
+        return {"exito": False, "mensaje": "El código de sala es obligatorio."}
+    if not nombre or not isinstance(nombre, str):
+        return {"exito": False, "mensaje": "El nombre de la sala es obligatorio."}
+
     if not isinstance(capacidad, int) or capacidad <= 0:
         return {"exito": False, "mensaje": "La capacidad debe ser un entero mayor que cero."}
     
@@ -57,6 +64,11 @@ def registrar_sala(codigo: str, nombre: str, capacidad: int, estado: str = 'disp
 
 def modificar_sala(codigo: str, nuevo_nombre: str, nueva_capacidad: int, nuevo_estado: str) -> dict:
     """RF-12: Modifica una sala validando que la capacidad soporte reservas futuras."""
+    codigo = codigo.strip() if isinstance(codigo, str) else codigo
+    nuevo_nombre = nuevo_nombre.strip() if isinstance(nuevo_nombre, str) else nuevo_nombre
+    if not nuevo_nombre or not isinstance(nuevo_nombre, str):
+        return {"exito": False, "mensaje": "El nombre de la sala es obligatorio."}
+
     if not isinstance(nueva_capacidad, int) or nueva_capacidad <= 0:
         return {"exito": False, "mensaje": "La capacidad debe ser un entero mayor que cero."}
 
@@ -66,7 +78,7 @@ def modificar_sala(codigo: str, nuevo_nombre: str, nueva_capacidad: int, nuevo_e
     conexion = obtener_conexion()
     try:
         sala = conexion.execute(
-            "SELECT id FROM salas WHERE codigo = ?",
+            "SELECT id FROM salas WHERE codigo = ? COLLATE NOCASE",
             (codigo,),
         ).fetchone()
         if not sala:
@@ -105,8 +117,8 @@ def modificar_sala(codigo: str, nuevo_nombre: str, nueva_capacidad: int, nuevo_e
             }
 
         conexion.execute(
-            "UPDATE salas SET nombre = ?, capacidad = ?, estado = ? WHERE codigo = ?",
-            (nuevo_nombre, nueva_capacidad, nuevo_estado, codigo),
+            "UPDATE salas SET nombre = ?, capacidad = ?, estado = ? WHERE id = ?",
+            (nuevo_nombre, nueva_capacidad, nuevo_estado, sala_id),
         )
 
         resultado_auditoria = registrar_evento(
@@ -131,7 +143,7 @@ def modificar_sala(codigo: str, nuevo_nombre: str, nueva_capacidad: int, nuevo_e
 def consultar_disponibilidad(codigo_sala: str, fecha: str, hora_inicio: str, duracion: int) -> dict:
     """RF-08: Evalúa la disponibilidad aplicando reglas de horario y superposición."""
     conexion = obtener_conexion()
-    sala = conexion.execute("SELECT id, estado FROM salas WHERE codigo = ?", (codigo_sala,)).fetchone()
+    sala = conexion.execute("SELECT id, estado FROM salas WHERE codigo = ? COLLATE NOCASE", (codigo_sala,)).fetchone()
     
     if not sala:
         return {"disponible": False, "motivo": "La sala especificada no existe."}

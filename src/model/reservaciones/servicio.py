@@ -761,7 +761,7 @@ def _buscar_sala(conexion, codigo_sala):
     if not isinstance(codigo_sala, str) or not codigo_sala.strip():
         return None
     return conexion.execute(
-        "SELECT id, codigo, capacidad, estado FROM salas WHERE codigo = ?",
+        "SELECT id, codigo, capacidad, estado FROM salas WHERE codigo = ? COLLATE NOCASE",
         (codigo_sala.strip(),),
     ).fetchone()
 
