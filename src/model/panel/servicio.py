@@ -131,7 +131,7 @@ def _consultar_reservaciones(
         consulta += " AND r.fecha = ?"
         parametros.append(fecha)
     if codigo_sala is not None:
-        consulta += " AND s.codigo = ?"
+        consulta += " AND s.codigo = ? COLLATE NOCASE"
         parametros.append(codigo_sala)
     if estado is not None:
         consulta += " AND r.estado = ?"

@@ -133,15 +133,15 @@ def test_crea_serie_atomica_con_identificador_compartido(
     fecha_inicial = _fecha_futura()
 
     resultado = crear_reservaciones_recurrentes(
-        **_parametros(fecha=fecha_inicial, semanas=4)
+        **_parametros(fecha=fecha_inicial, semanas=3)
     )
 
     assert resultado["exito"] is True
     assert resultado["serie_id"] == "SR0001"
-    assert resultado["ids"] == ["R0001", "R0002", "R0003", "R0004"]
+    assert resultado["ids"] == ["R0001", "R0002", "R0003"]
 
     reservaciones = consultar_reservaciones()["reservaciones"]
-    assert len(reservaciones) == 4
+    assert len(reservaciones) == 3
     assert {item["serie_id"] for item in reservaciones} == {"SR0001"}
 
 
@@ -181,27 +181,34 @@ def test_fallo_de_auditoria_revierte_toda_la_serie(
         lambda **_argumentos: {"exito": False, "mensaje": "Fallo simulado."},
     )
 
-    resultado = crear_reservaciones_recurrentes(**_parametros(semanas=4))
+    resultado = crear_reservaciones_recurrentes(**_parametros(semanas=3))
 
     assert resultado["exito"] is False
     assert consultar_reservaciones()["reservaciones"] == []
 
 
-def test_serie_cuenta_como_un_cupo_del_limite(base_datos_recurrencias):
+# RN-11 (DEF-F5-P2-01): cada ocurrencia de la serie ocupa un cupo del límite
+def test_cada_ocurrencia_de_la_serie_ocupa_un_cupo_del_limite(base_datos_recurrencias):
     fecha = _fecha_futura()
     serie = crear_reservaciones_recurrentes(
-        **_parametros(fecha=fecha, semanas=8)
+        **_parametros(fecha=fecha, semanas=2)
     )
     assert serie["exito"] is True
 
-    segunda_unidad = crear_reservacion(CARNE, "S02", fecha, "13:00", 1, 2)
-    tercera_unidad = crear_reservacion(CARNE, "S03", fecha, "15:00", 1, 2)
-    cuarta_unidad = crear_reservacion(CARNE, "S05", fecha, "17:00", 1, 1)
+    tercera = crear_reservacion(CARNE, "S02", fecha, "13:00", 1, 2)
+    cuarta = crear_reservacion(CARNE, "S03", fecha, "15:00", 1, 2)
 
-    assert segunda_unidad["exito"] is True
-    assert tercera_unidad["exito"] is True
-    assert cuarta_unidad["exito"] is False
-    assert "3" in cuarta_unidad["mensaje"]
+    assert tercera["exito"] is True
+    assert cuarta["exito"] is False
+    assert "3" in cuarta["mensaje"]
+
+
+def test_serie_mayor_al_limite_se_rechaza_sin_guardar(base_datos_recurrencias):
+    resultado = crear_reservaciones_recurrentes(**_parametros(semanas=4))
+
+    assert resultado["exito"] is False
+    assert "3" in resultado["mensaje"]
+    assert consultar_reservaciones()["reservaciones"] == []
 
 
 def test_cancelar_una_ocurrencia_conserva_las_demas(base_datos_recurrencias):
@@ -223,14 +230,14 @@ def test_cancelar_una_ocurrencia_conserva_las_demas(base_datos_recurrencias):
 
 
 def test_cancelar_ocurrencia_y_futuras_de_la_serie(base_datos_recurrencias):
-    serie = crear_reservaciones_recurrentes(**_parametros(semanas=4))
+    serie = crear_reservaciones_recurrentes(**_parametros(semanas=3))
     assert serie["exito"] is True
 
     resultado = cancelar_ocurrencias_futuras(serie["ids"][1])
 
     assert resultado["exito"] is True
     assert resultado["serie_id"] == "SR0001"
-    assert resultado["cantidad_cancelada"] == 3
+    assert resultado["cantidad_cancelada"] == 2
     estados = {
         item["id"]: item["estado"]
         for item in consultar_reservaciones()["reservaciones"]
@@ -239,7 +246,6 @@ def test_cancelar_ocurrencia_y_futuras_de_la_serie(base_datos_recurrencias):
         "R0001": "activa",
         "R0002": "cancelada",
         "R0003": "cancelada",
-        "R0004": "cancelada",
     }
 
 

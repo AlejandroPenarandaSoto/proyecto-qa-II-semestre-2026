@@ -7,8 +7,12 @@ from tkinter import messagebox, ttk
 
 from src.controller.controller import ControladorAplicacion
 from src.view.dialogo_auditoria import abrir_dialogo_auditoria
+from src.view.dialogo_disponibilidad import abrir_dialogo_disponibilidad
+from src.view.dialogo_estudiantes import abrir_dialogo_estudiantes
 from src.view.dialogo_recurrencia import abrir_dialogo_recurrencia
 from src.view.dialogo_reporte import abrir_dialogo_reporte
+from src.view.dialogo_reservacion import abrir_dialogo_reservacion
+from src.view.dialogo_salas import abrir_dialogo_salas
 from src.view.tema import (
     COLOR_ACENTO,
     COLOR_FILA_ALTERNA,
@@ -62,10 +66,33 @@ class Aplicacion(tk.Tk):
             command=self.solicitar_salida,
         )
         barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
+        menu_gestion = tk.Menu(barra_menu, tearoff=False)
+        menu_gestion.add_command(
+            label="Estudiantes…",
+            command=self.mostrar_estudiantes,
+        )
+        menu_gestion.add_command(
+            label="Salas…",
+            command=self.mostrar_salas,
+        )
+        barra_menu.add_cascade(label="Gestión", menu=menu_gestion)
         menu_reservaciones = tk.Menu(barra_menu, tearoff=False)
+        menu_reservaciones.add_command(
+            label="Nueva reservación…",
+            command=self.mostrar_nueva_reservacion,
+        )
+        menu_reservaciones.add_command(
+            label="Modificar reservación seleccionada…",
+            command=self.mostrar_modificar_reservacion,
+        )
         menu_reservaciones.add_command(
             label="Nueva recurrencia…",
             command=self.mostrar_recurrencia,
+        )
+        menu_reservaciones.add_separator()
+        menu_reservaciones.add_command(
+            label="Consultar disponibilidad…",
+            command=self.mostrar_disponibilidad,
         )
         barra_menu.add_cascade(
             label="Reservaciones",
@@ -95,6 +122,58 @@ class Aplicacion(tk.Tk):
             self.panel.refrescar_panel,
             self.marcar_cambios_pendientes,
         )
+
+    def mostrar_estudiantes(self):
+        abrir_dialogo_estudiantes(
+            self,
+            self.controlador,
+            self.panel.refrescar_panel,
+            self.marcar_cambios_pendientes,
+        )
+
+    def mostrar_salas(self):
+        abrir_dialogo_salas(
+            self,
+            self.controlador,
+            self.actualizar_salas_panel,
+            self.marcar_cambios_pendientes,
+        )
+
+    def mostrar_disponibilidad(self):
+        abrir_dialogo_disponibilidad(self, self.controlador)
+
+    def mostrar_nueva_reservacion(self):
+        abrir_dialogo_reservacion(
+            self,
+            self.controlador,
+            self.panel.refrescar_panel,
+            self.marcar_cambios_pendientes,
+        )
+
+    def mostrar_modificar_reservacion(self):
+        identificador = self.panel._id_reserva_seleccionada()
+        if identificador is None:
+            return
+        reservacion = self.controlador.obtener_reserva(identificador)
+        if reservacion is None or reservacion["estado"] != "activa":
+            messagebox.showwarning(
+                "Reservación no modificable",
+                "Solo se pueden modificar reservaciones activas.",
+                parent=self,
+            )
+            return
+        abrir_dialogo_reservacion(
+            self,
+            self.controlador,
+            self.panel.refrescar_panel,
+            self.marcar_cambios_pendientes,
+            reservacion,
+        )
+
+    def actualizar_salas_panel(self):
+        """Recarga el filtro de salas y el panel después de cambiar una sala."""
+        self.panel._cargar_salas()
+        self.panel.refrescar_panel()
 
     def marcar_cambios_pendientes(self, hay_cambios=True):
         """Permite a los formularios informar que tienen datos sin guardar."""
